@@ -1,0 +1,702 @@
+{
+  "ALDI|1000030409614012": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614012&store_id=29631686"
+  },
+  "ALDI|1000030409614030": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614030&store_id=29631686"
+  },
+  "ALDI|1000030409614092": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614092&store_id=29631686"
+  },
+  "ALDI|1000030409614219": {
+    "decision": "verified",
+    "expected": {},
+    "notes": "Live re-fetch of Frozen category (2026-09-16): name and price match exactly ($3.39, Appetitos Mozzarella Cheese Sticks 11 oz).",
+    "reviewed_at": "2026-09-16T21:41:55Z",
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614219&store_id=29631686"
+  },
+  "ALDI|1000030409614326": {
+    "decision": "verified",
+    "expected": {},
+    "notes": "Live re-fetch of Produce category (2026-09-16): name and price match exactly ($0.84, Cilantro bunch).",
+    "reviewed_at": "2026-09-16T21:41:55Z",
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614326&store_id=29631686"
+  },
+  "ALDI|1000030409614345": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": "2026-09-16T21:53:35Z",
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614345&store_id=29631686"
+  },
+  "ALDI|1000030409614372": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614372&store_id=29631686"
+  },
+  "ALDI|1000030409614417": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614417&store_id=29631686"
+  },
+  "ALDI|1000030409614529": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614529&store_id=29631686"
+  },
+  "ALDI|1000030409614546": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000030409614546&store_id=29631686"
+  },
+  "ALDI|1000032999710019": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000032999710019&store_id=29631686"
+  },
+  "ALDI|1000033990923001": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000033990923001&store_id=29631686"
+  },
+  "ALDI|1000035806129002": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000035806129002&store_id=29631686"
+  },
+  "ALDI|1000038340833322": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000038340833322&store_id=29631686"
+  },
+  "ALDI|1000042024938204": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=1000042024938204&store_id=29631686"
+  },
+  "ALDI|22646303714": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=22646303714&store_id=29631686"
+  },
+  "ALDI|22646305662": {
+    "decision": "verified",
+    "expected": {},
+    "notes": "Live re-fetch of Bakery category (2026-09-16): name and price match exactly ($3.99, Bake Shop Raspberry Strip Danish 14 oz).",
+    "reviewed_at": "2026-09-16T21:41:55Z",
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=22646305662&store_id=29631686"
+  },
+  "ALDI|22646325978": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=22646325978&store_id=29631686"
+  },
+  "ALDI|22646326115": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=22646326115&store_id=29631686"
+  },
+  "ALDI|22646327115": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/29631686?origin_page=item&product_id=22646327115&store_id=29631686"
+  },
+  "DashMart|10547898695": {
+    "decision": "verified",
+    "expected": {},
+    "notes": "Live re-fetch of Produce category (2026-09-16): name and price match exactly ($0.89, Roma Tomato 1 ea).",
+    "reviewed_at": "2026-09-16T21:43:17Z",
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=10547898695&store_id=1042759"
+  },
+  "DashMart|20202953508": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=20202953508&store_id=1042759"
+  },
+  "DashMart|27211830562": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=27211830562&store_id=1042759"
+  },
+  "DashMart|32298403941": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=32298403941&store_id=1042759"
+  },
+  "DashMart|32409646179": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=32409646179&store_id=1042759"
+  },
+  "DashMart|33161426245": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=33161426245&store_id=1042759"
+  },
+  "DashMart|36550292878": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=36550292878&store_id=1042759"
+  },
+  "DashMart|37178292465": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=37178292465&store_id=1042759"
+  },
+  "DashMart|38787096399": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=38787096399&store_id=1042759"
+  },
+  "DashMart|38789557429": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=38789557429&store_id=1042759"
+  },
+  "DashMart|41033426281": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=41033426281&store_id=1042759"
+  },
+  "DashMart|41243690353": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=41243690353&store_id=1042759"
+  },
+  "DashMart|42635532583": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=42635532583&store_id=1042759"
+  },
+  "DashMart|8776502941": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=8776502941&store_id=1042759"
+  },
+  "DashMart|8776503172": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=8776503172&store_id=1042759"
+  },
+  "DashMart|8776509757": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=8776509757&store_id=1042759"
+  },
+  "DashMart|8776509780": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=8776509780&store_id=1042759"
+  },
+  "DashMart|8776541321": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=8776541321&store_id=1042759"
+  },
+  "DashMart|8816075624": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=8816075624&store_id=1042759"
+  },
+  "DashMart|9816839246": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1042759?origin_page=item&product_id=9816839246&store_id=1042759"
+  },
+  "Ralphs|1000013611094004": {
+    "decision": "verified",
+    "expected": {},
+    "notes": "Live re-fetch of Dairy & Eggs category (2026-09-16): name and price match exactly ($4.99, Yoo-hoo Chocolate Drink Boxes 6.5 fl oz x 10 ct).",
+    "reviewed_at": "2026-09-16T21:43:17Z",
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=1000013611094004&store_id=35802549"
+  },
+  "Ralphs|30819681214": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30819681214&store_id=35802549"
+  },
+  "Ralphs|30994662966": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994662966&store_id=35802549"
+  },
+  "Ralphs|30994663287": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994663287&store_id=35802549"
+  },
+  "Ralphs|30994674093": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994674093&store_id=35802549"
+  },
+  "Ralphs|30994826369": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994826369&store_id=35802549"
+  },
+  "Ralphs|30994828207": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994828207&store_id=35802549"
+  },
+  "Ralphs|30994828838": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994828838&store_id=35802549"
+  },
+  "Ralphs|30994833617": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994833617&store_id=35802549"
+  },
+  "Ralphs|30994833724": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994833724&store_id=35802549"
+  },
+  "Ralphs|30994836353": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994836353&store_id=35802549"
+  },
+  "Ralphs|30994838612": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994838612&store_id=35802549"
+  },
+  "Ralphs|30994841613": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994841613&store_id=35802549"
+  },
+  "Ralphs|30994842704": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994842704&store_id=35802549"
+  },
+  "Ralphs|30994851326": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=30994851326&store_id=35802549"
+  },
+  "Ralphs|31447193556": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=31447193556&store_id=35802549"
+  },
+  "Ralphs|31447232884": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=31447232884&store_id=35802549"
+  },
+  "Ralphs|31447233822": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=31447233822&store_id=35802549"
+  },
+  "Ralphs|37923852316": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=37923852316&store_id=35802549"
+  },
+  "Ralphs|40125380549": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/35802549?origin_page=item&product_id=40125380549&store_id=35802549"
+  },
+  "Sprouts|1000014101629011": {
+    "decision": "verified",
+    "expected": {},
+    "notes": "Live re-fetch of Candy category (2026-09-16): name and price match exactly ($4.59, Smart Sweets Gummy Worms 1.8 oz).",
+    "reviewed_at": "2026-09-16T21:43:17Z",
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=1000014101629011&store_id=24325284"
+  },
+  "Sprouts|1000038684335002": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=1000038684335002&store_id=24325284"
+  },
+  "Sprouts|10175231026": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=10175231026&store_id=24325284"
+  },
+  "Sprouts|10290662140": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=10290662140&store_id=24325284"
+  },
+  "Sprouts|15053558127": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=15053558127&store_id=24325284"
+  },
+  "Sprouts|18101338114": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=18101338114&store_id=24325284"
+  },
+  "Sprouts|21647761185": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=21647761185&store_id=24325284"
+  },
+  "Sprouts|21755699271": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=21755699271&store_id=24325284"
+  },
+  "Sprouts|29069063166": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=29069063166&store_id=24325284"
+  },
+  "Sprouts|37746776021": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=37746776021&store_id=24325284"
+  },
+  "Sprouts|38945336765": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=38945336765&store_id=24325284"
+  },
+  "Sprouts|39184285664": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=39184285664&store_id=24325284"
+  },
+  "Sprouts|43681990206": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=43681990206&store_id=24325284"
+  },
+  "Sprouts|43856595185": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=43856595185&store_id=24325284"
+  },
+  "Sprouts|44182213764": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=44182213764&store_id=24325284"
+  },
+  "Sprouts|44214036894": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=44214036894&store_id=24325284"
+  },
+  "Sprouts|7182185006": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=7182185006&store_id=24325284"
+  },
+  "Sprouts|9165097970": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=9165097970&store_id=24325284"
+  },
+  "Sprouts|9713815209": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=9713815209&store_id=24325284"
+  },
+  "Sprouts|9952216249": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/24325284?origin_page=item&product_id=9952216249&store_id=24325284"
+  },
+  "Vons|1000001955462038": {
+    "decision": "verified",
+    "expected": {},
+    "notes": "Live re-fetch of Flowers & Plants category (2026-09-16): name and price match exactly ($19.69, Overjoyed Boutique Artisan Rose Arrangement).",
+    "reviewed_at": "2026-09-16T21:43:17Z",
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=1000001955462038&store_id=1742136"
+  },
+  "Vons|1000023462504245": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=1000023462504245&store_id=1742136"
+  },
+  "Vons|10109210439": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=10109210439&store_id=1742136"
+  },
+  "Vons|10109272023": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=10109272023&store_id=1742136"
+  },
+  "Vons|10109279042": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=10109279042&store_id=1742136"
+  },
+  "Vons|12124901890": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=12124901890&store_id=1742136"
+  },
+  "Vons|17110579258": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=17110579258&store_id=1742136"
+  },
+  "Vons|17585440593": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=17585440593&store_id=1742136"
+  },
+  "Vons|17585440597": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=17585440597&store_id=1742136"
+  },
+  "Vons|17610022912": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=17610022912&store_id=1742136"
+  },
+  "Vons|21423431567": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=21423431567&store_id=1742136"
+  },
+  "Vons|23206657638": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=23206657638&store_id=1742136"
+  },
+  "Vons|25156882084": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=25156882084&store_id=1742136"
+  },
+  "Vons|27124150933": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=27124150933&store_id=1742136"
+  },
+  "Vons|29703840667": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=29703840667&store_id=1742136"
+  },
+  "Vons|9336386390": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=9336386390&store_id=1742136"
+  },
+  "Vons|9336387030": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=9336387030&store_id=1742136"
+  },
+  "Vons|9706264925": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=9706264925&store_id=1742136"
+  },
+  "Vons|9741813990": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=9741813990&store_id=1742136"
+  },
+  "Vons|9876969962": {
+    "decision": "unreviewed",
+    "expected": {},
+    "notes": "",
+    "reviewed_at": null,
+    "source_url": "https://www.doordash.com/convenience/store/1742136?origin_page=item&product_id=9876969962&store_id=1742136"
+  }
+}

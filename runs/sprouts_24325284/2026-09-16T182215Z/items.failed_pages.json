@@ -1,0 +1,366 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.207707333000144,
+      "size": 6242
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "cheese-859455513283657762",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/cheese-859455513283657762",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.20367416700173635,
+      "size": 6423
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "butter-969",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/butter-969",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.16724550000071758,
+      "size": 6357
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "cream%20cheese-977",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/cream%20cheese-977",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.19927375000406755,
+      "size": 6381
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "cheese%20alternatives-804525984513818650",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/cheese%20alternatives-804525984513818650",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.195576042002358,
+      "size": 6490
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "cottage%20cheese-976",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/cottage%20cheese-976",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17609662500035483,
+      "size": 6387
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "creamer-978",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/creamer-978",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.19180437499744585,
+      "size": 6360
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "milk-992",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/milk-992",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.14161762499861652,
+      "size": 6351
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "milk%20alternatives-1051",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/milk%20alternatives-1051",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.16537354100000812,
+      "size": 6420
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "sour%20cream-1000",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/sour%20cream-1000",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17268766699999105,
+      "size": 6378
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "eggs-896",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/eggs-896",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.15704491599899484,
+      "size": 6351
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "flavored%20milk-1382",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/flavored%20milk-1382",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17841875000158325,
+      "size": 6387
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "spreads-1075",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/spreads-1075",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.32980637500440935,
+      "size": 6363
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "whipping%20cream-1007",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/whipping%20cream-1007",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.29018500000529457,
+      "size": 6390
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "yogurt-1008",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/yogurt-1008",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.27687370799685596,
+      "size": 6360
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "breakfast-1233",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961/sub-category/breakfast-1233",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.4395270410022931,
+      "size": 6312
+    },
+    {
+      "category": "frozen-961",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.5958591250018799,
+      "size": 6185
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "bread%20%26%20dough-1232",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961/sub-category/bread%20%26%20dough-1232",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.4854256659964449,
+      "size": 6363
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "facial%20care-1219",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/facial%20care-1219",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17414416700194124,
+      "size": 6372
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "feminine-1079",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/feminine-1079",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.20129062500200234,
+      "size": 6357
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "eye%20care-1153",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/eye%20care-1153",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.18047524999565212,
+      "size": 6363
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "hair%20care-1386",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/hair%20care-1386",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.15043791600328404,
+      "size": 6366
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "foot%20care-1155",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/foot%20care-1155",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17432950000511482,
+      "size": 6366
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "hand%20soap-1236",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/hand%20soap-1236",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17814208300114842,
+      "size": 6366
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "incontinence-1158",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/incontinence-1158",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17375712499779183,
+      "size": 6369
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "makeup-1133",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/makeup-1133",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.15293258400197374,
+      "size": 6351
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "intimacy-1214",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/intimacy-1214",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.16260991700255545,
+      "size": 6357
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "nails-1134",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/nails-1134",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.15301970800646814,
+      "size": 6327
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "shaving-1215",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/shaving-1215",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.16920491700147977,
+      "size": 6354
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "oral%20health-795",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/oral%20health-795",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.1419480830008979,
+      "size": 6369
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "sleep%20aids-1213",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/sleep%20aids-1213",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.1690025410061935,
+      "size": 6369
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "sun%20care-1136",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/sun%20care-1136",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17119566699693678,
+      "size": 6363
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "skin%20care-1135",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/skin%20care-1135",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.1608475000030012,
+      "size": 6366
+    },
+    {
+      "category": "produce-964",
+      "subcat": "fruit-782",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/produce-964/sub-category/fruit-782",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.16192749999754597,
+      "size": 6300
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "supplements-1161",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/supplements-1161",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.1662177089965553,
+      "size": 6366
+    },
+    {
+      "category": "produce-964",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/24325284/category/produce-964",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.2805916249999427,
+      "size": 6188
+    }
+  ],
+  "still_failed": [],
+  "discovery_failures": []
+}

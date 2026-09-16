@@ -1,0 +1,20 @@
+{
+  "store_id": "29631686",
+  "name": "Aldi",
+  "scraped_at": "2026-09-16T19:57:34Z",
+  "settings": {
+    "concurrency": 3,
+    "min_interval": 0.15,
+    "paginate": false,
+    "details": false
+  },
+  "elapsed_seconds": 418.4,
+  "pages_discovered": 214,
+  "first_pass_failures": 8,
+  "recovered_on_retry": 8,
+  "still_failed": 0,
+  "discovery_failures": 0,
+  "pages_with_zero_items": 0,
+  "products_saved": 3337,
+  "complete": true
+}

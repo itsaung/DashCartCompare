@@ -1,0 +1,623 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "household-754",
+      "subcat": "cookware-1235",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/household-754/sub-category/cookware-1235",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.08685704100207658,
+          "size": 6318
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2214495839943993,
+          "size": 6318
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1994278749989462,
+          "size": 6318
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1999147080059629,
+          "size": 6318
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2219161249959143,
+          "size": 6318
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "household-754",
+      "subcat": "coffee%20filters-1064",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/household-754/sub-category/coffee%20filters-1064",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.09277087500231573,
+          "size": 6363
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.36907412499567727,
+          "size": 6363
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17515966700011631,
+          "size": 6363
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17890395800350234,
+          "size": 6363
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19989866599644301,
+          "size": 6363
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "household-754",
+      "subcat": "clothing-1918",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/household-754/sub-category/clothing-1918",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06860033400153043,
+          "size": 6318
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17497341700072866,
+          "size": 6318
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.25631733299815096,
+          "size": 6318
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2317121669984772,
+          "size": 6318
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17289754200464813,
+          "size": 6318
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "household-754",
+      "subcat": "electronics-1390",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/household-754/sub-category/electronics-1390",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.5199264169932576,
+          "size": 6327
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.25784037500125123,
+          "size": 6327
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21357416699902387,
+          "size": 6327
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1573806250016787,
+          "size": 6327
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18862575000093784,
+          "size": 6327
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "household-754",
+      "subcat": "fragrance-1445",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/household-754/sub-category/fragrance-1445",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20308745799411554,
+          "size": 6321
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21610929199960083,
+          "size": 6321
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2163946250002482,
+          "size": 6321
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1707913339996594,
+          "size": 6321
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18403558400314068,
+          "size": 6321
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "household-754",
+      "subcat": "improvement-1211",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/household-754/sub-category/improvement-1211",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18805066600179998,
+          "size": 6327
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16867629099579062,
+          "size": 6327
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18311408299632603,
+          "size": 6327
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16688887499913108,
+          "size": 6327
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1898964590000105,
+          "size": 6327
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "household-754",
+      "subcat": "laundry-1062",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/household-754/sub-category/laundry-1062",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21767012499913108,
+          "size": 6315
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17273404099978507,
+          "size": 6315
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19202133399812737,
+          "size": 6315
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1559614169964334,
+          "size": 6315
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1940278749971185,
+          "size": 6315
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "crackers-772",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/snacks-758/sub-category/crackers-772",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2819969579941244,
+          "size": 6306
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2078771250016871,
+          "size": 6306
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15656154199677985,
+          "size": 6306
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2329932079956052,
+          "size": 6306
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17893412499688566,
+          "size": 6306
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "cookies-771",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/snacks-758/sub-category/cookies-771",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.07731945800333051,
+          "size": 6303
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16647020800155587,
+          "size": 6303
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1709814589994494,
+          "size": 6303
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19470716700016055,
+          "size": 6303
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15131462499994086,
+          "size": 6303
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "chips-765",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/snacks-758/sub-category/chips-765",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.07201820800401038,
+          "size": 6297
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.12363670799823012,
+          "size": 6297
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20744312500028173,
+          "size": 6297
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16895091599872103,
+          "size": 6297
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18782866700348677,
+          "size": 6297
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "fruit%20cups-1253",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/snacks-758/sub-category/fruit%20cups-1253",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15621266700327396,
+          "size": 6321
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2050384579997626,
+          "size": 6321
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19133570800477173,
+          "size": 6321
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20250737499736715,
+          "size": 6321
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20654699999431614,
+          "size": 6321
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "granola%20bars-1567",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/snacks-758/sub-category/granola%20bars-1567",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21224775000155205,
+          "size": 6327
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21272879099706188,
+          "size": 6327
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20054399999935413,
+          "size": 6327
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19770999999309424,
+          "size": 6327
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1948054169988609,
+          "size": 6327
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "jerky-1254",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/snacks-758/sub-category/jerky-1254",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21054183300293516,
+          "size": 6300
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2105692090044613,
+          "size": 6300
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1979250000003958,
+          "size": 6300
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19952995800122153,
+          "size": 6300
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1675986250047572,
+          "size": 6300
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "nuts%20%26%20seeds-1401",
+      "url": "https://www.doordash.com/convenience/store/35802549/category/snacks-758/sub-category/nuts%20%26%20seeds-1401",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.25704074999521254,
+          "size": 6360
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20877433299756376,
+          "size": 6360
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.48911470899474807,
+          "size": 6360
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19818087500607362,
+          "size": 6360
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4024890000000596,
+          "size": 6360
+        }
+      ],
+      "status": 429,
+      "error": null
+    }
+  ],
+  "still_failed": [],
+  "discovery_failures": [],
+  "zero_item_pages": []
+}

@@ -1,0 +1,359 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "medicine-756",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/29631686/category/medicine-756",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.07812229199771537,
+          "size": 6212
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 3.2579380000024685,
+          "size": 6212
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.5801878329948522,
+          "size": 6212
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.303839833002712,
+          "size": 6212
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3523292079989915,
+          "size": 6212
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "household-754",
+      "subcat": "trash-1411",
+      "url": "https://www.doordash.com/convenience/store/29631686/category/household-754/sub-category/trash-1411",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.0724365839996608,
+          "size": 6309
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.8493937909952365,
+          "size": 6309
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.7348852499999339,
+          "size": 6309
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.1897395830019377,
+          "size": 6309
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22467583399702562,
+          "size": 6309
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "medicine-756",
+      "subcat": "allergy%20%26%20asthma-1149",
+      "url": "https://www.doordash.com/convenience/store/29631686/category/medicine-756/sub-category/allergy%20%26%20asthma-1149",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 3.546020708003198,
+          "size": 6378
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.8924242080029217,
+          "size": 6378
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.4880290829969454,
+          "size": 6378
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.515862833999563,
+          "size": 6378
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.8516943750000792,
+          "size": 6378
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "medicine-756",
+      "subcat": "pain%20reliever-797",
+      "url": "https://www.doordash.com/convenience/store/29631686/category/medicine-756/sub-category/pain%20reliever-797",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.6868992500021704,
+          "size": 6354
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.6794627499984927,
+          "size": 6354
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.8021755829977337,
+          "size": 6354
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.9306053749969578,
+          "size": 6354
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.533572375003132,
+          "size": 6354
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "medicine-756",
+      "subcat": "sleep%20aids-1213",
+      "url": "https://www.doordash.com/convenience/store/29631686/category/medicine-756/sub-category/sleep%20aids-1213",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.0053166249999776,
+          "size": 6327
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.7844131250021746,
+          "size": 6327
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.9727062909951201,
+          "size": 6327
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.0755769169991254,
+          "size": 6327
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.398957875004271,
+          "size": 6327
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "outdoor-8840",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/29631686/category/outdoor-8840",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.5999299169998267,
+          "size": 6212
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.087103958001535,
+          "size": 6212
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.1758319579967065,
+          "size": 6212
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.701671416994941,
+          "size": 6212
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17396849999931874,
+          "size": 6212
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "outdoor-8840",
+      "subcat": "sports%20%26%20games-8968",
+      "url": "https://www.doordash.com/convenience/store/29631686/category/outdoor-8840/sub-category/sports%20%26%20games-8968",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3552245419996325,
+          "size": 6372
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.8509761669993168,
+          "size": 6372
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1779585410040454,
+          "size": 6372
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1885339170039515,
+          "size": 6372
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18037045800156193,
+          "size": 6372
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "outdoor-8840",
+      "subcat": "umbrellas-771111346547392538",
+      "url": "https://www.doordash.com/convenience/store/29631686/category/outdoor-8840/sub-category/umbrellas-771111346547392538",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.5866957500038552,
+          "size": 6381
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19533141600550152,
+          "size": 6381
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18073520900361473,
+          "size": 6381
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2610029999996186,
+          "size": 6381
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17024187499919208,
+          "size": 6381
+        }
+      ],
+      "status": 429,
+      "error": null
+    }
+  ],
+  "still_failed": [],
+  "discovery_failures": [],
+  "zero_item_pages": []
+}

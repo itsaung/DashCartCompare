@@ -1,0 +1,20 @@
+{
+  "store_id": "24325284",
+  "name": "Sprouts",
+  "scraped_at": "2026-09-16T19:46:02Z",
+  "settings": {
+    "concurrency": 3,
+    "min_interval": 0.15,
+    "paginate": false,
+    "details": false
+  },
+  "elapsed_seconds": 1129.3,
+  "pages_discovered": 325,
+  "first_pass_failures": 22,
+  "recovered_on_retry": 22,
+  "still_failed": 0,
+  "discovery_failures": 0,
+  "pages_with_zero_items": 0,
+  "products_saved": 6770,
+  "complete": true
+}

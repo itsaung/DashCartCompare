@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DashCartCompare — Build Log</title>
+<style>
+  :root {
+    --bg: #fafaf8;
+    --text: #1e1e1e;
+    --muted: #6b6b6b;
+    --accent: #2f6f4f;
+    --border: #e2e0da;
+    --code-bg: #f0efe9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a18;
+      --text: #ececec;
+      --muted: #9a9a95;
+      --accent: #7fcfa5;
+      --border: #34332e;
+      --code-bg: #26251f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 1rem;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.5rem 0 5rem;
+  }
+  header.site {
+    margin-bottom: 3rem;
+  }
+  header.site h1 {
+    font-size: 1.8rem;
+    margin: 0 0 0.25rem;
+  }
+  header.site p {
+    color: var(--muted);
+    margin: 0;
+  }
+  article {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+  }
+  article:first-of-type {
+    border-top: none;
+  }
+  article h2 {
+    font-size: 1.35rem;
+    margin: 0 0 0.15rem;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0 0 1.2rem;
+  }
+  article h3 {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+  code, pre {
+    background: var(--code-bg);
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.85em;
+  }
+  code { padding: 0.1em 0.35em; }
+  pre { padding: 0.9rem 1rem; overflow-x: auto; }
+  pre code { padding: 0; background: none; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+  }
+  th { color: var(--muted); font-weight: 600; }
+  .callout {
+    border-left: 3px solid var(--accent);
+    padding: 0.6rem 1rem;
+    background: var(--code-bg);
+    border-radius: 0 4px 4px 0;
+    margin: 1rem 0;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    padding: 0.1rem 0.6rem;
+    margin-right: 0.4rem;
+  }
+  a { color: var(--accent); }
+
+  .task-card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.2rem 1.4rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+  .task-card h4 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    margin: 1.4rem 0 0.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.25rem;
+  }
+  .task-card h4:first-child { margin-top: 0; }
+  .task-card ol, .task-card ul { margin: 0.4rem 0; padding-left: 1.4rem; }
+  .task-card .warning {
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 0.5rem 0.8rem;
+    margin: 0.6rem 0;
+  }
+  .task-card table { font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <header class="site">
+    <h1>DashCartCompare — Build Log</h1>
+    <p>A running record of the project: what we tried, what worked, what broke, and why. New entries go at the top.</p>
+  </header>
+
+  <article>
+    <h2>Checkpoint 2 review, round two: a fake review record, a regex backtracking bug, and a dimension heuristic that took three tries</h2>
+    <p class="meta">2026-09-16 &middot; <span class="tag">code review</span><span class="tag">bug fixes</span><span class="tag">testing</span></p>
+
+    <p>
+      A second review pass on Checkpoint 2 found three more issues: the
+      manual review record's every row defaulted to "OK" whether or not
+      anyone had checked it, and re-running the script would have erased
+      any real decision anyway; a specific bare-<code>oz</code> parsing
+      choice (documented as deliberate) turned out to have a real
+      consequence for beverages that wasn't being surfaced anywhere; and
+      four more shopping-list inputs had validation gaps, including a
+      genuine regex backtracking bug. All fixed. Full detail in
+      <code>dash/PARSING_AUDIT.md</code>.
+    </p>
+
+    <h3>The manual review record wasn't actually reviewing anything</h3>
+    <p>
+      The first version of <code>manual_review.py</code> sampled 100
+      products and wrote them to <code>MANUAL_REVIEW.md</code> with every
+      row's status defaulted to <code>"OK"</code> and a discrepancies
+      section reading <code>"None"</code> &mdash; regardless of whether a
+      human (or anything else) had actually looked at any of them.
+      Re-running the script would have silently regenerated the whole file,
+      erasing a real discrepancy note if one had ever been written by hand.
+      The deeper problem: even a genuine visual check only compares the
+      catalog's own <code>raw_title</code>/<code>raw_size</code> against
+      themselves &mdash; it can't catch the scraper having copied something
+      wrong from the source in the first place, because there's no
+      independent source in the loop at all.
+    </p>
+    <p>
+      Redesigned around three rules: generation only ever creates rows in
+      an explicit <code>"unreviewed"</code> state; review decisions live in
+      a separate file (<code>manual_review_decisions.json</code>) that
+      re-running generation preserves rather than overwrites; and every row
+      carries a <code>source_url</code> &mdash; the live DoorDash product
+      page &mdash; so a "verified" decision means something was actually
+      checked against an independent source. To prove the mechanism works
+      rather than leave it as untested infrastructure: 7 of the 100 rows
+      (one per store, three from ALDI) were checked against a fresh,
+      independent re-fetch of their live category page &mdash; not a
+      re-read of the stored CSV. Title and price matched exactly in all 7.
+      The other 93 are honestly <code>"unreviewed"</code>, not quietly
+      treated as fine.
+    </p>
+
+    <h3>Bare "oz" on beverages: a documented rule with an unflagged consequence</h3>
+    <p>
+      The review sample surfaced three products &mdash; Ripple plant milk,
+      Modelo beer cans, a FocusAid energy drink &mdash; all recorded with
+      bare <code>"oz"</code> and therefore parsed as <em>weight</em>, per
+      the rule documented in the first Checkpoint 2 entry. That rule itself
+      wasn't wrong, but a flexible-mode basket request in fluid ounces
+      would never match these, purely from a dimension mismatch unrelated
+      to whether the product fits the request. The fix is a review flag,
+      not a silent reinterpretation to volume &mdash; that would just be a
+      different silent guess, arguably a worse one since it would look more
+      "resolved" than it actually is.
+    </p>
+    <p>
+      Getting the heuristic right (added to
+      <code>build_normalized_catalog.py</code>, which sees the product
+      title/category that the size-string-only <code>normalize.py</code>
+      deliberately doesn't) took three checked iterations:
+    </p>
+    <table>
+      <thead><tr><th>Pass</th><th>Rule</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Category (Drinks/Alcohol) or any of 16 keywords anywhere in the title</td><td>1,568 flagged &mdash; but "milk" alone produced 340 hits, nearly all "Milk Chocolate" / "Whole Milk Yogurt"</td></tr>
+        <tr><td>2</td><td>Keyword must be the title's head noun (last word, or followed by "bottle"/"carton"/etc.)</td><td>656 flagged &mdash; but coffee/water/soda/tea/wine/cocktail still dominated by false positives ("Ground Coffee", "Tuna in Water", "Baking Soda") even as head nouns; dropped those six, kept milk/juice/broth/smoothie/kombucha</td></tr>
+        <tr><td>3</td><td>Also exclude "dry"/"powder(ed)" titles</td><td>654 flagged &mdash; excludes "Dry Whole Milk Powder"</td></tr>
+      </tbody>
+    </table>
+    <p>
+      All three originally-cited products stayed flagged at every stage.
+      A handful of remaining false positives (dry milk filed under the
+      "Drinks" category specifically, a "Rice Cooked in Bone Broth" product,
+      a "Lip Milk" balm) are documented rather than chased further &mdash;
+      single-digit counts against 654 flags and 31,398 rows; the
+      heuristic's job is nominating candidates for review, not perfect
+      classification.
+    </p>
+
+    <h3>Four more shopping-list validation gaps</h3>
+    <table>
+      <thead><tr><th>Input</th><th>Was</th><th>Now</th></tr></thead>
+      <tbody>
+        <tr><td><code>"0 eggs"</code></td><td>quantity 0, no review</td><td>needs review: non-positive quantity</td></tr>
+        <tr><td><code>"1 loaf bread"</code></td><td>product "loaf bread", no review</td><td>"loaf" is an ambiguous container (like bag/box); product "bread", needs review</td></tr>
+        <tr><td><code>"1 gallon gluten-free milk"</code></td><td>"gluten-free" stuck in the leftover text, not extracted</td><td>modifier "gluten free" extracted; hyphens now normalized before matching</td></tr>
+        <tr><td><code>"12% milk"</code></td><td>quantity <strong>1</strong> &mdash; from regex backtracking</td><td>no quantity at all; needs review</td></tr>
+      </tbody>
+    </table>
+    <p>
+      The <code>"12% milk"</code> case is the sharpest: an earlier fix
+      added a <code>(?!%)</code> lookahead so <code>"2%"</code> wouldn't be
+      torn into a number and a stray percent sign. But a lookahead placed
+      right after a greedy <code>\d+</code> doesn't stop backtracking
+      &mdash; for <code>"12%"</code>, the engine just tries the shorter
+      match <code>"1"</code>, for which "not followed by %" is true (the
+      next character is "2", not "%"), and the lookahead happily succeeds
+      on the wrong match. Fixed by removing the lookahead and checking,
+      after the full greedy match, whether the actual next character is
+      "%" &mdash; against the real matched text, not hoping backtracking
+      won't route around a lookahead.
+    </p>
+
+    <h3>Test count</h3>
+    <p>116 tests passing: 43 (normalize) + 61 (parse_query, up from 56) + 8 (normalized catalog, up from 6) + 4 (manual review, new).</p>
+  </article>
+
+  <article>
+    <h2>Checkpoint 2 review: confidently-wrong parses, a snapshot bug, and a missing dataset artifact</h2>
+    <p class="meta">2026-09-16 &middot; <span class="tag">code review</span><span class="tag">bug fixes</span><span class="tag">testing</span></p>
+
+    <p>
+      An external review of the Checkpoint 2 work (normalization + parsing,
+      previous entry) found four real issues: a snapshot-selection bug
+      inflating DashMart's product count, five shopping-list inputs that
+      parsed to a wrong answer with no review flag, three crash inputs and
+      a missing-validation gap in the package-size parser, and a missing
+      dataset artifact — the plan asks for one reproducible normalized
+      table, and this checkpoint had only produced the parsing functions,
+      not that table. All four are fixed. Full detail is in the updated
+      <code>dash/PARSING_AUDIT.md</code>; this entry summarizes what was
+      wrong and what changed.
+    </p>
+
+    <h3>DashMart's product count was inflated by mixing two scrape runs</h3>
+    <p>
+      <code>doordash_store_1042759_items.csv</code> is a single file two
+      different scrape runs (Sept 8 and Sept 16) had appended to.
+      <code>coverage_report.py</code> deduped it by keeping the last row
+      seen per <code>item_id</code> across the whole file — which means a
+      product present only in the older run still counted as "current"
+      simply because no later row overwrote it. Checked directly: the true
+      latest run has 3,022 products; the keep-last dedupe produced 3,326 —
+      304 products that should not have been counted as current inventory.
+      Fixed by filtering to the single most recent <code>scraped_at</code>
+      value only (<code>latest_snapshot_only()</code>), used consistently
+      now by the coverage report, the corpus test, and the new normalized
+      catalog builder.
+    </p>
+
+    <h3>Five shopping-list inputs parsed to a wrong answer, not a rejection</h3>
+    <p>
+      These are more serious than an input the parser doesn't recognize,
+      because each one returned <code>needs_review: false</code> — nothing
+      would have signaled that the result was wrong.
+    </p>
+    <table>
+      <thead><tr><th>Input</th><th>Was</th><th>Now</th></tr></thead>
+      <tbody>
+        <tr><td><code>"2 dozen eggs"</code></td><td>quantity 2, product "dozen eggs"</td><td>quantity 24, product "eggs"</td></tr>
+        <tr><td><code>"1 1/2 lb apples"</code></td><td>quantity 1 (count), rest discarded</td><td>quantity 1.5 lb &rarr; 24 oz</td></tr>
+        <tr><td><code>"1 GAL milk"</code></td><td>unit not recognized (case-sensitive)</td><td>resolves as 1 gal &rarr; 128 fl oz</td></tr>
+        <tr><td><code>"2% milk"</code></td><td>quantity 2, product "% milk"</td><td>needs review; modifier "2%" preserved, product "milk"</td></tr>
+        <tr><td><code>"1 milk"</code></td><td>quantity 1 (count), no review</td><td>needs review: milk isn't sold by the count</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Causes: the leading-number regex used a word boundary (<code>\b</code>)
+      after the digits, which never matches between a digit and a following
+      letter — so <code>"16oz"</code> (no space) silently failed to parse at
+      all, a gap a sloppily-written test had actually been hiding (see
+      below). The same regex also didn't exclude a following
+      <code>%</code>, so <code>"2%"</code> got torn into a number and a
+      stray percent sign instead of staying one token. The word-quantity
+      table only combined number *words* with "dozen" (<code>"two
+      dozen"</code>), not a numeral with "dozen". Unit and container
+      matching wasn't case-insensitive. And there was no concept of "this
+      product is never sold as a bare count" — <code>"1 milk"</code> looked
+      structurally identical to a legitimate <code>"1 apple"</code>. Fixed
+      each; all five are now regression tests.
+    </p>
+
+    <h3>Three crashes and a missing check in the package-size parser</h3>
+    <table>
+      <thead><tr><th>Input</th><th>Was</th><th>Now</th></tr></thead>
+      <tbody>
+        <tr><td><code>"1/0 oz"</code></td><td><code>ZeroDivisionError</code></td><td>unresolved: invalid quantity</td></tr>
+        <tr><td><code>"1..2 oz"</code></td><td><code>ValueError</code></td><td>unresolved: invalid quantity</td></tr>
+        <tr><td><code>"1 quarts"</code> / <code>"1 pints"</code></td><td><code>TypeError</code> (regex accepted the plural, the unit table didn't have it)</td><td>resolves correctly</td></tr>
+        <tr><td><code>"0 oz"</code></td><td>accepted as a valid zero-size package</td><td>unresolved: non-positive quantity</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Fixed by making the number parser return <code>None</code> instead of
+      raising, adding a positive-and-finite check before accepting any
+      parsed amount, and adding the missing plural unit entries. All four
+      are now regression tests in <code>test_normalize.py</code>.
+    </p>
+
+    <h3>A test that didn't test what it said it did</h3>
+    <p>
+      One existing test was written as
+      <code>"16oz yogurt".replace("oz", " oz")</code> — apparently meant to
+      normalize spacing in the fixture, it actually rewrote the input
+      before parsing, so the unspaced form was never exercised. This is how
+      the <code>\b</code> bug above went undetected by a test that looked,
+      at a glance, like it covered exactly that case. Fixed to test both
+      the spaced and unspaced forms as separate cases.
+    </p>
+
+    <h3>The missing dataset artifact</h3>
+    <p>
+      Parsing functions are necessary but were not, by themselves, the
+      Checkpoint 2 deliverable — the plan calls for one reproducible
+      normalized table. Added <code>build_normalized_catalog.py</code>,
+      which produces <code>normalized_catalog.csv</code> (31,398 rows):
+      explicit <code>store_id</code>/<code>store_name</code>/
+      <code>snapshot_id</code>/<code>product_id</code> columns (not
+      implied by which file was loaded), raw title/category/size next to
+      the parsed package-size fields, <code>price_cents</code> as an
+      integer, <code>parsing_status</code>/<code>parsing_reason</code>, and
+      explicit <code>brand</code>/<code>variant</code> columns that are
+      empty for every row right now — present in the schema and not
+      guessed, but not yet populated (deferred to Checkpoint 4, matching).
+      Also added <code>manual_review.py</code>, which persists the
+      required 20-products-per-store manual check (100 rows, seeded
+      sample) to <code>MANUAL_REVIEW.md</code> instead of leaving it as
+      console output from an earlier session. No discrepancies found in
+      this pass.
+    </p>
+
+    <h3>Corrected corpus numbers</h3>
+    <p>
+      With DashMart's snapshot-mixing bug fixed, the real corpus is 31,398
+      rows (not 34,401): 28,276 resolved (90.1%), 1,830 missing size, 1,000
+      priced-by-weight, 222 unrecognized, 70 apparel/diaper size labels.
+      Also worth stating plainly: 90.1% measures how much of the corpus
+      produced *some* fixed size, not that the size is correct — that's a
+      coverage number, not an accuracy number.
+    </p>
+
+    <h3>Test count</h3>
+    <p>43 (normalize) + 56 (parse_query, 50 required + 6 regression) + 6 (normalized catalog) = 105 tests, all passing.</p>
+  </article>
+
+  <article>
+    <h2>Checkpoint 2: package-size normalization and shopping-list parsing</h2>
+    <p class="meta">2026-09-16 &middot; <span class="tag">normalization</span><span class="tag">parsing</span><span class="tag">testing</span></p>
+
+    <p>
+      Two deterministic, vocabulary-based parsers, no ML: one turns a
+      product's free-text package size (<code>unit_size</code>, e.g.
+      <code>"4.8 oz x 8 ct"</code>) into a fixed size or an explicit refusal;
+      the other turns a shopping-list line (e.g. <code>"a dozen large
+      eggs"</code>) into a structured request or an explicit
+      review flag. Full detail, including every failure mode found, is in
+      <code>dash/PARSING_AUDIT.md</code>. This entry summarizes the results.
+    </p>
+
+    <h3>Dimensional analysis as the core rule</h3>
+    <p>
+      Both modules share one rule: weight, volume, and count are three
+      independent dimensions, and a value in one is never converted into
+      another. "12 oz" (weight) and "12 fl oz" (volume) are not the same
+      kind of quantity, even though both write "12" and both write "oz."
+      <code>convert_amount()</code> in <code>normalize.py</code> raises a
+      <code>ValueError</code> if asked to convert across dimensions (e.g.
+      pounds to fluid ounces); this is enforced in code and covered by a
+      test, not just documented as a rule to follow.
+    </p>
+
+    <h3>Product normalization: results against real data</h3>
+    <p>Ran <code>parse_package_size()</code> against the latest snapshot of all five stores (34,401 rows):</p>
+    <table>
+      <thead><tr><th>Outcome</th><th>Count</th><th>%</th></tr></thead>
+      <tbody>
+        <tr><td>Resolved to a fixed size</td><td>31,015</td><td>90.2%</td></tr>
+        <tr><td>Missing size (DoorDash gave none)</td><td>2,079</td><td>6.0%</td></tr>
+        <tr><td>Priced by weight, no fixed size</td><td>1,000</td><td>2.9%</td></tr>
+        <tr><td>Unrecognized format</td><td>233</td><td>0.7%</td></tr>
+        <tr><td>Apparel/diaper/seasonal size label</td><td>74</td><td>0.2%</td></tr>
+      </tbody>
+    </table>
+    <p>
+      The "missing size" and "priced by weight" rows are not parsing
+      failures &mdash; they are correctly identified cases where no fixed
+      size exists to extract. The project plan specifically requires
+      excluding priced-by-weight items (produce, deli, meat sold "by the
+      pound") from automatic basket math in v1; this parser is what makes
+      that exclusion possible to apply, rather than something to separately
+      build.
+    </p>
+    <p>
+      Two patterns were added after inspecting the "unrecognized format"
+      cases directly: bare <code>"each"</code>/<code>"ea"</code> (90
+      occurrences) is now read as a fixed count of 1, and the
+      <code>"3 pk x 56 ct"</code> form (pack-of-packs with no weight/volume
+      unit, ~38 occurrences) is now parsed as a count multipack, distinct
+      from the already-handled <code>"4.8 oz x 8 ct"</code> form. A third
+      change added a specific reason for apparel/diaper size labels
+      (<code>"Large"</code>, <code>"Size 6-10"</code>) that were leaking
+      into the <code>unit_size</code> field from unrelated listings &mdash;
+      this didn't reduce the unresolved count, it made the reason for 74 of
+      those rows specific instead of generic.
+    </p>
+
+    <h3>Shopping-list parsing: 50 targeted cases</h3>
+    <p>
+      Verified against the project plan's own four worked examples
+      (<code>"a dozen large eggs"</code>, <code>"1 gallon whole milk"</code>,
+      <code>"2 bags of chips"</code>, <code>"organic strawberries, 1
+      lb"</code>) plus 46 additional cases covering decimals, fractions,
+      bare counts, abbreviated units, vague quantities (<code>"some"</code>,
+      <code>"a few"</code>), and ambiguous containers (<code>"a box
+      of"</code>, <code>"a can of"</code>). All 50 pass. Missing quantities,
+      vague quantities, and ambiguous container units all produce
+      <code>needs_review: true</code> with a specific reason, never a
+      guessed number.
+    </p>
+    <p>
+      One real bug came out of writing the tests, not from inspecting code
+      by eye: <code>"two dozen eggs"</code> initially parsed as quantity 2,
+      product type <code>"dozen eggs"</code>. The word-quantity table had
+      <code>"a dozen"</code> and <code>"one dozen"</code> as literal
+      phrases, so <code>"two"</code> matched alone as 2 and left the word
+      <code>"dozen"</code> stuck in the leftover text instead of combining
+      with it. Fixed by generating every <code>"&lt;number word&gt;
+      dozen"</code> combination programmatically instead of hand-listing a
+      couple of them, and added a test that checks for 24 specifically
+      (not just "a number came out") so this class of bug would fail loudly
+      again if reintroduced.
+    </p>
+
+    <h3>Deliberate limitations, recorded rather than patched</h3>
+    <ul>
+      <li>
+        Bare <code>"oz"</code> is always read as weight, never volume, even
+        for a liquid (<code>"8 oz milk"</code> resolves as weight-ounces).
+        The plan requires keeping ounces and fluid ounces distinct; this
+        enforces that literally instead of guessing intent from the product
+        name. A real gap for natural phrasing, written down rather than
+        silently special-cased for specific product names.
+      </li>
+      <li>
+        <code>product_type</code> is leftover text after quantity/unit/
+        modifiers are removed, not a canonical grocery taxonomy. Matching
+        it against actual catalog products is Checkpoint 4's job.
+      </li>
+      <li>
+        pandas was not introduced in this checkpoint. Neither module needed
+        a join or a groupby; both work directly on plain dicts from
+        <code>csv.DictReader</code>. The project plan calls for pandas at
+        the "data preparation" stage generally, but adding it here would
+        have been a dependency with no operation that justified it.
+      </li>
+    </ul>
+
+    <h3>Next up</h3>
+    <p>Checkpoint 3: build the labeled evaluation benchmark (150 shopping requests, three-way relevance labels) before tuning any semantic matcher.</p>
+  </article>
+
+  <article>
+    <h2>TASK 01-00-00 — Catalog Data Collection and Check</h2>
+    <p class="meta">2026-09-16 &middot; <span class="tag">checkpoint 1</span><span class="tag">STE / ATA100 format</span></p>
+    <p>
+      This entry restates Checkpoint 1 in Simplified Technical English
+      (ASD-STE100: short sentences, one instruction per step, a controlled,
+      approved vocabulary) with an ATA&nbsp;100-style task-card structure. It
+      is a restatement of the two entries below, not new work.
+    </p>
+
+    <div class="task-card">
+      <h4>1. GENERAL</h4>
+      <p>
+        A. This task gives the data for Checkpoint 1 of the DashCartCompare project.<br>
+        B. This task gives the procedure for the catalog data collection.<br>
+        C. This task gives the check procedure and the results.
+      </p>
+
+      <h4>2. REASON FOR THE JOB</h4>
+      <p>
+        A. The project must compare shopping baskets across five stores.<br>
+        B. A correct basket comparison needs correct catalog data from each store.<br>
+        C. Do this task before you do the normalization task (Checkpoint 2).
+      </p>
+
+      <h4>3. EQUIPMENT AND DATA</h4>
+      <ul>
+        <li>Program: <code>doordash_dashmart_scraper.py</code> (item collection)</li>
+        <li>Program: <code>run_snapshot.py</code> (run folder control)</li>
+        <li>Program: <code>coverage_report.py</code> (data check)</li>
+      </ul>
+      <table>
+        <thead><tr><th>Store</th><th>Store ID</th></tr></thead>
+        <tbody>
+          <tr><td>ALDI</td><td>29631686</td></tr>
+          <tr><td>Ralphs</td><td>35802549</td></tr>
+          <tr><td>Vons</td><td>1742136</td></tr>
+          <tr><td>Sprouts Farmers Market</td><td>24325284</td></tr>
+          <tr><td>DashMart</td><td>1042759</td></tr>
+        </tbody>
+      </table>
+
+      <h4>4. JOB SET-UP</h4>
+      <p>
+        A. Confirm each store ID before you start the crawl.<br>
+        B. DoorDash gives more than one store listing for some retailers.
+        Example: "Vons", "Vons Essentials", and "Vons Beer, Wine &amp;
+        Spirits" are three different listings with three different store
+        IDs.<br>
+        C. Use the correct listing for each retailer. Do not assume the
+        first listing is correct.<br>
+        D. Confirm that all five stores use the "retail" page format. The
+        scraper does not support other formats.
+      </p>
+
+      <h4>5. PROCEDURE</h4>
+      <ol>
+        <li>Get the store home page.</li>
+        <li>Get the list of categories from the home page.</li>
+        <li>Get the list of sub-categories for each category.</li>
+        <li>Get the item data from each category page and each sub-category page.</li>
+        <li>Write the item data to a CSV file in a new, timestamped run folder.</li>
+        <li>If a page request fails, do the request again. Wait a longer time before each new try.</li>
+        <li>If a page request fails five times in a row, mark the page as failed.</li>
+        <li>After the first crawl, do all failed pages one more time, at a slow, steady rate.</li>
+        <li>Write a summary file with the pass count and the fail count for the run.</li>
+      </ol>
+      <div class="warning">
+        WARNING: Do not send requests to the server at a high rate. A high
+        request rate can cause a long block from the server. Use the
+        approved request rate for the run (concurrency&nbsp;3).
+      </div>
+
+      <h4>6. JOB CLOSE-UP (DATA CHECK)</h4>
+      <p>
+        A. Count the items in each store file.<br>
+        B. Check the file for duplicate item IDs. Do not accept a file with a duplicate ID.<br>
+        C. Check each row for a missing name or a missing price. Do not accept a row with a missing name or price.<br>
+        D. Take 20 items at random from each store file. Compare each item to the real store page.<br>
+        E. Write the check results to a coverage report. Do not mark a store as complete if a page is still failed.
+      </p>
+
+      <h4>7. RESULTS</h4>
+      <table>
+        <thead><tr><th>Store</th><th>Pages</th><th>1st-pass fails</th><th>Items</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>ALDI</td><td>214</td><td>8 (0 still failed)</td><td>3,337</td><td>COMPLETE</td></tr>
+          <tr><td>Ralphs</td><td>263</td><td>14 (0 still failed)</td><td>9,267</td><td>COMPLETE</td></tr>
+          <tr><td>Vons</td><td>262</td><td>16 (0 still failed)</td><td>9,002</td><td>COMPLETE</td></tr>
+          <tr><td>Sprouts</td><td>325</td><td>22 (0 still failed)</td><td>6,770</td><td>COMPLETE</td></tr>
+          <tr><td>DashMart</td><td>&mdash;</td><td>&mdash;</td><td>3,326</td><td>no crawl log (old run)</td></tr>
+        </tbody>
+      </table>
+      <p>
+        A. All five stores passed the data check in Step 6.<br>
+        B. "COMPLETE" means all discovered pages gave data. It does not mean
+        the task found every item in the real store. Some store pages give
+        a partial item list on one request. See Referenced Document
+        <code>doordash_scrape_findings.md</code>.
+      </p>
+
+      <h4>8. REFERENCED DOCUMENTS</h4>
+      <ul>
+        <li><code>dash/doordash_scrape_findings.md</code> &mdash; site structure and request method</li>
+        <li><code>dash/DATA_DICTIONARY.md</code> &mdash; field list for the CSV file</li>
+        <li><code>dash/coverage_report.md</code> &mdash; full data check output</li>
+      </ul>
+    </div>
+  </article>
+
+  <article id="sprouts-reliability">
+    <h2>Diagnosing and fixing scraper reliability on Sprouts</h2>
+    <p class="meta">2026-09-16 &middot; <span class="tag">scraping</span><span class="tag">reliability</span><span class="tag">concurrency</span></p>
+
+    <p>
+      The initial Sprouts crawl failed 115 of 325 pages (35%) on the first pass, versus
+      56&ndash;64 out of 200&ndash;325 for the other three stores. All failures recovered on
+      the existing retry pass, so the data itself was fine, but the failure rate was high enough
+      to check rather than assume an explanation. This entry covers what the check found, two
+      bugs it surfaced in the scraper's own retry logic, and what changed as a result.
+    </p>
+
+    <h3>Two competing hypotheses</h3>
+    <p>
+      A higher failure rate on one store could mean the requests to it were getting rate-limited
+      more (a server-side, load-dependent cause) or that its pages were slower/heavier to render
+      (a per-page, content-dependent cause). Distinguishing these requires knowing, per failed
+      request: the HTTP status code, whether it was an exception (timeout, connection error) or
+      an HTTP response, and how long the request took before failing. The scraper wasn't
+      recording any of that &mdash; a failed page was tracked as a bare <code>(url, status)</code>
+      tuple, and only for pages that were <em>still</em> failing after the retry pass, so pages
+      that failed once and then recovered left no record at all.
+    </p>
+
+    <h3>Adding the missing instrumentation</h3>
+    <p>
+      Changed <code>fetch()</code> to return a log dict per request with status, exception type,
+      elapsed time, and response size for every attempt, and changed the retry accounting to
+      write this out to <code>&lt;output&gt;.failed_pages.json</code> regardless of whether the
+      retry pass later fixed the page. Also added: a shared <code>Pacer</code> class to space out
+      request dispatch across worker threads and put every worker on hold when any one of them
+      hits a 429 (previously each worker retried independently, so several could be mid-backoff
+      and still firing into the same rate limit), exponential backoff with random jitter in
+      place of a fixed linear delay, and honoring a server-supplied <code>Retry-After</code>
+      header when present.
+    </p>
+
+    <h3>What the logs showed</h3>
+    <p>Re-running Sprouts with this instrumentation in place:</p>
+    <table>
+      <thead><tr><th>Run</th><th>First-pass failures</th><th>Recovered on retry</th><th>Items</th></tr></thead>
+      <tbody>
+        <tr><td>Original (no pacing, concurrency 6)</td><td>115 / 325</td><td>115</td><td>6,770</td></tr>
+        <tr><td>With pacing, concurrency 6</td><td>36 / 325</td><td>36</td><td>6,775&ndash;6,798</td></tr>
+        <tr><td>With pacing, concurrency 3</td><td>20&ndash;22 / 325</td><td>all</td><td>6,770&ndash;6,788</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Across every run, and across every attempt within every failure (up to 5 retries per
+      page), the status was <strong>HTTP 429</strong>, with no exceptions, no 5xx responses, and
+      elapsed times under 1.6 seconds. That rules out slow/heavy pages as a cause (a timeout
+      would show as a long elapsed time before failing; a 429 arrives quickly with a small
+      response body, consistent with a rate-limit rejection, not a slow render). The result:
+      rate limiting, not page weight, and it scales with request concurrency &mdash; each
+      reduction in concurrency produced fewer first-pass 429s.
+    </p>
+
+    <h3>A bug in the fix itself</h3>
+    <p>
+      A code review caught a race condition in the pacing logic before drawing further
+      conclusions from the concurrency comparison above. <code>Pacer.wait()</code> computed a
+      worker's next allowed dispatch time under a lock, released the lock, and then slept until
+      that time. If another worker's 429 extended the shared cooldown <em>during</em> that sleep,
+      the first worker had no way to find out &mdash; it would wake up and dispatch at its
+      original, now-stale time, inside a cooldown window meant to pause every worker. This meant
+      the concurrency-3 numbers above were measured against a pacer that didn't fully enforce its
+      own cooldown.
+    </p>
+    <p>
+      Fix: after waking from the sleep, re-check whether the cooldown deadline has moved past the
+      current time; if so, recompute and wait again. Verified with a standalone test: a cooldown
+      triggered from a separate thread while ten workers were mid-<code>wait()</code>, confirming
+      every dispatch that occurred after the cooldown was armed landed at or after its deadline
+      (a single dispatch that had already fired before the cooldown existed is expected and
+      correct &mdash; a request already in flight can't be recalled).
+    </p>
+    <p>
+      Re-running Sprouts at concurrency 3 with the fix in place: 22 first-pass failures (in the
+      same 20&ndash;22 range as before the fix), all HTTP 429 across all attempts, all recovered
+      on retry, 6,770 items. But the run took about 1,129 seconds &mdash; noticeably longer than
+      the same setting had taken with the race present. The earlier, buggy version was faster
+      because it wasn't actually waiting out every cooldown it triggered; the fix trades that
+      speed for the pacer's cooldown guarantee actually holding.
+    </p>
+
+    <h3>What's still open</h3>
+    <ul>
+      <li>
+        Item counts varied slightly run to run (6,770&ndash;6,798, about 0.3%) even with the same
+        settings. Plausibly timing-dependent (a category's contents changing between requests,
+        or a marginal page landing on one side of a batch boundary), but this hasn't been checked
+        by diffing the actual product IDs between runs, so it stays a hypothesis rather than a
+        finding.
+      </li>
+      <li>
+        A page that returns HTTP success with zero parsed items is now counted and reported
+        separately (<code>pages_with_zero_items</code> in the run summary), but the scraper still
+        can't distinguish a genuinely empty sub-category from an unnoticed parser mismatch. None
+        occurred in the runs above.
+      </li>
+      <li>
+        These are five sequential runs on a live, shared service, not a controlled experiment
+        &mdash; DoorDash's own load and rate-limit state at the time of each run aren't known or
+        held constant.
+      </li>
+    </ul>
+    <p>
+      Decision: keep concurrency 3 as the working default for stores that show this level of
+      rate-limit sensitivity. Every run now writes a <code>.summary.json</code> (settings,
+      duration, pass/fail counts) and a <code>.failed_pages.json</code> (full per-attempt detail)
+      next to its CSV, so this kind of question can be answered from saved data on future runs
+      instead of requiring a fresh diagnostic pass.
+    </p>
+  </article>
+
+  <article>
+    <h2>Checkpoint 1: A reliable five-store catalog dataset</h2>
+    <p class="meta">2026-09-16 &middot; <span class="tag">scraping</span><span class="tag">data collection</span></p>
+
+    <p>
+      DashCartCompare's whole premise is comparing a shopping basket across stores, which means
+      step zero is: can we actually get a trustworthy catalog snapshot from five different
+      stores on DoorDash? Today was about answering that, honestly, before writing a single
+      line of matching logic.
+    </p>
+
+    <h3>Starting point</h3>
+    <p>
+      The repo already had a working scraper (<code>dash/doordash_dashmart_scraper.py</code>),
+      but "already had" undersells it &mdash; nothing about talking to DoorDash was handed to
+      us. It was built, store by store of reverse-engineering, against DashMart specifically:
+      finding that DoorDash server-renders its data as Next.js "flight" payloads embedded in
+      the HTML (no public API, no docs), discovering that category pages silently under-render
+      relative to their reported item counts, and working out that decomposing a category into
+      its sub-category chip pages recovers most of what a single page's batch limit hides. None
+      of that came from a library or a tutorial; it's documented step by step in
+      <code>dash/doordash_scrape_findings.md</code> because it took real trial and error to
+      find. That effort was proven out against DashMart back in August (3,152 items). The open
+      question for today: does the technique generalize to genuinely different storefronts
+      &mdash; ALDI, Ralphs, Vons, Sprouts &mdash; or was it quietly tuned to DashMart's specific
+      page shape without us realizing it?
+    </p>
+
+    <h3>Confirming we had the right stores</h3>
+    <p>
+      Before any full crawl, a validation spike sampled ten products each from every store
+      DoorDash surfaces for ZIP 92117 (131 listings total &mdash; groceries mixed in with
+      liquor stores, delis, convenience stores, etc). This mattered because DoorDash lists
+      <em>multiple storefronts per retailer</em>: "Vons", "Vons Essentials", and "Vons Beer,
+      Wine &amp; Spirits" are three separate store IDs with three separate catalogs. Picking
+      the wrong one would mean silently comparing against the wrong slice of a store's actual
+      inventory.
+    </p>
+    <table>
+      <thead><tr><th>Store</th><th>Store ID</th></tr></thead>
+      <tbody>
+        <tr><td>ALDI</td><td><code>29631686</code></td></tr>
+        <tr><td>Ralphs</td><td><code>35802549</code></td></tr>
+        <tr><td>Vons</td><td><code>1742136</code></td></tr>
+        <tr><td>Sprouts Farmers Market</td><td><code>24325284</code></td></tr>
+        <tr><td>DashMart</td><td><code>1042759</code></td></tr>
+      </tbody>
+    </table>
+    <p>All five confirmed as the "retail" page layout the existing scraper already understands.</p>
+
+    <h3>Running the full crawl</h3>
+    <p>
+      Rather than editing the working scraper, we added a small wrapper
+      (<code>dash/run_snapshot.py</code>) that shells out to it with a computed output path:
+      <code>runs/&lt;store&gt;_&lt;id&gt;/&lt;timestamp&gt;/items.csv</code>. Each collection
+      run now lands in its own folder instead of appending into one shared file &mdash; every
+      snapshot stays independently inspectable, and nothing about the existing DashMart
+      pipeline had to change to get there.
+    </p>
+    <p>Ran one store at a time (not in parallel) to avoid compounding DoorDash's rate-limiting across stores. Results:</p>
+    <table>
+      <thead><tr><th>Store</th><th>Categories</th><th>Pages crawled</th><th>Unique items</th></tr></thead>
+      <tbody>
+        <tr><td>ALDI</td><td>22</td><td>214</td><td>3,337</td></tr>
+        <tr><td>Ralphs</td><td>22</td><td>263</td><td>9,276</td></tr>
+        <tr><td>Vons</td><td>22</td><td>262</td><td>9,006</td></tr>
+        <tr><td>Sprouts</td><td>28</td><td>325</td><td>6,770</td></tr>
+        <tr><td>DashMart <em>(existing)</em></td><td>22</td><td>&mdash;</td><td>3,152</td></tr>
+      </tbody>
+    </table>
+    <p class="callout" style="border-left-color:var(--muted)">
+      Note: the table above reflects the initial crawl, before the scraper's own retry/pacing
+      logic was found to have gaps. See <a href="#sprouts-reliability">the entry above</a>
+      for what was found and fixed, and the corrected per-store numbers below.
+    </p>
+    <table>
+      <thead><tr><th>Store</th><th>Categories</th><th>Pages</th><th>First-pass failures</th><th>Items</th><th>Elapsed</th></tr></thead>
+      <tbody>
+        <tr><td>ALDI</td><td>22</td><td>214</td><td>8 (all recovered)</td><td>3,337</td><td>418s</td></tr>
+        <tr><td>Ralphs</td><td>22</td><td>263</td><td>14 (all recovered)</td><td>9,267</td><td>787s</td></tr>
+        <tr><td>Vons</td><td>22</td><td>262</td><td>16 (all recovered)</td><td>9,002</td><td>789s</td></tr>
+        <tr><td>Sprouts</td><td>28</td><td>325</td><td>22 (all recovered)</td><td>6,770</td><td>1,129s</td></tr>
+        <tr><td>DashMart <em>(existing, pre-fix scraper)</em></td><td>22</td><td>&mdash;</td><td>&mdash;</td><td>3,152</td><td>&mdash;</td></tr>
+      </tbody>
+    </table>
+    <p>
+      This second table is from a full re-run of all four non-DashMart stores with the fixed
+      scraper at concurrency 3, after the reliability work described in the next entry. Every
+      run reached zero unrecovered failures and zero pages that parsed empty.
+    </p>
+    <p>
+      The scraper generalized cleanly &mdash; no code changes needed for any of the four new
+      stores. Every store hit the same failure/retry pattern already documented for DashMart:
+      a meaningful chunk of pages (56&ndash;115 out of 200&ndash;325) get HTTP 429'd on the
+      first pass, then a slower single-threaded retry pass clears effectively all of them.
+    </p>
+
+    <h3>Checking the data was actually trustworthy, not just present</h3>
+    <p>Each snapshot got the same three checks:</p>
+    <ul>
+      <li>No duplicate <code>item_id</code>s within the file.</li>
+      <li>Zero rows missing a name or a price.</li>
+      <li>A random sample of rows manually eyeballed against what the store plausibly sells (private-label brands, sane prices, sane package sizes).</li>
+    </ul>
+    <p>All five passed cleanly. Sample from ALDI:</p>
+    <pre><code>1000042024938105  Household    Crofton Glass Bowl with Snapping Lids, Round   $17.39   12 ct
+      22646268230  Deli         Appleton Farms Thick Sliced Hickory Bacon      $9.29    24 oz
+    43865789331  Pantry       Specially Selected Italian Five Cheese Blend    $2.59    12 oz</code></pre>
+
+    <div class="callout">
+      <strong>Fundamentals aside &mdash; why store ID + product ID, not just product ID:</strong>
+      look closely at those item IDs above: <code>1000042024938105</code> (16 digits) vs.
+      <code>22646268230</code> (11 digits) vs. <code>43865789331</code> (11 digits), all from
+      the <em>same</em> store. Different ID formats within one store isn't a bug &mdash;
+      DoorDash's catalog blends items from different backend systems (DoorDash-native SKUs vs.
+      pass-through IDs from the retailer's own inventory system). Product IDs can't be trusted
+      to mean anything consistent even within a single source, let alone across five different
+      ones. That's exactly why the data model uses <strong>(store ID, product ID)</strong> as
+      the compound key, and never assumes two stores' IDs identify the same product.
+    </div>
+
+    <h3>What's not resolved yet</h3>
+    <p>
+      Sprouts failed 115 of its 325 pages on the first pass &mdash; noticeably worse than the
+      56&ndash;64 seen on the other three stores &mdash; though the retry pass fully recovered
+      it, same as everywhere else. Right now that detail only exists in scrollback console
+      output; it isn't captured anywhere the next person (future me) could see it without
+      re-running the crawl. The plan's own pass criteria are explicit about this: partial
+      coverage needs to stay <em>visible</em>, not get smoothed over into a single "it worked"
+      item count. So the next piece of Checkpoint 1 is a proper coverage report &mdash;
+      products, categories, missing fields, and crawl failures, per store &mdash; built from
+      these five snapshots, not just relying on console logs from the run that produced them.
+    </p>
+
+    <h3>Next up</h3>
+    <p>Build the coverage report + data dictionary that Checkpoint 1 actually asks for as deliverables, then move to Checkpoint 2 (normalization + shopping-list parsing).</p>
+  </article>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "store_id": "35802549",
+  "name": "Ralphs",
+  "scraped_at": "2026-09-16T20:10:42Z",
+  "settings": {
+    "concurrency": 3,
+    "min_interval": 0.15,
+    "paginate": false,
+    "details": false
+  },
+  "elapsed_seconds": 787.0,
+  "pages_discovered": 263,
+  "first_pass_failures": 14,
+  "recovered_on_retry": 14,
+  "still_failed": 0,
+  "discovery_failures": 0,
+  "pages_with_zero_items": 0,
+  "products_saved": 9267,
+  "complete": true
+}

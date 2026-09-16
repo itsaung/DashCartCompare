@@ -1,0 +1,206 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "frozen-961",
+      "subcat": "novelty-1055",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961/sub-category/novelty-1055",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.19816299999365583,
+      "size": 6306
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "pies%20%26%20cakes-1548",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961/sub-category/pies%20%26%20cakes-1548",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.18513520800479455,
+      "size": 6360
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "pizza-803",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961/sub-category/pizza-803",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.18460454200248932,
+      "size": 6297
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "snacks%20%26%20apps-1556",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961/sub-category/snacks%20%26%20apps-1556",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17169445900071878,
+      "size": 6363
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "veggies-1058",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/frozen-961/sub-category/veggies-1058",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17996412500360748,
+      "size": 6306
+    },
+    {
+      "category": "drinks-751",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/24325284/category/drinks-751",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.18652016700070817,
+      "size": 6185
+    },
+    {
+      "category": "drinks-751",
+      "subcat": "alcohol-free-1783",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/drinks-751/sub-category/alcohol-free-1783",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.15101783299905946,
+      "size": 6321
+    },
+    {
+      "category": "drinks-751",
+      "subcat": "beverages-1137",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/drinks-751/sub-category/beverages-1137",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17317600000387756,
+      "size": 6312
+    },
+    {
+      "category": "drinks-751",
+      "subcat": "coffee-768",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/drinks-751/sub-category/coffee-768",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17524008300097194,
+      "size": 6300
+    },
+    {
+      "category": "drinks-751",
+      "subcat": "energy-1408",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/drinks-751/sub-category/energy-1408",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.16805249999742955,
+      "size": 6303
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "ear%20care-1596",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/ear%20care-1596",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.1526869590015849,
+      "size": 6363
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "facial%20care-1219",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/facial%20care-1219",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17301079200115055,
+      "size": 6372
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "eye%20care-1153",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/eye%20care-1153",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.1580297079999582,
+      "size": 6363
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "feminine-1079",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/feminine-1079",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.2005471660013427,
+      "size": 6357
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "foot%20care-1155",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/foot%20care-1155",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.20647995800391072,
+      "size": 6366
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "hair%20care-1386",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/hair%20care-1386",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.15799025000160327,
+      "size": 6366
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "hand%20soap-1236",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/hand%20soap-1236",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17305745799967553,
+      "size": 6366
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "incontinence-1158",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/incontinence-1158",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.18808754099882208,
+      "size": 6369
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "intimacy-1214",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/intimacy-1214",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.2180180420036777,
+      "size": 6357
+    },
+    {
+      "category": "personal%20care-757",
+      "subcat": "makeup-1133",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/personal%20care-757/sub-category/makeup-1133",
+      "attempts": 5,
+      "status": 429,
+      "error": null,
+      "elapsed": 0.17335154099419015,
+      "size": 6351
+    }
+  ],
+  "still_failed": [],
+  "discovery_failures": []
+}

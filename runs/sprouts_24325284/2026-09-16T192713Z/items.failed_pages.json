@@ -1,0 +1,975 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "deli-908597445830541430",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/24325284/category/deli-908597445830541430",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06249874999775784,
+          "size": 6245
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19650970899965614,
+          "size": 6245
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19736920799914515,
+          "size": 6245
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17166174999874784,
+          "size": 6245
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16242225000314647,
+          "size": 6245
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "whipping%20cream-1007",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/whipping%20cream-1007",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06909170899598394,
+          "size": 6390
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22590179099643137,
+          "size": 6390
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.233211749997281,
+          "size": 6390
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18564587499713525,
+          "size": 6390
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17248004199791467,
+          "size": 6390
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "deli-908597445830541430",
+      "subcat": "bologna-911061935272231036",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/deli-908597445830541430/sub-category/bologna-911061935272231036",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18058166700211586,
+          "size": 6429
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21437404199969023,
+          "size": 6429
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20035895799810532,
+          "size": 6429
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18101225000282284,
+          "size": 6429
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21106441599840764,
+          "size": 6429
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "deli-908597445830541430",
+      "subcat": "bacon-911061935273377899",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/deli-908597445830541430/sub-category/bacon-911061935273377899",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1633762499986915,
+          "size": 6423
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15442862499912735,
+          "size": 6423
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19011270900227828,
+          "size": 6423
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18573866599763278,
+          "size": 6423
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18045645899837837,
+          "size": 6423
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "dairy%20%26%20eggs-960",
+      "subcat": "yogurt-1008",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/dairy%20%26%20eggs-960/sub-category/yogurt-1008",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18180212500010384,
+          "size": 6360
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16857104199880268,
+          "size": 6360
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19509800000378164,
+          "size": 6360
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19293854100396857,
+          "size": 6360
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1558301670011133,
+          "size": 6360
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "deli-908597445830541430",
+      "subcat": "deli%20chicken-908597767406157931",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/deli-908597445830541430/sub-category/deli%20chicken-908597767406157931",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1640257079998264,
+          "size": 6450
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18601070799923036,
+          "size": 6450
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2580241660034517,
+          "size": 6450
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22020195799996145,
+          "size": 6450
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3054595840003458,
+          "size": 6450
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "deli-908597445830541430",
+      "subcat": "deli%20ham-911061935319384170",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/deli-908597445830541430/sub-category/deli%20ham-911061935319384170",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.354311916998995,
+          "size": 6438
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21293504200002644,
+          "size": 6438
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2042760830008774,
+          "size": 6438
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1899737499988987,
+          "size": 6438
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.159667833999265,
+          "size": 6438
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "meat-911548223244271740",
+      "subcat": "sausage-911061935358541930",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/meat-911548223244271740/sub-category/sausage-911061935358541930",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06622320799942827,
+          "size": 6429
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21807054199598497,
+          "size": 6429
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1952984590025153,
+          "size": 6429
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18554608300473774,
+          "size": 6429
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1471120419955696,
+          "size": 6429
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "meat-911548223244271740",
+      "subcat": "turkey-933939906010382442",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/meat-911548223244271740/sub-category/turkey-933939906010382442",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2535034579996136,
+          "size": 6426
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1798342500042054,
+          "size": 6426
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1889716670048074,
+          "size": 6426
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1796920839988161,
+          "size": 6426
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.11571770800219383,
+          "size": 6426
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "meat-911548223244271740",
+      "subcat": "steak-933102843662237814",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/meat-911548223244271740/sub-category/steak-933102843662237814",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.09692570900369901,
+          "size": 6423
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18441812499804655,
+          "size": 6423
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1738820839964319,
+          "size": 6423
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.31442191699898103,
+          "size": 6423
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4118803340024897,
+          "size": 6423
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "medicine-756",
+      "subcat": "allergy%20%26%20asthma-1149",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/medicine-756/sub-category/allergy%20%26%20asthma-1149",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22522674999345327,
+          "size": 6378
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1839672080022865,
+          "size": 6378
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21323008299805224,
+          "size": 6378
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20698666700627655,
+          "size": 6378
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19799433300067903,
+          "size": 6378
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "medicine-756",
+      "subcat": "anti-itch-1073",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/medicine-756/sub-category/anti-itch-1073",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17168429199955426,
+          "size": 6318
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18370758300443413,
+          "size": 6318
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1931356249988312,
+          "size": 6318
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15851541599840857,
+          "size": 6318
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2760997080040397,
+          "size": 6318
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "medicine-756",
+      "subcat": "cold%20%26%20flu-769",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/medicine-756/sub-category/cold%20%26%20flu-769",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22213779199955752,
+          "size": 6357
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2053567920011119,
+          "size": 6357
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1897811669987277,
+          "size": 6357
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15981629099405836,
+          "size": 6357
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1863977499961038,
+          "size": 6357
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "medicine-756",
+      "subcat": "digestive-1151",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/medicine-756/sub-category/digestive-1151",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19862654200551333,
+          "size": 6318
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.24088587499863934,
+          "size": 6318
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18480654199811397,
+          "size": 6318
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17405924999911804,
+          "size": 6318
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20304824999766424,
+          "size": 6318
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "gummy%20candy-762168147276922906",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/gummy%20candy-762168147276922906",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.05675162499392172,
+          "size": 6387
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.26335424999706447,
+          "size": 6387
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3046857919980539,
+          "size": 6387
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.3715417090061237,
+          "size": 6387
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.2809154170026886,
+          "size": 6387
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "nuts%20%26%20dried%20fruit-808745972218626075",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/nuts%20%26%20dried%20fruit-808745972218626075",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.0551371250039665,
+          "size": 6447
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15047291700466303,
+          "size": 6447
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18388054100068985,
+          "size": 6447
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.2277458749958896,
+          "size": 6447
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.592441417000373,
+          "size": 6447
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "jerky-1254",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/jerky-1254",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06726612499915063,
+          "size": 6300
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1833418750029523,
+          "size": 6300
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19016316600027494,
+          "size": 6300
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.4264792910034885,
+          "size": 6300
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.4594980830006534,
+          "size": 6300
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "protein%20%26%20meal%20bars-905",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/protein%20%26%20meal%20bars-905",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15162966600473737,
+          "size": 6384
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1907311250033672,
+          "size": 6384
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.14759758400032297,
+          "size": 6384
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16282491700258106,
+          "size": 6384
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15255237499513896,
+          "size": 6384
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "nuts%20%26%20seeds-1401",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/nuts%20%26%20seeds-1401",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15502729200670728,
+          "size": 6360
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16939504200126976,
+          "size": 6360
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16175204199680593,
+          "size": 6360
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19036454200249864,
+          "size": 6360
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16397512500407174,
+          "size": 6360
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "salsa%20%26%20dips-1557",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/salsa%20%26%20dips-1557",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19015041700185975,
+          "size": 6360
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22147450000193203,
+          "size": 6360
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1839937499971711,
+          "size": 6360
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18212620799749857,
+          "size": 6360
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2871483329945477,
+          "size": 6360
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "popcorn-804",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/popcorn-804",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18352708400198026,
+          "size": 6303
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21522758299397537,
+          "size": 6303
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16810420800175052,
+          "size": 6303
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17768066700227791,
+          "size": 6303
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15773512500163633,
+          "size": 6303
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "snack%20mixes-1499",
+      "url": "https://www.doordash.com/convenience/store/24325284/category/snacks-758/sub-category/snack%20mixes-1499",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15536470799997915,
+          "size": 6324
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4009804160014028,
+          "size": 6324
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19949545800045598,
+          "size": 6324
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1938934159989003,
+          "size": 6324
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18627766700228676,
+          "size": 6324
+        }
+      ],
+      "status": 429,
+      "error": null
+    }
+  ],
+  "still_failed": [],
+  "discovery_failures": [],
+  "zero_item_pages": []
+}

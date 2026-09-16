@@ -1,0 +1,711 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "frozen-961",
+      "subcat": "pies%20%26%20cakes-1548",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/frozen-961/sub-category/pies%20%26%20cakes-1548",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06326945900218561,
+          "size": 6357
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16330883299815468,
+          "size": 6357
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.13729912500275532,
+          "size": 6357
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20093891700526,
+          "size": 6357
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16588120899541536,
+          "size": 6357
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "pizza-803",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/frozen-961/sub-category/pizza-803",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19463495800300734,
+          "size": 6294
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.15067833299690392,
+          "size": 6294
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17614233299536863,
+          "size": 6294
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23506154200003948,
+          "size": 6294
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23676587500085589,
+          "size": 6294
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "snacks%20%26%20apps-1556",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/frozen-961/sub-category/snacks%20%26%20apps-1556",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22774179200496292,
+          "size": 6360
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.5225132909981767,
+          "size": 6360
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.27131766700040316,
+          "size": 6360
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18561733300157357,
+          "size": 6360
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17482383299648063,
+          "size": 6360
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "veggies-1058",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/frozen-961/sub-category/veggies-1058",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.5663213750012801,
+          "size": 6303
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2757710839941865,
+          "size": 6303
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2038561250010389,
+          "size": 6303
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23951383300300222,
+          "size": 6281
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.9682224159987527,
+          "size": 6303
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "frozen-961",
+      "subcat": "novelty-1055",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/frozen-961/sub-category/novelty-1055",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.05714887500653276,
+          "size": 6303
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06582308300130535,
+          "size": 6303
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2332176249983604,
+          "size": 6303
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4569838749957853,
+          "size": 6303
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.819162250001682,
+          "size": 6303
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "meat-911548223244271740",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/1742136/category/meat-911548223244271740",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.0683810830014409,
+          "size": 6242
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.8604541669992614,
+          "size": 6242
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.5200169580057263,
+          "size": 6242
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.3591771250066813,
+          "size": 6242
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 5.772281708996161,
+          "size": 6242
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "meat-911548223244271740",
+      "subcat": "chicken-908597767414939760",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/meat-911548223244271740/sub-category/chicken-908597767414939760",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.837604125001235,
+          "size": 6426
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.6621672920009587,
+          "size": 6426
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.511657208997349,
+          "size": 6426
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 3.825421166999149,
+          "size": 6426
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 4.190652833000058,
+          "size": 6426
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "meat-911548223244271740",
+      "subcat": "beef-911838206637047923",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/meat-911548223244271740/sub-category/beef-911838206637047923",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.7810122500013676,
+          "size": 6396
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.7971345000041765,
+          "size": 6396
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.6611601670010714,
+          "size": 6396
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 11.446764084001188,
+          "size": 6396
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 3.9999725419984316,
+          "size": 6396
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/1742136/category/snacks-758",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18281125000066822,
+          "size": 6182
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.14746929200191516,
+          "size": 6182
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3097018339976785,
+          "size": 6182
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.31962054199539125,
+          "size": 6182
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1898552920029033,
+          "size": 6182
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "seafood-911062372566958200",
+      "subcat": "tilapia-911061935362113639",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/seafood-911062372566958200/sub-category/tilapia-911061935362113639",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.08020520900026895,
+          "size": 6435
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3397862499987241,
+          "size": 6435
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4053640829952201,
+          "size": 6435
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3016688330026227,
+          "size": 6435
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21048929200333077,
+          "size": 6435
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "seafood-911062372566958200",
+      "subcat": "tuna-911061935357427825",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/seafood-911062372566958200/sub-category/tuna-911061935357427825",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19991558399487985,
+          "size": 6426
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.25311279200104764,
+          "size": 6426
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.35798795799928484,
+          "size": 6426
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.29202912500477396,
+          "size": 6426
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.9264827500010142,
+          "size": 6426
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "cookies-771",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/snacks-758/sub-category/cookies-771",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.5264505000013742,
+          "size": 6300
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16392995799833443,
+          "size": 6300
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16072262499801582,
+          "size": 6300
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19388275000528665,
+          "size": 6300
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19733091699890792,
+          "size": 6300
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "crackers-772",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/snacks-758/sub-category/crackers-772",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22402400000282796,
+          "size": 6303
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19544287500320934,
+          "size": 6303
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18007550000038464,
+          "size": 6303
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2048522090044571,
+          "size": 6303
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2043732500023907,
+          "size": 6303
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "fruit%20cups-1253",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/snacks-758/sub-category/fruit%20cups-1253",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19874708400311647,
+          "size": 6318
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.024274791998323,
+          "size": 6318
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17141504200117197,
+          "size": 6318
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22590987500007031,
+          "size": 6318
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18611391600279603,
+          "size": 6318
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "granola%20bars-1567",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/snacks-758/sub-category/granola%20bars-1567",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.8781359159984277,
+          "size": 6324
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20273095900483895,
+          "size": 6324
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18276891599816736,
+          "size": 6324
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20517791699967347,
+          "size": 6324
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.225479709006322,
+          "size": 6324
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "snacks-758",
+      "subcat": "chips-765",
+      "url": "https://www.doordash.com/convenience/store/1742136/category/snacks-758/sub-category/chips-765",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20939216700207908,
+          "size": 6294
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 1.059975416996167,
+          "size": 6294
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.10061800000403309,
+          "size": 6294
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.7682038330021896,
+          "size": 6294
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 2.0805840829998488,
+          "size": 6294
+        }
+      ],
+      "status": 429,
+      "error": null
+    }
+  ],
+  "still_failed": [],
+  "discovery_failures": [],
+  "zero_item_pages": []
+}
