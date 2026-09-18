@@ -1,0 +1,8 @@
+{
+  "catalog_version": {
+    "sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
+    "row_count": 31398,
+    "frozen_at": "2026-09-17T001348Z",
+    "source_file": "normalized_catalog.csv"
+  }
+}
