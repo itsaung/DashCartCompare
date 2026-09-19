@@ -263,6 +263,10 @@ def main():
     already_decided = set()
     for request_id, store_id, product_id, label in HUMAN_REVIEWED_FROM_CHAT:
         key = _decision_key(request_id, store_id, product_id)
+        # Historical chat judgments seed missing entries only. Never undo a
+        # newer human correction or the complete catalog-based audit.
+        if key in decisions:
+            continue
         decisions[key] = {
             "request_id": request_id, "store_id": store_id, "product_id": product_id,
             "reviewer_label": label,

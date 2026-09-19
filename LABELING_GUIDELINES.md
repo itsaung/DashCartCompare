@@ -1,6 +1,6 @@
 # Labeling guidelines — Checkpoint 3 benchmark
 
-**Version: v1** (pilot). Bump this version on any meaningful rule change; a
+**Version: v2** (complete catalog-based label audit, 2026-09-18). Bump this version on any meaningful rule change; a
 decision recorded under an older version is stale once the version bumps,
 even if the request/catalog didn't change (`build_benchmark.py` enforces
 this via each decision's stamped `labeling_guideline_version`).
@@ -72,6 +72,41 @@ distinct outcome, not a softened Incorrect either.
    genuine ambiguity.
 
 ## Review process notes
+
+### v2 adjudication rules
+
+- Read the actual request, all expected attributes, title, category and package
+  metadata together. Do not use `parse_shopping_line` output as ground truth.
+  An ingredient mention is not product identity: peanut-butter candy is not
+  peanut butter; orange fruit cups are not orange juice.
+- Check every required variant, including comma-separated requirements and
+  explicit words in the request that `expected` omitted (e.g. frozen).
+  Word order, intervening descriptors and obvious spelling errors do not
+  establish a conflict. Additional requirements absent from the request must
+  not be invented (generic canned tuna permits water or oil).
+- A confirmed independent mismatch takes precedence over an uncertain size
+  or `dimension_review_flag`. Otherwise missing evidence is Needs clarification,
+  never an automatic match. A flag matters when it makes a required attribute
+  uncertain; it does not by itself invalidate unrelated requirements.
+- Distinct printed sizes are distinct packages. Allow ordinary rounding of
+  equivalent units (2 L / 67.6 fl oz; 946 ml / 32 fl oz), not an arbitrary
+  three-percent size tolerance. Compare multipack count and per-unit amount
+  when explicitly specified. A single 5.3 oz item is not a 4-pack of that item.
+  Conflicting title-count and raw-size metadata needs clarification.
+- Count-only versus weight-only descriptions of the same kind of item may
+  describe the same package; without conversion evidence they are uncertain,
+  not proven mismatches. Bare oz on ice cream is uncertain weight/volume.
+- Fixed-package requests do not match variable-weight listings in this MVP.
+  Unknown-size listings remain uncertain. Ordering quantity is separate:
+  nine jars can mean nine units of an eligible individual sauce listing.
+- Ambiguous requests can have compatible product candidates while still
+  needing request-level clarification. Explicit container requirements that
+  cannot be verified remain uncertain. These labels do not assert stock
+  depth, live availability, nutrition facts, or checkout fulfillability.
+- This complete audit is AI adjudication from frozen catalog evidence, not
+  independent human review or live product-page verification. Preserve the
+  previous decisions and attribution in the audit trail. Prior human labels
+  are not attributed to a human when the AI changes them.
 
 - The review UI shows `expected` and the candidate's real attributes but
   hides the draft label, retrieval source, and similarity score until after

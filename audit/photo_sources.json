@@ -1,0 +1,762 @@
+[
+  {
+    "store_id": 29631686,
+    "product_id": "1000030409614136",
+    "title": "Pueblo Lindo Fajita Flour Tortillas (23 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9289a3a8-b670-4082-8aad-ea697c13c3a5-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 0
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "1000032999710119",
+    "title": "Pueblo Lindo Flour Tortillas (17.5 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/f2fab04b-dfbf-435d-8b9b-d7a07773b247-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 1
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "22646325374",
+    "title": "Friendly Farms Low Fat Strawberry Greek Yogurt 4 ct (5.3 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/3b2dc888-3ff4-4e28-81e3-05b1a81e0533-retina-large.png",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 2
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "1000030409614263",
+    "title": "Friendly Farms Original Unsweetened Almond Milk (64 fl oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/b9ed7b62-7cb5-45af-a079-eb3dc20fcc30-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 3
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "1000030409614581",
+    "title": "Lunch Mate Oven Roasted Turkey Breast (9 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/8f8de53b-6fb8-43fb-b426-1a0f0ecbb50a-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 4
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "1000030409614583",
+    "title": "Lunch Mate Premium Cured Oven Roasted Chicken Breast Value Pack (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/dd74b9e9-9d5b-455e-86bd-dddd61a91274-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 5
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "42177046800",
+    "title": "PurAqua Sparkling Frost Caffeine Strawberry Citrus Sparkling Water (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/296b61fa-6a93-4fcc-b5d4-240389ddef95-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 6
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "32760619640",
+    "title": "Ben & Jerry's Half Baked Chocolate & Vanilla Ice Cream (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/bbc244a5-1163-4346-9d63-366f7ed0a404-retina-large.png",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 7
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "33905145040",
+    "title": "Fremont Fish Market Boneless Skinless Wild Caught Pink Salmon (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/f6801e8e-1e1c-444a-8695-ae74ce086d3f-retina-large.png",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 8
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "22646326071",
+    "title": "Simply Nature Pasta Sauce (23.5 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/752e9ead-ff98-46c3-b033-c5193c4dbe04-retina-large.png",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 9
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "35968708361",
+    "title": "Stuffed Atlantic Salmon (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/551f1e1e-d1f5-4e22-9790-063f5ec0fcca-retina-large.png",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 10
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "43649193203",
+    "title": "Banana (each)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/48ec4ac6-1635-498b-ac56-35aa64e5730a-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 11
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "1000037210864004",
+    "title": "Organic Bananas (bunch)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/ea64a94d-8c81-4086-8517-230035513282-retina-large.png",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 12
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "33873154338",
+    "title": "Organic Bananas Bunch",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/34422e17-5f5c-4440-9ded-770f1698fdb1-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 13
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "36853168254",
+    "title": "Atlantic Salmon Portion Pack",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/80deb0e1-13c8-42b4-81b6-400b8edecf71-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 14
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "22646327062",
+    "title": "Millville Crunchy Granola Bars Oats and Honey 2 Packs (6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/c3714a7b-b7a6-4bfb-adb7-a3bcfa25f6e9-retina-large.jpg",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 15
+  },
+  {
+    "store_id": 29631686,
+    "product_id": "22897750804",
+    "title": "Savoritz Family Size Cheese Crackers (21 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/97314201-5591-43a2-94ad-9802729e7acb-retina-large.png",
+    "source_csv": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+    "photo_index": 16
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "31447193589",
+    "title": "Bakehouse Bread Company Banana Bread (14 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9ad6aa0c-b4c4-4007-839c-4519b3a76986-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 17
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994674460",
+    "title": "Mission Burrito Flour Tortillas (16 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/84780cef-c95b-4799-acfe-fc1c953cb6a2-retina-large.jpeg",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 18
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "32929359730",
+    "title": "Daisy Brand 4% Milkfat Cottage Cheese 2 ct (5.3 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d0e06643-b981-4b66-9ebe-e0f0c4a2b57c-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 19
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994828069",
+    "title": "Kerrygold Pure Unsalted Irish Butter (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/e7a2c722-326a-4d6a-a728-a0788994a6eb-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 20
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994827505",
+    "title": "Land O'Lakes Unsalted Butter Half Sticks (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/058e0553-8f83-4b72-80b5-5fe845d6d25b-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 21
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994828628",
+    "title": "Deli Fresh Turkey Breast Mega Pack",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/35a04bd5-3441-4367-986f-deb002a7c3d5-retina-large.jpg",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 22
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994828615",
+    "title": "Oscar Mayer Black Pepper Turkey Breast Deli Sliced Deli Meat (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/e6844511-e6c8-4dbc-bdb2-2fdf5b2e751a-retina-large.jpg",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 23
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994833097",
+    "title": "Ben & Jerry's Half Baked Chocolate & Vanilla Ice Cream (1 pt)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d982d438-9345-48cf-8858-73b36ea7ad4c-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 24
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30936400674",
+    "title": "Kroger Marinara Pasta Sauce (24 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d4405697-66a6-4d4a-a5d0-835b44e66892-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 25
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994838342",
+    "title": "Kroger Traditional Pasta Sauce (24 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/98bc25c2-f6fd-4d39-a8e7-a7f822e4b3e4-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 26
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994848258",
+    "title": "Sea Cuisine Honey Chipotle Salmon Fillets (10.5 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/3d86adb5-aeed-482b-908f-e259a833661c-retina-large.png",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 27
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994851727",
+    "title": "Chewy Granola Bars 100% Whole Grains Chocolate Chip Granola Bars (6.7 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/4a30cac5-cfe1-4e39-8008-c56d8a13fe73-retina-large.jpg",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 28
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994851728",
+    "title": "Chewy Granola Bars Peanut Butter Chocolate Chip Granola Bars (0.84 oz x 8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9fb57c69-d0a6-4938-95f4-c4746e6be382-retina-large.jpg",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 29
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994851726",
+    "title": "Chewy Granola Bars S'mores Granola Bars (0.84 oz x 8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/c25270c2-0e1d-46bf-8b6b-fec039764acb-retina-large.jpg",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 30
+  },
+  {
+    "store_id": 35802549,
+    "product_id": "30994851749",
+    "title": "Club Crackers Snack Stacks Original Crackers (12.5 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9a6d997d-7cf2-4e91-8e9d-78a93eb6d20a-retina-large.jpg",
+    "source_csv": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+    "photo_index": 31
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "20640849539",
+    "title": "Hero Bread Flour Tortillas (9.3 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/c820c638-6846-48d2-b1ec-14404fd38571-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 32
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "5648919475",
+    "title": "La Fe Tortillas No Preservatives Flour Tortillas (12 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/fc685dc6-b03b-49c1-bec8-466da52e4f30-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 33
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "5648919472",
+    "title": "La Fe Tortillas Unbleached Flour Tortillas (10 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/8f5ede72-ebfa-4972-a1a7-4b9d8ef78c95-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 34
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "24472659379",
+    "title": "Mission Foods Large Flour Tortillas",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d4faf397-a757-4cd3-b5ba-64c8752c39d2-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 35
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "5970031115",
+    "title": "6 Grain Hot Cereal",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/c8a31d01-87cd-4522-a061-e2fae4791abc-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 36
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "29222447339",
+    "title": "Daisy Brand 4% Cottage Cheese (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/6be644c1-cc63-4e0e-92de-35d340674a5a-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 37
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "9819999719",
+    "title": "Kerrygold Grass-Fed Pure Irish Butter Unsalted (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/be9c0b33-5aef-4e50-9ff8-5936d71fc0ef-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 38
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "43911612966",
+    "title": "Applegate Organic Oven Roasted Turkey Breast (6 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/42aebf4f-40e7-4b53-9f60-a94cdb1438fa-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 39
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "10240894288",
+    "title": "Applegate Organic Smoked Turkey Breast (6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/91d0a136-6cd9-4a9d-91da-55d220fec30f-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 40
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "1000001427175050",
+    "title": "Boar's Head Organic Oven Roasted Turkey Breast (6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/7a685508-8e84-4f81-8a46-6627cdc4525a-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 41
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "11730030077",
+    "title": "True Story Oven Roasted Turkey Breast (6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/fdc3bcda-b708-4fb5-ba63-b47f66567dba-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 42
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "21040431450",
+    "title": "La Croix Sparkling Water Lime (12 oz x 12 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/b5de6a83-6e1b-42d6-9d14-553ff03fde40-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 43
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "9122402372",
+    "title": "Bubbies Ice Cream Mochi Strawberry Ice Cream (6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/37d15f05-386c-4bbf-95b7-a7db477b165f-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 44
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "13949771340",
+    "title": "Bubbies Ice Cream Premium Mochi Mango Ice Cream (6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/3bd933a6-92c5-40ee-a94f-867fb5e8c384-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 45
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "23372596582",
+    "title": "Sauz Pasta Sauce Summer Lemon Marinara Pasta Sauce (25 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/918f3a11-9578-4d13-b4d1-6dcbcc901634-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 46
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "5648872769",
+    "title": "Sprouts Coconut Milk (13.5 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9d7f00de-7fe0-40e3-a863-65c6eec1ecdb-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 47
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "10230027000",
+    "title": "Sprouts Organic Coconut Chips (7 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/89231b91-81e2-4d59-872d-af5176fc29fe-retina-large",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 48
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "14040263051",
+    "title": "Sprouts Organic Pasta Sauce Garlic (25 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/7be5bfce-6baa-4f91-88e2-ba2891247b74-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 49
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "5648960048",
+    "title": "Sprouts Pasta Sauce Garlic (25 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/645d9787-e5fb-4929-936f-ad4250da2c70-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 50
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "24049084915",
+    "title": "Mary's Gone Crackers Organic Herb Crackers (4 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/bdf1ac73-f0b7-4e02-9570-68982d32a010-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 51
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "24463140609",
+    "title": "Mary's Gone Crackers Organic Original Super Seed Crackers (4 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/2c85ac55-1bec-4d68-af8f-baa88d7b9ff9-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 52
+  },
+  {
+    "store_id": 24325284,
+    "product_id": "22272682071",
+    "title": "Sprouts Original Water Crackers (4.4 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/316f73fd-8da0-496f-b19a-e2a1f9e851d1-retina-large.png",
+    "source_csv": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+    "photo_index": 53
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "1000002555061094",
+    "title": "Artesano Golden Wheat Bakery Bread (20 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/20a31fa3-e768-4575-9292-b2ad0740b763-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 54
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "37596221536",
+    "title": "Mission Burrito Flour Tortillas (16 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/84780cef-c95b-4799-acfe-fc1c953cb6a2-retina-large.jpeg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 55
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "10109224134",
+    "title": "Almond Breeze Unsweetened Original Almond Milk (32 fl oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/0b8d20e3-b0a1-4335-adb1-0355ba8e84ba-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 56
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "10109271326",
+    "title": "Kerrygold Pure Irish Butter (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/710a585d-9757-4af0-95cc-4bea3208230a-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 57
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "13817936486",
+    "title": "Kerrygold Pure Irish Butter Naturally Softer (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/b7b573ce-ebe6-4030-afeb-61c6f243de7f-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 58
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "34049152986",
+    "title": "Kerrygold Pure Unsalted Irish Butter (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/e7a2c722-326a-4d6a-a728-a0788994a6eb-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 59
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "11194800448",
+    "title": "Kerrygold Unsalted Irish Butter Sticks (4 oz x 2 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/01416858-6230-4fc2-bec6-cffbdf348457-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 60
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "10109271315",
+    "title": "Land O'Lakes Unsalted Butter Half Sticks (16 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/7cffb40a-8be2-499e-b5c6-e3af98fea20d-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 61
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "1000020349873024",
+    "title": "Grilled Chicken Breast, Cold",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/e07aeea0-f41d-4ae9-b7f8-49a537eba330-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 62
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "14533930577",
+    "title": "Oscar Mayer Black Pepper Turkey Breast Deli Sliced Deli Meat (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/e6844511-e6c8-4dbc-bdb2-2fdf5b2e751a-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 63
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "17270795871",
+    "title": "Fresca Grapefruit Citrus Original Sparkling Soda Water (12 fl oz x 12 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/36b9b7d5-280b-4c47-899e-36f92ee82884-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 64
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "20704808982",
+    "title": "Signature Select Peach Creme Sparkling Water Bottle (33.8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/6c81f0a3-9323-459d-a45e-70c795ace7c9-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 65
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "19704276460",
+    "title": "Signature Select Strawberry Watermelon Flavored Sparkling Water Beverage Bottle (33.8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/7bab9d86-2d6d-49ac-95e4-6e693e8fd3fc-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 66
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "32390446339",
+    "title": "Soleil Blood Orange Sparkling Water Cans (12 oz x 8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/145677e6-95e4-42c9-be3e-726ac3a8ef72-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 67
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "32390446368",
+    "title": "Soleil Peach Sparkling Water Cans (12 oz x 8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/c57c6362-2e4c-4291-889e-976e338789ef-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 68
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "17453283494",
+    "title": "Soleil Sparkling Water Original Cans (12 oz x 8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/b6cd0ae3-dec3-4921-8095-8dca3dd78529-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 69
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "1000002709433016",
+    "title": "Tehuacan Sparkling Natural Mineral Water (12 oz x 12 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/b4f508c9-c073-42c5-a33f-6eb1bf5d2dab-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 70
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "10582421916",
+    "title": "Ben & Jerry's Half Baked Chocolate & Vanilla Ice Cream (1 pt)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d982d438-9345-48cf-8858-73b36ea7ad4c-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 71
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "32695775745",
+    "title": "Fried Chicken Breast Hot",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/a6c1037b-5310-4b78-b312-75297d36077a-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 72
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "12518453564",
+    "title": "Roasted Chicken Breast Hot",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/c7d2ed88-23b1-49d4-905f-9fb8595fcba7-retina-large.png",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 73
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "25836986386",
+    "title": "Chewy Granola Bars Peanut Butter Chocolate Chip Granola Bars (0.84 oz x 8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9fb57c69-d0a6-4938-95f4-c4746e6be382-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 74
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "25836986384",
+    "title": "Chewy Granola Bars S'mores Granola Bars (0.84 oz x 8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/c25270c2-0e1d-46bf-8b6b-fec039764acb-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 75
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "12044237780",
+    "title": "Club Crackers Snack Stacks Original Crackers (12.5 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9a6d997d-7cf2-4e91-8e9d-78a93eb6d20a-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 76
+  },
+  {
+    "store_id": 1742136,
+    "product_id": "23598313944",
+    "title": "Quaker Oats Chewy Granola Bars Big Chocolate Chip Granola Bars (1.48 oz x 5 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/160d59e7-839c-4fe1-a6fe-207d30cf2410-retina-large.jpg",
+    "source_csv": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+    "photo_index": 77
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "33365945796",
+    "title": "Kerrygold Pure Irish Butter (8 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/710a585d-9757-4af0-95cc-4bea3208230a-retina-large.png",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 78
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "20277094899",
+    "title": "Fresca Grapefruit Citrus Original Sparkling Soda Water (12 fl oz x 12 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/36b9b7d5-280b-4c47-899e-36f92ee82884-retina-large.png",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 79
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "8776540508",
+    "title": "Ben & Jerry's Half Baked Chocolate & Vanilla Ice Cream (1 pt)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d982d438-9345-48cf-8858-73b36ea7ad4c-retina-large.png",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 80
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "21366092208",
+    "title": "Prego Gluten Free Italian Flavored with Meat Pasta Sauce (24 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/2439eb73-54da-40e6-8b1a-6a9806c5b5db-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 81
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "21366092209",
+    "title": "Prego Italian Roasted Garlic Parmesan Pasta Sauce (24 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/5eee55a9-ca19-44c5-8386-7324dd1d4494-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 82
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "29461405036",
+    "title": "Prego Tomato Basil & Garlic Italian Pasta Sauce (24 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/14c9bf7f-ba99-4905-aa58-e4a613a7de92-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 83
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "38131667643",
+    "title": "Gala Apples",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photos/3367d6f9-7ced-42cf-bcb6-bd6e45e3b48c-retina-large-jpeg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 84
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "26047649087",
+    "title": "Chewy Chocolate Chip Granola Bars Value Pack (0.84 oz x 18 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d706eb8f-b766-4af6-b724-b3b1956cdc0c-retina-large.png",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 85
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "26461382000",
+    "title": "Chewy Granola Bars Dipps Covered Chocolate Chip Granola Bars (1.09 oz x 6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/d2f99c00-efc6-44f0-90d5-8f152ff66e7b-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 86
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "15040347666",
+    "title": "Chewy Granola Bars Variety Pack (0.84 oz x 18 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9c386b64-62dc-42c5-a6e4-4004e9dc14d1-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 87
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "10288800611",
+    "title": "Club Crackers Snack Stacks Original Crackers (12.5 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/9a6d997d-7cf2-4e91-8e9d-78a93eb6d20a-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 88
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "1000002739432004",
+    "title": "Goldfish Cheddar Cheese Baked Snack Crackers (6.6 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/72361414-accc-463e-9c36-06d5f195fd0c-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 89
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "1000003155996001",
+    "title": "Goldfish Flavor Blasted Xtra Cheddar Baked Snack Crackers (6.6 oz)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=2688,height=1512,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/be72e7b9-6875-482e-aaa0-df53f1bdeea2-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 90
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "10199849891",
+    "title": "Nature Valley Crunchy Oats 'n Honey Granola Bars Pouches (1.49 oz x 6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/ebb9c3f0-8928-44b4-a864-69434cd8eb5e-retina-large.png",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 91
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "12649276025",
+    "title": "Nature Valley Sweet & Salty Nut Peanut Granola Bars (1.2 oz x 6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/315ef6f2-3682-4418-950e-e0748801e2a1-retina-large.png",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 92
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "27390894337",
+    "title": "Quaker Chewy Granola Bars Chocolate Chip (8 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photos/16873e7f-c135-4870-bc58-810def4789f1-retina-large-jpeg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 93
+  },
+  {
+    "store_id": 1042759,
+    "product_id": "13472443448",
+    "title": "Ritz Peanut Butter Flavored Filling Sandwich Crackers Snack Packs (8 pk x 6 ct)",
+    "image_url": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/photosV2/a0b44628-7f12-48ee-bd8d-0b19882845b5-retina-large.jpg",
+    "source_csv": "doordash_store_1042759_items.csv",
+    "photo_index": 94
+  }
+]
