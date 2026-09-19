@@ -4,7 +4,9 @@ branches."""
 import pandas as pd
 import pytest
 
-from retrieval import attribute_filter_baseline, fit_tfidf, lexical_search, synonym_assisted_search
+from retrieval import (
+    attribute_filter_baseline, filter_by_package_size, fit_tfidf, lexical_search, synonym_assisted_search,
+)
 
 
 def _catalog(rows):
@@ -17,6 +19,18 @@ def _row(store_id, product_id, title, category="Grocery", brand=None, variant=No
         "raw_title": title, "raw_category": category,
         "brand": brand, "variant": variant, "pkg_dimension": dimension,
     }
+
+
+def _size_row(store_id, product_id, title, pkg_canonical_unit=None, pkg_canonical_total=None, pkg_count=1.0):
+    return {
+        "store_id": store_id, "product_id": product_id, "raw_title": title,
+        "pkg_canonical_unit": pkg_canonical_unit, "pkg_canonical_total": pkg_canonical_total,
+        "pkg_count": pkg_count,
+    }
+
+
+def _cand(row_index, store_id="s1", product_id="p1"):
+    return {"row": row_index, "store_id": store_id, "product_id": product_id, "score": 1.0}
 
 
 # --- lexical_search / fit_tfidf ---------------------------------------------
@@ -135,6 +149,81 @@ def test_synonym_assisted_search_no_overlap_returns_empty():
     assert synonym_assisted_search(structured, catalog, top_k=5) == []
 
 
+# --- filter_by_package_size ---------------------------------------------------
+
+def test_filter_by_package_size_drops_a_confirmed_different_size():
+    # Regression fixture for the dominant real failure mode from
+    # BASELINE_RESULTS.md: a 16 oz candidate scoring highly against a
+    # 5.3 oz request purely on brand/lexical overlap.
+    catalog = _catalog([_size_row("s1", "p1", "cottage cheese", "oz", 16.0, 1.0)])
+    structured = {"canonical_unit": "oz", "canonical_quantity": 5.3}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert survivors == []
+
+
+def test_filter_by_package_size_keeps_an_exact_match():
+    catalog = _catalog([_size_row("s1", "p1", "cottage cheese", "oz", 5.3, 1.0)])
+    structured = {"canonical_unit": "oz", "canonical_quantity": 5.3}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert len(survivors) == 1
+
+
+def test_filter_by_package_size_allows_genuine_cross_unit_rounding():
+    # 2 L request vs a candidate whose canonical total (from a "67.6 fl oz"
+    # printed label) is 67.628 fl oz after conversion -- ordinary rounding,
+    # not a distinct size.
+    catalog = _catalog([_size_row("s1", "p1", "soda", "fl oz", 67.6, 1.0)])
+    structured = {"canonical_unit": "fl oz", "canonical_quantity": 67.628}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert len(survivors) == 1
+
+
+def test_filter_by_package_size_compares_per_pack_not_total_for_a_multipack():
+    # "12 fl oz x 12 ct Diet Coke" -- parse_shopping_line captures only the
+    # per-can size (12 fl oz), not the "x 12 ct" multiplier, so this must
+    # compare against the row's per-pack amount (144 / 12 = 12), not its
+    # 144 fl oz total, or a genuinely correct product would be wrongly
+    # rejected.
+    catalog = _catalog([_size_row("s1", "p1", "Diet Coke (12 fl oz x 12 ct)", "fl oz", 144.0, 12.0)])
+    structured = {"canonical_unit": "fl oz", "canonical_quantity": 12.0}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert len(survivors) == 1
+
+
+def test_filter_by_package_size_unresolved_request_never_filters():
+    catalog = _catalog([_size_row("s1", "p1", "cottage cheese", "oz", 16.0, 1.0)])
+    structured = {"canonical_unit": None, "canonical_quantity": None}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert len(survivors) == 1
+
+
+def test_filter_by_package_size_unresolved_row_never_filters():
+    # A variable-weight item (e.g. produce priced by the pound) has no
+    # fixed canonical total -- unknown, not a confirmed mismatch.
+    catalog = _catalog([_size_row("s1", "p1", "bananas", pkg_canonical_unit=None, pkg_canonical_total=None)])
+    structured = {"canonical_unit": "ct", "canonical_quantity": 3.0}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert len(survivors) == 1
+
+
+def test_filter_by_package_size_defers_a_different_dimension_to_filter_by_dimension():
+    # A "ct" row against an "oz" request is a dimension mismatch, not a
+    # size mismatch -- this function leaves it for filter_by_dimension.
+    catalog = _catalog([_size_row("s1", "p1", "eggs", "ct", 12.0, 1.0)])
+    structured = {"canonical_unit": "oz", "canonical_quantity": 16.0}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert len(survivors) == 1
+
+
+def test_filter_by_package_size_close_but_distinct_size_is_still_dropped():
+    # 20% oversize (10 oz requested vs 12 oz candidate) -- BASELINE_RESULTS.md's
+    # r105 pattern: close enough to score highly, still a real mismatch.
+    catalog = _catalog([_size_row("s1", "p1", "frozen broccoli", "oz", 12.0, 1.0)])
+    structured = {"canonical_unit": "oz", "canonical_quantity": 10.0}
+    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    assert survivors == []
+
+
 # --- attribute_filter_baseline: three response branches ----------------------
 
 def test_baseline_needs_clarification_for_unparseable_request(tmp_path):
@@ -200,3 +289,67 @@ def test_baseline_answerable_with_tied_candidates_both_returned(tmp_path):
     assert results[0]["score"] == pytest.approx(results[1]["score"])
     # deterministic tie-break: lower store_id first
     assert [r["store_id"] for r in results] == ["s1", "s2"]
+
+
+# --- attribute_and_size_filter_baseline: the new, non-v1 baseline ------------
+
+def _full_row(store_id, product_id, title, dimension=None, pkg_canonical_unit=None,
+              pkg_canonical_total=None, pkg_count=1.0):
+    return {
+        "store_id": store_id, "product_id": product_id, "raw_title": title,
+        "raw_category": "Grocery", "brand": None, "variant": None,
+        "pkg_dimension": dimension, "pkg_canonical_unit": pkg_canonical_unit,
+        "pkg_canonical_total": pkg_canonical_total, "pkg_count": pkg_count,
+    }
+
+
+def test_size_baseline_rejects_a_same_dimension_wrong_size_candidate_that_dimension_alone_would_keep(tmp_path):
+    # The exact r078-shaped scenario from BASELINE_RESULTS.md: a 16 oz
+    # candidate is same-dimension ("weight") as a 5.3 oz request, so
+    # attribute_filter_baseline's own dimension filter lets it through --
+    # attribute_and_size_filter_baseline must not.
+    from retrieval import attribute_and_size_filter_baseline
+
+    catalog = _catalog([
+        _full_row("s1", "p1", "good culture cottage cheese", dimension="weight",
+                   pkg_canonical_unit="oz", pkg_canonical_total=16.0, pkg_count=1.0),
+    ])
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+
+    dimension_only_results, dimension_only_response = attribute_filter_baseline(
+        "5.3 oz good culture cottage cheese", catalog, vectorizer, matrix, top_k=5, min_similarity=0.0,
+    )
+    assert dimension_only_response == "answerable"  # confirms the wrong-size candidate WOULD survive dimension alone
+
+    results, response = attribute_and_size_filter_baseline(
+        "5.3 oz good culture cottage cheese", catalog, vectorizer, matrix, top_k=5, min_similarity=0.0,
+    )
+    assert response == "no_acceptable_match"
+    assert results == []
+
+
+def test_size_baseline_keeps_a_correctly_sized_candidate(tmp_path):
+    from retrieval import attribute_and_size_filter_baseline
+
+    catalog = _catalog([
+        _full_row("s1", "p1", "good culture cottage cheese", dimension="weight",
+                   pkg_canonical_unit="oz", pkg_canonical_total=5.3, pkg_count=1.0),
+    ])
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    results, response = attribute_and_size_filter_baseline(
+        "5.3 oz good culture cottage cheese", catalog, vectorizer, matrix, top_k=5, min_similarity=0.0,
+    )
+    assert response == "answerable"
+    assert len(results) == 1
+
+
+def test_size_baseline_still_needs_clarification_for_unparseable_request(tmp_path):
+    from retrieval import attribute_and_size_filter_baseline
+
+    catalog = _catalog([_full_row("s1", "p1", "whole milk", dimension="volume")])
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    results, response = attribute_and_size_filter_baseline(
+        "some milk", catalog, vectorizer, matrix, top_k=5, min_similarity=0.0,
+    )
+    assert response == "needs_clarification"
+    assert results == []

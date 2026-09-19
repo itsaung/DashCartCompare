@@ -184,6 +184,70 @@ def filter_by_dimension(candidates: list, catalog_df, dimension) -> list:
     return survivors
 
 
+# Relative tolerance for comparing a request's requested canonical package
+# amount against a catalog row's canonical per-pack amount. Both values are
+# already expressed in the same canonical unit by the time they reach this
+# comparison, so a genuine cross-unit label-rounding difference (e.g. "2 L"
+# printed against a candidate labeled "67.6 fl oz", ~0.04% apart) and an
+# identical-unit exact match (0% apart) both pass trivially; a materially
+# different printed size (e.g. "15 oz" vs "15.4 oz", ~2.7% apart) does not.
+# This is deliberately NOT claude_auto_label.py's 3% SIZE_MISMATCH_TOLERANCE
+# -- LABELING_GUIDELINES.md v2 explicitly rejects that as arbitrary, and a
+# 2026-09-19 audit found real false positives it let through (see
+# apply_new_candidate_review.py's identically-named-and-reasoned constant).
+PACKAGE_SIZE_ROUNDING_TOLERANCE = 0.01  # relative
+
+
+def filter_by_package_size(candidates: list, catalog_df, structured: dict) -> list:
+    """Drop only candidates whose row has a KNOWN, conflicting per-pack
+    package amount -- the numeric sibling of filter_by_dimension, which
+    only checks weight/volume/count category and has nothing to say about
+    "5.3 oz" vs "16 oz" both being "weight" (the dominant failure mode
+    found in Checkpoint 3's E7 baseline analysis, e.g. r078: a 16 oz
+    candidate scored 0.977 against a request for 5.3 oz).
+
+    Compares `structured["canonical_quantity"]`/`["canonical_unit"]` (from
+    parse_shopping_line) against each row's canonical PER-PACK amount,
+    `pkg_canonical_total / pkg_count` -- not `pkg_canonical_total` alone.
+    Those are identical whenever a row isn't itself a multipack
+    (pkg_count == 1, the overwhelming majority of rows), and this
+    deliberately compares against the per-pack amount because
+    parse_shopping_line does not currently understand a trailing "x N ct"
+    multipack multiplier in request text (e.g. "12 fl oz x 12 ct Diet
+    Coke" parses to canonical_quantity=12, the per-can size, silently
+    dropping "x 12 ct"; comparing against pkg_canonical_total=144 for that
+    same product would wrongly reject it). A request whose OWN parse is
+    unresolvable, or a row whose package size is unknown/unresolved
+    (variable-weight produce, missing data), is never filtered -- the same
+    "unknown means don't filter" rule as filter_by_dimension, not a
+    confirmed mismatch."""
+    canonical_unit = structured.get("canonical_unit")
+    canonical_qty = structured.get("canonical_quantity")
+    if not canonical_unit or canonical_qty is None:
+        return list(candidates)
+
+    survivors = []
+    for c in candidates:
+        row = catalog_df.iloc[c["row"]]
+        row_unit = row.get("pkg_canonical_unit")
+        row_total = row.get("pkg_canonical_total")
+        row_count = row.get("pkg_count")
+        if (
+            pd.isna(row_unit) or pd.isna(row_total) or pd.isna(row_count)
+            or not row_count or row_unit != canonical_unit
+        ):
+            # Unknown package size, or a different canonical unit entirely
+            # (a dimension mismatch -- filter_by_dimension's concern, not
+            # this function's) -- never filtered here.
+            survivors.append(c)
+            continue
+        row_per_pack = row_total / row_count
+        rel_diff = abs(row_per_pack - canonical_qty) / canonical_qty
+        if rel_diff <= PACKAGE_SIZE_ROUNDING_TOLERANCE:
+            survivors.append(c)
+    return survivors
+
+
 def attribute_filter_baseline(request_text: str, catalog_df, vectorizer, matrix, top_k, min_similarity):
     """The system under test.
 
@@ -206,6 +270,41 @@ def attribute_filter_baseline(request_text: str, catalog_df, vectorizer, matrix,
     dimension = structured.get("dimension")
     candidates = lexical_search(request_text, vectorizer, matrix, catalog_df, top_k=max(top_k * 4, 20))
     survivors = filter_by_dimension(candidates, catalog_df, dimension)
+    if not survivors:
+        return [], "no_acceptable_match"
+
+    survivors.sort(key=cfg.tie_break_key)
+    top = survivors[:top_k]
+    if top[0]["score"] < min_similarity:
+        return [], "no_acceptable_match"
+
+    return top, "answerable"
+
+
+def attribute_and_size_filter_baseline(request_text: str, catalog_df, vectorizer, matrix, top_k, min_similarity):
+    """A NEW baseline, not a modification of attribute_filter_baseline --
+    Checkpoint 3's v1 baselines (tfidf, tfidf_dimension_filter,
+    tfidf_dimension_filter_threshold) stay byte-for-byte immutable per the
+    plan ("Keep baseline v1 results immutable when a later model is
+    evaluated"), so BASELINE_RESULTS.md's published numbers remain
+    reproducible from a clean checkout indefinitely.
+
+    Adds filter_by_package_size on top of attribute_filter_baseline's own
+    dimension filter -- the evidence-justified next step from
+    BASELINE_RESULTS.md's own E7 conclusion: 9 of 14 representative
+    failures there were a candidate with the right dimension (weight,
+    volume, or count) but the wrong actual number (e.g. 16 oz returned
+    for a 5.3 oz request). Same three response branches as
+    attribute_filter_baseline, same tie-break, same top_k prefilter depth
+    -- only the extra filter differs."""
+    structured = parse_shopping_line(request_text)
+    if structured["needs_review"]:
+        return [], "needs_clarification"
+
+    dimension = structured.get("dimension")
+    candidates = lexical_search(request_text, vectorizer, matrix, catalog_df, top_k=max(top_k * 4, 20))
+    survivors = filter_by_dimension(candidates, catalog_df, dimension)
+    survivors = filter_by_package_size(survivors, catalog_df, structured)
     if not survivors:
         return [], "no_acceptable_match"
 
