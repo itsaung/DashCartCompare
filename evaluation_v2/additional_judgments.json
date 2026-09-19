@@ -8,13 +8,13 @@
     "is_best_guess": false,
     "label_quality": "text_rule_based",
     "reviewed_by": "claude_new_candidate_review_v2",
-    "reviewed_by_reason": "title confirms a different named variant ('medium roast'), not 'French Vanilla'",
+    "reviewed_by_reason": "title confirms a different named variant ('medium'), not 'French Vanilla'",
     "source": "run_experiments_v2.py full-catalog search (tfidf_dimension_size_filter), not in the original candidate pool or v1's additional judgments",
     "request_version": "v2",
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "692962734cb17e88e4c45d1505f94dc00639bebab7008193fb3efdcf2cfdfca9",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r003|24325284|5648960956": {
     "request_id": "r003",
@@ -31,7 +31,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "3ead4a6bcdf75488a4866bb4c32574ff8ff4c266b09aeed8591f0ac9f1ae47a5",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r004|35802549|30994827916": {
     "request_id": "r004",
@@ -48,7 +48,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "d392e4158805cc21a7fb754a109e296ed9986fc2282adc39b4b0690066b43191",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r006|29631686|22646327004": {
     "request_id": "r006",
@@ -65,7 +65,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "eb44054513bfa8cda4fdc71a7f838c565ddd1007558fc086e3f63b1a2ed73ebb",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r010|1742136|11846936786": {
     "request_id": "r010",
@@ -82,7 +82,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "2db2fae1179a84a9d3cb246c1486bdf4644a96d31ab67a39ca5de2237d30db63",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r010|35802549|30994839088": {
     "request_id": "r010",
@@ -99,7 +99,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "2db2fae1179a84a9d3cb246c1486bdf4644a96d31ab67a39ca5de2237d30db63",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r011|24325284|1000001427173069": {
     "request_id": "r011",
@@ -116,7 +116,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f18ca10edf6a1e34ab684f35ee388fd7fecb77528dc6ff20e06f1997f8f754bc",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r011|29631686|38873432785": {
     "request_id": "r011",
@@ -133,7 +133,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f18ca10edf6a1e34ab684f35ee388fd7fecb77528dc6ff20e06f1997f8f754bc",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r014|24325284|35875197493": {
     "request_id": "r014",
@@ -150,7 +150,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "ad034c4fa36686390e1dace28b4ff805259aa46c955ed1fb7167e403166d4506",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r016|29631686|1000030409614193": {
     "request_id": "r016",
@@ -167,7 +167,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "ab8e066ba43d6ece30860b8bade9c8e47cc776e4422a9d27b3e21d56f99956bf",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r019|35802549|33421243596": {
     "request_id": "r019",
@@ -184,7 +184,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "68259082329d30922ae195f41be7d77bae4fae3b917c33e653153580751abf74",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r020|24325284|35703957793": {
     "request_id": "r020",
@@ -201,7 +201,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "66109d0d76a47695be74b89ca4f41150fe209c418cb33b138a9fdacd38973637",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r020|24325284|9890078270": {
     "request_id": "r020",
@@ -218,7 +218,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "66109d0d76a47695be74b89ca4f41150fe209c418cb33b138a9fdacd38973637",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r035|1742136|9721576807": {
     "request_id": "r035",
@@ -235,7 +235,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0831ce04c7042c628e77d90315f82d6b4e601e9d1bd00bb859832b32f32bbbe8",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r036|1042759|40209530761": {
     "request_id": "r036",
@@ -252,7 +252,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "fdb3fc3ff9d3ac0bf760067c0c4dcbecc640347171b71a9728cec7c7a1388f81",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r036|1042759|40210249150": {
     "request_id": "r036",
@@ -269,7 +269,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "fdb3fc3ff9d3ac0bf760067c0c4dcbecc640347171b71a9728cec7c7a1388f81",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r038|1742136|12518453564": {
     "request_id": "r038",
@@ -286,7 +286,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "3289bbe9b46544e4eb699c89e8a3561cbaae4840ebb85e9ffa0f747415bf138e",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r038|24325284|22589740567": {
     "request_id": "r038",
@@ -303,7 +303,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "3289bbe9b46544e4eb699c89e8a3561cbaae4840ebb85e9ffa0f747415bf138e",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r038|35802549|30994828497": {
     "request_id": "r038",
@@ -320,7 +320,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "3289bbe9b46544e4eb699c89e8a3561cbaae4840ebb85e9ffa0f747415bf138e",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r039|24325284|42003635399": {
     "request_id": "r039",
@@ -337,7 +337,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "b9115ffab3971fe329e81bc7691c8749d2d6d5890e00f35a36daef57cdbbb9d1",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r039|24325284|8678626074": {
     "request_id": "r039",
@@ -354,7 +354,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "b9115ffab3971fe329e81bc7691c8749d2d6d5890e00f35a36daef57cdbbb9d1",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r039|35802549|30994850950": {
     "request_id": "r039",
@@ -371,7 +371,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "b9115ffab3971fe329e81bc7691c8749d2d6d5890e00f35a36daef57cdbbb9d1",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r041|1042759|20784206272": {
     "request_id": "r041",
@@ -388,7 +388,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "506321a0f4d04d197e576272a3a1154622138beaa017cd23f199b2ed699c8d9a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r041|1042759|29849831693": {
     "request_id": "r041",
@@ -405,7 +405,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "506321a0f4d04d197e576272a3a1154622138beaa017cd23f199b2ed699c8d9a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r041|1042759|29900238886": {
     "request_id": "r041",
@@ -422,7 +422,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "506321a0f4d04d197e576272a3a1154622138beaa017cd23f199b2ed699c8d9a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r041|1042759|33527755945": {
     "request_id": "r041",
@@ -439,7 +439,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "506321a0f4d04d197e576272a3a1154622138beaa017cd23f199b2ed699c8d9a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r041|1742136|10109224248": {
     "request_id": "r041",
@@ -456,7 +456,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "506321a0f4d04d197e576272a3a1154622138beaa017cd23f199b2ed699c8d9a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r042|1742136|30331644266": {
     "request_id": "r042",
@@ -473,7 +473,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "755966cabbe1c215654cd4b689110ea072263e97cdc88092be9abca938c695cc",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r042|35802549|38545080429": {
     "request_id": "r042",
@@ -490,7 +490,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "755966cabbe1c215654cd4b689110ea072263e97cdc88092be9abca938c695cc",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r051|35802549|30994840533": {
     "request_id": "r051",
@@ -507,7 +507,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f643ec6ada0ad6e8ce895313ddaf9c18af3c4fae4ff5bb8a433e6346434ab288",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r055|29631686|1000030409614254": {
     "request_id": "r055",
@@ -524,7 +524,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "c10a31c56c1f480a3866eddee7b20f09f7c04ef55cb51d62c37ed393da4c10ff",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r055|29631686|23139652925": {
     "request_id": "r055",
@@ -541,7 +541,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "c10a31c56c1f480a3866eddee7b20f09f7c04ef55cb51d62c37ed393da4c10ff",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r055|29631686|23563948171": {
     "request_id": "r055",
@@ -558,7 +558,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "c10a31c56c1f480a3866eddee7b20f09f7c04ef55cb51d62c37ed393da4c10ff",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r055|29631686|33573022609": {
     "request_id": "r055",
@@ -575,7 +575,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "c10a31c56c1f480a3866eddee7b20f09f7c04ef55cb51d62c37ed393da4c10ff",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r056|29631686|23139652925": {
     "request_id": "r056",
@@ -592,7 +592,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "97ea690c026eae53e4c9ea2adc78d3691b57a5f65bb6868dc7cac1fa0282df33",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r056|29631686|23563948171": {
     "request_id": "r056",
@@ -609,7 +609,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "97ea690c026eae53e4c9ea2adc78d3691b57a5f65bb6868dc7cac1fa0282df33",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r056|29631686|33573022609": {
     "request_id": "r056",
@@ -626,7 +626,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "97ea690c026eae53e4c9ea2adc78d3691b57a5f65bb6868dc7cac1fa0282df33",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r058|1742136|21027313621": {
     "request_id": "r058",
@@ -643,7 +643,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "af280bc97c70e49beeed8125adbf1e53c6d0715b8f9a9a3be5fbafbc1efe561a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r058|24325284|12871176248": {
     "request_id": "r058",
@@ -660,7 +660,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "af280bc97c70e49beeed8125adbf1e53c6d0715b8f9a9a3be5fbafbc1efe561a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r064|29631686|24200027675": {
     "request_id": "r064",
@@ -677,7 +677,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "c27a578a722f2553802c753263078cbaae174c5460a4fb8497731884866d4f2b",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r064|35802549|30994851056": {
     "request_id": "r064",
@@ -694,7 +694,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "c27a578a722f2553802c753263078cbaae174c5460a4fb8497731884866d4f2b",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r066|1742136|10221792854": {
     "request_id": "r066",
@@ -711,7 +711,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f1a1050b80f8a391b82fde760b776f4ba9200393712c06b18b7310e884ce07ec",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r067|1742136|24780599554": {
     "request_id": "r067",
@@ -728,7 +728,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "2ea6a754e8604ceebeb75a0c1480f3750d622301b8f740dfd12b17cfc2ef9d19",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r068|24325284|9507991293": {
     "request_id": "r068",
@@ -745,7 +745,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0fe0e432ac4e24d3abd7aa0fe639f321fb54e0e0e383627ebbfbd31bd0fd2586",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r068|29631686|1000030409614403": {
     "request_id": "r068",
@@ -762,7 +762,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0fe0e432ac4e24d3abd7aa0fe639f321fb54e0e0e383627ebbfbd31bd0fd2586",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r068|35802549|30994828499": {
     "request_id": "r068",
@@ -779,7 +779,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0fe0e432ac4e24d3abd7aa0fe639f321fb54e0e0e383627ebbfbd31bd0fd2586",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r070|29631686|41694369450": {
     "request_id": "r070",
@@ -796,7 +796,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "271b386dbe72b59d96e87def2f2c4ce92c494db652a6e8f38d4b2d503689ce79",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r072|24325284|36789377142": {
     "request_id": "r072",
@@ -813,7 +813,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f672715a71436434ea6d57a135c0245097952497110cc7fd0db2f4aeb3dee2c3",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r072|24325284|9507991293": {
     "request_id": "r072",
@@ -830,7 +830,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f672715a71436434ea6d57a135c0245097952497110cc7fd0db2f4aeb3dee2c3",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r073|35802549|30994674445": {
     "request_id": "r073",
@@ -847,7 +847,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0e3f544fdfa28d01731d1c4ae7da06f4f9414ae8a8def6ff3e366030f873350d",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r074|1042759|10379468273": {
     "request_id": "r074",
@@ -864,7 +864,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "1ae4c5aa3d07f84deb7936d00143588421aafffaa72ccbc9f0d91cfbb5a817dd",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r075|24325284|8989318584": {
     "request_id": "r075",
@@ -881,7 +881,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "566c7b76db3e785e81de710a5da1e0bc04313fd24b574c668ce122c3b2b7b123",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r076|29631686|39779400369": {
     "request_id": "r076",
@@ -898,7 +898,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "9a50956f7f74f06a5bdadd910d18b7e20bcccb06c68e549e891245f86b4e23e7",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r076|29631686|39779400370": {
     "request_id": "r076",
@@ -915,7 +915,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "9a50956f7f74f06a5bdadd910d18b7e20bcccb06c68e549e891245f86b4e23e7",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r078|1742136|32390457374": {
     "request_id": "r078",
@@ -932,7 +932,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "2545483d6e3fdb708e1c338588a4e858aa780f5198b5748c0843476547af2d71",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r078|35802549|32929359730": {
     "request_id": "r078",
@@ -949,7 +949,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "2545483d6e3fdb708e1c338588a4e858aa780f5198b5748c0843476547af2d71",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r080|24325284|9507991293": {
     "request_id": "r080",
@@ -966,7 +966,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "120407a7ee72bcb089e9edba843fef8073ca94882338595e12be275f2e0fbfd3",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r080|35802549|30994828479": {
     "request_id": "r080",
@@ -983,7 +983,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "120407a7ee72bcb089e9edba843fef8073ca94882338595e12be275f2e0fbfd3",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r082|1042759|20784206272": {
     "request_id": "r082",
@@ -1000,7 +1000,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0a14a10b4d6c535c5b4d2ceffd6f887d8438e47b50f2f950592cdbc1076a6ea9",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r082|1042759|29900238886": {
     "request_id": "r082",
@@ -1017,7 +1017,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0a14a10b4d6c535c5b4d2ceffd6f887d8438e47b50f2f950592cdbc1076a6ea9",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r082|1042759|40103122694": {
     "request_id": "r082",
@@ -1034,7 +1034,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "0a14a10b4d6c535c5b4d2ceffd6f887d8438e47b50f2f950592cdbc1076a6ea9",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r086|1042759|20621546144": {
     "request_id": "r086",
@@ -1051,7 +1051,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "e03f5331860acbcbae3e53bd285e3f11c232602a06ede4234fec3ab051c17806",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r086|29631686|22646326225": {
     "request_id": "r086",
@@ -1068,7 +1068,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "e03f5331860acbcbae3e53bd285e3f11c232602a06ede4234fec3ab051c17806",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r086|35802549|38545080429": {
     "request_id": "r086",
@@ -1085,7 +1085,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "e03f5331860acbcbae3e53bd285e3f11c232602a06ede4234fec3ab051c17806",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r087|35802549|30994851587": {
     "request_id": "r087",
@@ -1102,7 +1102,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f293c28b3c26d273c1bc9f5e605b407753034d4fb53be8760e0daffefcb7659a",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r088|35802549|30994675255": {
     "request_id": "r088",
@@ -1119,7 +1119,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "f902b88b101fc05bb893dbde70f6958bd7d7512dd1a129b5c239cbc5a2e5ddf1",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r090|35802549|30994832733": {
     "request_id": "r090",
@@ -1136,7 +1136,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "9cd91f23cb0d1e5d6259619d0d464975af411913ce886ffcd08a1cb1e6cc6e7b",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r096|24325284|12095632558": {
     "request_id": "r096",
@@ -1153,7 +1153,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "b2b10c83aae8d80bb22afa0716f5bd6ccec6f7ca756bd494a4f7607e504b1567",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r098|1742136|14533930664": {
     "request_id": "r098",
@@ -1170,7 +1170,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "142dfbf5ffa4829b05e4e90601f9fe86fddec7a4d89f26a130cd469ce3980de1",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r098|35802549|30994828608": {
     "request_id": "r098",
@@ -1187,7 +1187,24 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "142dfbf5ffa4829b05e4e90601f9fe86fddec7a4d89f26a130cd469ce3980de1",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
+  },
+  "r099|35802549|1000002146197362": {
+    "request_id": "r099",
+    "store_id": 35802549,
+    "product_id": "1000002146197362",
+    "reviewer_label": "Acceptable",
+    "conservative_label": "Acceptable",
+    "is_best_guess": false,
+    "label_quality": "text_rule_based",
+    "reviewed_by": "claude_new_candidate_review_v2",
+    "reviewed_by_reason": "no explicit-attribute conflict found (dimension, size, brand, variant all checked)",
+    "source": "run_experiments_v2.py full-catalog search (tfidf_dimension_size_filter), not in the original candidate pool or v1's additional judgments",
+    "request_version": "v2",
+    "labeling_guideline_version": "v2",
+    "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
+    "request_content_sha256": "7aa6c8103be41776bf76fe740b6ec92b67fd98f60083cad8e9a784631ec42544",
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r099|35802549|31447185468": {
     "request_id": "r099",
@@ -1204,7 +1221,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "7aa6c8103be41776bf76fe740b6ec92b67fd98f60083cad8e9a784631ec42544",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r101|1742136|3674799712": {
     "request_id": "r101",
@@ -1221,7 +1238,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "5877331a4b73235a3a52b0403046d4efe4bc78871a4cfedecaeb8b205167ac9e",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r103|29631686|35968931882": {
     "request_id": "r103",
@@ -1238,7 +1255,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "7879e9d304290471ac3b519d5c5f193628123f06c0707b7e7bcc67c3a6912881",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r105|24325284|20694297518": {
     "request_id": "r105",
@@ -1255,7 +1272,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "ee4303f379c9237af3f084a5f139e0ff48978ff188a2ef218054987a58671ea2",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r109|1742136|32390457374": {
     "request_id": "r109",
@@ -1272,24 +1289,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "5f13157bd97892f4ca45e759621415a6f5ecebaac4890fd84746a41d6b12a9ac",
-    "reviewed_at": "2026-09-19T200810Z"
-  },
-  "r109|24325284|1000038488583117": {
-    "request_id": "r109",
-    "store_id": 24325284,
-    "product_id": "1000038488583117",
-    "reviewer_label": "Incorrect",
-    "conservative_label": "Incorrect",
-    "is_best_guess": false,
-    "label_quality": "text_rule_based",
-    "reviewed_by": "claude_new_candidate_review_v2",
-    "reviewed_by_reason": "size mismatch: expected '5.3 oz' (5.30 oz), candidate is '5.3 oz x 2 ct' (10.60 oz)",
-    "source": "run_experiments_v2.py full-catalog search (tfidf_dimension_size_filter), not in the original candidate pool or v1's additional judgments",
-    "request_version": "v2",
-    "labeling_guideline_version": "v2",
-    "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
-    "request_content_sha256": "5f13157bd97892f4ca45e759621415a6f5ecebaac4890fd84746a41d6b12a9ac",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r110|24325284|25207180125": {
     "request_id": "r110",
@@ -1306,7 +1306,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "01f6c02c1ba1768ea0a06c94a3478e9651587263df42746154ccc3badc53c217",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r110|35802549|30788678966": {
     "request_id": "r110",
@@ -1323,7 +1323,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "01f6c02c1ba1768ea0a06c94a3478e9651587263df42746154ccc3badc53c217",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r112|1742136|14533881864": {
     "request_id": "r112",
@@ -1340,7 +1340,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "4c999d993e0067a01b30e8bb3b6c8e8a597a5eb361f6cb7bd03b2fbbc1fec7ed",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r114|24325284|16240430524": {
     "request_id": "r114",
@@ -1357,7 +1357,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "eadb4106e417f64ac6a782342b4f9aa189fb3aff6171668f888772298ff27ea8",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r114|29631686|1000030409614487": {
     "request_id": "r114",
@@ -1374,7 +1374,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "eadb4106e417f64ac6a782342b4f9aa189fb3aff6171668f888772298ff27ea8",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r117|29631686|22646326556": {
     "request_id": "r117",
@@ -1391,7 +1391,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "5f76c1cf1da142cf0b8786c4ba2a8ab9c56796aa5edea4cfa9cdb0ff0047e529",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r136|1742136|10021637629": {
     "request_id": "r136",
@@ -1408,7 +1408,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "80e71808deaf371cf12c630c57433ad30449e8d0db3dc865b9faec830a259a61",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r136|24325284|12871176248": {
     "request_id": "r136",
@@ -1425,7 +1425,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "80e71808deaf371cf12c630c57433ad30449e8d0db3dc865b9faec830a259a61",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r141|35802549|30994674445": {
     "request_id": "r141",
@@ -1442,7 +1442,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "1974ced479ef1d597fa096d88b583e43018f2ccf3f9f72cb16331d1a7d1ffb00",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r143|35802549|37420733983": {
     "request_id": "r143",
@@ -1459,7 +1459,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "7ca5b57e46b6b656b3f87c971862d8de68b4315f9f5858f760c268b1302eeccd",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r146|1042759|10191975551": {
     "request_id": "r146",
@@ -1476,7 +1476,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "c5d3141b0e16f5a1b6c59f02cb0df8e1f48a45aa35a8eedaecb356004f2743f6",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r147|24325284|10339107149": {
     "request_id": "r147",
@@ -1493,7 +1493,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "daf4cf5cb72c09e4248b8388c928506821125907612c730310972d3183b18882",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r147|24325284|17626652144": {
     "request_id": "r147",
@@ -1510,7 +1510,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "daf4cf5cb72c09e4248b8388c928506821125907612c730310972d3183b18882",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r147|24325284|17869444964": {
     "request_id": "r147",
@@ -1527,7 +1527,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "daf4cf5cb72c09e4248b8388c928506821125907612c730310972d3183b18882",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r147|24325284|44012897595": {
     "request_id": "r147",
@@ -1544,7 +1544,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "daf4cf5cb72c09e4248b8388c928506821125907612c730310972d3183b18882",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r148|35802549|30994828725": {
     "request_id": "r148",
@@ -1561,7 +1561,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "2100c92627d61c013ebaa6684e5cd4bef2c1bb6f26e485309a8c79f926f897eb",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r150|1742136|44094252552": {
     "request_id": "r150",
@@ -1578,7 +1578,7 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "341218af432bc5e88ea2d2496beb2035960b3057754f13e2552bed473b3ddf30",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   },
   "r150|24325284|35885420645": {
     "request_id": "r150",
@@ -1595,6 +1595,6 @@
     "labeling_guideline_version": "v2",
     "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
     "request_content_sha256": "341218af432bc5e88ea2d2496beb2035960b3057754f13e2552bed473b3ddf30",
-    "reviewed_at": "2026-09-19T200810Z"
+    "reviewed_at": "2026-09-19T221107Z"
   }
 }

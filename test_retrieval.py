@@ -5,7 +5,8 @@ import pandas as pd
 import pytest
 
 from retrieval import (
-    attribute_filter_baseline, filter_by_package_size, fit_tfidf, lexical_search, synonym_assisted_search,
+    _requested_canonical_total, attribute_filter_baseline, filter_by_package_size, fit_tfidf,
+    lexical_search, synonym_assisted_search,
 )
 
 
@@ -149,6 +150,33 @@ def test_synonym_assisted_search_no_overlap_returns_empty():
     assert synonym_assisted_search(structured, catalog, top_k=5) == []
 
 
+# --- _requested_canonical_total ------------------------------------------------
+
+def test_requested_canonical_total_extracts_a_multipack_phrase_as_the_full_total():
+    structured = {"canonical_unit": "fl oz", "canonical_quantity": 12.0}  # what parse_shopping_line alone gives
+    unit, total = _requested_canonical_total("12 fl oz x 12 ct Diet Coke Diet Cola Soda", structured)
+    assert unit == "fl oz"
+    assert total == 144.0
+
+
+def test_requested_canonical_total_finds_the_multipack_phrase_mid_sentence():
+    structured = {"canonical_unit": "fl oz", "canonical_quantity": 12.0}
+    unit, total = _requested_canonical_total("a 12 fl oz x 12 ct pack of Diet Coke Diet Cola Soda", structured)
+    assert total == 144.0
+
+
+def test_requested_canonical_total_falls_back_to_parse_shopping_line_for_a_plain_request():
+    structured = {"canonical_unit": "oz", "canonical_quantity": 5.3}
+    unit, total = _requested_canonical_total("5.3 oz cottage cheese", structured)
+    assert unit == "oz"
+    assert total == 5.3
+
+
+def test_requested_canonical_total_unresolvable_returns_none_none():
+    structured = {"canonical_unit": None, "canonical_quantity": None}
+    assert _requested_canonical_total("some milk", structured) == (None, None)
+
+
 # --- filter_by_package_size ---------------------------------------------------
 
 def test_filter_by_package_size_drops_a_confirmed_different_size():
@@ -157,14 +185,14 @@ def test_filter_by_package_size_drops_a_confirmed_different_size():
     # 5.3 oz request purely on brand/lexical overlap.
     catalog = _catalog([_size_row("s1", "p1", "cottage cheese", "oz", 16.0, 1.0)])
     structured = {"canonical_unit": "oz", "canonical_quantity": 5.3}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    survivors = filter_by_package_size([_cand(0)], catalog, "5.3 oz cottage cheese", structured)
     assert survivors == []
 
 
 def test_filter_by_package_size_keeps_an_exact_match():
     catalog = _catalog([_size_row("s1", "p1", "cottage cheese", "oz", 5.3, 1.0)])
     structured = {"canonical_unit": "oz", "canonical_quantity": 5.3}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    survivors = filter_by_package_size([_cand(0)], catalog, "5.3 oz cottage cheese", structured)
     assert len(survivors) == 1
 
 
@@ -174,26 +202,55 @@ def test_filter_by_package_size_allows_genuine_cross_unit_rounding():
     # not a distinct size.
     catalog = _catalog([_size_row("s1", "p1", "soda", "fl oz", 67.6, 1.0)])
     structured = {"canonical_unit": "fl oz", "canonical_quantity": 67.628}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    survivors = filter_by_package_size([_cand(0)], catalog, "2 L soda", structured)
     assert len(survivors) == 1
 
 
-def test_filter_by_package_size_compares_per_pack_not_total_for_a_multipack():
-    # "12 fl oz x 12 ct Diet Coke" -- parse_shopping_line captures only the
-    # per-can size (12 fl oz), not the "x 12 ct" multiplier, so this must
-    # compare against the row's per-pack amount (144 / 12 = 12), not its
-    # 144 fl oz total, or a genuinely correct product would be wrongly
-    # rejected.
+def test_filter_by_package_size_compares_total_not_per_pack_for_a_multipack():
+    # "12 fl oz x 12 ct Diet Coke" -- parse_shopping_line's own
+    # canonical_quantity only captures the per-can size (12), dropping the
+    # "x 12 ct" multiplier, but _requested_canonical_total re-parses the
+    # multipack phrase directly out of the raw text via
+    # normalize.parse_package_size, giving the correct 144 fl oz total --
+    # matched against the row's own 144 fl oz total, a true total-vs-total
+    # comparison.
     catalog = _catalog([_size_row("s1", "p1", "Diet Coke (12 fl oz x 12 ct)", "fl oz", 144.0, 12.0)])
-    structured = {"canonical_unit": "fl oz", "canonical_quantity": 12.0}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    structured = {"canonical_unit": "fl oz", "canonical_quantity": 12.0}  # what parse_shopping_line alone would give
+    survivors = filter_by_package_size(
+        [_cand(0)], catalog, "12 fl oz x 12 ct Diet Coke Diet Cola Soda", structured,
+    )
     assert len(survivors) == 1
+
+
+def test_filter_by_package_size_rejects_a_multipack_whose_total_is_wrong():
+    # Same multipack phrase, but the candidate is actually a 24-can case
+    # (288 fl oz total) -- must be rejected now that both sides compare
+    # totals.
+    catalog = _catalog([_size_row("s1", "p1", "Diet Coke (12 fl oz x 24 ct)", "fl oz", 288.0, 24.0)])
+    structured = {"canonical_unit": "fl oz", "canonical_quantity": 12.0}
+    survivors = filter_by_package_size(
+        [_cand(0)], catalog, "12 fl oz x 12 ct Diet Coke Diet Cola Soda", structured,
+    )
+    assert survivors == []
+
+
+def test_filter_by_package_size_rejects_a_multi_cup_pack_for_a_single_cup_request():
+    # Regression test for the exact inconsistency this fix resolves: a
+    # "5.3 oz cottage cheese" request (no multipack phrase at all) must be
+    # judged against the CANDIDATE'S total, so a "5.3 oz x 2 ct" (10.6 oz
+    # total) pack is correctly rejected -- previously it wrongly passed by
+    # comparing against the candidate's per-pack amount (5.3), which
+    # matched the request's number by coincidence.
+    catalog = _catalog([_size_row("s1", "p1", "Daisy Cottage Cheese (5.3 oz x 2 ct)", "oz", 10.6, 2.0)])
+    structured = {"canonical_unit": "oz", "canonical_quantity": 5.3}
+    survivors = filter_by_package_size([_cand(0)], catalog, "5.3 oz cottage cheese", structured)
+    assert survivors == []
 
 
 def test_filter_by_package_size_unresolved_request_never_filters():
     catalog = _catalog([_size_row("s1", "p1", "cottage cheese", "oz", 16.0, 1.0)])
     structured = {"canonical_unit": None, "canonical_quantity": None}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    survivors = filter_by_package_size([_cand(0)], catalog, "some cottage cheese", structured)
     assert len(survivors) == 1
 
 
@@ -202,7 +259,7 @@ def test_filter_by_package_size_unresolved_row_never_filters():
     # fixed canonical total -- unknown, not a confirmed mismatch.
     catalog = _catalog([_size_row("s1", "p1", "bananas", pkg_canonical_unit=None, pkg_canonical_total=None)])
     structured = {"canonical_unit": "ct", "canonical_quantity": 3.0}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    survivors = filter_by_package_size([_cand(0)], catalog, "3 bananas", structured)
     assert len(survivors) == 1
 
 
@@ -211,7 +268,7 @@ def test_filter_by_package_size_defers_a_different_dimension_to_filter_by_dimens
     # size mismatch -- this function leaves it for filter_by_dimension.
     catalog = _catalog([_size_row("s1", "p1", "eggs", "ct", 12.0, 1.0)])
     structured = {"canonical_unit": "oz", "canonical_quantity": 16.0}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    survivors = filter_by_package_size([_cand(0)], catalog, "16 oz eggs", structured)
     assert len(survivors) == 1
 
 
@@ -220,7 +277,7 @@ def test_filter_by_package_size_close_but_distinct_size_is_still_dropped():
     # r105 pattern: close enough to score highly, still a real mismatch.
     catalog = _catalog([_size_row("s1", "p1", "frozen broccoli", "oz", 12.0, 1.0)])
     structured = {"canonical_unit": "oz", "canonical_quantity": 10.0}
-    survivors = filter_by_package_size([_cand(0)], catalog, structured)
+    survivors = filter_by_package_size([_cand(0)], catalog, "10 oz frozen broccoli", structured)
     assert survivors == []
 
 

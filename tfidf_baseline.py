@@ -215,7 +215,7 @@ def run_size_baseline_within_pool(request_text: str, pool_pairs: list, catalog_d
         response, results = "needs_clarification", []
     else:
         survivors = filter_by_dimension(scored, catalog_df, structured.get("dimension"))
-        survivors = filter_by_package_size(survivors, catalog_df, structured)
+        survivors = filter_by_package_size(survivors, catalog_df, request_text, structured)
         response, results = ("answerable", survivors) if survivors else ("no_acceptable_match", [])
 
     elapsed_ms = (time.perf_counter() - started) * 1000

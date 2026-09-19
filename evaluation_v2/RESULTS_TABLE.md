@@ -5,8 +5,8 @@
 
 | view | Success@1 | Hit@5 | MRR@5 | Pool Recall@5 (n pools) |
 |---|---|---|---|---|
-| conservative | 83.12% (64/77) | 90.91% (70/77) | 0.863 | 79.82% (85 pools, 5 N/A) |
-| practical | 83.12% (64/77) | 90.91% (70/77) | 0.863 | 78.75% (86 pools, 4 N/A) |
+| conservative | 84.42% (65/77) | 90.91% (70/77) | 0.871 | 79.82% (85 pools, 5 N/A) |
+| practical | 84.42% (65/77) | 90.91% (70/77) | 0.871 | 78.75% (86 pools, 4 N/A) |
 
 Return coverage: 82.22%. False return on unanswerable: 0.15384615384615385. False abstention: 0.06493506493506493.
 
@@ -14,8 +14,8 @@ Return coverage: 82.22%. False return on unanswerable: 0.15384615384615385. Fals
 
 | view | Success@1 | Hit@5 | MRR@5 | Pool Recall@5 (n pools) |
 |---|---|---|---|---|
-| conservative | 100.00% (20/20) | 100.00% (20/20) | 1.000 | 73.84% (24 pools, 6 N/A) |
-| practical | 100.00% (20/20) | 100.00% (20/20) | 1.000 | 71.46% (25 pools, 5 N/A) |
+| conservative | 100.00% (20/20) | 100.00% (20/20) | 1.000 | 74.31% (24 pools, 6 N/A) |
+| practical | 100.00% (20/20) | 100.00% (20/20) | 1.000 | 71.90% (25 pools, 5 N/A) |
 
 Return coverage: 73.33%. False return on unanswerable: 0.2. False abstention: 0.0.
 

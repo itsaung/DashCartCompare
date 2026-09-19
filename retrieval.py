@@ -15,6 +15,7 @@ and for human review, never to help the system being graded.
 """
 import hashlib
 import pickle
+import re
 import sklearn
 from pathlib import Path
 
@@ -23,6 +24,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 import benchmark_config as cfg
+from normalize import parse_package_size
 from parse_query import parse_shopping_line
 
 MODEL_CACHE_PATH = Path(__file__).resolve().parent / "tfidf_model.pkl"
@@ -184,9 +186,9 @@ def filter_by_dimension(candidates: list, catalog_df, dimension) -> list:
     return survivors
 
 
-# Relative tolerance for comparing a request's requested canonical package
-# amount against a catalog row's canonical per-pack amount. Both values are
-# already expressed in the same canonical unit by the time they reach this
+# Relative tolerance for comparing a request's requested canonical total
+# against a catalog row's canonical total. Both values are already
+# expressed in the same canonical unit by the time they reach this
 # comparison, so a genuine cross-unit label-rounding difference (e.g. "2 L"
 # printed against a candidate labeled "67.6 fl oz", ~0.04% apart) and an
 # identical-unit exact match (0% apart) both pass trivially; a materially
@@ -197,33 +199,71 @@ def filter_by_dimension(candidates: list, catalog_df, dimension) -> list:
 # apply_new_candidate_review.py's identically-named-and-reasoned constant).
 PACKAGE_SIZE_ROUNDING_TOLERANCE = 0.01  # relative
 
+# Matches a "<amount> <unit> x <count> [ct-word]" multipack phrase inside
+# free request text (e.g. the "12 fl oz x 12 ct" in "a 12 fl oz x 12 ct
+# pack of Diet Coke..."), narrow enough to feed straight into
+# normalize.parse_package_size() -- which expects exactly this shape (it's
+# built to parse a catalog row's own raw_size string) and, unlike
+# parse_shopping_line, already knows how to compute a multipack's TOTAL.
+_MULTIPACK_PHRASE_RE = re.compile(
+    r"[\d./]+\s*(?:fl\s?oz|fluid\s?ounces?|floz|oz|ounces?|lbs?|pounds?|g|grams?|kg|"
+    r"gal|gallons?|qt|quarts?|pt|pints?|ml|l|liters?|ct|count|ea|each)\s*[x×]\s*"
+    r"\d+\s*(?:ct|count|pk|pack|ea|each)?",
+    re.I,
+)
 
-def filter_by_package_size(candidates: list, catalog_df, structured: dict) -> list:
-    """Drop only candidates whose row has a KNOWN, conflicting per-pack
+
+def _requested_canonical_total(request_text: str, structured: dict):
+    """Returns (canonical_unit, canonical_total) for the FULL amount the
+    shopper is asking for. parse_shopping_line's own canonical_quantity
+    silently drops a trailing "x N ct" multipack multiplier in free text
+    (e.g. "12 fl oz x 12 ct Diet Coke" parses to 12, the per-can size, not
+    144, the total) -- when such a phrase is found in the raw text, this
+    re-parses just that phrase with normalize.parse_package_size(), the
+    same, more capable parser already used for the catalog's own raw_size
+    strings and for a request's authored `expected.size` in
+    claude_auto_label.py's auto_label(). That keeps this function and the
+    labeling logic judging "total" consistently, instead of this function
+    comparing a per-pack amount that the labeling side never did (the
+    inconsistency a "5.3 oz" request matched against a "5.3 oz x 2 ct",
+    10.6 oz total candidate exposed: auto_label correctly rejects it by
+    total; the old per-pack comparison here wrongly accepted it).
+    Falls back to parse_shopping_line's own canonical_quantity/unit --
+    already a correct total for anything that ISN'T a multipack phrase --
+    when no such phrase is found. Returns (None, None) if neither
+    resolves."""
+    m = _MULTIPACK_PHRASE_RE.search(request_text)
+    if m:
+        parsed = parse_package_size(m.group(0))
+        if not parsed["unresolved"] and parsed["canonical_total"]:
+            return parsed["canonical_unit"], parsed["canonical_total"]
+
+    unit = structured.get("canonical_unit")
+    qty = structured.get("canonical_quantity")
+    if not unit or qty is None:
+        return None, None
+    return unit, qty
+
+
+def filter_by_package_size(candidates: list, catalog_df, request_text: str, structured: dict) -> list:
+    """Drop only candidates whose row has a KNOWN, conflicting total
     package amount -- the numeric sibling of filter_by_dimension, which
     only checks weight/volume/count category and has nothing to say about
     "5.3 oz" vs "16 oz" both being "weight" (the dominant failure mode
     found in Checkpoint 3's E7 baseline analysis, e.g. r078: a 16 oz
     candidate scored 0.977 against a request for 5.3 oz).
 
-    Compares `structured["canonical_quantity"]`/`["canonical_unit"]` (from
-    parse_shopping_line) against each row's canonical PER-PACK amount,
-    `pkg_canonical_total / pkg_count` -- not `pkg_canonical_total` alone.
-    Those are identical whenever a row isn't itself a multipack
-    (pkg_count == 1, the overwhelming majority of rows), and this
-    deliberately compares against the per-pack amount because
-    parse_shopping_line does not currently understand a trailing "x N ct"
-    multipack multiplier in request text (e.g. "12 fl oz x 12 ct Diet
-    Coke" parses to canonical_quantity=12, the per-can size, silently
-    dropping "x 12 ct"; comparing against pkg_canonical_total=144 for that
-    same product would wrongly reject it). A request whose OWN parse is
-    unresolvable, or a row whose package size is unknown/unresolved
-    (variable-weight produce, missing data), is never filtered -- the same
-    "unknown means don't filter" rule as filter_by_dimension, not a
-    confirmed mismatch."""
-    canonical_unit = structured.get("canonical_unit")
-    canonical_qty = structured.get("canonical_quantity")
-    if not canonical_unit or canonical_qty is None:
+    Compares the shopper's requested canonical TOTAL (see
+    _requested_canonical_total, which is multipack-phrase-aware) against
+    each row's own canonical total, `pkg_canonical_total` -- both are the
+    same "how much is in the package" quantity, so this is always a
+    total-vs-total comparison, never a per-pack one. A request whose own
+    amount can't be resolved, or a row whose package size is unknown/
+    unresolved (variable-weight produce, missing data), is never filtered
+    -- the same "unknown means don't filter" rule as filter_by_dimension,
+    not a confirmed mismatch."""
+    canonical_unit, canonical_total = _requested_canonical_total(request_text, structured)
+    if not canonical_unit or canonical_total is None:
         return list(candidates)
 
     survivors = []
@@ -231,18 +271,13 @@ def filter_by_package_size(candidates: list, catalog_df, structured: dict) -> li
         row = catalog_df.iloc[c["row"]]
         row_unit = row.get("pkg_canonical_unit")
         row_total = row.get("pkg_canonical_total")
-        row_count = row.get("pkg_count")
-        if (
-            pd.isna(row_unit) or pd.isna(row_total) or pd.isna(row_count)
-            or not row_count or row_unit != canonical_unit
-        ):
+        if pd.isna(row_unit) or pd.isna(row_total) or row_unit != canonical_unit:
             # Unknown package size, or a different canonical unit entirely
             # (a dimension mismatch -- filter_by_dimension's concern, not
             # this function's) -- never filtered here.
             survivors.append(c)
             continue
-        row_per_pack = row_total / row_count
-        rel_diff = abs(row_per_pack - canonical_qty) / canonical_qty
+        rel_diff = abs(row_total - canonical_total) / canonical_total
         if rel_diff <= PACKAGE_SIZE_ROUNDING_TOLERANCE:
             survivors.append(c)
     return survivors
@@ -304,7 +339,7 @@ def attribute_and_size_filter_baseline(request_text: str, catalog_df, vectorizer
     dimension = structured.get("dimension")
     candidates = lexical_search(request_text, vectorizer, matrix, catalog_df, top_k=max(top_k * 4, 20))
     survivors = filter_by_dimension(candidates, catalog_df, dimension)
-    survivors = filter_by_package_size(survivors, catalog_df, structured)
+    survivors = filter_by_package_size(survivors, catalog_df, request_text, structured)
     if not survivors:
         return [], "no_acceptable_match"
 

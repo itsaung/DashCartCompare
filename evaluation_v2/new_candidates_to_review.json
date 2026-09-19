@@ -772,6 +772,17 @@
   {
     "request_id": "r099",
     "store_id": 35802549,
+    "product_id": "1000002146197362",
+    "raw_title": "Saratoga Water Sparkling Carbonated Spring Water Glass Bottles (12 fl oz \u00d7 12 ct)",
+    "raw_category": "Drinks",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 fl oz \u00d7 12 ct",
+    "pkg_dimension": "volume"
+  },
+  {
+    "request_id": "r099",
+    "store_id": 35802549,
     "product_id": "31447185468",
     "raw_title": "Kroger Caffeine Free Mandarin Orange Sparkling Water (12 fl oz \u00d7 12 ct)",
     "raw_category": "Drinks",
@@ -822,17 +833,6 @@
     "brand": null,
     "variant": null,
     "raw_size": "5.3 oz",
-    "pkg_dimension": "weight"
-  },
-  {
-    "request_id": "r109",
-    "store_id": 24325284,
-    "product_id": "1000038488583117",
-    "raw_title": "Daisy 2% Low Fat Cottage Cheese 2 Pack (5.3 oz x 2 ct)",
-    "raw_category": "Dairy & Eggs",
-    "brand": null,
-    "variant": null,
-    "raw_size": "5.3 oz x 2 ct",
     "pkg_dimension": "weight"
   },
   {
