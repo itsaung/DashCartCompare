@@ -94,6 +94,15 @@ _SUPPLEMENTARY_VARIANTS = {
     "no pulp", "pulp free", "high pulp", "with pineapple",
     "skim", "non-fat", "nonfat", "low fat",
     "strawberry", "blueberry", "black cherry", "raspberry",
+    # USDA egg size grades -- added after apply_new_candidate_review.py's
+    # E4 review found "extra large" eggs passing as Acceptable against a
+    # request for "large" eggs (r032): "large" is a literal substring of
+    # "extra large", so auto_label's own `primary_variant not in title_lower`
+    # check was satisfied before the KNOWN_VARIANTS conflict lookup ever ran,
+    # and "extra large" wasn't in this vocabulary to be found as the
+    # conflicting term even if it had. These are distinct, non-interchangeable
+    # size grades, not a wording variation.
+    "extra large", "jumbo", "medium", "small",
 }
 
 
@@ -263,6 +272,10 @@ def main():
     already_decided = set()
     for request_id, store_id, product_id, label in HUMAN_REVIEWED_FROM_CHAT:
         key = _decision_key(request_id, store_id, product_id)
+        # Historical chat judgments seed missing entries only. Never undo a
+        # newer human correction or the complete catalog-based audit.
+        if key in decisions:
+            continue
         decisions[key] = {
             "request_id": request_id, "store_id": store_id, "product_id": product_id,
             "reviewer_label": label,

@@ -69,6 +69,50 @@ def test_fit_tfidf_refits_on_catalog_change(tmp_path):
     assert matrix.shape[0] == 2
 
 
+def test_fit_tfidf_refits_when_text_construction_version_changes(tmp_path, monkeypatch):
+    # A code change to _catalog_text's field construction must invalidate
+    # an on-disk cache even though the catalog content hash is unchanged --
+    # this is what TEXT_CONSTRUCTION_VERSION is for.
+    import retrieval
+
+    cache_path = tmp_path / "model.pkl"
+    catalog = _catalog([_row("s1", "p1", "apple juice")])
+    v1, _ = fit_tfidf(catalog, cache_path=cache_path)
+
+    monkeypatch.setattr(retrieval, "TEXT_CONSTRUCTION_VERSION", "v2-changed")
+    with open(cache_path, "rb") as f:
+        import pickle
+        cached_before = pickle.load(f)
+    v2, _ = fit_tfidf(catalog, cache_path=cache_path)
+    with open(cache_path, "rb") as f:
+        import pickle
+        cached_after = pickle.load(f)
+    assert cached_before["cache_key"] != cached_after["cache_key"]
+
+
+def test_fit_tfidf_refits_when_vectorizer_params_change(tmp_path):
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
+    import retrieval
+
+    cache_path = tmp_path / "model.pkl"
+    catalog = _catalog([_row("s1", "p1", "apple juice")])
+    fit_tfidf(catalog, cache_path=cache_path)
+
+    key_with_defaults = retrieval._cache_key(catalog)
+    original = TfidfVectorizer
+    try:
+        class _DifferentParams(TfidfVectorizer):
+            def __init__(self):
+                super().__init__(lowercase=False)
+        retrieval.TfidfVectorizer = _DifferentParams
+        key_with_different_params = retrieval._cache_key(catalog)
+    finally:
+        retrieval.TfidfVectorizer = original
+
+    assert key_with_defaults != key_with_different_params
+
+
 # --- synonym_assisted_search -------------------------------------------------
 
 def test_synonym_assisted_search_matches_via_synonym_table():
@@ -124,6 +168,22 @@ def test_baseline_no_acceptable_match_below_min_similarity_floor(tmp_path):
     )
     assert response == "no_acceptable_match"
     assert results == []
+
+
+def test_baseline_missing_row_dimension_is_not_treated_as_a_confirmed_mismatch(tmp_path):
+    # Regression test: pkg_dimension is NaN for a row with no parsed
+    # package size (e.g. variable-weight produce). bool(nan) is True in
+    # Python, so an unguarded truthy check on it would wrongly filter this
+    # candidate out as a "confirmed" dimension conflict, when the truth is
+    # simply unknown and should not exclude it.
+    catalog = _catalog([_row("s1", "p1", "whole milk gallon jug")])
+    catalog.loc[0, "pkg_dimension"] = float("nan")
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    results, response = attribute_filter_baseline(
+        "1 gal whole milk", catalog, vectorizer, matrix, top_k=5, min_similarity=0.0,
+    )
+    assert response == "answerable"
+    assert len(results) == 1
 
 
 def test_baseline_answerable_with_tied_candidates_both_returned(tmp_path):

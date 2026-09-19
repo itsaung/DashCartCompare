@@ -1,0 +1,166 @@
+{
+  "generated_at": "2026-09-19T075012Z",
+  "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
+  "request_version": "v2",
+  "labeling_guideline_version": "v2",
+  "requests_total": 150,
+  "pilot_requests_total": 46,
+  "pairs_total": 1658,
+  "checks": {
+    "manifest_catalog_hash_matches_file": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "manifest_decisions_hash_matches_file": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "no_duplicate_request_ids": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "pilot_ids_present_in_requests": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "no_duplicate_catalog_identities": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "every_pair_product_in_catalog": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "every_pair_has_a_decision": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "no_duplicate_pairs_within_a_pool": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "all_reviewer_labels_valid": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "no_version_or_hash_mismatches": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "guessed_labels_carry_conservative_interpretation": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "decisions_outside_current_pool": {
+      "status": "info",
+      "count": 0,
+      "examples": []
+    },
+    "no_paraphrase_group_label_conflicts": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "pilot_groups_disjoint_from_non_pilot_requests": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "every_no_match_request_has_an_audit_entry": {
+      "status": "pass",
+      "count": 0,
+      "examples": []
+    },
+    "answerable_requests_with_no_known_positive_in_pool": {
+      "status": "info",
+      "count": 0,
+      "examples": []
+    }
+  },
+  "request_level_answerability_audit": {
+    "no_acceptable_match_requests": [
+      "r039",
+      "r051",
+      "r052",
+      "r053",
+      "r054",
+      "r129",
+      "r130",
+      "r131",
+      "r132",
+      "r133",
+      "r154"
+    ],
+    "audit": {
+      "r039": {
+        "confidence": "confirmed",
+        "method": "full-catalog title search for 'unsalted'+'butter'",
+        "finding": "Only 8 oz/16 oz dairy butter and one unrelated 12 oz macadamia NUT butter exist; no 12 oz unsalted dairy butter. Recorded in the 2026-09-18 label audit."
+      },
+      "r051": {
+        "confidence": "confirmed",
+        "method": "full-catalog raw_size search over all 171 'chicken'+'breast' rows",
+        "finding": "No row has raw_size == '2 lb' (32 oz); fixed packages cluster at 1 lb, 16-29 oz, or are sold 'by pound' (variable weight, excluded per policy)."
+      },
+      "r052": {
+        "confidence": "pattern-consistent, not independently re-searched",
+        "method": "none beyond the candidate pool",
+        "finding": "Bananas are sold by bunch or 'each' with per-pound pricing, never as a fixed 3-count package; consistent with r051's confirmed pattern but not itself searched."
+      },
+      "r053": {
+        "confidence": "confirmed by construction",
+        "method": "none needed",
+        "finding": "'1 lb' of a liquid (oat milk) is a dimension mismatch by definition -- no catalog search can produce a weight match for a beverage."
+      },
+      "r054": {
+        "confidence": "pattern-consistent, not independently re-searched",
+        "method": "none beyond the candidate pool",
+        "finding": "5 gal (640 fl oz) is far outside any observed retail milk packaging (largest seen is under 1 gal); plausible by inspection but not exhaustively searched."
+      },
+      "r129": {
+        "confidence": "pattern-consistent, not independently re-searched",
+        "method": "none beyond the candidate pool",
+        "finding": "Salmon fillets are sold by weight/pack, not as a fixed '2 fillets' unit; consistent with r051's confirmed pattern but not itself searched."
+      },
+      "r130": {
+        "confidence": "pattern-consistent, not independently re-searched",
+        "method": "full-catalog raw_size search over all 133 'turkey'+'breast' rows (shared with r051's check)",
+        "finding": "No fixed '3-breast' unit; deli turkey is sold by weight/ct or 'by pound'."
+      },
+      "r131": {
+        "confidence": "confirmed by construction",
+        "method": "none needed",
+        "finding": "100 ct of individually-wrapped granola bars is far outside any observed multipack count (largest seen is 18 ct); not a catalog-search question."
+      },
+      "r132": {
+        "confidence": "confirmed by construction",
+        "method": "none needed",
+        "finding": "'1 lb' of sparkling water is a dimension mismatch by definition (weight requested for a liquid)."
+      },
+      "r133": {
+        "confidence": "confirmed by construction",
+        "method": "none needed",
+        "finding": "10 gal of sparkling water is far outside any observed retail beverage packaging."
+      },
+      "r154": {
+        "confidence": "confirmed by construction",
+        "method": "none needed",
+        "finding": "Same product/count as r131 (paraphrase), same finding."
+      }
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "pass": true
+}

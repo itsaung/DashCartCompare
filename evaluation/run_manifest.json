@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-09-19T075012Z",
+  "catalog_version_sha256": "087a7bbac88827223b92ab1fb51fd5b8ed1c26e9779aa704508a15de23a94a4a",
+  "labeling_guideline_version": "v2",
+  "random_seed": 20260916,
+  "split_ratios_target": {
+    "dev": 0.6,
+    "validation": 0.2,
+    "test": 0.2
+  },
+  "split_counts": {
+    "dev": 90,
+    "validation": 30,
+    "test": 30
+  },
+  "cross_group_overlap_count": 4,
+  "benchmark_requests_sha256": "32df1bd711a2744b8115515e2ddf9e2aac618c4412136c7445ebf01acd205d66",
+  "benchmark_pairs_sha256": "18b92ffb2d858ada5850042e12cc015599426561ad696b166f00820b3dfe9722",
+  "splits_sha256": "311e2917f6d30d2ce5ec0ff4f7f065912a4b93b41d89a24eb19bcf918b2af148"
+}

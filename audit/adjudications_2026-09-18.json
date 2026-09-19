@@ -1,0 +1,1294 @@
+{
+  "r001": {
+    "a": [
+      0
+    ]
+  },
+  "r003": {
+    "a": [
+      2,
+      6
+    ]
+  },
+  "r004": {
+    "a": [
+      7,
+      8
+    ]
+  },
+  "r006": {
+    "a": [
+      0,
+      1
+    ]
+  },
+  "r007": {
+    "a": [
+      0
+    ],
+    "n": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9
+    ],
+    "note": "Explicit unsalted, grass-fed and stick requirements must be supported; omitted attributes remain uncertain. Salted/herb variants conflict."
+  },
+  "r008": {
+    "a": [
+      0
+    ]
+  },
+  "r009": {
+    "a": [
+      0
+    ]
+  },
+  "r010": {
+    "a": [
+      3,
+      8
+    ]
+  },
+  "r011": {
+    "a": [
+      0
+    ]
+  },
+  "r012": {
+    "a": [
+      0
+    ]
+  },
+  "r013": {
+    "a": [
+      0
+    ],
+    "note": "Exact branded cage-free variant requested; free-range/pasture-raised are different marketed variants."
+  },
+  "r014": {
+    "a": [
+      0
+    ]
+  },
+  "r015": {
+    "a": [
+      1
+    ],
+    "n": [
+      0
+    ],
+    "note": "Original unsweetened may be a distinct formulation; sweetness is not explicit in the request, so do not assume equivalence. Vanilla and coconut conflict."
+  },
+  "r016": {
+    "a": [
+      0,
+      1,
+      5
+    ],
+    "note": "2 L and 67.6 fl oz are equivalent after rounding."
+  },
+  "r017": {
+    "a": [
+      0
+    ]
+  },
+  "r018": {
+    "a": [
+      0
+    ]
+  },
+  "r019": {
+    "a": [
+      0,
+      1
+    ],
+    "n": [
+      3
+    ],
+    "note": "Gala listing with no size cannot establish a 3 lb bag."
+  },
+  "r020": {
+    "a": [
+      1,
+      4,
+      5
+    ]
+  },
+  "r021": {
+    "a": [
+      0,
+      3,
+      4
+    ]
+  },
+  "r022": {
+    "a": [
+      0,
+      1
+    ],
+    "n": [
+      4
+    ],
+    "note": "32 fl oz equals 946 ml after rounding; shelf stability is unspecified for candidate 4."
+  },
+  "r023": {
+    "a": [
+      0,
+      2
+    ],
+    "note": "Per-pound/each listings do not establish the required fixed 2 lb package under this benchmark's fixed-package scope."
+  },
+  "r024": {
+    "a": [
+      1,
+      2
+    ],
+    "note": "Per-pound/each listings do not establish the required fixed 2 lb package."
+  },
+  "r025": {
+    "a": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10,
+      12,
+      13,
+      14
+    ]
+  },
+  "r026": {
+    "a": [
+      9,
+      10,
+      12
+    ]
+  },
+  "r027": {
+    "a": [
+      0,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "r028": {
+    "a": [
+      3,
+      6,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "r029": {
+    "a": [
+      2,
+      4,
+      6,
+      12,
+      13
+    ]
+  },
+  "r030": {
+    "a": [
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r031": {
+    "a": [
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r032": {
+    "a": [
+      1,
+      2,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r033": {
+    "a": [
+      0,
+      3,
+      4,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r034": {
+    "a": [
+      8,
+      11,
+      13
+    ]
+  },
+  "r035": {
+    "a": [
+      0,
+      1,
+      10,
+      11
+    ],
+    "n": [
+      3
+    ],
+    "note": "Golden wheat does not establish whole wheat."
+  },
+  "r036": {
+    "a": [
+      1,
+      2,
+      5,
+      7,
+      12,
+      14
+    ],
+    "n": [
+      6,
+      10,
+      13
+    ],
+    "note": "Count-only mochi and bare-oz ice cream cannot establish 16 fl oz. Bars/sandwiches are distinct forms."
+  },
+  "r037": {
+    "a": [
+      5,
+      12,
+      13,
+      14
+    ]
+  },
+  "r038": {
+    "a": [
+      6
+    ],
+    "n": [
+      9
+    ],
+    "note": "Deli listing does not establish strip form; per-pound package excluded under fixed-package scope."
+  },
+  "r039": {
+    "a": []
+  },
+  "r040": {
+    "a": [
+      0
+    ]
+  },
+  "r041": {
+    "a": [
+      14
+    ],
+    "n": [
+      12
+    ],
+    "note": "Explicit 4-pack exceeds one 5.3 oz package; candidate 12 has conflicting title count and raw_size, requiring clarification."
+  },
+  "r042": {
+    "a": [
+      12,
+      13,
+      14
+    ],
+    "n": [
+      7
+    ],
+    "note": "14.75 oz is a different stated package size, not a unit-conversion rounding difference. Bulk listing has no size."
+  },
+  "r045": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      9,
+      10
+    ],
+    "n": [
+      11
+    ],
+    "note": "Ordinary dairy milk candidates are compatible; coconut milk is an uncertain substitute. Protein shakes and chocolate are different products."
+  },
+  "r046": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "n": [
+      11
+    ]
+  },
+  "r047": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      7,
+      9,
+      10
+    ],
+    "n": [
+      11
+    ]
+  },
+  "r048": {
+    "a": [
+      2,
+      4,
+      5,
+      8
+    ],
+    "n": [
+      3
+    ],
+    "note": "Bag requested: canned crisps conflict with container; coconut chips are an uncertain snack interpretation. Baking chips/cookies are different products."
+  },
+  "r049": {
+    "a": [
+      0,
+      2,
+      10,
+      11
+    ],
+    "n": [
+      9
+    ]
+  },
+  "r050": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "n": [
+      8
+    ],
+    "note": "Banana quick bread is an uncertain interpretation of a generic loaf of bread."
+  },
+  "r051": {
+    "a": [],
+    "n": [
+      6,
+      8,
+      10
+    ],
+    "note": "Listings without size cannot establish 2 lb; explicit other sizes and variable-weight packs fail fixed-package requirements."
+  },
+  "r052": {
+    "a": [],
+    "n": [
+      0,
+      1,
+      11
+    ],
+    "note": "Whole bananas match identity, but bunch counts and per-pound pricing leave fulfillment of three bananas uncertain."
+  },
+  "r053": {
+    "a": []
+  },
+  "r054": {
+    "a": []
+  },
+  "r055": {
+    "a": [
+      0
+    ]
+  },
+  "r056": {
+    "a": [
+      0
+    ]
+  },
+  "r057": {
+    "a": [
+      0
+    ]
+  },
+  "r058": {
+    "a": [
+      0
+    ]
+  },
+  "r059": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "note": "In-water requirement excludes in-oil tuna; all variant constraints apply."
+  },
+  "r060": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "r061": {
+    "a": [
+      0
+    ]
+  },
+  "r062": {
+    "a": [
+      0
+    ],
+    "note": "Eight cans cannot satisfy twelve cans, regardless of ambiguous oz notation."
+  },
+  "r063": {
+    "a": [
+      0
+    ]
+  },
+  "r064": {
+    "a": [
+      1
+    ]
+  },
+  "r065": {
+    "a": [
+      0
+    ],
+    "note": "Steamable Frozen Broccoli Florets matches steamable florets despite intervening words; peas, corn and beans are distinct products."
+  },
+  "r066": {
+    "a": [
+      6
+    ]
+  },
+  "r067": {
+    "a": [
+      0
+    ]
+  },
+  "r068": {
+    "a": [
+      1
+    ]
+  },
+  "r069": {
+    "a": [
+      0
+    ]
+  },
+  "r070": {
+    "a": [
+      0
+    ]
+  },
+  "r071": {
+    "a": [
+      0,
+      1
+    ],
+    "n": [
+      2
+    ],
+    "note": "Candidate 2 has matching brand, fat and size, but does not establish the requested Pure & Natural descriptor."
+  },
+  "r072": {
+    "a": [
+      0,
+      1
+    ]
+  },
+  "r073": {
+    "a": [
+      0
+    ],
+    "n": [
+      1,
+      3
+    ],
+    "note": "Weight-only flour tortilla listings do not establish count; a different measurement is not proof of a different package."
+  },
+  "r074": {
+    "a": [
+      0,
+      1,
+      2,
+      6
+    ]
+  },
+  "r075": {
+    "a": [
+      0
+    ]
+  },
+  "r076": {
+    "a": [
+      0,
+      1
+    ]
+  },
+  "r077": {
+    "a": [
+      0,
+      1,
+      2
+    ]
+  },
+  "r078": {
+    "a": [
+      3,
+      7
+    ]
+  },
+  "r079": {
+    "a": [
+      0,
+      1
+    ],
+    "note": "Frost Water Lemonade is a word-order equivalent; other named flavors conflict even where oz units are uncertain."
+  },
+  "r080": {
+    "a": [
+      0
+    ],
+    "n": [
+      2
+    ],
+    "note": "Gluten-free requirement is not established by abbreviated candidate 2 title."
+  },
+  "r081": {
+    "a": [
+      0
+    ]
+  },
+  "r082": {
+    "a": [
+      0
+    ]
+  },
+  "r083": {
+    "a": [],
+    "n": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "note": "Bare oz for ice cream does not reliably distinguish weight from volume, even on the reference. Matching flavor but uncertain unit needs clarification."
+  },
+  "r084": {
+    "a": [
+      0
+    ]
+  },
+  "r085": {
+    "a": [
+      0,
+      1,
+      2
+    ],
+    "n": [
+      3,
+      4
+    ],
+    "note": "Half-stick weight-only listings do not establish four sticks or equivalent stick size."
+  },
+  "r086": {
+    "a": [
+      0
+    ]
+  },
+  "r087": {
+    "a": [
+      0,
+      1,
+      2
+    ]
+  },
+  "r088": {
+    "a": [
+      0,
+      6,
+      10
+    ],
+    "note": "Diet Coke implies diet cola; caffeine-free is a distinct exact variant."
+  },
+  "r089": {
+    "a": [
+      0,
+      2,
+      3,
+      7,
+      8
+    ],
+    "note": "Added calcium/vitamins do not conflict with the stated no-pulp Pure Premium requirements; fortification is not excluded."
+  },
+  "r090": {
+    "a": [
+      0,
+      1
+    ]
+  },
+  "r091": {
+    "a": [
+      7
+    ],
+    "n": [
+      11,
+      12
+    ],
+    "note": "Frozen salmon title does not establish fillet form; stuffed prepared salmon may not fulfill an unqualified fillet request. Variable-weight listings fail fixed-package scope."
+  },
+  "r092": {
+    "a": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r093": {
+    "a": [
+      0,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r094": {
+    "a": [
+      6,
+      7,
+      10,
+      11,
+      13
+    ],
+    "note": "Produce-category fresh broccoli does not satisfy explicitly frozen broccoli."
+  },
+  "r095": {
+    "a": [
+      1,
+      2,
+      3,
+      11,
+      12,
+      14
+    ],
+    "n": [
+      8,
+      13
+    ],
+    "note": "Weight-only package does not establish six bars; 2 Packs (6 ct) is ambiguous between six bars and six twin-packs."
+  },
+  "r096": {
+    "a": [
+      1,
+      2,
+      12,
+      13
+    ],
+    "note": "Request says canned tuna, not in water; remove invented water-only restriction from expected intent. Oil and water cans both satisfy actual text."
+  },
+  "r097": {
+    "a": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      7,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r098": {
+    "a": [
+      0,
+      1,
+      10,
+      11,
+      12,
+      13
+    ],
+    "n": [
+      6
+    ]
+  },
+  "r099": {
+    "a": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      10,
+      12,
+      13,
+      14
+    ],
+    "n": [
+      0,
+      1,
+      11
+    ],
+    "note": "Fresca sparkling soda is an uncertain substitute for unqualified sparkling water; bare-oz La Croix leaves volume uncertain."
+  },
+  "r100": {
+    "a": [
+      11
+    ]
+  },
+  "r101": {
+    "a": [
+      3,
+      12
+    ],
+    "n": [
+      7,
+      8
+    ]
+  },
+  "r102": {
+    "a": [
+      4,
+      5,
+      11,
+      12
+    ]
+  },
+  "r103": {
+    "a": [
+      2,
+      6,
+      7,
+      11,
+      12,
+      13
+    ],
+    "n": [
+      8
+    ]
+  },
+  "r104": {
+    "a": [
+      12
+    ],
+    "n": [
+      6,
+      8,
+      9,
+      10,
+      11
+    ],
+    "note": "Count-only tortillas cannot establish package weight; known other weights and prepared taquitos conflict."
+  },
+  "r105": {
+    "a": [
+      12
+    ]
+  },
+  "r106": {
+    "a": [
+      12
+    ],
+    "n": [
+      7,
+      8
+    ]
+  },
+  "r107": {
+    "a": [
+      12,
+      13,
+      14
+    ],
+    "n": [
+      8
+    ]
+  },
+  "r108": {
+    "a": [
+      11,
+      12
+    ]
+  },
+  "r109": {
+    "a": [
+      12
+    ],
+    "n": [
+      13
+    ],
+    "note": "Explicit 5.3 oz x2 pack is not a single 5.3 oz package; title 2 ct with raw_size 5.3 oz is internally ambiguous."
+  },
+  "r110": {
+    "a": [
+      1,
+      9,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "r111": {
+    "a": [
+      11
+    ],
+    "n": [
+      8
+    ]
+  },
+  "r112": {
+    "a": [
+      11,
+      12,
+      13
+    ],
+    "n": [
+      8
+    ]
+  },
+  "r113": {
+    "a": [
+      12
+    ],
+    "n": [
+      11
+    ],
+    "note": "Bare oz beverage has uncertain volume; do not assume an unverified weight-to-volume conversion."
+  },
+  "r114": {
+    "a": [
+      11
+    ]
+  },
+  "r115": {
+    "a": [
+      7,
+      8
+    ]
+  },
+  "r116": {
+    "a": [
+      7,
+      9,
+      12
+    ]
+  },
+  "r117": {
+    "a": [
+      4
+    ]
+  },
+  "r118": {
+    "a": [
+      0,
+      3,
+      4,
+      6,
+      7
+    ],
+    "note": "Orange fruit cups are not orange juice, regardless of dimension flags."
+  },
+  "r119": {
+    "a": [
+      0,
+      1,
+      2,
+      4,
+      12
+    ],
+    "note": "Quantity is nine jars, not one nine-count package; individual pasta sauce listings are eligible product choices for ordering nine units. Stock depth is not verified."
+  },
+  "r120": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "r121": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "r122": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "note": "Plain pantry tuna listings are compatible with canned tuna; prepared tuna salads, sushi and pet food are not."
+  },
+  "r123": {
+    "a": [
+      0,
+      6,
+      7,
+      8,
+      10,
+      11
+    ],
+    "note": "Only peanut-butter spreads satisfy this request; candy, sandwiches, bars and popcorn do not."
+  },
+  "r124": {
+    "a": [],
+    "n": [
+      0,
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "note": "Box form is not confirmed in these titles. Explicit Snak Saks and Grab Bag packaging conflicts."
+  },
+  "r125": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ]
+  },
+  "r126": {
+    "a": [],
+    "n": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "note": "Granola-bar identity matches, but requested bag packaging is unconfirmed; request itself needs clarification."
+  },
+  "r127": {
+    "a": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "r128": {
+    "a": [],
+    "n": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "note": "Pasta sauce matches product identity but box packaging is unconfirmed; explicit jar is incompatible, prepared pasta meals are wrong products."
+  },
+  "r129": {
+    "a": [],
+    "n": [
+      0,
+      12
+    ],
+    "note": "Salmon fillets/portions with unknown count cannot establish two fillets; stated six/ten counts, wrong fish and pet food conflict."
+  },
+  "r130": {
+    "a": [],
+    "n": [
+      0,
+      1,
+      2,
+      9,
+      10,
+      11,
+      12
+    ],
+    "note": "Three deli turkey breasts is ambiguous between whole breasts, slices and packages. Turkey-breast deli listings require clarification; bacon, pepperoni and chicken are incorrect."
+  },
+  "r131": {
+    "a": [],
+    "n": [
+      8
+    ],
+    "note": "Weight-only granola package does not establish count; explicit other counts conflict."
+  },
+  "r132": {
+    "a": [],
+    "n": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      11
+    ],
+    "note": "Bare-oz beverage units are ambiguous; no mass-to-volume assumption. Explicit fluid-ounce listings cannot establish one pound."
+  },
+  "r133": {
+    "a": [],
+    "n": [
+      11
+    ],
+    "note": "Explicit other volume sizes conflict; bare-oz beverage volume is unverified."
+  },
+  "r134": {
+    "a": [
+      2
+    ]
+  },
+  "r135": {
+    "a": [
+      0
+    ]
+  },
+  "r136": {
+    "a": [
+      0
+    ]
+  },
+  "r137": {
+    "a": [
+      0,
+      6,
+      7,
+      11,
+      12,
+      13
+    ]
+  },
+  "r138": {
+    "a": [
+      0
+    ]
+  },
+  "r139": {
+    "a": [
+      0
+    ]
+  },
+  "r140": {
+    "a": [
+      0
+    ]
+  },
+  "r141": {
+    "a": [
+      0
+    ],
+    "n": [
+      1,
+      2
+    ]
+  },
+  "r142": {
+    "a": [
+      0,
+      6,
+      7,
+      8
+    ],
+    "note": "A pack of does not change the explicitly specified 12 fl oz x12 package dimension."
+  },
+  "r143": {
+    "a": [
+      4
+    ]
+  },
+  "r144": {
+    "a": [
+      7,
+      8,
+      9,
+      12,
+      13
+    ],
+    "note": "Oil and water canned tuna both match the actual request; remove invented water-only restriction."
+  },
+  "r145": {
+    "a": [
+      0,
+      1,
+      4,
+      5,
+      13
+    ],
+    "note": "Fresh produce-category broccoli is incorrect for a frozen request."
+  },
+  "r146": {
+    "a": [
+      0
+    ],
+    "n": [
+      2
+    ],
+    "note": "Plain family-size cheese cracker title does not establish extra-toasty variant."
+  },
+  "r147": {
+    "a": [
+      11
+    ]
+  },
+  "r148": {
+    "a": [
+      0
+    ]
+  },
+  "r149": {
+    "a": [
+      3,
+      5,
+      6,
+      12,
+      13,
+      14
+    ]
+  },
+  "r150": {
+    "a": [
+      0
+    ]
+  },
+  "r151": {
+    "a": [
+      0
+    ],
+    "note": "Case of does not change the 12 fl oz x12 package requirement; lime/pure flavors and eight-count packs conflict."
+  },
+  "r152": {
+    "a": [
+      0
+    ]
+  },
+  "r153": {
+    "a": [
+      0
+    ]
+  },
+  "r154": {
+    "a": [],
+    "n": [
+      0
+    ]
+  }
+}

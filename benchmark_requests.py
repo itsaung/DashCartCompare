@@ -46,7 +46,7 @@ Store ids (see DATA_DICTIONARY.md / dash/run_snapshot.py):
   ALDI=29631686  RALPHS=35802549  VONS=1742136  SPROUTS=24325284  DASHMART=1042759
 """
 
-REQUEST_VERSION = "v1"
+REQUEST_VERSION = "v2"  # Full label audit: remove invented tuna restriction; flag ambiguous ice-cream units.
 
 ALDI = 29631686
 RALPHS = 35802549
@@ -225,7 +225,7 @@ REQUESTS = [
           "allowed_substitutions": {"brand": "any"}},
          [(ALDI, "1000024859640010")],
          hard_negative_product_ids=[(ALDI, "1000030409614583")]),  # deli-sliced, not "strips"
-    _req("r039", "12 oz unsalted butter", "g039", "flexible", "answerable",
+    _req("r039", "12 oz unsalted butter", "g039", "flexible", "no_acceptable_match",
          {"brand": None, "variant": "unsalted", "size": "12 oz", "quantity": 1,
           "allowed_substitutions": {"brand": "any"}},
          [],  # no 12 oz unsalted butter observed in sample -- nearby sizes only
@@ -418,7 +418,7 @@ REQUESTS += [
           "allowed_substitutions": {}},
          [(ALDI, "44216925438")],
          hard_negative_product_ids=[(ALDI, "44216925437")]),  # S'mores -- different named variant
-    _req("r083", "16 oz Ben & Jerry's Half Baked Chocolate & Vanilla Ice Cream", "g083", "exact", "answerable",
+    _req("r083", "16 oz Ben & Jerry's Half Baked Chocolate & Vanilla Ice Cream", "g083", "exact", "needs_clarification",
          {"brand": "Ben & Jerry's", "variant": "Half Baked", "size": "16 oz", "quantity": 1,
           "allowed_substitutions": {}},
          [(ALDI, "32760619640")],
@@ -476,7 +476,7 @@ REQUESTS += [
           "allowed_substitutions": {"brand": "any", "flavor": "any"}},
          [(ALDI, "1000030409614421"), (ALDI, "22646327046"), (ALDI, "22646327062"), (ALDI, "22646327063")]),
     _req("r096", "5 oz canned tuna", "g096", "flexible", "answerable",
-         {"brand": None, "variant": "canned, in water", "size": "5 oz", "quantity": 1,
+         {"brand": None, "variant": "canned", "size": "5 oz", "quantity": 1,
           "allowed_substitutions": {"brand": "any"}},
          [(RALPHS, "1000013334011006"), (RALPHS, "44208371799")],
          hard_negative_product_ids=[(ALDI, "22646281642")]),  # 2.5 oz pouch -- wrong size and format
@@ -663,7 +663,7 @@ REQUESTS += [
          [(RALPHS, "30994834863")],
          hard_negative_product_ids=[(VONS, "11918946928")]),
     _req("r144", "5 oz can of tuna, any brand", "g096", "flexible", "answerable",
-         {"brand": None, "variant": "canned, in water", "size": "5 oz", "quantity": 1,
+         {"brand": None, "variant": "canned", "size": "5 oz", "quantity": 1,
           "allowed_substitutions": {"brand": "any"}},
          [(RALPHS, "1000013334011006"), (RALPHS, "44208371799")],
          hard_negative_product_ids=[(ALDI, "22646281642")]),

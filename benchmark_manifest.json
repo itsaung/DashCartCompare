@@ -4,5 +4,37 @@
     "row_count": 31398,
     "frozen_at": "2026-09-17T001348Z",
     "source_file": "normalized_catalog.csv"
-  }
+  },
+  "label_audit": {
+    "audit_id": "2026-09-18-complete-v2",
+    "request_version": "v2",
+    "labeling_guideline_version": "v2",
+    "reviewed_by": "codex_ai_audit",
+    "pairs_reviewed": 1658,
+    "labels_changed": 270,
+    "report": "audit/LABEL_AUDIT_2026-09-18.md",
+    "evidence": "audit/label_audit_2026-09-18.json",
+    "decisions_sha256": "e84aa9f4e2ea29079e61a2bb085a48389da508582821df3514b7f58239fa6041",
+    "request_file_sha256": "164b49c95e9bbb33691292412c149f26624e3bfd1458a751030d5887482a0183",
+    "candidate_pool_sha256": "155902eaae5abd087399c2ccd0b6c3730c1aea589a0ae10f4fdbbd63dc9c1e56",
+    "independent_human_review": false
+  },
+  "photo_review": {
+    "review_id": "2026-09-18-photo-v1",
+    "pairs": 114,
+    "distinct_photos": 95,
+    "labels": {
+      "Incorrect": 86,
+      "Acceptable": 28
+    },
+    "quality": {
+      "photo_supported": 58,
+      "best_guess": 56
+    },
+    "decisions_sha256": "edc2eb1875f4af1b8e777ebfb5f90cfe0360765fcef8a8e7e6ae4506d0f7fb4a",
+    "before_sha256": "e84aa9f4e2ea29079e61a2bb085a48389da508582821df3514b7f58239fa6041",
+    "report": "audit/PHOTO_REVIEW_2026-09-18.md",
+    "independent_human_review": false
+  },
+  "current_decisions_sha256": "edc2eb1875f4af1b8e777ebfb5f90cfe0360765fcef8a8e7e6ae4506d0f7fb4a"
 }

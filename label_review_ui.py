@@ -101,7 +101,7 @@ IMAGE_BY_KEY = load_image_by_key()
 
 # Kept in sync by hand with the "Version: vN" line at the top of
 # LABELING_GUIDELINES.md -- bump both together.
-LABELING_GUIDELINE_VERSION = "v1"
+LABELING_GUIDELINE_VERSION = "v2"
 
 VALID_LABELS = {"Acceptable", "Needs clarification", "Incorrect"}
 
