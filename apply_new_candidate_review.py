@@ -35,8 +35,24 @@ import pandas as pd
 
 from benchmark_requests import REQUEST_VERSION
 from build_benchmark import LABELING_GUIDELINE_VERSION
-from claude_auto_label import _product_type_tokens, auto_label
+from claude_auto_label import KNOWN_VARIANTS, _product_type_tokens, auto_label
+from normalize import parse_package_size
 from parse_query import parse_shopping_line
+
+# Product-type words that are false friends across genuinely different
+# product families in this catalog -- the bare word is technically present
+# and "matches" a title, but names a different kind of product entirely.
+# Found via a real false positive: "a bag of chips" (no other qualifier)
+# matched "Ghirardelli Premium Milk Chocolate Baking Chips" -- the exact
+# same failure class the original 2026-09-18 audit already corrected for
+# other candidates in this same request's original pool (r048/r049), now
+# reappearing in a newly-discovered candidate outside that pool. Downgrades
+# only -- the candidate might still be a real match if the shopper actually
+# meant a baking ingredient; this just means the bare word alone doesn't
+# confirm it.
+_FALSE_FRIEND_PHRASES = {
+    "chips": ["chocolate chips", "baking chips", "morsels"],
+}
 
 HERE = Path(__file__).resolve().parent
 OUT_DIR = HERE / "evaluation"
@@ -82,6 +98,85 @@ def _core_product_type_confirmed(request: dict, title_lower: str) -> bool:
     return all(re.search(rf"\b{re.escape(tok)}\b", title_lower) for tok in core_tokens)
 
 
+def _variant_not_shadowed_by_a_more_specific_known_variant(request: dict, title_lower: str) -> bool:
+    """auto_label()'s own variant-conflict check only runs when the
+    expected variant phrase is NOT found in the title at all
+    (`if primary_variant not in title_lower`) -- so when the expected
+    phrase is itself a substring of a different, more specific KNOWN_VARIANTS
+    phrase that's actually in the title (e.g. expected "large" vs a title
+    that says "extra large"), that substring match satisfies the check
+    before the conflict-detection code ever runs, and the real conflict is
+    never caught. This checks for exactly that shadowing, independent of
+    auto_label's own control flow. True = no such shadowing found."""
+    expected = request["expected"]
+    variant = expected.get("variant")
+    substitutions = expected.get("allowed_substitutions", {})
+    if not variant or substitutions.get("flavor") == "any" or substitutions.get("variant") == "any":
+        return True
+    primary = variant.split(",")[0].strip().lower()
+    if not primary:
+        return True
+    for known in KNOWN_VARIANTS:
+        if known != primary and primary in known and known in title_lower:
+            return False
+    return True
+
+
+def _no_false_friend_product_type_conflict(request: dict, title_lower: str) -> bool:
+    """See _FALSE_FRIEND_PHRASES. True = no conflicting phrase found."""
+    structured = parse_shopping_line(request["text"])
+    tokens = _product_type_tokens(structured.get("product_type"))
+    for token in tokens:
+        for phrase in _FALSE_FRIEND_PHRASES.get(token, []):
+            if phrase in title_lower:
+                return False
+    return True
+
+
+# Only applied when the expected/candidate sizes were printed in DIFFERENT
+# raw units (a genuine metric<->imperial conversion, e.g. "2 L" printed
+# against a candidate labeled "67.6 fl oz") -- never as a same-unit fudge
+# factor. The guideline's own examples (2 L/67.6 fl oz: 0.04% off; 946 ml/
+# 32 fl oz: 0.006% off) are both far inside this; it exists only to absorb
+# real label-rounding on a genuine unit conversion, not to blur distinct
+# printed sizes.
+_UNIT_CONVERSION_ROUNDING_TOLERANCE = 0.01  # relative
+
+
+def _size_confirmed_without_arbitrary_tolerance(request: dict, candidate: dict) -> bool:
+    """auto_label() allows a 3% relative-size tolerance (SIZE_MISMATCH_TOLERANCE)
+    that LABELING_GUIDELINES.md v2 explicitly rejects: "Distinct printed
+    sizes are distinct packages... not an arbitrary three-percent size
+    tolerance." Found via a real false positive: "15 oz cereal" matched a
+    "15.4 oz" candidate (2.7% off -- inside auto_label's 3% tolerance, but
+    both sizes are printed in the SAME unit, "oz", so there is no unit-
+    conversion excuse for the difference; "15 oz" and "15.4 oz" are simply
+    distinct printed sizes. This re-checks: exact match (up to floating-
+    point precision) when both sizes share a raw printed unit; only a tight
+    tolerance for genuine cross-unit rounding when they don't (see
+    _UNIT_CONVERSION_ROUNDING_TOLERANCE). True = no conflict found (either
+    no expected size, or the sizes pass one of those two checks)."""
+    expected = request["expected"]
+    size = expected.get("size")
+    substitutions = expected.get("allowed_substitutions", {})
+    if not size or substitutions.get("size") == "any":
+        return True
+    parsed_expected = parse_package_size(size)
+    parsed_candidate = parse_package_size(str(candidate.get("raw_size") or ""))
+    if (
+        parsed_expected["unresolved"] or parsed_candidate["unresolved"]
+        or parsed_expected["dimension"] != parsed_candidate["dimension"]
+        or not parsed_expected["canonical_total"] or not parsed_candidate["canonical_total"]
+    ):
+        return True  # can't compare -- not this check's job to flag unresolvable sizes
+
+    if parsed_expected["unit"] == parsed_candidate["unit"]:
+        return abs(parsed_candidate["canonical_total"] - parsed_expected["canonical_total"]) < 1e-6
+
+    rel_diff = abs(parsed_candidate["canonical_total"] - parsed_expected["canonical_total"]) / parsed_expected["canonical_total"]
+    return rel_diff <= _UNIT_CONVERSION_ROUNDING_TOLERANCE
+
+
 def _load_catalog_by_key() -> dict:
     by_key = {}
     for row in pd.read_csv(FROZEN_CATALOG, dtype={"product_id": str}).to_dict("records"):
@@ -106,13 +201,32 @@ def main():
         request = requests[c["request_id"]]
         row = catalog_by_key[(c["store_id"], c["product_id"])]
         label, reason = auto_label(row, request)
+        title_lower = str(row["raw_title"]).lower()
 
-        if label == "Acceptable" and not _core_product_type_confirmed(request, str(row["raw_title"]).lower()):
+        if label == "Acceptable" and not _core_product_type_confirmed(request, title_lower):
             label = "Needs clarification"
             reason = (
                 "auto_label found no attribute conflict, but the core product-type words "
                 "(excluding brand/variant, matched whole-word) are not confirmable in raw_title "
                 f"-- original auto_label reason: {reason!r}"
+            )
+        elif label == "Acceptable" and not _variant_not_shadowed_by_a_more_specific_known_variant(request, title_lower):
+            label = "Needs clarification"
+            reason = (
+                "auto_label's variant match was satisfied by a substring of a different, more "
+                f"specific known variant phrase actually present in raw_title -- original auto_label reason: {reason!r}"
+            )
+        elif label == "Acceptable" and not _no_false_friend_product_type_conflict(request, title_lower):
+            label = "Needs clarification"
+            reason = (
+                "raw_title contains a known false-friend phrase for this product-type word "
+                f"(different product family, same word) -- original auto_label reason: {reason!r}"
+            )
+        elif label == "Acceptable" and not _size_confirmed_without_arbitrary_tolerance(request, row):
+            label = "Needs clarification"
+            reason = (
+                "auto_label's size match relied on its 3% tolerance band rather than unit-"
+                f"equivalent equality -- original auto_label reason: {reason!r}"
             )
 
         label_counts[label] += 1

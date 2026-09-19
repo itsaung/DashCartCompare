@@ -34,110 +34,110 @@
     {
       "threshold": 0.0,
       "n": 88,
-      "avg_cost": 0.4431818181818182,
-      "cost_0_count": 67,
+      "avg_cost": 0.4659090909090909,
+      "cost_0_count": 66,
       "cost_1_count": 3,
-      "cost_2_count": 18,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 19,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.05,
       "n": 88,
-      "avg_cost": 0.4431818181818182,
-      "cost_0_count": 67,
+      "avg_cost": 0.4659090909090909,
+      "cost_0_count": 66,
       "cost_1_count": 3,
-      "cost_2_count": 18,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 19,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.1,
       "n": 88,
-      "avg_cost": 0.4431818181818182,
-      "cost_0_count": 67,
+      "avg_cost": 0.4659090909090909,
+      "cost_0_count": 66,
       "cost_1_count": 3,
-      "cost_2_count": 18,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 19,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.15,
       "n": 88,
-      "avg_cost": 0.4431818181818182,
-      "cost_0_count": 67,
+      "avg_cost": 0.4659090909090909,
+      "cost_0_count": 66,
       "cost_1_count": 3,
-      "cost_2_count": 18,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 19,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.2,
       "n": 88,
-      "avg_cost": 0.4431818181818182,
-      "cost_0_count": 67,
+      "avg_cost": 0.4659090909090909,
+      "cost_0_count": 66,
       "cost_1_count": 3,
-      "cost_2_count": 18,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 19,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.25,
       "n": 88,
-      "avg_cost": 0.4431818181818182,
-      "cost_0_count": 67,
+      "avg_cost": 0.4659090909090909,
+      "cost_0_count": 66,
       "cost_1_count": 3,
-      "cost_2_count": 18,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 19,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.3,
       "n": 88,
-      "avg_cost": 0.4318181818181818,
-      "cost_0_count": 67,
+      "avg_cost": 0.45454545454545453,
+      "cost_0_count": 66,
       "cost_1_count": 4,
-      "cost_2_count": 17,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 18,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.35,
       "n": 88,
-      "avg_cost": 0.42045454545454547,
-      "cost_0_count": 67,
+      "avg_cost": 0.4431818181818182,
+      "cost_0_count": 66,
       "cost_1_count": 5,
-      "cost_2_count": 16,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 17,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.4,
       "n": 88,
-      "avg_cost": 0.4090909090909091,
-      "cost_0_count": 67,
+      "avg_cost": 0.4318181818181818,
+      "cost_0_count": 66,
       "cost_1_count": 6,
-      "cost_2_count": 15,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 16,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.45,
       "n": 88,
-      "avg_cost": 0.3977272727272727,
-      "cost_0_count": 67,
+      "avg_cost": 0.42045454545454547,
+      "cost_0_count": 66,
       "cost_1_count": 7,
-      "cost_2_count": 14,
-      "confirmed_correct_returns": 60
+      "cost_2_count": 15,
+      "confirmed_correct_returns": 59
     },
     {
       "threshold": 0.5,
+      "n": 88,
+      "avg_cost": 0.4090909090909091,
+      "cost_0_count": 66,
+      "cost_1_count": 8,
+      "cost_2_count": 14,
+      "confirmed_correct_returns": 58
+    },
+    {
+      "threshold": 0.55,
       "n": 88,
       "avg_cost": 0.38636363636363635,
       "cost_0_count": 67,
       "cost_1_count": 8,
       "cost_2_count": 13,
-      "confirmed_correct_returns": 59
-    },
-    {
-      "threshold": 0.55,
-      "n": 88,
-      "avg_cost": 0.36363636363636365,
-      "cost_0_count": 68,
-      "cost_1_count": 8,
-      "cost_2_count": 12,
-      "confirmed_correct_returns": 59
+      "confirmed_correct_returns": 58
     },
     {
       "threshold": 0.6,

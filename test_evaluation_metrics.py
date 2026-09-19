@@ -163,12 +163,27 @@ def test_return_coverage_hand_calculated():
 
 def test_returned_match_accuracy_only_denominates_over_returned_requests():
     lookup = _lookup({("r1", 1, "p1"): ("Acceptable", "Acceptable", False)})
+    answerability = {"r1": "answerable", "r2": "answerable"}
     records = [
         _record("r1", "answerable", [_res(1, "p1")]),  # returned, correct
         _record("r2", "no_acceptable_match", []),       # abstained -- excluded from n
     ]
-    out = em.returned_match_accuracy(records, lookup, "practical")
+    out = em.returned_match_accuracy(records, lookup, "practical", answerability)
     assert out == {"correct": 1, "n": 1, "rate": 1.0}
+
+
+def test_returned_match_accuracy_does_not_credit_a_return_on_an_unanswerable_request():
+    # Regression test: a request whose ground truth needed clarification or
+    # had no match must never count as a "correct" returned match, even
+    # when the returned candidate itself carries an Acceptable label --
+    # returning at all was the policy error, per the plan ("even if the
+    # candidate is loosely compatible"). Denominator (n) still counts it,
+    # since it did receive a match.
+    lookup = _lookup({("r1", 1, "p1"): ("Acceptable", "Acceptable", False)})
+    answerability = {"r1": "needs_clarification"}
+    records = [_record("r1", "answerable", [_res(1, "p1")])]
+    out = em.returned_match_accuracy(records, lookup, "practical", answerability)
+    assert out == {"correct": 0, "n": 1, "rate": 0.0}
 
 
 def test_false_return_rate_on_unanswerable_hand_calculated():
@@ -198,9 +213,9 @@ def test_false_abstention_rate_hand_calculated():
 def test_success_at_1_bounds_confirmed_correct_incorrect_and_unresolved():
     lookup = _lookup({
         ("r1", 1, "p1"): ("Acceptable", "Acceptable", False),               # confirmed correct
-        ("r2", 1, "p2"): ("Needs clarification", "Incorrect", True),        # best guess, practical says Incorrect too -> confirmed incorrect
-        ("r3", 1, "p3"): ("Needs clarification", "Acceptable", True),       # best guess, practical Acceptable -> unresolved
-        ("r4", 1, "p4"): ("Incorrect", "Incorrect", False),                 # confirmed incorrect
+        ("r2", 1, "p2"): ("Needs clarification", "Incorrect", True),        # best guess (guessed negative) -> unresolved, NOT confirmed incorrect
+        ("r3", 1, "p3"): ("Needs clarification", "Acceptable", True),       # best guess (guessed positive) -> unresolved
+        ("r4", 1, "p4"): ("Incorrect", "Incorrect", False),                 # not a guess -> confirmed incorrect
     })
     records = [
         _record("r1", "answerable", [_res(1, "p1")]),
@@ -211,10 +226,21 @@ def test_success_at_1_bounds_confirmed_correct_incorrect_and_unresolved():
     out = em.success_at_1_bounds(records, lookup)
     assert out["n"] == 4
     assert out["confirmed_correct"] == 1
-    assert out["confirmed_incorrect"] == 2
-    assert out["unresolved"] == 1
+    assert out["confirmed_incorrect"] == 1
+    assert out["unresolved"] == 2
     assert out["lower_bound_rate"] == 1 / 4  # unresolved treated as nonpositive
-    assert out["upper_bound_rate"] == 2 / 4  # unresolved treated as potentially acceptable
+    assert out["upper_bound_rate"] == 3 / 4  # unresolved treated as potentially acceptable
+
+
+def test_success_at_1_bounds_a_guessed_negative_is_never_a_confirmed_error():
+    # Regression test: a best-guess pair whose practical label leans
+    # Incorrect must still be "unresolved," not "confirmed_incorrect" --
+    # a guess is unconfirmed regardless of which way it leans.
+    lookup = _lookup({("r1", 1, "p1"): ("Needs clarification", "Incorrect", True)})
+    records = [_record("r1", "answerable", [_res(1, "p1")])]
+    out = em.success_at_1_bounds(records, lookup)
+    assert out["unresolved"] == 1
+    assert out["confirmed_incorrect"] == 0
 
 
 def test_success_at_1_bounds_abstention_excluded_from_correct_or_incorrect_but_counts_in_n():

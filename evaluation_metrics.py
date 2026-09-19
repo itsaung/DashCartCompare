@@ -162,12 +162,23 @@ def return_coverage(records: list) -> dict:
     return {"returned": returned, "n": n, "rate": (returned / n) if n else None}
 
 
-def returned_match_accuracy(records: list, lookup: dict, view: str) -> dict:
+def returned_match_accuracy(records: list, lookup: dict, view: str, request_answerability: dict) -> dict:
+    """Denominator is every request that received a match (response ==
+    "answerable"), regardless of ground truth -- "requests receiving a
+    match," per the plan. The numerator is stricter: a returned match only
+    counts as correct when the request's true answerability is itself
+    "answerable" AND the top-1 label is Acceptable. Returning on a request
+    that needed clarification or had no acceptable match is a response-
+    policy error "even if the candidate is loosely compatible" (the plan's
+    own words) -- it must never count as a correct returned match just
+    because the candidate happens to carry an Acceptable label."""
     returned = [r for r in records if r["response"] == "answerable"]
     n = len(returned)
     correct = 0
     for r in returned:
         if not r["results"]:
+            continue
+        if request_answerability[r["request_id"]] != "answerable":
             continue
         top1 = r["results"][0]
         if label_of(lookup, r["request_id"], top1["store_id"], top1["product_id"], view) == "Acceptable":
@@ -196,12 +207,22 @@ def false_abstention_rate(records: list, request_answerability: dict) -> dict:
 
 def success_at_1_bounds(records: list, lookup: dict) -> dict:
     """Conservative-view Success@1, split into confirmed-correct,
-    confirmed-incorrect, and unresolved (a best-guess top-1 whose
-    conservative_label is Needs clarification but whose practical
-    reviewer_label is Acceptable) top-one outcomes. Lower bound treats
-    unresolved as nonpositive; upper bound treats them as potentially
-    acceptable. Unresolved cases are never called confirmed errors, and
-    never dropped from the denominator."""
+    confirmed-incorrect, and unresolved top-one outcomes. Lower bound
+    treats unresolved as nonpositive; upper bound treats them as
+    potentially acceptable. Unresolved cases are never called confirmed
+    errors, and never dropped from the denominator.
+
+    "Unresolved" is any is_best_guess pair, full stop -- regardless of
+    which way its practical label points. All 56 best-guess pairs revert
+    to a conservative label of Needs clarification (never Acceptable), so
+    conservative == "Acceptable" already excludes every guess; anything
+    left with is_best_guess=True is a guess whose conservative label
+    reverted to Needs clarification specifically because it wasn't
+    independently confirmed -- that is unresolved whether the guess itself
+    leaned Acceptable (practical) or Incorrect. Treating a guessed-negative
+    as a "confirmed incorrect" would be exactly the "unresolved cases...
+    called confirmed errors" the plan says not to do; only a genuinely
+    non-guess Needs clarification/Incorrect decision is a confirmed error."""
     n = len(records)
     confirmed_correct = confirmed_incorrect = unresolved = 0
     for r in records:
@@ -212,10 +233,9 @@ def success_at_1_bounds(records: list, lookup: dict) -> dict:
         entry = lookup.get(key)
         if entry is None:
             continue
-        conservative, practical = entry["conservative"], entry["practical"]
-        if conservative == "Acceptable":
+        if entry["conservative"] == "Acceptable":
             confirmed_correct += 1
-        elif conservative != "Acceptable" and practical == "Acceptable" and entry["is_best_guess"]:
+        elif entry["is_best_guess"]:
             unresolved += 1
         else:
             confirmed_incorrect += 1
@@ -312,7 +332,7 @@ def main():
                     "success_at_1": success_at_1(answerable_records, lookup, view),
                     "hit_at_5": hit_at_5(answerable_records, lookup, view),
                     "mrr_at_5": mrr_at_5(answerable_records, lookup, view),
-                    "returned_match_accuracy": returned_match_accuracy(fc_records, lookup, view),
+                    "returned_match_accuracy": returned_match_accuracy(fc_records, lookup, view, request_answerability),
                     "pool_recall_at_5": pool_recall_at_5(split_pool_records, split_full_pool, lookup, view),
                 }
             split_report["conservative_success_at_1_bounds"] = success_at_1_bounds(answerable_records, lookup)
