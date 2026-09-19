@@ -15,8 +15,10 @@ and for human review, never to help the system being graded.
 """
 import hashlib
 import pickle
+import sklearn
 from pathlib import Path
 
+import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -24,6 +26,11 @@ import benchmark_config as cfg
 from parse_query import parse_shopping_line
 
 MODEL_CACHE_PATH = Path(__file__).resolve().parent / "tfidf_model.pkl"
+
+# Bumped whenever _catalog_text's field construction changes meaningfully --
+# part of the fit_tfidf cache key (see _cache_key) so a code change that
+# doesn't touch the catalog content still invalidates a stale cache.
+TEXT_CONSTRUCTION_VERSION = "v1"  # raw_title + brand + variant
 
 # A small, explicit substitution table -- not embeddings, just words a
 # shopper might reasonably use interchangeably with a catalog title/category
@@ -59,25 +66,40 @@ def _catalog_text(catalog_df):
     )
 
 
+def _cache_key(catalog_df) -> dict:
+    """Everything a stale TF-IDF cache could silently disagree with the
+    current run on -- not just catalog content. A code change to
+    TfidfVectorizer's hyperparameters, an sklearn/pandas upgrade, or a
+    _catalog_text field-construction change must all invalidate the cache
+    on their own, even if the catalog rows are byte-identical."""
+    return {
+        "catalog_hash": catalog_hash(catalog_df),
+        "row_order": list(zip(catalog_df["store_id"], catalog_df["product_id"].astype(str))),
+        "vectorizer_params": TfidfVectorizer().get_params(),
+        "text_construction_version": TEXT_CONSTRUCTION_VERSION,
+        "sklearn_version": sklearn.__version__,
+        "pandas_version": pd.__version__,
+    }
+
+
 def fit_tfidf(catalog_df, cache_path: Path = MODEL_CACHE_PATH):
     """Fit a TF-IDF vectorizer once against the frozen catalog's raw_title (+
-    brand/variant, once populated). Cached to disk keyed by the catalog's
-    content hash -- a mismatched hash means the cache is stale and must be
-    refit, but refitting only ever happens here, never inside
-    lexical_search, which only ever transforms a query against this fitted
-    model."""
-    current_hash = catalog_hash(catalog_df)
+    brand/variant, once populated). Cached to disk keyed by _cache_key -- a
+    mismatched key means the cache is stale and must be refit, but
+    refitting only ever happens here, never inside lexical_search, which
+    only ever transforms a query against this fitted model."""
+    current_key = _cache_key(catalog_df)
 
     if cache_path.exists():
         with open(cache_path, "rb") as f:
             cached = pickle.load(f)
-        if cached.get("catalog_hash") == current_hash:
+        if cached.get("cache_key") == current_key:
             return cached["vectorizer"], cached["matrix"]
 
     vectorizer = TfidfVectorizer()
     matrix = vectorizer.fit_transform(_catalog_text(catalog_df))
     with open(cache_path, "wb") as f:
-        pickle.dump({"catalog_hash": current_hash, "vectorizer": vectorizer, "matrix": matrix}, f)
+        pickle.dump({"cache_key": current_key, "vectorizer": vectorizer, "matrix": matrix}, f)
     return vectorizer, matrix
 
 
@@ -164,10 +186,17 @@ def attribute_filter_baseline(request_text: str, catalog_df, vectorizer, matrix,
     dimension = structured.get("dimension")
     candidates = lexical_search(request_text, vectorizer, matrix, catalog_df, top_k=max(top_k * 4, 20))
 
-    survivors = [
-        c for c in candidates
-        if not (dimension and catalog_df.iloc[c["row"]]["pkg_dimension"] and catalog_df.iloc[c["row"]]["pkg_dimension"] != dimension)
-    ]
+    # row_dimension can be NaN for a row with no parsed package size at all
+    # (e.g. a variable-weight item) -- bool(nan) is True in Python, so an
+    # unguarded truthy check here would misreport "unknown" as "confirmed
+    # mismatch" and wrongly filter the candidate out. pd.notna() treats a
+    # missing dimension as the "unknown, don't filter" case it actually is.
+    survivors = []
+    for c in candidates:
+        row_dimension = catalog_df.iloc[c["row"]]["pkg_dimension"]
+        if dimension and pd.notna(row_dimension) and row_dimension != dimension:
+            continue
+        survivors.append(c)
     if not survivors:
         return [], "no_acceptable_match"
 
