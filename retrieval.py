@@ -164,6 +164,26 @@ def synonym_assisted_search(structured_request: dict, catalog_df, top_k):
     return scored[:top_k]
 
 
+def filter_by_dimension(candidates: list, catalog_df, dimension) -> list:
+    """Drop only candidates whose row has a KNOWN, conflicting pkg_dimension.
+    row_dimension can be NaN for a row with no parsed package size at all
+    (e.g. a variable-weight item) -- bool(nan) is True in Python, so an
+    unguarded truthy check here would misreport "unknown" as "confirmed
+    mismatch" and wrongly filter the candidate out. pd.notna() treats a
+    missing dimension as the "unknown, don't filter" case it actually is.
+    Shared by attribute_filter_baseline and tfidf_baseline.py's pool-ranking
+    experiment so there is exactly one place this rule is written."""
+    if not dimension:
+        return list(candidates)
+    survivors = []
+    for c in candidates:
+        row_dimension = catalog_df.iloc[c["row"]]["pkg_dimension"]
+        if pd.notna(row_dimension) and row_dimension != dimension:
+            continue
+        survivors.append(c)
+    return survivors
+
+
 def attribute_filter_baseline(request_text: str, catalog_df, vectorizer, matrix, top_k, min_similarity):
     """The system under test.
 
@@ -185,18 +205,7 @@ def attribute_filter_baseline(request_text: str, catalog_df, vectorizer, matrix,
 
     dimension = structured.get("dimension")
     candidates = lexical_search(request_text, vectorizer, matrix, catalog_df, top_k=max(top_k * 4, 20))
-
-    # row_dimension can be NaN for a row with no parsed package size at all
-    # (e.g. a variable-weight item) -- bool(nan) is True in Python, so an
-    # unguarded truthy check here would misreport "unknown" as "confirmed
-    # mismatch" and wrongly filter the candidate out. pd.notna() treats a
-    # missing dimension as the "unknown, don't filter" case it actually is.
-    survivors = []
-    for c in candidates:
-        row_dimension = catalog_df.iloc[c["row"]]["pkg_dimension"]
-        if dimension and pd.notna(row_dimension) and row_dimension != dimension:
-            continue
-        survivors.append(c)
+    survivors = filter_by_dimension(candidates, catalog_df, dimension)
     if not survivors:
         return [], "no_acceptable_match"
 

@@ -36,10 +36,20 @@ Usage (smoke demo against the real frozen catalog + a few dev requests):
 """
 import time
 
+from sklearn.metrics.pairwise import cosine_similarity
+
 import benchmark_config as cfg
-from retrieval import attribute_filter_baseline, lexical_search
+from parse_query import parse_shopping_line
+from retrieval import attribute_filter_baseline, filter_by_dimension, lexical_search
 
 BASELINE_NAMES = ("tfidf", "tfidf_dimension_filter", "tfidf_dimension_filter_threshold")
+
+# Only these two are meaningful as a pool-ranking experiment (Checkpoint E4,
+# Experiment A). tfidf_dimension_filter_threshold's candidate set is, by
+# construction, a subset of tfidf_dimension_filter's -- same ranking, same
+# candidates, filtered afterward by a threshold that doesn't exist yet -- so
+# it contributes nothing new to a pool ranking and isn't run separately here.
+POOL_BASELINE_NAMES = ("tfidf", "tfidf_dimension_filter")
 
 
 def _tfidf_only(request_text, catalog_df, vectorizer, matrix, top_k):
@@ -88,6 +98,62 @@ def run_baseline(name: str, request_text: str, catalog_df, vectorizer, matrix, t
         "results": [
             {"store_id": int(r["store_id"]), "product_id": str(r["product_id"]), "score": float(r["score"])}
             for r in ranked
+        ],
+        "response": response,
+        "elapsed_ms": elapsed_ms,
+    }
+
+
+def run_baseline_within_pool(name: str, request_text: str, pool_pairs: list, catalog_df, vectorizer, matrix,
+                              catalog_index: dict) -> dict:
+    """Checkpoint E4, Experiment A: score every candidate in a request's own
+    fixed pool (`pool_pairs`, a list of (store_id, product_id)) -- never a
+    full-catalog top-k intersected with the pool, which would confound pool
+    ranking with retrieval, per the plan. Uses the SAME catalog-fitted
+    vectorizer/matrix as the full-catalog baselines (never refit per
+    request): the pool's rows are sliced out of the already-fitted matrix
+    by `catalog_index`, a {(store_id, product_id): row} lookup built once
+    over the whole catalog.
+
+    Unlike run_baseline, this scores and returns EVERY pool candidate
+    (including zero-score ones) rather than a top-k -- the point of pool
+    ranking is to see where the known-labeled candidates land, not to
+    simulate retrieval depth."""
+    if name not in POOL_BASELINE_NAMES:
+        raise ValueError(f"unknown pool baseline {name!r}; must be one of {POOL_BASELINE_NAMES}")
+
+    started = time.perf_counter()
+
+    rows = [catalog_index[pair] for pair in pool_pairs]
+    query_vec = vectorizer.transform([request_text])
+    scores = cosine_similarity(query_vec, matrix[rows])[0] if rows else []
+
+    scored = [
+        {"store_id": int(sid), "product_id": str(pid), "score": float(scores[i]), "row": rows[i]}
+        for i, (sid, pid) in enumerate(pool_pairs)
+    ]
+    scored.sort(key=cfg.tie_break_key)
+
+    if name == "tfidf":
+        response = "answerable" if scored else "no_acceptable_match"
+        results = scored
+        config = {"name": name, "dimension_filter": False, "min_similarity": None, "experiment": "pool"}
+    else:  # tfidf_dimension_filter
+        structured = parse_shopping_line(request_text)
+        if structured["needs_review"]:
+            response, results = "needs_clarification", []
+        else:
+            survivors = filter_by_dimension(scored, catalog_df, structured.get("dimension"))
+            response, results = ("answerable", survivors) if survivors else ("no_acceptable_match", [])
+        config = {"name": name, "dimension_filter": True, "min_similarity": 0.0, "experiment": "pool"}
+
+    elapsed_ms = (time.perf_counter() - started) * 1000
+
+    return {
+        "config": config,
+        "results": [
+            {"store_id": r["store_id"], "product_id": r["product_id"], "score": r["score"]}
+            for r in results
         ],
         "response": response,
         "elapsed_ms": elapsed_ms,

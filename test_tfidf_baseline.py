@@ -136,3 +136,64 @@ def test_tied_scores_break_deterministically_across_repeated_calls(tmp_path):
     out2 = tb.run_baseline("tfidf_dimension_filter", "3 apples", catalog, vectorizer, matrix, top_k=5)
     assert out1["results"] == out2["results"]
     assert [r["store_id"] for r in out1["results"]] == [1, 2]  # lower store_id first
+
+
+# --- run_baseline_within_pool: Checkpoint E4 Experiment A --------------------
+
+def _catalog_index(catalog):
+    return {(row.store_id, row.product_id): i for i, row in enumerate(catalog.itertuples())}
+
+
+def test_pool_baseline_scores_every_pool_candidate_including_zero_score(tmp_path):
+    catalog, vectorizer, matrix = _fit(
+        [_row(1, "p1", "apple juice"), _row(1, "p2", "frozen pizza"), _row(1, "p3", "grape soda")],
+        tmp_path,
+    )
+    index = _catalog_index(catalog)
+    pool = [(1, "p1"), (1, "p2")]  # p3 deliberately excluded -- not in this request's pool
+    out = tb.run_baseline_within_pool("tfidf", "apple juice", pool, catalog, vectorizer, matrix, index)
+    ids = {r["product_id"] for r in out["results"]}
+    assert ids == {"p1", "p2"}  # p3 never appears -- pool ranking never reaches outside the pool
+    zero_score = [r for r in out["results"] if r["product_id"] == "p2"][0]
+    assert zero_score["score"] == 0.0  # unrelated pool member still scored and returned, not dropped
+
+
+def test_pool_baseline_never_returns_a_pair_outside_the_pool(tmp_path):
+    catalog, vectorizer, matrix = _fit(
+        [_row(1, "p1", "apple juice"), _row(1, "p2", "apple juice concentrate")], tmp_path,
+    )
+    index = _catalog_index(catalog)
+    pool = [(1, "p1")]  # p2 scores highly too but isn't in the pool
+    out = tb.run_baseline_within_pool("tfidf", "apple juice", pool, catalog, vectorizer, matrix, index)
+    assert {r["product_id"] for r in out["results"]} == {"p1"}
+
+
+def test_pool_baseline_dimension_filter_applies_needs_clarification_gate(tmp_path):
+    catalog, vectorizer, matrix = _fit([_row(1, "p1", "some milk substitute")], tmp_path)
+    index = _catalog_index(catalog)
+    out = tb.run_baseline_within_pool(
+        "tfidf_dimension_filter", "some milk", [(1, "p1")], catalog, vectorizer, matrix, index,
+    )
+    assert out["response"] == "needs_clarification"
+    assert out["results"] == []
+
+
+def test_pool_baseline_missing_dimension_not_treated_as_confirmed_mismatch(tmp_path):
+    catalog = _catalog([_row(1, "p1", "whole milk gallon jug")])
+    catalog.loc[0, "pkg_dimension"] = float("nan")
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    index = _catalog_index(catalog)
+    out = tb.run_baseline_within_pool(
+        "tfidf_dimension_filter", "1 gal whole milk", [(1, "p1")], catalog, vectorizer, matrix, index,
+    )
+    assert out["response"] == "answerable"
+    assert len(out["results"]) == 1
+
+
+def test_pool_baseline_rejects_the_threshold_baseline_name(tmp_path):
+    catalog, vectorizer, matrix = _fit([_row(1, "p1", "milk")], tmp_path)
+    index = _catalog_index(catalog)
+    with pytest.raises(ValueError, match="unknown pool baseline"):
+        tb.run_baseline_within_pool(
+            "tfidf_dimension_filter_threshold", "milk", [(1, "p1")], catalog, vectorizer, matrix, index,
+        )
