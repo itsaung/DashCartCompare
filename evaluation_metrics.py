@@ -212,17 +212,16 @@ def success_at_1_bounds(records: list, lookup: dict) -> dict:
     potentially acceptable. Unresolved cases are never called confirmed
     errors, and never dropped from the denominator.
 
-    "Unresolved" is any is_best_guess pair, full stop -- regardless of
-    which way its practical label points. All 56 best-guess pairs revert
-    to a conservative label of Needs clarification (never Acceptable), so
-    conservative == "Acceptable" already excludes every guess; anything
-    left with is_best_guess=True is a guess whose conservative label
-    reverted to Needs clarification specifically because it wasn't
-    independently confirmed -- that is unresolved whether the guess itself
-    leaned Acceptable (practical) or Incorrect. Treating a guessed-negative
-    as a "confirmed incorrect" would be exactly the "unresolved cases...
-    called confirmed errors" the plan says not to do; only a genuinely
-    non-guess Needs clarification/Incorrect decision is a confirmed error."""
+    Classified purely by the conservative label's own value, not by
+    is_best_guess: Acceptable -> confirmed_correct, Incorrect ->
+    confirmed_incorrect, Needs clarification -> unresolved. Needs
+    clarification means genuinely unresolved regardless of *why* a
+    particular pair carries it -- a best-guess pair that reverted to Needs
+    clarification (all 56 do, since "the 56 best guesses revert to Needs
+    clarification") and a non-guess pair that was independently judged
+    Needs clarification are both, definitionally, not a confirmed error.
+    Treating either one as "confirmed incorrect" would be exactly the
+    "unresolved cases... called confirmed errors" the plan says not to do."""
     n = len(records)
     confirmed_correct = confirmed_incorrect = unresolved = 0
     for r in records:
@@ -233,9 +232,10 @@ def success_at_1_bounds(records: list, lookup: dict) -> dict:
         entry = lookup.get(key)
         if entry is None:
             continue
-        if entry["conservative"] == "Acceptable":
+        conservative = entry["conservative"]
+        if conservative == "Acceptable":
             confirmed_correct += 1
-        elif entry["is_best_guess"]:
+        elif conservative == "Needs clarification":
             unresolved += 1
         else:
             confirmed_incorrect += 1

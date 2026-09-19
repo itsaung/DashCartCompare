@@ -46,10 +46,10 @@ from parse_query import parse_shopping_line
 # matched "Ghirardelli Premium Milk Chocolate Baking Chips" -- the exact
 # same failure class the original 2026-09-18 audit already corrected for
 # other candidates in this same request's original pool (r048/r049), now
-# reappearing in a newly-discovered candidate outside that pool. Downgrades
-# only -- the candidate might still be a real match if the shopper actually
-# meant a baking ingredient; this just means the bare word alone doesn't
-# confirm it.
+# reappearing in a newly-discovered candidate outside that pool. A match
+# here is a CONFIRMED conflict, not mere unconfirmability, so it asserts
+# Incorrect -- the same treatment the original audit gave the other
+# baking-chips candidates on this exact request.
 _FALSE_FRIEND_PHRASES = {
     "chips": ["chocolate chips", "baking chips", "morsels"],
 }
@@ -184,6 +184,64 @@ def _load_catalog_by_key() -> dict:
     return by_key
 
 
+def adjudicate_new_candidate(request: dict, row) -> tuple:
+    """Returns (label, reason). Starts from auto_label()'s own verdict, then
+    applies four additional checks written against real false positives
+    found while reviewing these 153 pairs (see module docstring). Each
+    check only ever runs when auto_label said Acceptable, and each
+    distinguishes a CONFIRMED conflict (a specific different value is
+    actually present in raw_title, or two sizes both parse and genuinely
+    differ) -- which asserts Incorrect, matching auto_label's own
+    convention for the same situation -- from mere unconfirmability (the
+    core product-type words are simply absent, which could mean many
+    things), which downgrades to Needs clarification instead."""
+    label, reason = auto_label(row, request)
+    title_lower = str(row["raw_title"]).lower()
+
+    if label == "Acceptable" and not _core_product_type_confirmed(request, title_lower):
+        label = "Needs clarification"
+        reason = (
+            "auto_label found no attribute conflict, but the core product-type words "
+            "(excluding brand/variant, matched whole-word) are not confirmable in raw_title "
+            f"-- original auto_label reason: {reason!r}"
+        )
+    elif label == "Acceptable" and not _variant_not_shadowed_by_a_more_specific_known_variant(request, title_lower):
+        # A CONFIRMED conflict, not mere unconfirmability -- raw_title
+        # names a specific, different, more-specific known variant
+        # (e.g. "extra large" present when "large" was requested).
+        # Matches auto_label's own convention for this exact situation
+        # ("title confirms a different named variant" -> Incorrect).
+        label = "Incorrect"
+        reason = (
+            "raw_title confirms a different, more specific known variant phrase than the one "
+            f"requested (a substring-shadowed conflict) -- original auto_label reason: {reason!r}"
+        )
+    elif label == "Acceptable" and not _no_false_friend_product_type_conflict(request, title_lower):
+        # Also a confirmed conflict: raw_title names a specific
+        # different product family (e.g. "chocolate chips" when a
+        # generic "chips" snack was requested), not just an
+        # unconfirmable word.
+        label = "Incorrect"
+        reason = (
+            "raw_title contains a known false-friend phrase for this product-type word "
+            f"(different product family, same word) -- original auto_label reason: {reason!r}"
+        )
+    elif label == "Acceptable" and not _size_confirmed_without_arbitrary_tolerance(request, row):
+        # Also a confirmed conflict: both sizes parsed successfully and
+        # differ beyond genuine unit-conversion rounding -- "Distinct
+        # printed sizes are distinct packages" (LABELING_GUIDELINES.md
+        # v2). Matches auto_label's own convention for a size mismatch
+        # beyond its own (looser) tolerance -> Incorrect, not Needs
+        # clarification.
+        label = "Incorrect"
+        reason = (
+            "auto_label's size match relied on its 3% tolerance band rather than unit-"
+            f"equivalent equality -- distinct printed sizes are distinct packages -- original auto_label reason: {reason!r}"
+        )
+
+    return label, reason
+
+
 def main():
     if not NEW_CANDIDATES_PATH.exists():
         raise SystemExit(f"{NEW_CANDIDATES_PATH.name} missing -- run run_experiments.py first")
@@ -200,35 +258,7 @@ def main():
     for c in new_candidates:
         request = requests[c["request_id"]]
         row = catalog_by_key[(c["store_id"], c["product_id"])]
-        label, reason = auto_label(row, request)
-        title_lower = str(row["raw_title"]).lower()
-
-        if label == "Acceptable" and not _core_product_type_confirmed(request, title_lower):
-            label = "Needs clarification"
-            reason = (
-                "auto_label found no attribute conflict, but the core product-type words "
-                "(excluding brand/variant, matched whole-word) are not confirmable in raw_title "
-                f"-- original auto_label reason: {reason!r}"
-            )
-        elif label == "Acceptable" and not _variant_not_shadowed_by_a_more_specific_known_variant(request, title_lower):
-            label = "Needs clarification"
-            reason = (
-                "auto_label's variant match was satisfied by a substring of a different, more "
-                f"specific known variant phrase actually present in raw_title -- original auto_label reason: {reason!r}"
-            )
-        elif label == "Acceptable" and not _no_false_friend_product_type_conflict(request, title_lower):
-            label = "Needs clarification"
-            reason = (
-                "raw_title contains a known false-friend phrase for this product-type word "
-                f"(different product family, same word) -- original auto_label reason: {reason!r}"
-            )
-        elif label == "Acceptable" and not _size_confirmed_without_arbitrary_tolerance(request, row):
-            label = "Needs clarification"
-            reason = (
-                "auto_label's size match relied on its 3% tolerance band rather than unit-"
-                f"equivalent equality -- original auto_label reason: {reason!r}"
-            )
-
+        label, reason = adjudicate_new_candidate(request, row)
         label_counts[label] += 1
 
         key = f"{c['request_id']}|{c['store_id']}|{c['product_id']}"

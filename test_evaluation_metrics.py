@@ -243,6 +243,18 @@ def test_success_at_1_bounds_a_guessed_negative_is_never_a_confirmed_error():
     assert out["confirmed_incorrect"] == 0
 
 
+def test_success_at_1_bounds_a_non_guess_needs_clarification_is_unresolved_not_a_confirmed_error():
+    # Regression test: a genuinely non-guess Needs clarification decision
+    # (is_best_guess=False) is still, definitionally, not a confirmed
+    # error -- classification must key off the conservative label's own
+    # value, not off is_best_guess.
+    lookup = _lookup({("r1", 1, "p1"): ("Needs clarification", "Needs clarification", False)})
+    records = [_record("r1", "answerable", [_res(1, "p1")])]
+    out = em.success_at_1_bounds(records, lookup)
+    assert out["unresolved"] == 1
+    assert out["confirmed_incorrect"] == 0
+
+
 def test_success_at_1_bounds_abstention_excluded_from_correct_or_incorrect_but_counts_in_n():
     records = [_record("r1", "no_acceptable_match", [])]
     out = em.success_at_1_bounds(records, {})

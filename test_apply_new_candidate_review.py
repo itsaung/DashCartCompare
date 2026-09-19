@@ -18,6 +18,7 @@ from apply_new_candidate_review import (
     _no_false_friend_product_type_conflict,
     _size_confirmed_without_arbitrary_tolerance,
     _variant_not_shadowed_by_a_more_specific_known_variant,
+    adjudicate_new_candidate,
 )
 
 
@@ -149,3 +150,48 @@ def test_size_any_substitution_skips_the_check():
 def test_unresolvable_candidate_size_does_not_block_acceptance():
     request = _request("15 oz cereal", size="15 oz")
     assert _size_confirmed_without_arbitrary_tolerance(request, {"raw_size": "by pound"}) is True
+
+
+# --- adjudicate_new_candidate: end-to-end label output ------------------------
+# Regression tests for the three real cases an external review found still
+# saying "Needs clarification" when the underlying checks had actually
+# confirmed a specific conflicting value -- auto_label's own convention
+# (and the original 2026-09-18 audit's, for the chips case specifically)
+# treats a confirmed conflict as Incorrect, not a softer "unconfirmable".
+
+def _row(raw_title, raw_size=None, pkg_dimension=None, dimension_review_flag=False):
+    return {
+        "raw_title": raw_title, "raw_size": raw_size,
+        "pkg_dimension": pkg_dimension, "dimension_review_flag": dimension_review_flag,
+    }
+
+
+def test_extra_large_eggs_against_large_eggs_request_is_incorrect():
+    request = _request(
+        "12 ct large eggs", variant="large", size="12 ct",
+    )
+    row = _row("Kroger Cage Free Extra Large White Eggs (12 ct)", raw_size="12 ct", pkg_dimension="count")
+    label, reason = adjudicate_new_candidate(request, row)
+    assert label == "Incorrect"
+    assert "extra large" in reason.lower() or "shadowed" in reason.lower() or "conflict" in reason.lower()
+
+
+def test_chocolate_baking_chips_against_bag_of_chips_request_is_incorrect():
+    request = _request("a bag of chips")
+    row = _row("Ghirardelli Premium Milk Chocolate Baking Chips Bag (11.5 oz)", raw_size="11.5 oz", pkg_dimension="weight")
+    label, reason = adjudicate_new_candidate(request, row)
+    assert label == "Incorrect"
+
+
+def test_15_4_oz_against_strict_15_oz_cereal_request_is_incorrect():
+    request = _request("15 oz cereal", size="15 oz")
+    row = _row("Cheerios Gluten Free Honey Nut Cereal (15.4 oz)", raw_size="15.4 oz", pkg_dimension="weight")
+    label, reason = adjudicate_new_candidate(request, row)
+    assert label == "Incorrect"
+
+
+def test_genuine_match_still_passes_through_as_acceptable():
+    request = _request("32 oz greek yogurt", size="32 oz")
+    row = _row("Sprouts Whole 5% Greek Yogurt Plain (32 oz)", raw_size="32 oz", pkg_dimension="weight")
+    label, reason = adjudicate_new_candidate(request, row)
+    assert label == "Acceptable"

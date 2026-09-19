@@ -26,17 +26,27 @@ this document reports the results it specifies.
   only "pattern-consistent, not independently re-searched," not confirmed (`NO_MATCH_AUDIT` in
   [`build_benchmark.py`](../build_benchmark.py)) — both were excluded from Checkpoint E6's threshold
   tuning for exactly that reason (`evaluation/threshold_selection.json`).
-- **The 153 additional judgments were themselves externally reviewed and corrected** before this
-  report was finalized: an initial pass reused `claude_auto_label.py`'s `auto_label()` unmodified
-  (the same rule set behind the main 1,658-pair audit) and let 5 real false positives through —
-  "extra large" eggs accepted against a "large" eggs request, chocolate baking chips accepted
-  against a generic "bag of chips," and a 15.4 oz box accepted against a "15 oz" request via
+- **The 153 additional judgments went through two rounds of external review and correction** before
+  this report was finalized. Round 1: an initial pass reused `claude_auto_label.py`'s `auto_label()`
+  unmodified (the same rule set behind the main 1,658-pair audit) and let 5 real false positives
+  through — "extra large" eggs accepted against a "large" eggs request, chocolate baking chips
+  accepted against a generic "bag of chips," and a 15.4 oz box accepted against a "15 oz" request via
   `auto_label`'s own 3% size tolerance (which `LABELING_GUIDELINES.md` v2 explicitly rejects as
-  arbitrary). `apply_new_candidate_review.py` now carries four additional, principled checks beyond
+  arbitrary). `apply_new_candidate_review.py` gained four additional, principled checks beyond
   `auto_label()` (product-type word confirmation, known-variant shadowing, a small false-friend
-  phrase list, and unit-equivalent-only size matching) written specifically against these findings;
-  the final split is 77 Acceptable / 56 Incorrect / 20 Needs clarification. All numbers in this
-  report reflect the corrected labels.
+  phrase list, and unit-equivalent-only size matching). Round 2: those four checks initially
+  downgraded every failure to `Needs clarification` uniformly; review caught that three of them
+  (known-variant shadowing, the false-friend list, and size matching) detect a CONFIRMED conflict —
+  a specific different value actually present, not mere unconfirmability — and should assert
+  `Incorrect` instead, matching `auto_label`'s own established convention for the same situation
+  (a confirmed brand/variant/size mismatch is always `Incorrect`; only a genuinely absent,
+  unconfirmable attribute is `Needs clarification`). Only the product-type check (the original
+  oat-milk-vs-almond-milk fix, which detects an absent core noun rather than a confirmed conflicting
+  one) still downgrades to `Needs clarification`. Final split: **77 Acceptable / 61 Incorrect / 15
+  Needs clarification**. All numbers in this report reflect the corrected labels (in this run, the
+  correction touched none of the specific pairs that are any split's own top-1 prediction, so no
+  metric value in §2 actually moved — verified by recomputing `evaluation/metrics.json` and diffing
+  it byte-for-byte against the version this correction started from).
 - **The original 1,658-pair pool was separately re-audited for the same size-tolerance issue**
   (`audit_size_tolerance.py`, `audit/SIZE_TOLERANCE_AUDIT_2026-09-19.md`): every one of its 475
   `Acceptable` labels with an expected size was checked against the same unit-equivalent-only
@@ -110,11 +120,15 @@ property of this run, not a guarantee for future models scored against the same 
 
 **Conservative-view Success@1 bounds** (dev, answerable n=77, `tfidf`): 63 confirmed correct, 14
 confirmed incorrect, 0 unresolved → lower bound 81.8%, upper bound 81.8% (identical here because no
-best-guess pair was ever a returned top-1 for `tfidf` on dev). "Unresolved" here means any of the 56
-best-guess pairs, regardless of which way its practical label leans — a guessed-negative is just as
-unconfirmed as a guessed-positive, so neither is ever counted as a confirmed error. All three
-baselines' bounds are recorded per split in `evaluation/metrics.json`; none of the three has a case
-where the lower and upper bounds meaningfully diverge on the headline Success@1 number in this run.
+best-guess pair was ever a returned top-1 for `tfidf` on dev). Classification is by the conservative
+label's own value, not by whether a pair happens to be a best guess: `Acceptable` → confirmed
+correct, `Incorrect` → confirmed incorrect, `Needs clarification` → unresolved. Every one of the 56
+best-guess pairs carries a conservative label of `Needs clarification` (never `Acceptable`), so they
+always land in "unresolved" regardless of which way their practical label leans — but so does any
+genuinely non-guess `Needs clarification` decision, since neither kind is a confirmed error. All
+three baselines' bounds are recorded per split in `evaluation/metrics.json`; none of the three has a
+case where the lower and upper bounds meaningfully diverge on the headline Success@1 number in this
+run.
 
 **Practical-view guessed-label exposure:** zero of any split's ~17–90 *scored* top-1 predictions
 touch one of the 56 best-guess labels, for any of the three baselines (`practical_guessed_label_exposure`
