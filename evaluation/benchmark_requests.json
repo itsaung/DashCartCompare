@@ -1,0 +1,3945 @@
+[
+  {
+    "request_id": "r001",
+    "text": "12 oz Barissimo French Vanilla ground coffee",
+    "paraphrase_group": "g001",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Barissimo",
+      "variant": "French Vanilla",
+      "size": "12 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326037"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r003",
+    "text": "16 oz Countryside Creamery Unsalted Butter",
+    "paraphrase_group": "g003",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Countryside Creamery",
+      "variant": "unsalted",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614305"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r004",
+    "text": "0.5 gal Oatly Original Oat Milk",
+    "paraphrase_group": "g004",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Oatly",
+      "variant": "Original",
+      "size": "0.5 gal",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994827920"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614273"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r006",
+    "text": "10 oz Clancy's Original Potato Chips",
+    "paraphrase_group": "g006",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Clancy's",
+      "variant": "Original",
+      "size": "10 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "42128961183"
+      ],
+      [
+        29631686,
+        "1000030409614426"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r007",
+    "text": "8 oz Kerrygold Grass Fed Pure Irish Unsalted Butter Sticks",
+    "paraphrase_group": "g007",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Kerrygold",
+      "variant": "unsalted, grass fed",
+      "size": "8 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "1000015143117001"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r008",
+    "text": "52 fl oz Simply Nature Organic Orange Juice",
+    "paraphrase_group": "g008",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Simply Nature",
+      "variant": "organic, no pulp claim",
+      "size": "52 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "37935676557"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r009",
+    "text": "52 fl oz of Simply Nature Organic Orange Juice please",
+    "paraphrase_group": "g008",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Simply Nature",
+      "variant": "organic, no pulp claim",
+      "size": "52 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "37935676557"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r010",
+    "text": "16.8 oz Cinnamon Toast Crunch Cereal",
+    "paraphrase_group": "g010",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Cinnamon Toast Crunch",
+      "variant": null,
+      "size": "16.8 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646281516"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r011",
+    "text": "80 oz Aldi Basmati Rice",
+    "paraphrase_group": "g011",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Aldi",
+      "variant": "basmati",
+      "size": "80 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000031863773500"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r012",
+    "text": "48 fl oz Califia Farms Organic Dairy Free Original Oat Milk Bottle",
+    "paraphrase_group": "g012",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Califia Farms",
+      "variant": "Original",
+      "size": "48 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994828098"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r013",
+    "text": "12 ct Goldhen Cage Free Grade A Large Brown Eggs",
+    "paraphrase_group": "g013",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Goldhen",
+      "variant": "cage free, grade A, brown",
+      "size": "12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "28683103634"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r014",
+    "text": "32 oz Friendly Farms Low Fat Plain Greek Yogurt",
+    "paraphrase_group": "g014",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Friendly Farms",
+      "variant": "low fat, plain",
+      "size": "32 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325337"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r015",
+    "text": "64 fl oz Friendly Farms Almond Milk Original",
+    "paraphrase_group": "g015",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Friendly Farms",
+      "variant": "Original",
+      "size": "64 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614288"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        35802549,
+        "30994827452"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r016",
+    "text": "67.6 fl oz Coke Cola Soda Bottle",
+    "paraphrase_group": "g016",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Coke",
+      "variant": "Cola",
+      "size": "67.6 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "25658690163"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r017",
+    "text": "a 67.6 fl oz bottle of Coke soda",
+    "paraphrase_group": "g016",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Coke",
+      "variant": "Cola",
+      "size": "67.6 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "25658690163"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r018",
+    "text": "7 oz Simply Nature Gluten Free Sweet Potato Chips",
+    "paraphrase_group": "g018",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Simply Nature",
+      "variant": "gluten free, sweet potato",
+      "size": "7 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326926"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r019",
+    "text": "3 lb Gala Apples Bag",
+    "paraphrase_group": "g019",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "Gala",
+      "size": "3 lb",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326556"
+      ],
+      [
+        1742136,
+        "11918946928"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "40274634997"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r020",
+    "text": "24 oz Bimbo Large White Bread",
+    "paraphrase_group": "g020",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Bimbo",
+      "variant": "white",
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "40050985415"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r021",
+    "text": "a 24 oz loaf of Bimbo Large White Bread",
+    "paraphrase_group": "g020",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Bimbo",
+      "variant": "white",
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "40050985415"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r022",
+    "text": "946 ml Almond Breeze Unsweetened Original Almond Milk Shelf Stable Carton",
+    "paraphrase_group": "g022",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Almond Breeze",
+      "variant": "unsweetened original",
+      "size": "946 ml",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994827591"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r023",
+    "text": "2 lb Honeycrisp Apples",
+    "paraphrase_group": "g023",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "Honeycrisp",
+      "size": "2 lb",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "40274634997"
+      ],
+      [
+        1742136,
+        "12065884876"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        35802549,
+        "30994834919"
+      ],
+      [
+        1742136,
+        "11112921718"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r024",
+    "text": "two pounds of Honeycrisp apples",
+    "paraphrase_group": "g023",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "Honeycrisp",
+      "size": "2 lb",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "40274634997"
+      ],
+      [
+        1742136,
+        "12065884876"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        35802549,
+        "30994834919"
+      ],
+      [
+        1742136,
+        "11112921718"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r025",
+    "text": "12 oz ground coffee",
+    "paraphrase_group": "g025",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "12 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326036"
+      ],
+      [
+        29631686,
+        "1000030409614014"
+      ],
+      [
+        29631686,
+        "38767041322"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r026",
+    "text": "10 oz potato chips",
+    "paraphrase_group": "g026",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "10 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "42128961183"
+      ],
+      [
+        29631686,
+        "1000030409614414"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r027",
+    "text": "0.5 gal almond milk",
+    "paraphrase_group": "g027",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "0.5 gal",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325285"
+      ],
+      [
+        29631686,
+        "22646303838"
+      ],
+      [
+        35802549,
+        "30982958977"
+      ],
+      [
+        35802549,
+        "30994827597"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614279"
+      ],
+      [
+        35802549,
+        "30994827920"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r028",
+    "text": "0.5 gal almond milk, any brand",
+    "paraphrase_group": "g027",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "0.5 gal",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325285"
+      ],
+      [
+        29631686,
+        "22646303838"
+      ],
+      [
+        35802549,
+        "30982958977"
+      ],
+      [
+        35802549,
+        "30994827597"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614279"
+      ],
+      [
+        35802549,
+        "30994827920"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r029",
+    "text": "0.5 gal oat milk",
+    "paraphrase_group": "g029",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "0.5 gal",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994827916"
+      ],
+      [
+        35802549,
+        "30994827920"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614273"
+      ],
+      [
+        35802549,
+        "30994828149"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r030",
+    "text": "32 oz greek yogurt",
+    "paraphrase_group": "g030",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "32 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325337"
+      ],
+      [
+        29631686,
+        "22646325338"
+      ],
+      [
+        29631686,
+        "1000030409614291"
+      ],
+      [
+        29631686,
+        "29575595381"
+      ],
+      [
+        29631686,
+        "22646325377"
+      ],
+      [
+        29631686,
+        "22955783493"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r031",
+    "text": "32 oz of greek yogurt please",
+    "paraphrase_group": "g030",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "32 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325337"
+      ],
+      [
+        29631686,
+        "22646325338"
+      ],
+      [
+        29631686,
+        "1000030409614291"
+      ],
+      [
+        29631686,
+        "29575595381"
+      ],
+      [
+        29631686,
+        "22646325377"
+      ],
+      [
+        29631686,
+        "22955783493"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r032",
+    "text": "12 ct large eggs",
+    "paraphrase_group": "g032",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "large",
+      "size": "12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "28683103634"
+      ],
+      [
+        29631686,
+        "22646325370"
+      ],
+      [
+        35802549,
+        "30994828033"
+      ],
+      [
+        35802549,
+        "30994828240"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r033",
+    "text": "a dozen large eggs, any brand is fine",
+    "paraphrase_group": "g032",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "large",
+      "size": "12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "28683103634"
+      ],
+      [
+        29631686,
+        "22646325370"
+      ],
+      [
+        35802549,
+        "30994828033"
+      ],
+      [
+        35802549,
+        "30994828240"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r034",
+    "text": "52 fl oz orange juice",
+    "paraphrase_group": "g034",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "no stated flavor add-ins",
+      "size": "52 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614180"
+      ],
+      [
+        29631686,
+        "24255531505"
+      ],
+      [
+        29631686,
+        "37935676557"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000032999710111"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r035",
+    "text": "20 oz whole wheat bread",
+    "paraphrase_group": "g035",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "whole wheat",
+      "size": "20 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614142"
+      ],
+      [
+        29631686,
+        "22646327477"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r036",
+    "text": "16 fl oz ice cream",
+    "paraphrase_group": "g036",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "16 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "32760619639"
+      ],
+      [
+        29631686,
+        "32760619641"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "32760619640"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r037",
+    "text": "7 oz pasta",
+    "paraphrase_group": "g037",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "7 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "shape": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646281578"
+      ],
+      [
+        29631686,
+        "22646281576"
+      ],
+      [
+        29631686,
+        "22646281579"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r038",
+    "text": "16 oz chicken breast strips",
+    "paraphrase_group": "g038",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "strips",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000024859640010"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614583"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r039",
+    "text": "12 oz unsalted butter",
+    "paraphrase_group": "g039",
+    "matching_mode": "flexible",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": "unsalted",
+      "size": "12 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614305"
+      ],
+      [
+        35802549,
+        "30851030310"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r040",
+    "text": "9.5 oz barbecue potato chips",
+    "paraphrase_group": "g040",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "barbecue",
+      "size": "9.5 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000032999710092"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        35802549,
+        "30994851533"
+      ]
+    ],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r041",
+    "text": "5.3 oz flavored greek yogurt, any flavor",
+    "paraphrase_group": "g041",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "5.3 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "44216925438"
+      ],
+      [
+        29631686,
+        "44216925437"
+      ],
+      [
+        29631686,
+        "22646325374"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r042",
+    "text": "15 oz cereal",
+    "paraphrase_group": "g042",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "15 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326226"
+      ],
+      [
+        29631686,
+        "1000001948175117"
+      ],
+      [
+        29631686,
+        "1000001948175116"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r045",
+    "text": "milk",
+    "paraphrase_group": "g045",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r046",
+    "text": "milk please",
+    "paraphrase_group": "g045",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r047",
+    "text": "some milk",
+    "paraphrase_group": "g047",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r048",
+    "text": "a bag of chips",
+    "paraphrase_group": "g048",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r049",
+    "text": "chips, one bag",
+    "paraphrase_group": "g048",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r050",
+    "text": "a loaf of bread",
+    "paraphrase_group": "g050",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": true
+  },
+  {
+    "request_id": "r051",
+    "text": "2 lb chicken breast",
+    "paraphrase_group": "g051",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "2 lb",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "25302960431"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r052",
+    "text": "3 bananas",
+    "paraphrase_group": "g052",
+    "matching_mode": "flexible",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": 3,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "43649193203"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r053",
+    "text": "1 lb oat milk",
+    "paraphrase_group": "g053",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "1 lb",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        35802549,
+        "30994827920"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r054",
+    "text": "5 gal whole milk",
+    "paraphrase_group": "g054",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": "whole",
+      "size": "5 gal",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614274"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r055",
+    "text": "16 oz Fremont Fish Market Boneless Skinless Wild Caught Pink Salmon",
+    "paraphrase_group": "g055",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Fremont Fish Market",
+      "variant": "wild caught pink, boneless skinless",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "33905145040"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r056",
+    "text": "16 oz Fremont Fish Market Wild Caught Pink Salmon, boneless and skinless, please",
+    "paraphrase_group": "g055",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Fremont Fish Market",
+      "variant": "wild caught pink, boneless skinless",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "33905145040"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r057",
+    "text": "11.57 oz La Tortilla Factory Yellow Corn Tortillas",
+    "paraphrase_group": "g057",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "La Tortilla Factory",
+      "variant": "yellow corn",
+      "size": "11.57 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "42227523004"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r058",
+    "text": "16 oz Simply Nature Organic Creamy Peanut Butter",
+    "paraphrase_group": "g058",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Simply Nature",
+      "variant": "organic, creamy",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614058"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r059",
+    "text": "5 oz Starkist Chunk Light Tuna in Water Can",
+    "paraphrase_group": "g059",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Starkist",
+      "variant": "chunk light, in water",
+      "size": "5 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "1000013334011006"
+      ],
+      [
+        35802549,
+        "44208371799"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r060",
+    "text": "5 oz can of Starkist Chunk Light Tuna in Water, get me one",
+    "paraphrase_group": "g059",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Starkist",
+      "variant": "chunk light, in water",
+      "size": "5 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "1000013334011006"
+      ],
+      [
+        35802549,
+        "44208371799"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r061",
+    "text": "29.75 oz Mama Cozzi Rising Crust Four Cheese Pizza",
+    "paraphrase_group": "g061",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Mama Cozzi",
+      "variant": "rising crust, four cheese",
+      "size": "29.75 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646288068"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r062",
+    "text": "12 fl oz x 12 ct La Croix Razz-Cranberry Sparkling Water Cans",
+    "paraphrase_group": "g062",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "La Croix",
+      "variant": "Razz-Cranberry",
+      "size": "12 fl oz x 12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646303929"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r063",
+    "text": "24 oz Priano Marinara Pasta Sauce",
+    "paraphrase_group": "g063",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Priano",
+      "variant": "marinara",
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325794"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r064",
+    "text": "18 ct Millville Chocolate Chip Chewy Granola Bars",
+    "paraphrase_group": "g064",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Millville",
+      "variant": "chocolate chip, chewy",
+      "size": "18 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "24200027674"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r065",
+    "text": "12 oz Season's Choice Steamable Frozen Broccoli Florets",
+    "paraphrase_group": "g065",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Season's Choice",
+      "variant": "steamable florets",
+      "size": "12 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646327699"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r066",
+    "text": "12 oz Goldfish Cheddar Crackers",
+    "paraphrase_group": "g066",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Goldfish",
+      "variant": "cheddar",
+      "size": "12 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "27761443670"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "27761443669"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r067",
+    "text": "24 oz Friendly Farms 4% Milkfat Small Curd Regular Cottage Cheese",
+    "paraphrase_group": "g067",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Friendly Farms",
+      "variant": "4% milkfat, small curd",
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614300"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r068",
+    "text": "9 oz Lunch Mate Oven Roasted Turkey Breast",
+    "paraphrase_group": "g068",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Lunch Mate",
+      "variant": "oven roasted",
+      "size": "9 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614581"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614579"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r069",
+    "text": "24 oz Reggano Tomato Basil & Garlic Pasta Sauce",
+    "paraphrase_group": "g069",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Reggano",
+      "variant": "tomato basil & garlic",
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325799"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r070",
+    "text": "6 ct Millville Chewy Dipped Peanut Butter Granola Bars",
+    "paraphrase_group": "g070",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Millville",
+      "variant": "chewy dipped, peanut butter",
+      "size": "6 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646327046"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r071",
+    "text": "16 oz Daisy Brand 4% Milk Fat Pure & Natural Cottage Cheese",
+    "paraphrase_group": "g071",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Daisy Brand",
+      "variant": "4% milk fat, pure & natural",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994827880"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r072",
+    "text": "8 oz Foster Farms Oven Roasted Turkey Breast",
+    "paraphrase_group": "g072",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Foster Farms",
+      "variant": "oven roasted",
+      "size": "8 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "1000025624262020"
+      ],
+      [
+        35802549,
+        "30994828683"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r073",
+    "text": "20 ct Pueblo Lindo Fajita Flour Tortillas",
+    "paraphrase_group": "g073",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Pueblo Lindo",
+      "variant": "fajita, flour",
+      "size": "20 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646305614"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r074",
+    "text": "7 oz Cheez-It Baked Original Snack Crackers",
+    "paraphrase_group": "g074",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Cheez-It",
+      "variant": "baked, original",
+      "size": "7 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646289759"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r075",
+    "text": "16 oz Aldi Powdered Peanut Butter",
+    "paraphrase_group": "g075",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Aldi",
+      "variant": "powdered",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "43529745214"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r076",
+    "text": "40 ct Bagel Bites Cheese and Pepperoni Frozen Mini Pizza Snacks Party Pack",
+    "paraphrase_group": "g076",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Bagel Bites",
+      "variant": "cheese and pepperoni",
+      "size": "40 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994826715"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        35802549,
+        "30994826716"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r077",
+    "text": "10.8 oz Birds Eye Steamfresh Frozen Broccoli Florets",
+    "paraphrase_group": "g077",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Birds Eye",
+      "variant": "steamfresh florets",
+      "size": "10.8 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994826159"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        35802549,
+        "41517124658"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r078",
+    "text": "5.3 oz Good Culture 2% Milkfat Simply Cottage Cheese",
+    "paraphrase_group": "g078",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Good Culture",
+      "variant": "2% milkfat, simply",
+      "size": "5.3 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30785144607"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r079",
+    "text": "17 fl oz PurAqua Frost Lemonade Sparkling Water Bottle",
+    "paraphrase_group": "g079",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "PurAqua",
+      "variant": "Frost Lemonade",
+      "size": "17 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646304071"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r080",
+    "text": "6 oz Applegate Farms Organics Gluten Free Oven Roasted Turkey Breast",
+    "paraphrase_group": "g080",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Applegate Farms",
+      "variant": "organic, gluten free, oven roasted",
+      "size": "6 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994828521"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r081",
+    "text": "8.8 oz Savoritz Mini Peanut Butter Sandwich Crackers",
+    "paraphrase_group": "g081",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Savoritz",
+      "variant": "mini, peanut butter sandwich",
+      "size": "8.8 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646327015"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r082",
+    "text": "5.3 oz Chobani Flip Greek Yogurt Cookie Dough",
+    "paraphrase_group": "g082",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Chobani",
+      "variant": "Flip, Cookie Dough",
+      "size": "5.3 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "44216925438"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "44216925437"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r083",
+    "text": "16 oz Ben & Jerry's Half Baked Chocolate & Vanilla Ice Cream",
+    "paraphrase_group": "g083",
+    "matching_mode": "exact",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": "Ben & Jerry's",
+      "variant": "Half Baked",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "32760619640"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "32760619639"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r084",
+    "text": "20 oz L'oven Fresh Honey Wheat Bread",
+    "paraphrase_group": "g084",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "L'oven Fresh",
+      "variant": "honey wheat",
+      "size": "20 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614143"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r085",
+    "text": "4 ct Land O'Lakes Unsalted Butter Sticks",
+    "paraphrase_group": "g085",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Land O'Lakes",
+      "variant": "unsalted",
+      "size": "4 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994827498"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r086",
+    "text": "15 oz Fruity Pebbles Cereal Large Size",
+    "paraphrase_group": "g086",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Fruity Pebbles",
+      "variant": null,
+      "size": "15 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326226"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r087",
+    "text": "8 oz Ruffles Flamin' Hot Flavored Potato Chips",
+    "paraphrase_group": "g087",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Ruffles",
+      "variant": "Flamin' Hot",
+      "size": "8 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "34381974108"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r088",
+    "text": "12 fl oz x 12 ct Diet Coke Diet Cola Soda",
+    "paraphrase_group": "g088",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Diet Coke",
+      "variant": "diet cola",
+      "size": "12 fl oz x 12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000040970948003"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r089",
+    "text": "89 fl oz Tropicana No Pulp Pure Premium Orange Juice",
+    "paraphrase_group": "g089",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Tropicana",
+      "variant": "no pulp, pure premium",
+      "size": "89 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30802482205"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r090",
+    "text": "15 oz Priano Four Cheese Alfredo Pasta Sauce",
+    "paraphrase_group": "g090",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Priano",
+      "variant": "alfredo, four cheese",
+      "size": "15 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614123"
+      ],
+      [
+        29631686,
+        "22646326175"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r091",
+    "text": "16 oz salmon fillet",
+    "paraphrase_group": "g091",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "fillet",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "33905145040"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "35968708361"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r092",
+    "text": "24 oz pasta sauce",
+    "paraphrase_group": "g092",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325796"
+      ],
+      [
+        29631686,
+        "22646325794"
+      ],
+      [
+        29631686,
+        "22646325795"
+      ],
+      [
+        29631686,
+        "22646326199"
+      ],
+      [
+        29631686,
+        "22646326200"
+      ],
+      [
+        29631686,
+        "22646325801"
+      ],
+      [
+        29631686,
+        "1000033272212023"
+      ],
+      [
+        29631686,
+        "22646326113"
+      ],
+      [
+        29631686,
+        "1000003009758177"
+      ],
+      [
+        29631686,
+        "22646325799"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r093",
+    "text": "24 oz of pasta sauce, any flavor is fine",
+    "paraphrase_group": "g092",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646325796"
+      ],
+      [
+        29631686,
+        "22646325794"
+      ],
+      [
+        29631686,
+        "22646325795"
+      ],
+      [
+        29631686,
+        "22646326199"
+      ],
+      [
+        29631686,
+        "22646326200"
+      ],
+      [
+        29631686,
+        "22646325801"
+      ],
+      [
+        29631686,
+        "1000033272212023"
+      ],
+      [
+        29631686,
+        "22646326113"
+      ],
+      [
+        29631686,
+        "1000003009758177"
+      ],
+      [
+        29631686,
+        "22646325799"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r094",
+    "text": "12 oz frozen broccoli florets",
+    "paraphrase_group": "g094",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "florets",
+      "size": "12 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646327699"
+      ],
+      [
+        29631686,
+        "22646326552"
+      ],
+      [
+        35802549,
+        "1000013315682004"
+      ],
+      [
+        35802549,
+        "34388507641"
+      ],
+      [
+        35802549,
+        "44208655145"
+      ],
+      [
+        35802549,
+        "1000013487895003"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000032999710102"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r095",
+    "text": "6 ct granola bars",
+    "paraphrase_group": "g095",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "6 ct",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614421"
+      ],
+      [
+        29631686,
+        "22646327046"
+      ],
+      [
+        29631686,
+        "22646327062"
+      ],
+      [
+        29631686,
+        "22646327063"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r096",
+    "text": "5 oz canned tuna",
+    "paraphrase_group": "g096",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "canned",
+      "size": "5 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "1000013334011006"
+      ],
+      [
+        35802549,
+        "44208371799"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "22646281642"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r097",
+    "text": "16 oz cottage cheese",
+    "paraphrase_group": "g097",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994827880"
+      ],
+      [
+        35802549,
+        "30890153736"
+      ],
+      [
+        35802549,
+        "30994828222"
+      ],
+      [
+        35802549,
+        "30896842801"
+      ],
+      [
+        35802549,
+        "30851030315"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r098",
+    "text": "9 oz deli turkey breast",
+    "paraphrase_group": "g098",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "oven roasted or smoked",
+      "size": "9 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614579"
+      ],
+      [
+        29631686,
+        "1000030409614581"
+      ],
+      [
+        35802549,
+        "30994828588"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r099",
+    "text": "12 fl oz x 12 ct sparkling water",
+    "paraphrase_group": "g099",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "12 fl oz x 12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646303929"
+      ],
+      [
+        29631686,
+        "41385015236"
+      ],
+      [
+        29631686,
+        "41877836529"
+      ],
+      [
+        29631686,
+        "41877836530"
+      ],
+      [
+        29631686,
+        "41511254172"
+      ],
+      [
+        29631686,
+        "41694369354"
+      ],
+      [
+        29631686,
+        "41877836531"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r100",
+    "text": "14.9 oz frozen pizza",
+    "paraphrase_group": "g100",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "14.9 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646327850"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r101",
+    "text": "20 ct flour tortillas",
+    "paraphrase_group": "g101",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "flour",
+      "size": "20 ct",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646305614"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r102",
+    "text": "7 oz crackers",
+    "paraphrase_group": "g102",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "7 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646289759"
+      ],
+      [
+        29631686,
+        "1000030409614438"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r103",
+    "text": "8 oz deli turkey",
+    "paraphrase_group": "g103",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "8 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "33573022675"
+      ],
+      [
+        35802549,
+        "1000025624262020"
+      ],
+      [
+        35802549,
+        "30994828683"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r104",
+    "text": "17.5 oz flour tortillas",
+    "paraphrase_group": "g104",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "flour",
+      "size": "17.5 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000032999710119"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r105",
+    "text": "10 oz frozen broccoli florets",
+    "paraphrase_group": "g105",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "florets",
+      "size": "10 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000032999710102"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r106",
+    "text": "24 ct flour tortillas",
+    "paraphrase_group": "g106",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "flour",
+      "size": "24 ct",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646327483"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r107",
+    "text": "18 ct granola bars",
+    "paraphrase_group": "g107",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "18 ct",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "24200027674"
+      ],
+      [
+        29631686,
+        "24222461766"
+      ],
+      [
+        29631686,
+        "24200027675"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r108",
+    "text": "21 oz crackers",
+    "paraphrase_group": "g108",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "21 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "40653620242"
+      ],
+      [
+        29631686,
+        "22897750804"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r109",
+    "text": "5.3 oz cottage cheese",
+    "paraphrase_group": "g109",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "5.3 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "32929359730"
+      ],
+      [
+        35802549,
+        "30785144607"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r110",
+    "text": "24 oz cottage cheese",
+    "paraphrase_group": "g110",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614300"
+      ],
+      [
+        29631686,
+        "1000032999710057"
+      ],
+      [
+        35802549,
+        "30851030311"
+      ],
+      [
+        35802549,
+        "33634805825"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r111",
+    "text": "7 oz deli turkey",
+    "paraphrase_group": "g111",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "7 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994828519"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r112",
+    "text": "16 oz deli turkey",
+    "paraphrase_group": "g112",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "30671486433"
+      ],
+      [
+        29631686,
+        "1000030409614578"
+      ],
+      [
+        29631686,
+        "22646268213"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r113",
+    "text": "33.8 fl oz sparkling water",
+    "paraphrase_group": "g113",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "33.8 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646303957"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r114",
+    "text": "13.1 oz crackers",
+    "paraphrase_group": "g114",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "13.1 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326995"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r115",
+    "text": "96 fl oz almond milk",
+    "paraphrase_group": "g115",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "96 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994827604"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r116",
+    "text": "52 fl oz oat milk",
+    "paraphrase_group": "g116",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "52 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994828149"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r117",
+    "text": "3 lb Honeycrisp Apples",
+    "paraphrase_group": "g117",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "Honeycrisp",
+      "size": "3 lb",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994834863"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        1742136,
+        "11918946928"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r118",
+    "text": "46 fl oz orange juice",
+    "paraphrase_group": "g118",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "46 fl oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "43820232926"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r119",
+    "text": "9 ct pasta sauce jars, any flavor",
+    "paraphrase_group": "g119",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": 9,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "22646325794"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r120",
+    "text": "some tortillas",
+    "paraphrase_group": "g120",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r121",
+    "text": "tortillas",
+    "paraphrase_group": "g121",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r122",
+    "text": "a can of tuna",
+    "paraphrase_group": "g122",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r123",
+    "text": "a jar of peanut butter",
+    "paraphrase_group": "g123",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r124",
+    "text": "1 box of crackers",
+    "paraphrase_group": "g124",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r125",
+    "text": "cottage cheese",
+    "paraphrase_group": "g125",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r126",
+    "text": "a bag of granola bars",
+    "paraphrase_group": "g126",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r127",
+    "text": "some crackers",
+    "paraphrase_group": "g127",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r128",
+    "text": "a box of pasta sauce",
+    "paraphrase_group": "g128",
+    "matching_mode": "flexible",
+    "answerability": "needs_clarification",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": null,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r129",
+    "text": "2 salmon fillets",
+    "paraphrase_group": "g129",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": 2,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "36853168254"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r130",
+    "text": "3 deli turkey breasts",
+    "paraphrase_group": "g130",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": null,
+      "quantity": 3,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614581"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r131",
+    "text": "100 ct granola bars",
+    "paraphrase_group": "g131",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "100 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "24200027674"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r132",
+    "text": "1 lb sparkling water",
+    "paraphrase_group": "g132",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "1 lb",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "22646303929"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r133",
+    "text": "10 gal sparkling water",
+    "paraphrase_group": "g133",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "10 gal",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "22646303957"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r134",
+    "text": "18 oz Peanut Delight Creamy Peanut Butter",
+    "paraphrase_group": "g134",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Peanut Delight",
+      "variant": "creamy",
+      "size": "18 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614071"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r135",
+    "text": "40 oz Peanut Delight Creamy Peanut Butter",
+    "paraphrase_group": "g135",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Peanut Delight",
+      "variant": "creamy",
+      "size": "40 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614001"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r136",
+    "text": "16 oz Peanut Delight No-Stir Creamy Peanut Butter",
+    "paraphrase_group": "g136",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Peanut Delight",
+      "variant": "no-stir, creamy",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614057"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r137",
+    "text": "16 oz peanut butter",
+    "paraphrase_group": "g137",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614058"
+      ],
+      [
+        29631686,
+        "1000030409614057"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r138",
+    "text": "12 fl oz x 12 ct PurAqua Belle Vie Strawberry Sparkling Water Cans",
+    "paraphrase_group": "g138",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "PurAqua Belle Vie",
+      "variant": "strawberry",
+      "size": "12 fl oz x 12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "41877836531"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r139",
+    "text": "29.75 oz Mama Cozzi Rising Crust Four Cheese Pizza, if you would",
+    "paraphrase_group": "g061",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Mama Cozzi",
+      "variant": "rising crust, four cheese",
+      "size": "29.75 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646288068"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r140",
+    "text": "24 oz of Friendly Farms 4% Milkfat Small Curd Regular Cottage Cheese, get me that",
+    "paraphrase_group": "g067",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Friendly Farms",
+      "variant": "4% milkfat, small curd",
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614300"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r141",
+    "text": "20 ct Pueblo Lindo Fajita Flour Tortillas please",
+    "paraphrase_group": "g073",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Pueblo Lindo",
+      "variant": "fajita, flour",
+      "size": "20 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646305614"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r142",
+    "text": "a 12 fl oz x 12 ct pack of Diet Coke Diet Cola Soda",
+    "paraphrase_group": "g088",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Diet Coke",
+      "variant": "diet cola",
+      "size": "12 fl oz x 12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000040970948003"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r143",
+    "text": "three pounds Honeycrisp apples",
+    "paraphrase_group": "g117",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "Honeycrisp",
+      "size": "3 lb",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "30994834863"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        1742136,
+        "11918946928"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r144",
+    "text": "5 oz can of tuna, any brand",
+    "paraphrase_group": "g096",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "canned",
+      "size": "5 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        35802549,
+        "1000013334011006"
+      ],
+      [
+        35802549,
+        "44208371799"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "22646281642"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r145",
+    "text": "12 oz frozen broccoli florets, any brand is fine",
+    "paraphrase_group": "g094",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "florets",
+      "size": "12 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646327699"
+      ],
+      [
+        29631686,
+        "22646326552"
+      ],
+      [
+        35802549,
+        "1000013315682004"
+      ],
+      [
+        35802549,
+        "34388507641"
+      ],
+      [
+        35802549,
+        "44208655145"
+      ],
+      [
+        35802549,
+        "1000013487895003"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000032999710102"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r146",
+    "text": "21 oz Savoritz Extra Toasty Cheese Crackers Family Size",
+    "paraphrase_group": "g146",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Savoritz",
+      "variant": "extra toasty cheese",
+      "size": "21 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "40653620242"
+      ],
+      [
+        29631686,
+        "22897750804"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r147",
+    "text": "4.25 oz crackers",
+    "paraphrase_group": "g147",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "4.25 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any",
+        "flavor": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646289867"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r148",
+    "text": "10.5 oz Baker's Treat Glazed Honey Buns",
+    "paraphrase_group": "g148",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Baker's Treat",
+      "variant": "glazed honey",
+      "size": "10.5 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "33873154325"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r149",
+    "text": "16 oz honey ham",
+    "paraphrase_group": "g149",
+    "matching_mode": "flexible",
+    "answerability": "answerable",
+    "expected": {
+      "brand": null,
+      "variant": "honey ham",
+      "size": "16 oz",
+      "quantity": 1,
+      "allowed_substitutions": {
+        "brand": "any"
+      }
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000032999710137"
+      ],
+      [
+        29631686,
+        "1000030409614589"
+      ],
+      [
+        29631686,
+        "41448177281"
+      ]
+    ],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "1000030409614588"
+      ]
+    ],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r150",
+    "text": "15 oz Lunch Mate Lower Sodium Smoked Honey Ham",
+    "paraphrase_group": "g150",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Lunch Mate",
+      "variant": "lower sodium, smoked honey ham",
+      "size": "15 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "31132830124"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r151",
+    "text": "a 12 fl oz x 12 ct case of La Croix Razz-Cranberry Sparkling Water",
+    "paraphrase_group": "g062",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "La Croix",
+      "variant": "Razz-Cranberry",
+      "size": "12 fl oz x 12 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646303929"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r152",
+    "text": "20 oz loaf of L'oven Fresh Honey Wheat Bread",
+    "paraphrase_group": "g084",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "L'oven Fresh",
+      "variant": "honey wheat",
+      "size": "20 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "1000030409614143"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r153",
+    "text": "24 oz Reggano Roasted Garlic Pasta Sauce",
+    "paraphrase_group": "g153",
+    "matching_mode": "exact",
+    "answerability": "answerable",
+    "expected": {
+      "brand": "Reggano",
+      "variant": "roasted garlic",
+      "size": "24 oz",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [
+      [
+        29631686,
+        "22646326113"
+      ]
+    ],
+    "hard_negative_product_ids": [],
+    "is_pilot": false
+  },
+  {
+    "request_id": "r154",
+    "text": "I need 100 ct of granola bars",
+    "paraphrase_group": "g131",
+    "matching_mode": "exact",
+    "answerability": "no_acceptable_match",
+    "expected": {
+      "brand": null,
+      "variant": null,
+      "size": "100 ct",
+      "quantity": 1,
+      "allowed_substitutions": {}
+    },
+    "reference_product_ids": [],
+    "hard_negative_product_ids": [
+      [
+        29631686,
+        "24200027674"
+      ]
+    ],
+    "is_pilot": false
+  }
+]
