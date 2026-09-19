@@ -37,6 +37,13 @@ this document reports the results it specifies.
   phrase list, and unit-equivalent-only size matching) written specifically against these findings;
   the final split is 77 Acceptable / 56 Incorrect / 20 Needs clarification. All numbers in this
   report reflect the corrected labels.
+- **The original 1,658-pair pool was separately re-audited for the same size-tolerance issue**
+  (`audit_size_tolerance.py`, `audit/SIZE_TOLERANCE_AUDIT_2026-09-19.md`): every one of its 475
+  `Acceptable` labels with an expected size was checked against the same unit-equivalent-only
+  comparison, not `auto_label`'s 3% tolerance. **Zero violations found** — the 2026-09-18 complete
+  audit (`codex_ai_audit`) never actually relied on that tolerance for its own Acceptable labels,
+  unlike the separate, later 153-additional-candidate review above. This was a real, checked
+  finding, not an assumption that the main pool was fine because it predates the bug report.
 
 ## 2. The three baselines, side by side
 
