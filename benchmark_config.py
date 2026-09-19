@@ -37,7 +37,7 @@ RANDOM_SEED = 20260916
 # "answerable" rather than "no_acceptable_match". This is the one threshold
 # in the project; it is chosen using the dev split only (tfidf_baseline.py),
 # then locked before validation/test are ever scored against it.
-MIN_SIMILARITY = None  # set by tfidf_baseline.py's dev-tuning step, then frozen
+MIN_SIMILARITY = 0.65  # frozen by tune_threshold.py (Checkpoint E6) -- see evaluation/threshold_selection.json for the dev-only selection that set this
 
 # Target overall split ratios by request count (build_benchmark.py). The 50
 # pilot requests are pinned to dev unconditionally and count toward this

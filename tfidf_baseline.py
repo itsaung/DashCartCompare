@@ -160,6 +160,32 @@ def run_baseline_within_pool(name: str, request_text: str, pool_pairs: list, cat
     }
 
 
+def apply_threshold(record: dict, min_similarity: float) -> dict:
+    """Derive what tfidf_dimension_filter_threshold would have returned at
+    `min_similarity`, from an already-computed tfidf_dimension_filter record
+    (config min_similarity=0.0, i.e. pre-threshold) -- without re-running
+    retrieval, since the candidate set and ranking are byte-identical; only
+    the threshold cutoff differs. This is what Checkpoint E6's grid search
+    sweeps over (cheaply, over already-written predictions), and what
+    Checkpoint E7 uses to materialize the frozen threshold baseline's own
+    results for the final report."""
+    if record["config"]["name"] != "tfidf_dimension_filter":
+        raise ValueError(
+            f"apply_threshold only derives from tfidf_dimension_filter records, got "
+            f"{record['config']['name']!r}"
+        )
+
+    config = {**record["config"], "name": "tfidf_dimension_filter_threshold", "min_similarity": min_similarity}
+
+    if record["response"] != "answerable" or not record["results"]:
+        return {**record, "config": config}
+
+    if record["results"][0]["score"] < min_similarity:
+        return {**record, "config": config, "response": "no_acceptable_match", "results": []}
+
+    return {**record, "config": config}
+
+
 def main():
     import json
     from pathlib import Path

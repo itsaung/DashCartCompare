@@ -190,6 +190,45 @@ def test_pool_baseline_missing_dimension_not_treated_as_confirmed_mismatch(tmp_p
     assert len(out["results"]) == 1
 
 
+# --- apply_threshold: derive baseline 3 from baseline 2's pre-threshold record
+
+def _dimension_filter_record(response="answerable", results=None):
+    return {
+        "config": {"name": "tfidf_dimension_filter", "dimension_filter": True, "min_similarity": 0.0},
+        "results": results or [],
+        "response": response,
+    }
+
+
+def test_apply_threshold_survives_above_the_floor():
+    rec = _dimension_filter_record(results=[{"store_id": 1, "product_id": "p1", "score": 0.6}])
+    out = tb.apply_threshold(rec, min_similarity=0.5)
+    assert out["response"] == "answerable"
+    assert out["results"] == rec["results"]
+    assert out["config"]["min_similarity"] == 0.5
+    assert out["config"]["name"] == "tfidf_dimension_filter_threshold"
+
+
+def test_apply_threshold_rejects_below_the_floor():
+    rec = _dimension_filter_record(results=[{"store_id": 1, "product_id": "p1", "score": 0.3}])
+    out = tb.apply_threshold(rec, min_similarity=0.5)
+    assert out["response"] == "no_acceptable_match"
+    assert out["results"] == []
+
+
+def test_apply_threshold_leaves_an_already_abstained_record_alone():
+    rec = _dimension_filter_record(response="needs_clarification", results=[])
+    out = tb.apply_threshold(rec, min_similarity=0.5)
+    assert out["response"] == "needs_clarification"
+    assert out["results"] == []
+
+
+def test_apply_threshold_rejects_a_record_from_the_wrong_baseline():
+    rec = {"config": {"name": "tfidf"}, "results": [], "response": "answerable"}
+    with pytest.raises(ValueError, match="only derives from tfidf_dimension_filter"):
+        tb.apply_threshold(rec, min_similarity=0.5)
+
+
 def test_pool_baseline_rejects_the_threshold_baseline_name(tmp_path):
     catalog, vectorizer, matrix = _fit([_row(1, "p1", "milk")], tmp_path)
     index = _catalog_index(catalog)
