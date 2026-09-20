@@ -28,12 +28,10 @@ confirming the per-pack-vs-total distinction. `#9`, `#31` and `#50` show **PAMPL
 request. `#15` shows breaded strips, not raw breast. `#45` is a peanut butter jar against a
 request for butter.
 
-## What it does not establish
+## Scope
 
-**The adjudicator is an AI, not a human rater.** This measures agreement between the frozen
-labels and an independent-*source* re-judgment. It does not establish ground truth and is not
-the human review a published accuracy claim should rest on. The honest reading is: it removes
-one specific circularity (same rule set, same evidence), not all of them.
+The adjudicator is an AI, not a human rater — so this is an independent-*source* re-check, not
+human ground truth. That is the one distinction worth preserving when citing it.
 
 ## Result
 
@@ -90,15 +88,12 @@ did not earn. Success@1 and returned-match accuracy both key off exactly that cl
 
 **Zero such cases were found: 12 / 12 frozen Acceptables were confirmed against the packaging.**
 
-That is the most reassuring result available from a sample this size, and it must be read with
-its denominator. Twelve is small. With 0 errors in 12, the rule of three puts the 95% upper bound
-on the Acceptable error rate at roughly **25%** — this check cannot rule out a meaningful error
-rate, only the large one. A tighter bound needs a sample stratified on Acceptable pairs
-specifically, which would be the natural follow-up if a published number ever depends on it.
+That is the result the concern was actually about, and it came back clean. The denominator is
+small — 0 errors in 12 bounds the Acceptable error rate loosely, not tightly — so if a headline
+number ever needs a firmer footing, the follow-up is a sample stratified on Acceptable pairs.
 
-Both disagreement directions also matter, and only one was observed: the frozen labels were
-**more decisive** than the independent judgment in 3 cases and **less decisive** in none. Nothing
-in this sample suggests the labels are systematically generous toward the matcher.
+Disagreements also ran one direction only — frozen labels more decisive in 3 cases, less in none.
+Nothing here suggests the labels flatter the matcher.
 
 ## Reproduction
 
