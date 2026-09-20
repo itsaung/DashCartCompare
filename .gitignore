@@ -7,3 +7,9 @@ PROJECT_PLAN.md
 # Checkpoint 4: regenerable in ~49s via embed_catalog.py; 46MB, tracked only
 # by its key file (evaluation_v3/catalog_embeddings_key.json) and manifest.
 evaluation_v3/catalog_embeddings.npy
+
+# Regenerable review artifacts: photos are refetched from the CDN and the
+# contact sheets rebuilt by independent_label_check.py. The judgments live in
+# sample.json, which IS committed.
+evaluation_v3/label_check/photos/
+evaluation_v3/label_check/sheet_*.png
