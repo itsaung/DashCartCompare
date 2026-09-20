@@ -106,13 +106,24 @@ def fit_tfidf(catalog_df, cache_path: Path = MODEL_CACHE_PATH):
     return vectorizer, matrix
 
 
+def _unwrap(value):
+    """numpy scalar -> Python scalar.
+
+    store_id is an int64 column, so catalog_df.iloc[i]["store_id"] yields a
+    numpy int64, which json.dump refuses. That has always been true here; it
+    only surfaced once a caller wrote these dicts straight to JSON. Values are
+    unchanged, only their Python type, so nothing downstream shifts.
+    """
+    return value.item() if hasattr(value, "item") else value
+
+
 def _ranked(catalog_df, scores) -> list:
     scored = [
         {
-            "store_id": catalog_df.iloc[i]["store_id"],
-            "product_id": catalog_df.iloc[i]["product_id"],
+            "store_id": _unwrap(catalog_df.iloc[i]["store_id"]),
+            "product_id": _unwrap(catalog_df.iloc[i]["product_id"]),
             "score": float(scores[i]),
-            "row": i,
+            "row": int(i),
         }
         for i in range(len(catalog_df))
         if scores[i] > 0

@@ -1,7 +1,7 @@
 {
-  "cold_start_ms": 6451.280124980258,
-  "full_catalog_median_ms": 244.87066597794183,
-  "full_catalog_p95_ms": 321.0463750001509,
-  "n_queries": 300,
+  "cold_start_ms": 24665.337166021345,
+  "full_catalog_median_ms": 654.0999159915373,
+  "full_catalog_p95_ms": 5744.619208009681,
+  "n_queries": 600,
   "note": "cold start = cached-matrix load plus model load. Warm query times are per full-catalog search, both embedding baselines pooled."
 }
