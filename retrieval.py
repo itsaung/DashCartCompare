@@ -26,6 +26,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import benchmark_config as cfg
 from normalize import parse_package_size
 from parse_query import parse_shopping_line
+from product_identity import extract_request_identity, variants_conflict
 
 MODEL_CACHE_PATH = Path(__file__).resolve().parent / "tfidf_model.pkl"
 
@@ -342,6 +343,113 @@ def attribute_and_size_filter_baseline(request_text: str, catalog_df, vectorizer
     survivors = filter_by_package_size(survivors, catalog_df, request_text, structured)
     if not survivors:
         return [], "no_acceptable_match"
+
+    survivors.sort(key=cfg.tie_break_key)
+    top = survivors[:top_k]
+    if top[0]["score"] < min_similarity:
+        return [], "no_acceptable_match"
+
+    return top, "answerable"
+
+
+# --- Checkpoint 4, S3: exact-mode identity ----------------------------------
+
+def _identity_lookup(identity_df) -> dict:
+    """{(store_id, product_id): row} with both keys as str, because the
+    catalog carries product_id as int64 and the side-car CSV reads it back as
+    str -- a silent dtype mismatch here would make every lookup miss and turn
+    every candidate into "brand unknown", which reads as a coverage collapse
+    rather than as the bug it is."""
+    out = {}
+    for row in identity_df.itertuples():
+        out[(str(row.store_id), str(row.product_id))] = row
+    return out
+
+
+def filter_by_identity(candidates: list, catalog_df, identity_lookup: dict,
+                       request_identity: dict, mode: str):
+    """Brand/variant identity gate. Returns (survivors, needs_review).
+
+    Follows filter_by_dimension's rule exactly: only a CONFIRMED conflict
+    drops a candidate. Unknown on either side is a third state -- it neither
+    drops the candidate nor accepts it, it raises needs_review, because
+    PROJECT_PLAN.md's Checkpoint 4 requires that a missing identity attribute
+    request review rather than be guessed past ("If key identity attributes
+    are missing, request review").
+
+    exact mode:   brand must match and variant must not conflict.
+    flexible mode: brand is only enforced when the request states one; a
+                   variant conflict still drops the candidate.
+
+    Package-size identity, the third leg of exact mode, is deliberately NOT
+    handled here -- filter_by_package_size already does it, unchanged, and
+    duplicating the rule would give it two places to drift.
+    """
+    requested_brand = (request_identity or {}).get("brand")
+    requested_variant = (request_identity or {}).get("variant_tokens") or frozenset()
+
+    survivors = []
+    needs_review = False
+
+    for c in candidates:
+        row = catalog_df.iloc[c["row"]]
+        ident = identity_lookup.get((str(row["store_id"]), str(row["product_id"])))
+        cand_brand = getattr(ident, "brand", None) if ident is not None else None
+        if isinstance(cand_brand, float):  # NaN from the CSV
+            cand_brand = None
+        raw_variant = getattr(ident, "variant_tokens", "") if ident is not None else ""
+        cand_variant = frozenset(str(raw_variant).split()) if isinstance(raw_variant, str) else frozenset()
+
+        if variants_conflict(requested_variant, cand_variant):
+            continue
+
+        if mode == "exact":
+            if not requested_brand or cand_brand is None:
+                # Unknown identity: cannot confirm, must not guess.
+                needs_review = True
+                continue
+            if cand_brand.casefold() != requested_brand.casefold():
+                continue
+        else:
+            if requested_brand and cand_brand is not None:
+                if cand_brand.casefold() != requested_brand.casefold():
+                    continue
+
+        survivors.append(c)
+
+    return survivors, needs_review
+
+
+def identity_filter_baseline(request_text: str, catalog_df, vectorizer, matrix, top_k,
+                             min_similarity, identity_lookup: dict, brand_lexicon: dict,
+                             mode: str):
+    """A NEW baseline on top of attribute_and_size_filter_baseline, not a
+    modification of it -- v1's and v2's baselines stay byte-identical, the
+    same rule Checkpoint 3.1 followed.
+
+    Exact-mode requests never fall through to a substitute: if the identity
+    gate cannot confirm a candidate, the response is needs_clarification or
+    no_acceptable_match, at any threshold including 0.0.
+    """
+    structured = parse_shopping_line(request_text)
+    if structured["needs_review"]:
+        return [], "needs_clarification"
+
+    dimension = structured.get("dimension")
+    candidates = lexical_search(request_text, vectorizer, matrix, catalog_df, top_k=max(top_k * 4, 20))
+    survivors = filter_by_dimension(candidates, catalog_df, dimension)
+    survivors = filter_by_package_size(survivors, catalog_df, request_text, structured)
+
+    request_identity = extract_request_identity(request_text, brand_lexicon)
+    survivors, needs_review = filter_by_identity(
+        survivors, catalog_df, identity_lookup, request_identity, mode
+    )
+
+    if not survivors:
+        # An exact request whose identity could not be confirmed is a review
+        # case, not a "no such product" case -- the distinction matters for
+        # the false-abstention rate.
+        return [], "needs_clarification" if needs_review else "no_acceptable_match"
 
     survivors.sort(key=cfg.tie_break_key)
     top = survivors[:top_k]
