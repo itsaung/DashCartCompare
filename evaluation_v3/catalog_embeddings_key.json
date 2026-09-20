@@ -1,0 +1,17 @@
+{
+  "fingerprint": "662e9403c6aefb5a939cb772a3c4a7d1149092d9e6da79aa7438e7322868132d",
+  "catalog_hash": "141b82d9e167d7bfbb08de4a39e0dd38b58286146849a70debef66e35c5434b1",
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "text_construction_version": "v1",
+  "embed_construction_version": "v1",
+  "package_versions": {
+    "sentence-transformers": "6.1.0",
+    "transformers": "5.17.0",
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5"
+  },
+  "n_rows": 31398,
+  "dimension": 384
+}
