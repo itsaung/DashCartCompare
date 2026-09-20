@@ -18,6 +18,14 @@ def _row(store_id, product_id, title, dimension=None):
             "brand": None, "variant": None, "pkg_dimension": dimension}
 
 
+def _size_row(store_id, product_id, title, dimension=None, pkg_canonical_unit=None,
+              pkg_canonical_total=None, pkg_count=1.0):
+    return {"store_id": store_id, "product_id": product_id, "raw_title": title,
+            "brand": None, "variant": None, "pkg_dimension": dimension,
+            "pkg_canonical_unit": pkg_canonical_unit, "pkg_canonical_total": pkg_canonical_total,
+            "pkg_count": pkg_count}
+
+
 def _fit(rows, tmp_path):
     catalog = _catalog(rows)
     vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
@@ -236,3 +244,49 @@ def test_pool_baseline_rejects_the_threshold_baseline_name(tmp_path):
         tb.run_baseline_within_pool(
             "tfidf_dimension_filter_threshold", "milk", [(1, "p1")], catalog, vectorizer, matrix, index,
         )
+
+
+# --- run_size_baseline / run_size_baseline_within_pool (v2, not a v1 baseline) -
+
+def test_size_baseline_rejects_a_wrong_size_candidate_that_dimension_alone_keeps(tmp_path):
+    catalog = _catalog([_size_row(1, "p1", "good culture cottage cheese", dimension="weight",
+                                   pkg_canonical_unit="oz", pkg_canonical_total=16.0, pkg_count=1.0)])
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    out = tb.run_size_baseline("5.3 oz good culture cottage cheese", catalog, vectorizer, matrix, top_k=5)
+    assert out["response"] == "no_acceptable_match"
+    assert out["results"] == []
+    assert out["config"]["name"] == tb.SIZE_BASELINE_NAME
+
+
+def test_size_baseline_keeps_a_correctly_sized_candidate(tmp_path):
+    catalog = _catalog([_size_row(1, "p1", "good culture cottage cheese", dimension="weight",
+                                   pkg_canonical_unit="oz", pkg_canonical_total=5.3, pkg_count=1.0)])
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    out = tb.run_size_baseline("5.3 oz good culture cottage cheese", catalog, vectorizer, matrix, top_k=5)
+    assert out["response"] == "answerable"
+    assert len(out["results"]) == 1
+
+
+def test_size_baseline_within_pool_matches_full_catalog_behavior(tmp_path):
+    catalog = _catalog([
+        _size_row(1, "p1", "good culture cottage cheese", dimension="weight",
+                  pkg_canonical_unit="oz", pkg_canonical_total=16.0, pkg_count=1.0),
+        _size_row(1, "p2", "good culture cottage cheese", dimension="weight",
+                  pkg_canonical_unit="oz", pkg_canonical_total=5.3, pkg_count=1.0),
+    ])
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    index = _catalog_index(catalog)
+    out = tb.run_size_baseline_within_pool(
+        "5.3 oz good culture cottage cheese", [(1, "p1"), (1, "p2")], catalog, vectorizer, matrix, index,
+    )
+    assert out["response"] == "answerable"
+    assert [r["product_id"] for r in out["results"]] == ["p2"]  # p1 (16 oz) filtered out, p2 (5.3 oz) kept
+
+
+def test_size_baseline_within_pool_needs_clarification_for_unparseable_request(tmp_path):
+    catalog = _catalog([_size_row(1, "p1", "some milk substitute")])
+    vectorizer, matrix = fit_tfidf(catalog, cache_path=tmp_path / "model.pkl")
+    index = _catalog_index(catalog)
+    out = tb.run_size_baseline_within_pool("some milk", [(1, "p1")], catalog, vectorizer, matrix, index)
+    assert out["response"] == "needs_clarification"
+    assert out["results"] == []

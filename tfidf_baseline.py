@@ -160,6 +160,78 @@ def run_baseline_within_pool(name: str, request_text: str, pool_pairs: list, cat
     }
 
 
+SIZE_BASELINE_NAME = "tfidf_dimension_size_filter"
+
+
+def run_size_baseline(request_text: str, catalog_df, vectorizer, matrix, top_k: int = 5) -> dict:
+    """The v2 baseline: attribute_and_size_filter_baseline, floor 0.0 (no
+    threshold -- mirrors tfidf_dimension_filter's own shape, just with the
+    added numeric package-size filter). Deliberately a separate function
+    from run_baseline(), not a new branch inside it or a new entry in
+    BASELINE_NAMES -- Checkpoint 3's v1 baselines and their exact
+    reproduction commands stay untouched; this is Checkpoint 3.1's own
+    baseline, evaluated as its own report per the plan's "future models
+    get evaluated on the same split and get their own report" rule."""
+    from retrieval import attribute_and_size_filter_baseline
+
+    started = time.perf_counter()
+    ranked, response = attribute_and_size_filter_baseline(
+        request_text, catalog_df, vectorizer, matrix, top_k=top_k, min_similarity=0.0,
+    )
+    elapsed_ms = (time.perf_counter() - started) * 1000
+
+    return {
+        "config": {"name": SIZE_BASELINE_NAME, "dimension_filter": True, "package_size_filter": True, "min_similarity": 0.0},
+        "results": [
+            {"store_id": int(r["store_id"]), "product_id": str(r["product_id"]), "score": float(r["score"])}
+            for r in ranked
+        ],
+        "response": response,
+        "elapsed_ms": elapsed_ms,
+    }
+
+
+def run_size_baseline_within_pool(request_text: str, pool_pairs: list, catalog_df, vectorizer, matrix,
+                                   catalog_index: dict) -> dict:
+    """Pool-ranking counterpart to run_size_baseline, same shape as
+    run_baseline_within_pool("tfidf_dimension_filter", ...) plus
+    filter_by_package_size."""
+    from retrieval import filter_by_package_size
+
+    started = time.perf_counter()
+
+    rows = [catalog_index[pair] for pair in pool_pairs]
+    query_vec = vectorizer.transform([request_text])
+    scores = cosine_similarity(query_vec, matrix[rows])[0] if rows else []
+
+    scored = [
+        {"store_id": int(sid), "product_id": str(pid), "score": float(scores[i]), "row": rows[i]}
+        for i, (sid, pid) in enumerate(pool_pairs)
+    ]
+    scored.sort(key=cfg.tie_break_key)
+
+    structured = parse_shopping_line(request_text)
+    if structured["needs_review"]:
+        response, results = "needs_clarification", []
+    else:
+        survivors = filter_by_dimension(scored, catalog_df, structured.get("dimension"))
+        survivors = filter_by_package_size(survivors, catalog_df, request_text, structured)
+        response, results = ("answerable", survivors) if survivors else ("no_acceptable_match", [])
+
+    elapsed_ms = (time.perf_counter() - started) * 1000
+
+    return {
+        "config": {"name": SIZE_BASELINE_NAME, "dimension_filter": True, "package_size_filter": True,
+                   "min_similarity": 0.0, "experiment": "pool"},
+        "results": [
+            {"store_id": r["store_id"], "product_id": r["product_id"], "score": r["score"]}
+            for r in results
+        ],
+        "response": response,
+        "elapsed_ms": elapsed_ms,
+    }
+
+
 def apply_threshold(record: dict, min_similarity: float) -> dict:
     """Derive what tfidf_dimension_filter_threshold would have returned at
     `min_similarity`, from an already-computed tfidf_dimension_filter record
