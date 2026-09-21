@@ -1,0 +1,10 @@
+{
+  "hardware": "Apple M1, 8 GB, macOS 27.0, CPU only (no MPS/CUDA)",
+  "catalog_csv_load_ms": 1988.3,
+  "model_load_ms": 5574.8,
+  "cached_embedding_matrix_load_ms": 249.4,
+  "encode_500_rows_ms": 893.0,
+  "full_catalog_encode_estimate_s": 56.1,
+  "catalog_rows": 31398,
+  "note": "Catalog encode is a one-off build cost, paid only when the cache key moves (catalog hash, row order, model revision, package versions). Steady-state cold start is model load + cached matrix load; the encode figure is extrapolated from a 500-row sample rather than re-encoding 31,398 rows to time something already cached."
+}

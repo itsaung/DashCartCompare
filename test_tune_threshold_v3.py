@@ -207,10 +207,13 @@ def test_sweep_counts_every_included_request_exactly_once():
 # --- frozen config ----------------------------------------------------------
 
 def test_frozen_cut_points_cover_every_baseline_family():
+    """The four v3 families S6 tuned, plus the v2 incumbent S7 added so the
+    final selection compares three-way systems against a three-way system."""
     import checkpoint4_config as c4
     assert set(c4.CUT_POINTS) == {
         "embed", "embed_dimension_size_filter",
         "hybrid_dimension_size_filter", "hybrid_identity_filter",
+        "tfidf_dimension_size_filter",
     }
 
 

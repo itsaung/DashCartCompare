@@ -12,8 +12,12 @@ Label lookup is merged from four sources: v1's pool, v1's 153 additional
 judgments, v2's 94 additional judgments, and v3's own additional judgments
 once they exist. A pair judged in any earlier round keeps that judgment.
 
-Writes evaluation_v3/metrics.json + evaluation_v3/RESULTS_TABLE.md. Never
-touches evaluation/ or evaluation_v2/.
+Writes evaluation_v3/metrics.json + evaluation_v3/S4_S5_METRICS_TABLE.md.
+(The S4/S5 table was called RESULTS_TABLE.md until S7; that name now belongs to
+final_evaluation.py's table, which reports the frozen three-way response rather
+than these floor-0.0 retrieval metrics. Renamed rather than shared, so re-running
+this script cannot clobber the final report's table.) Never touches evaluation/
+or evaluation_v2/.
 
 Usage:
     .venv/bin/python evaluation_metrics_v3.py
@@ -174,8 +178,8 @@ def main():
             fls = f"{fl['rate']:.1%} ({fl['successes']}/{fl['n']})" if fl["rate"] is not None else "N/A"
             lines.append(f"\nSuccess@1 by mode (practical): exact {exs} · flexible {fls}")
 
-    (OUT_DIR / "RESULTS_TABLE.md").write_text("\n".join(lines) + "\n")
-    print(f"Wrote {OUT_DIR / 'RESULTS_TABLE.md'}")
+    (OUT_DIR / "S4_S5_METRICS_TABLE.md").write_text("\n".join(lines) + "\n")
+    print(f"Wrote {OUT_DIR / 'S4_S5_METRICS_TABLE.md'}")
 
 
 if __name__ == "__main__":

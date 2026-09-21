@@ -1,0 +1,1362 @@
+{
+  "frozen_config": {
+    "selected_baseline": "embed_dimension_size_filter",
+    "selected_on_split": "validation",
+    "cut_points": {
+      "accept_threshold": 0.75552,
+      "review_floor": 0.691613
+    },
+    "code_sha": "237b021fa69cc62121c9facc09552ba1417c12c3",
+    "frozen_at": "2026-09-21T07:31:45Z"
+  },
+  "criterion": 0.95,
+  "criterion_judged_on": "conservative view, test split",
+  "label_note": "Every label underlying these numbers is AI adjudication from frozen catalog text and images, not independent human review or live product-page verification. A difference measured here is a difference against that adjudication.",
+  "baselines": {
+    "embed": {
+      "cut_points": {
+        "accept_threshold": 0.93703,
+        "review_floor": 0.77859
+      },
+      "splits": {
+        "dev": {
+          "n_requests": 90,
+          "counts": {
+            "accept": 33,
+            "review": 41,
+            "no_match": 16
+          },
+          "automatic_match_rate": {
+            "n": 33,
+            "of": 90,
+            "rate": 0.36666666666666664
+          },
+          "review_rate": {
+            "n": 41,
+            "of": 90,
+            "rate": 0.45555555555555555
+          },
+          "abstention_rate": {
+            "n": 16,
+            "of": 90,
+            "rate": 0.17777777777777778
+          },
+          "sums_to_one": true,
+          "n_answerable": 77,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 33,
+              "of": 33,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 33,
+              "of": 33,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 47,
+              "counts": {
+                "accept": 33,
+                "review": 10,
+                "no_match": 4
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 33,
+                  "of": 33,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 33,
+                  "of": 33,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 43,
+              "counts": {
+                "accept": 0,
+                "review": 31,
+                "no_match": 12
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 0,
+                  "of": 0,
+                  "rate": null,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 0,
+                  "of": 0,
+                  "rate": null,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "validation": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 14,
+            "review": 11,
+            "no_match": 5
+          },
+          "automatic_match_rate": {
+            "n": 14,
+            "of": 30,
+            "rate": 0.4666666666666667
+          },
+          "review_rate": {
+            "n": 11,
+            "of": 30,
+            "rate": 0.36666666666666664
+          },
+          "abstention_rate": {
+            "n": 5,
+            "of": 30,
+            "rate": 0.16666666666666666
+          },
+          "sums_to_one": true,
+          "n_answerable": 25,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 13,
+              "of": 14,
+              "rate": 0.9285714285714286,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 13,
+              "of": 14,
+              "rate": 0.9285714285714286,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": false,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 14,
+                "review": 1,
+                "no_match": 1
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 13,
+                  "of": 14,
+                  "rate": 0.9285714285714286,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 13,
+                  "of": 14,
+                  "rate": 0.9285714285714286,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 0,
+                "review": 10,
+                "no_match": 4
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 0,
+                  "of": 0,
+                  "rate": null,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 0,
+                  "of": 0,
+                  "rate": null,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "test": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 12,
+            "review": 5,
+            "no_match": 13
+          },
+          "automatic_match_rate": {
+            "n": 12,
+            "of": 30,
+            "rate": 0.4
+          },
+          "review_rate": {
+            "n": 5,
+            "of": 30,
+            "rate": 0.16666666666666666
+          },
+          "abstention_rate": {
+            "n": 13,
+            "of": 30,
+            "rate": 0.43333333333333335
+          },
+          "sums_to_one": true,
+          "n_answerable": 20,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 12,
+              "of": 12,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 12,
+              "of": 12,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 12,
+                "review": 0,
+                "no_match": 4
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 12,
+                  "of": 12,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 12,
+                  "of": 12,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 0,
+                "review": 5,
+                "no_match": 9
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 0,
+                  "of": 0,
+                  "rate": null,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 0,
+                  "of": 0,
+                  "rate": null,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "embed_dimension_size_filter": {
+      "cut_points": {
+        "accept_threshold": 0.75552,
+        "review_floor": 0.691613
+      },
+      "splits": {
+        "dev": {
+          "n_requests": 90,
+          "counts": {
+            "accept": 65,
+            "review": 12,
+            "no_match": 13
+          },
+          "automatic_match_rate": {
+            "n": 65,
+            "of": 90,
+            "rate": 0.7222222222222222
+          },
+          "review_rate": {
+            "n": 12,
+            "of": 90,
+            "rate": 0.13333333333333333
+          },
+          "abstention_rate": {
+            "n": 13,
+            "of": 90,
+            "rate": 0.14444444444444443
+          },
+          "sums_to_one": true,
+          "n_answerable": 77,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 63,
+              "of": 65,
+              "rate": 0.9692307692307692,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 63,
+              "of": 65,
+              "rate": 0.9692307692307692,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 47,
+              "counts": {
+                "accept": 39,
+                "review": 0,
+                "no_match": 8
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 39,
+                  "of": 39,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 39,
+                  "of": 39,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 43,
+              "counts": {
+                "accept": 26,
+                "review": 12,
+                "no_match": 5
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 24,
+                  "of": 26,
+                  "rate": 0.9230769230769231,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 24,
+                  "of": 26,
+                  "rate": 0.9230769230769231,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "validation": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 23,
+            "review": 3,
+            "no_match": 4
+          },
+          "automatic_match_rate": {
+            "n": 23,
+            "of": 30,
+            "rate": 0.7666666666666667
+          },
+          "review_rate": {
+            "n": 3,
+            "of": 30,
+            "rate": 0.1
+          },
+          "abstention_rate": {
+            "n": 4,
+            "of": 30,
+            "rate": 0.13333333333333333
+          },
+          "sums_to_one": true,
+          "n_answerable": 25,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 22,
+              "of": 23,
+              "rate": 0.9565217391304348,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 22,
+              "of": 23,
+              "rate": 0.9565217391304348,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 15,
+                "review": 0,
+                "no_match": 1
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 14,
+                  "of": 15,
+                  "rate": 0.9333333333333333,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 14,
+                  "of": 15,
+                  "rate": 0.9333333333333333,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 8,
+                "review": 3,
+                "no_match": 3
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 8,
+                  "of": 8,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 8,
+                  "of": 8,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "test": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 17,
+            "review": 11,
+            "no_match": 2
+          },
+          "automatic_match_rate": {
+            "n": 17,
+            "of": 30,
+            "rate": 0.5666666666666667
+          },
+          "review_rate": {
+            "n": 11,
+            "of": 30,
+            "rate": 0.36666666666666664
+          },
+          "abstention_rate": {
+            "n": 2,
+            "of": 30,
+            "rate": 0.06666666666666667
+          },
+          "sums_to_one": true,
+          "n_answerable": 20,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 17,
+              "of": 17,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 17,
+              "of": 17,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 12,
+                "review": 2,
+                "no_match": 2
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 12,
+                  "of": 12,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 12,
+                  "of": 12,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 5,
+                "review": 9,
+                "no_match": 0
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 5,
+                  "of": 5,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 5,
+                  "of": 5,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hybrid_dimension_size_filter": {
+      "cut_points": {
+        "accept_threshold": 0.027424,
+        "review_floor": 0.015625
+      },
+      "splits": {
+        "dev": {
+          "n_requests": 90,
+          "counts": {
+            "accept": 67,
+            "review": 14,
+            "no_match": 9
+          },
+          "automatic_match_rate": {
+            "n": 67,
+            "of": 90,
+            "rate": 0.7444444444444445
+          },
+          "review_rate": {
+            "n": 14,
+            "of": 90,
+            "rate": 0.15555555555555556
+          },
+          "abstention_rate": {
+            "n": 9,
+            "of": 90,
+            "rate": 0.1
+          },
+          "sums_to_one": true,
+          "n_answerable": 77,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 67,
+              "of": 67,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 67,
+              "of": 67,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 47,
+              "counts": {
+                "accept": 39,
+                "review": 1,
+                "no_match": 7
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 39,
+                  "of": 39,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 39,
+                  "of": 39,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 43,
+              "counts": {
+                "accept": 28,
+                "review": 13,
+                "no_match": 2
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 28,
+                  "of": 28,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 28,
+                  "of": 28,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "validation": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 23,
+            "review": 3,
+            "no_match": 4
+          },
+          "automatic_match_rate": {
+            "n": 23,
+            "of": 30,
+            "rate": 0.7666666666666667
+          },
+          "review_rate": {
+            "n": 3,
+            "of": 30,
+            "rate": 0.1
+          },
+          "abstention_rate": {
+            "n": 4,
+            "of": 30,
+            "rate": 0.13333333333333333
+          },
+          "sums_to_one": true,
+          "n_answerable": 25,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 22,
+              "of": 23,
+              "rate": 0.9565217391304348,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 22,
+              "of": 23,
+              "rate": 0.9565217391304348,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 15,
+                "review": 0,
+                "no_match": 1
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 14,
+                  "of": 15,
+                  "rate": 0.9333333333333333,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 14,
+                  "of": 15,
+                  "rate": 0.9333333333333333,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 8,
+                "review": 3,
+                "no_match": 3
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 8,
+                  "of": 8,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 8,
+                  "of": 8,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "test": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 20,
+            "review": 8,
+            "no_match": 2
+          },
+          "automatic_match_rate": {
+            "n": 20,
+            "of": 30,
+            "rate": 0.6666666666666666
+          },
+          "review_rate": {
+            "n": 8,
+            "of": 30,
+            "rate": 0.26666666666666666
+          },
+          "abstention_rate": {
+            "n": 2,
+            "of": 30,
+            "rate": 0.06666666666666667
+          },
+          "sums_to_one": true,
+          "n_answerable": 20,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 19,
+              "of": 20,
+              "rate": 0.95,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 19,
+              "of": 20,
+              "rate": 0.95,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 13,
+                "review": 1,
+                "no_match": 2
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 12,
+                  "of": 13,
+                  "rate": 0.9230769230769231,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 12,
+                  "of": 13,
+                  "rate": 0.9230769230769231,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 7,
+                "review": 7,
+                "no_match": 0
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 7,
+                  "of": 7,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 7,
+                  "of": 7,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "hybrid_identity_filter": {
+      "cut_points": {
+        "accept_threshold": 0.027424,
+        "review_floor": 0.015625
+      },
+      "splits": {
+        "dev": {
+          "n_requests": 90,
+          "counts": {
+            "accept": 58,
+            "review": 15,
+            "no_match": 17
+          },
+          "automatic_match_rate": {
+            "n": 58,
+            "of": 90,
+            "rate": 0.6444444444444445
+          },
+          "review_rate": {
+            "n": 15,
+            "of": 90,
+            "rate": 0.16666666666666666
+          },
+          "abstention_rate": {
+            "n": 17,
+            "of": 90,
+            "rate": 0.18888888888888888
+          },
+          "sums_to_one": true,
+          "n_answerable": 77,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 58,
+              "of": 58,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 58,
+              "of": 58,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 47,
+              "counts": {
+                "accept": 30,
+                "review": 2,
+                "no_match": 15
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 30,
+                  "of": 30,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 30,
+                  "of": 30,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 43,
+              "counts": {
+                "accept": 28,
+                "review": 13,
+                "no_match": 2
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 28,
+                  "of": 28,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 28,
+                  "of": 28,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "validation": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 22,
+            "review": 3,
+            "no_match": 5
+          },
+          "automatic_match_rate": {
+            "n": 22,
+            "of": 30,
+            "rate": 0.7333333333333333
+          },
+          "review_rate": {
+            "n": 3,
+            "of": 30,
+            "rate": 0.1
+          },
+          "abstention_rate": {
+            "n": 5,
+            "of": 30,
+            "rate": 0.16666666666666666
+          },
+          "sums_to_one": true,
+          "n_answerable": 25,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 20,
+              "of": 22,
+              "rate": 0.9090909090909091,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 20,
+              "of": 22,
+              "rate": 0.9090909090909091,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": false,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 14,
+                "review": 0,
+                "no_match": 2
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 12,
+                  "of": 14,
+                  "rate": 0.8571428571428571,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 12,
+                  "of": 14,
+                  "rate": 0.8571428571428571,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 8,
+                "review": 3,
+                "no_match": 3
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 8,
+                  "of": 8,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 8,
+                  "of": 8,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "test": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 12,
+            "review": 10,
+            "no_match": 8
+          },
+          "automatic_match_rate": {
+            "n": 12,
+            "of": 30,
+            "rate": 0.4
+          },
+          "review_rate": {
+            "n": 10,
+            "of": 30,
+            "rate": 0.3333333333333333
+          },
+          "abstention_rate": {
+            "n": 8,
+            "of": 30,
+            "rate": 0.26666666666666666
+          },
+          "sums_to_one": true,
+          "n_answerable": 20,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 12,
+              "of": 12,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 12,
+              "of": 12,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 5,
+                "review": 3,
+                "no_match": 8
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 5,
+                  "of": 5,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 5,
+                  "of": 5,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 7,
+                "review": 7,
+                "no_match": 0
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 7,
+                  "of": 7,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 7,
+                  "of": 7,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tfidf_dimension_size_filter": {
+      "cut_points": {
+        "accept_threshold": 0.637678,
+        "review_floor": 0.275329
+      },
+      "splits": {
+        "dev": {
+          "n_requests": 90,
+          "counts": {
+            "accept": 58,
+            "review": 22,
+            "no_match": 10
+          },
+          "automatic_match_rate": {
+            "n": 58,
+            "of": 90,
+            "rate": 0.6444444444444445
+          },
+          "review_rate": {
+            "n": 22,
+            "of": 90,
+            "rate": 0.24444444444444444
+          },
+          "abstention_rate": {
+            "n": 10,
+            "of": 90,
+            "rate": 0.1111111111111111
+          },
+          "sums_to_one": true,
+          "n_answerable": 77,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 57,
+              "of": 58,
+              "rate": 0.9827586206896551,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 57,
+              "of": 58,
+              "rate": 0.9827586206896551,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 47,
+              "counts": {
+                "accept": 39,
+                "review": 2,
+                "no_match": 6
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 39,
+                  "of": 39,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 39,
+                  "of": 39,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 43,
+              "counts": {
+                "accept": 19,
+                "review": 20,
+                "no_match": 4
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 18,
+                  "of": 19,
+                  "rate": 0.9473684210526315,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 18,
+                  "of": 19,
+                  "rate": 0.9473684210526315,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "validation": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 21,
+            "review": 7,
+            "no_match": 2
+          },
+          "automatic_match_rate": {
+            "n": 21,
+            "of": 30,
+            "rate": 0.7
+          },
+          "review_rate": {
+            "n": 7,
+            "of": 30,
+            "rate": 0.23333333333333334
+          },
+          "abstention_rate": {
+            "n": 2,
+            "of": 30,
+            "rate": 0.06666666666666667
+          },
+          "sums_to_one": true,
+          "n_answerable": 25,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 18,
+              "of": 21,
+              "rate": 0.8571428571428571,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 18,
+              "of": 21,
+              "rate": 0.8571428571428571,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": false,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 15,
+                "review": 0,
+                "no_match": 1
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 14,
+                  "of": 15,
+                  "rate": 0.9333333333333333,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 14,
+                  "of": 15,
+                  "rate": 0.9333333333333333,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 6,
+                "review": 7,
+                "no_match": 1
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 4,
+                  "of": 6,
+                  "rate": 0.6666666666666666,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 4,
+                  "of": 6,
+                  "rate": 0.6666666666666666,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        },
+        "test": {
+          "n_requests": 30,
+          "counts": {
+            "accept": 17,
+            "review": 12,
+            "no_match": 1
+          },
+          "automatic_match_rate": {
+            "n": 17,
+            "of": 30,
+            "rate": 0.5666666666666667
+          },
+          "review_rate": {
+            "n": 12,
+            "of": 30,
+            "rate": 0.4
+          },
+          "abstention_rate": {
+            "n": 1,
+            "of": 30,
+            "rate": 0.03333333333333333
+          },
+          "sums_to_one": true,
+          "n_answerable": 20,
+          "automatic_match_precision": {
+            "conservative": {
+              "n": 17,
+              "of": 17,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            },
+            "practical": {
+              "n": 17,
+              "of": 17,
+              "rate": 1.0,
+              "unjudged_top1_request_ids": []
+            }
+          },
+          "meets_criterion_conservative": true,
+          "meets_criterion_practical_only": false,
+          "by_matching_mode": {
+            "exact": {
+              "n_requests": 16,
+              "counts": {
+                "accept": 12,
+                "review": 3,
+                "no_match": 1
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 12,
+                  "of": 12,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 12,
+                  "of": 12,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            },
+            "flexible": {
+              "n_requests": 14,
+              "counts": {
+                "accept": 5,
+                "review": 9,
+                "no_match": 0
+              },
+              "automatic_match_precision": {
+                "conservative": {
+                  "n": 5,
+                  "of": 5,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                },
+                "practical": {
+                  "n": 5,
+                  "of": 5,
+                  "rate": 1.0,
+                  "unjudged_top1_request_ids": []
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
