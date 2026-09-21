@@ -1,0 +1,71 @@
+{
+  "baseline": "embed_dimension_size_filter",
+  "cut_points": {
+    "accept_threshold": 0.75552,
+    "review_floor": 0.691613
+  },
+  "rule": "A hard-constraint violation is a CONFIRMED conflict between the request and the automatically matched top-1: brand (exact mode only, both sides known), variant, package dimension, or package size beyond 1% relative. Unknown on either side is never a conflict. Re-derived here from the catalog row rather than read back from the retrieval filters, so a filter bug surfaces as a violation.",
+  "splits": {
+    "dev": {
+      "n_automatic_matches_checked": 65,
+      "n_violations": 0,
+      "passes": true,
+      "violations": []
+    },
+    "validation": {
+      "n_automatic_matches_checked": 23,
+      "n_violations": 2,
+      "passes": false,
+      "violations": [
+        {
+          "request_id": "r064",
+          "request_text": "18 ct Millville Chocolate Chip Chewy Granola Bars",
+          "matching_mode": "exact",
+          "store_id": 29631686,
+          "product_id": "24200027674",
+          "violations": [
+            "brand_conflict"
+          ]
+        },
+        {
+          "request_id": "r075",
+          "request_text": "16 oz Aldi Powdered Peanut Butter",
+          "matching_mode": "exact",
+          "store_id": 29631686,
+          "product_id": "43529745214",
+          "violations": [
+            "brand_conflict"
+          ]
+        }
+      ]
+    },
+    "test": {
+      "n_automatic_matches_checked": 17,
+      "n_violations": 2,
+      "passes": false,
+      "violations": [
+        {
+          "request_id": "r070",
+          "request_text": "6 ct Millville Chewy Dipped Peanut Butter Granola Bars",
+          "matching_mode": "exact",
+          "store_id": 29631686,
+          "product_id": "22646327046",
+          "violations": [
+            "brand_conflict"
+          ]
+        },
+        {
+          "request_id": "r081",
+          "request_text": "8.8 oz Savoritz Mini Peanut Butter Sandwich Crackers",
+          "matching_mode": "exact",
+          "store_id": 29631686,
+          "product_id": "22646327015",
+          "violations": [
+            "brand_conflict"
+          ]
+        }
+      ]
+    }
+  },
+  "test_passes": false
+}

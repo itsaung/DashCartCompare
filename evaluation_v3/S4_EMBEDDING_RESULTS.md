@@ -121,5 +121,5 @@ helper written for sparse scores.
 cd dash
 .venv/bin/python run_experiments_v3.py            # predictions + new candidates + latency
 .venv/bin/python apply_new_candidate_review_v3.py # judge the 383 new candidates
-.venv/bin/python evaluation_metrics_v3.py         # metrics.json + RESULTS_TABLE.md
+.venv/bin/python evaluation_metrics_v3.py         # metrics.json + S4_S5_METRICS_TABLE.md
 ```

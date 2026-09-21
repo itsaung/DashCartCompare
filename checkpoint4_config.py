@@ -43,7 +43,7 @@ RRF_K = 60
 # informational read at the dev-chosen pair -- it never fed back into selection.
 #
 # review_costs_agreeing lists which of the swept review costs (0.25/0.5/0.75)
-# pick this same pair. None of the four families agree across all three, so the
+# pick this same pair. None of the five families agree across all three, so the
 # 0.5 choice IS load-bearing -- and it is a declared design preference with no
 # measured basis. Do not read these cut points as precise.
 CUT_POINTS = {
@@ -77,6 +77,19 @@ CUT_POINTS = {
         "dev_avg_cost": 0.233,
         "validation_avg_cost": 0.2833,
         "dev_outcomes": {'accept': 58, 'review': 15, 'no_match': 15},
+        "review_costs_agreeing": [0.5, 0.25],
+    },
+    # Added by S7, not S6: the v2 incumbent had never been given a review band
+    # (v1/v2 responses are two-way, return or abstain), and selecting a shipped
+    # matcher against it otherwise compares a three-way system to a two-way one.
+    # Tuned dev-only by the same sweep, same cost function, same exclusions; the
+    # four pairs above came out bit-identical on the re-run.
+    "tfidf_dimension_size_filter": {
+        "accept_threshold": 0.637678,
+        "review_floor": 0.275329,
+        "dev_avg_cost": 0.2102,
+        "validation_avg_cost": 0.3167,
+        "dev_outcomes": {'accept': 58, 'review': 23, 'no_match': 7},
         "review_costs_agreeing": [0.5, 0.25],
     },
 }

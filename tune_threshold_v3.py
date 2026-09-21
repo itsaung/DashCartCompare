@@ -56,6 +56,7 @@ from build_benchmark import NO_MATCH_AUDIT
 
 HERE = Path(__file__).resolve().parent
 V1_DIR = HERE / "evaluation"
+V2_DIR = HERE / "evaluation_v2"
 OUT_DIR = HERE / "evaluation_v3"
 CONFIG_PATH = HERE / "checkpoint4_config.py"
 
@@ -71,6 +72,15 @@ SELECTING_REVIEW_COST = 0.5
 # from dev scores is itself a use of dev data; that is permitted -- dev is the
 # tuning split -- and is stated in the report.
 GRID_POINTS = 17
+
+# The v2 incumbent, swept here too. Added by S7, not by S6: selecting a shipped
+# matcher means comparing it against the incumbent on the same footing, and the
+# incumbent had never been given a review band (v1 and v2 only ever had a
+# two-way return/abstain response). Sweeping it is dev-only tuning of a family
+# that had no cut points at all; it changes no already-frozen pair, and the four
+# families S6 froze come out bit-identical when this is re-run. evaluation_v2/
+# is read here and never written.
+INCUMBENT_PREDICTIONS = V2_DIR / "predictions.jsonl"
 
 
 def excluded_request_ids(splits, request_answerability) -> list:
@@ -195,6 +205,7 @@ def main():
     requests = json.loads((V1_DIR / "benchmark_requests.json").read_text())
     splits = json.loads((V1_DIR / "splits.json").read_text())["request_split"]
     predictions = [json.loads(line) for line in open(OUT_DIR / "predictions.jsonl")]
+    predictions += [json.loads(line) for line in open(INCUMBENT_PREDICTIONS)]
     lookup = v3.load_merged_label_lookup()
     request_answerability = {r["request_id"]: r["answerability"] for r in requests}
 
