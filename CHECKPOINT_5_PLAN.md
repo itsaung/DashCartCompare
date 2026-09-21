@@ -173,10 +173,12 @@ asserting `filter_by_package_size`'s behavior is byte-identical to Checkpoint 4'
 1. **Stock is not in the frozen catalog and must be joined back.** `benchmark_catalog_frozen.csv`
    and `normalized_catalog.csv` carry no availability column — normalization dropped it. The raw
    snapshots carry `stock_status`.
-2. **Unknown is the majority state and must not be read as "in stock."** Across all 11 snapshot
-   files (77,126 rows), `stock_status` is null for **42,084 — 54.6%**. In the ALDI snapshot alone
-   it is null for 2,038 of 3,337 (61%). Four distinct non-null values are observed and the mapping
-   must be explicit about all of them, following the standing unknown-is-a-third-state rule:
+2. **Unknown is the majority state and must not be read as "in stock."** *(Figures corrected
+   2026-09-21 during B3 — the 54.6% / four-values numbers below were computed over all 11 snapshot
+   directories on disk, but the frozen catalog draws on only 5 of them and that glob missed
+   DashMart's legacy CSV entirely. Measured against the 5 real sources: **49.0% unverified**, and
+   `In stock (20+)` is a fifth value. See `evaluation_v4/B3_AVAILABILITY.md`.)* The mapping must be
+   explicit about every observed value, following the standing unknown-is-a-third-state rule:
    - `Out of stock` (334 rows) → **excluded** from the basket, and named in the explanation.
    - `Many in stock` (34,608) → eligible, marked **verified**.
    - `In stock (N)` (100 rows, e.g. `In stock (3)`) → eligible, marked **verified, low stock**,
