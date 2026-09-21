@@ -57,9 +57,8 @@ def encode_query(text: str, model=None) -> np.ndarray:
 _PREFILTER_ROWS = 2000
 
 
-def _unwrap(value):
-    """numpy scalar -> Python scalar, so predictions.jsonl stays serializable."""
-    return value.item() if hasattr(value, "item") else value
+# One definition, in retrieval.py -- see its docstring.
+_unwrap = retrieval._unwrap
 
 
 def _ranked_top(catalog_df, scores: np.ndarray, top_k: int) -> list:

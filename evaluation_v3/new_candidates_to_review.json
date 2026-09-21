@@ -46,6 +46,17 @@
   {
     "request_id": "r003",
     "store_id": 35802549,
+    "product_id": "1000013350296002",
+    "raw_title": "Kroger Unsalted Butter (16 oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r003",
+    "store_id": 35802549,
     "product_id": "30851030310",
     "raw_title": "Challenge Unsalted Butter (16 oz)",
     "raw_category": "Dairy & Eggs",
@@ -111,6 +122,17 @@
   },
   {
     "request_id": "r008",
+    "store_id": 1742136,
+    "product_id": "17110631897",
+    "raw_title": "Simply All Natural Strawberry Juice Bottle (52 fl oz)",
+    "raw_category": "Drinks",
+    "brand": null,
+    "variant": null,
+    "raw_size": "52 fl oz",
+    "pkg_dimension": "volume"
+  },
+  {
+    "request_id": "r008",
     "store_id": 24325284,
     "product_id": "10297614728",
     "raw_title": "Uncle Matt's Organic Defense Orange Juice Bottle (52 fl oz)",
@@ -154,6 +176,28 @@
     "pkg_dimension": "volume"
   },
   {
+    "request_id": "r008",
+    "store_id": 29631686,
+    "product_id": "24255531505",
+    "raw_title": "Nature's Nectar Pulp Free Premium Orange Juice Bottle (52 fl oz)",
+    "raw_category": "Drinks",
+    "brand": null,
+    "variant": null,
+    "raw_size": "52 fl oz",
+    "pkg_dimension": "volume"
+  },
+  {
+    "request_id": "r009",
+    "store_id": 1742136,
+    "product_id": "17110631897",
+    "raw_title": "Simply All Natural Strawberry Juice Bottle (52 fl oz)",
+    "raw_category": "Drinks",
+    "brand": null,
+    "variant": null,
+    "raw_size": "52 fl oz",
+    "pkg_dimension": "volume"
+  },
+  {
     "request_id": "r009",
     "store_id": 24325284,
     "product_id": "10297614728",
@@ -195,6 +239,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "33.8 fl oz",
+    "pkg_dimension": "volume"
+  },
+  {
+    "request_id": "r009",
+    "store_id": 35802549,
+    "product_id": "31447185514",
+    "raw_title": "Simply All Natural Strawberry Juice Bottle (52 fl oz)",
+    "raw_category": "Drinks",
+    "brand": null,
+    "variant": null,
+    "raw_size": "52 fl oz",
     "pkg_dimension": "volume"
   },
   {
@@ -309,6 +364,17 @@
   },
   {
     "request_id": "r015",
+    "store_id": 29631686,
+    "product_id": "22646325306",
+    "raw_title": "Friendly Farms Lactose Free Whole Milk (64 fl oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "64 fl oz",
+    "pkg_dimension": "volume"
+  },
+  {
+    "request_id": "r015",
     "store_id": 35802549,
     "product_id": "30994827450",
     "raw_title": "Silk Plant Based Original Almond Milk (64 fl oz)",
@@ -404,6 +470,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "3 lb",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r020",
+    "store_id": 1742136,
+    "product_id": "7582202712",
+    "raw_title": "Oroweat Country Style White Bread Bag (24 oz)",
+    "raw_category": "Bakery",
+    "brand": null,
+    "variant": null,
+    "raw_size": "24 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -506,6 +583,17 @@
     "pkg_dimension": "weight"
   },
   {
+    "request_id": "r024",
+    "store_id": 35802549,
+    "product_id": "30802482185",
+    "raw_title": "Simple Truth Organic Large Honeycrisp Apple (each)",
+    "raw_category": "Produce",
+    "brand": null,
+    "variant": null,
+    "raw_size": "$4.29/lb",
+    "pkg_dimension": "weight"
+  },
+  {
     "request_id": "r025",
     "store_id": 24325284,
     "product_id": "44161048411",
@@ -525,6 +613,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "11.3 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r025",
+    "store_id": 29631686,
+    "product_id": "1000038340833005",
+    "raw_title": "Barissimo Apple Crisp Ground Coffee (12 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -662,6 +761,17 @@
   {
     "request_id": "r030",
     "store_id": 1742136,
+    "product_id": "1000037877610064",
+    "raw_title": "The Greek Gods Greek Style Plain Traditional Yogurt Tub (32 oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "32 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r030",
+    "store_id": 1742136,
     "product_id": "12220187997",
     "raw_title": "Oikos Triple Zero Vanilla Greek Yogurt (32 oz)",
     "raw_category": "Dairy & Eggs",
@@ -707,6 +817,17 @@
     "request_id": "r031",
     "store_id": 1042759,
     "product_id": "38755030156",
+    "raw_title": "Fage Total 0% Plain Greek Yogurt (32 oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "32 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r031",
+    "store_id": 1742136,
+    "product_id": "10109271108",
     "raw_title": "Fage Total 0% Plain Greek Yogurt (32 oz)",
     "raw_category": "Dairy & Eggs",
     "brand": null,
@@ -793,6 +914,17 @@
   },
   {
     "request_id": "r032",
+    "store_id": 24325284,
+    "product_id": "9877829867",
+    "raw_title": "Sprouts Cage Free Grade A Extra Large Eggs (12 ct)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 ct",
+    "pkg_dimension": "count"
+  },
+  {
+    "request_id": "r032",
     "store_id": 29631686,
     "product_id": "1000030409614304",
     "raw_title": "Goldhen Grade A Cage Free Large Eggs (12 ct) Limit 2 per order",
@@ -814,10 +946,43 @@
     "pkg_dimension": "count"
   },
   {
+    "request_id": "r032",
+    "store_id": 35802549,
+    "product_id": "1000013315682003",
+    "raw_title": "Simple Truth Natural Cage Free Large Brown Eggs (12 ct)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 ct",
+    "pkg_dimension": "count"
+  },
+  {
+    "request_id": "r032",
+    "store_id": 35802549,
+    "product_id": "30994827333",
+    "raw_title": "Simple Truth Natural Cage Free Large Brown Eggs (12 ct)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 ct",
+    "pkg_dimension": "count"
+  },
+  {
     "request_id": "r033",
     "store_id": 1742136,
     "product_id": "1000013953588363",
     "raw_title": "Happy Egg Co. Free Range Grade A Large Brown Eggs (12 ct)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 ct",
+    "pkg_dimension": "count"
+  },
+  {
+    "request_id": "r033",
+    "store_id": 1742136,
+    "product_id": "12211000661",
+    "raw_title": "Eggland's Best Cage Free Large White Eggs (12 ct)",
     "raw_category": "Dairy & Eggs",
     "brand": null,
     "variant": null,
@@ -840,6 +1005,17 @@
     "store_id": 35802549,
     "product_id": "1000013408224001",
     "raw_title": "Happy Egg Co. Organic Grade A Free Range Large Brown Eggs (12 ct)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 ct",
+    "pkg_dimension": "count"
+  },
+  {
+    "request_id": "r033",
+    "store_id": 35802549,
+    "product_id": "30994827367",
+    "raw_title": "Kroger Grade AA Cage Free Large Eggs (12 ct)",
     "raw_category": "Dairy & Eggs",
     "brand": null,
     "variant": null,
@@ -1045,10 +1221,43 @@
     "pkg_dimension": "weight"
   },
   {
+    "request_id": "r038",
+    "store_id": 1742136,
+    "product_id": "14533930494",
+    "raw_title": "Signature Select Oven Roasted Cured Chicken Breast (16 oz)",
+    "raw_category": "Deli",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
+    "pkg_dimension": "weight"
+  },
+  {
     "request_id": "r041",
     "store_id": 1042759,
     "product_id": "28197595357",
     "raw_title": "Oikos Triple Zero Strawberry Greek Yogurt (5.3 oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "5.3 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r041",
+    "store_id": 1042759,
+    "product_id": "40103122694",
+    "raw_title": "Chobani Nonfat Plain Greek Yogurt (5.3 oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "5.3 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r041",
+    "store_id": 1742136,
+    "product_id": "8981950451",
+    "raw_title": "Fage Total 5% Plain Greek Yogurt (5.3 oz)",
     "raw_category": "Dairy & Eggs",
     "brand": null,
     "variant": null,
@@ -1086,6 +1295,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "32 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r041",
+    "store_id": 29631686,
+    "product_id": "24228419602",
+    "raw_title": "Friendly Farms Low Sugar Greek Yogurt Vanilla 4 ct (5.3 oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "5.3 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -1465,12 +1685,34 @@
   {
     "request_id": "r051",
     "store_id": 1742136,
+    "product_id": "25594470010",
+    "raw_title": "Boneless Skinless Chicken Breast Value Pack",
+    "raw_category": "Meat",
+    "brand": null,
+    "variant": null,
+    "raw_size": "$2.99/lb",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r051",
+    "store_id": 1742136,
     "product_id": "27147764970",
     "raw_title": "Dietz & Watson Gourmet Chicken Breast (by pound)",
     "raw_category": "Meat",
     "brand": null,
     "variant": null,
     "raw_size": "by pound",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r051",
+    "store_id": 1742136,
+    "product_id": "29873578074",
+    "raw_title": "Boneless Skinless Diced Chicken Breast Pack",
+    "raw_category": "Meat",
+    "brand": null,
+    "variant": null,
+    "raw_size": "$7.99/lb",
     "pkg_dimension": "weight"
   },
   {
@@ -1738,6 +1980,17 @@
     "pkg_dimension": "weight"
   },
   {
+    "request_id": "r055",
+    "store_id": 35802549,
+    "product_id": "1000036281925001",
+    "raw_title": "Wild Caught USA Sockeye Salmon Portion (pack)",
+    "raw_category": "Seafood",
+    "brand": null,
+    "variant": null,
+    "raw_size": "$19.98/lb",
+    "pkg_dimension": "weight"
+  },
+  {
     "request_id": "r056",
     "store_id": 1742136,
     "product_id": "21423420361",
@@ -1874,6 +2127,17 @@
     "store_id": 24325284,
     "product_id": "8718658051",
     "raw_title": "Santa Cruz Organic Creamy Dark Roasted Peanut Butter (16 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r058",
+    "store_id": 24325284,
+    "product_id": "9411274051",
+    "raw_title": "MaraNatha Organic Creamy Peanut Butter (16 oz)",
     "raw_category": "Pantry",
     "brand": null,
     "variant": null,
@@ -2024,6 +2288,39 @@
     "pkg_dimension": "weight"
   },
   {
+    "request_id": "r069",
+    "store_id": 29631686,
+    "product_id": "1000033272212023",
+    "raw_title": "Reggano Meat Pasta Sauce (24 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "24 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r069",
+    "store_id": 29631686,
+    "product_id": "22646325801",
+    "raw_title": "Reggano Marinara Pasta Sauce (24 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "24 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r069",
+    "store_id": 29631686,
+    "product_id": "22646325869",
+    "raw_title": "Reggano Traditional Pasta Sauce (24 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "24 oz",
+    "pkg_dimension": "weight"
+  },
+  {
     "request_id": "r070",
     "store_id": 29631686,
     "product_id": "24200027674",
@@ -2120,6 +2417,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "6 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r075",
+    "store_id": 1042759,
+    "product_id": "8776503171",
+    "raw_title": "Peanut Butter & Co. Smooth Operator Peanut Butter Spread (16 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -2296,6 +2604,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "12 fl oz x 24 ct",
+    "pkg_dimension": "volume"
+  },
+  {
+    "request_id": "r088",
+    "store_id": 35802549,
+    "product_id": "30994675254",
+    "raw_title": "Coke Original Cola Soda Cans (12 fl oz x 12 ct)",
+    "raw_category": "Drinks",
+    "brand": null,
+    "variant": null,
+    "raw_size": "12 fl oz x 12 ct",
     "pkg_dimension": "volume"
   },
   {
@@ -2488,12 +2807,67 @@
   {
     "request_id": "r096",
     "store_id": 1742136,
+    "product_id": "1000013953588073",
+    "raw_title": "Starkist Chunk Light Tuna in Water (5 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "5 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r096",
+    "store_id": 1742136,
+    "product_id": "10109279285",
+    "raw_title": "ACE Sushi Spicy Tuna Roll (5 oz)",
+    "raw_category": "Prepared Food",
+    "brand": null,
+    "variant": null,
+    "raw_size": "5 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r096",
+    "store_id": 1742136,
     "product_id": "18313620307",
     "raw_title": "Starkist Chunk Light Tuna in Water Can (5 oz)",
     "raw_category": "Pantry",
     "brand": null,
     "variant": null,
     "raw_size": "5 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r096",
+    "store_id": 1742136,
+    "product_id": "21127128868",
+    "raw_title": "Tuna Ahi Steak, Previously Frozen (5 oz)",
+    "raw_category": "Seafood",
+    "brand": null,
+    "variant": null,
+    "raw_size": "5 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r096",
+    "store_id": 24325284,
+    "product_id": "23968109471",
+    "raw_title": "Sprouts Chunk White Albacore Tuna (5 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "5 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r097",
+    "store_id": 24325284,
+    "product_id": "1000035468335001",
+    "raw_title": "Clover Sonoma Organic Cottage Cheese (16 oz)",
+    "raw_category": "Dairy & Eggs",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -2692,6 +3066,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "6.5 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r103",
+    "store_id": 24325284,
+    "product_id": "42555194048",
+    "raw_title": "Turkey Sandwich (8 oz)",
+    "raw_category": "Prepared Food",
+    "brand": null,
+    "variant": null,
+    "raw_size": "8 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -3000,6 +3385,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "8 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r112",
+    "store_id": 35802549,
+    "product_id": "30994828623",
+    "raw_title": "Oscar Mayer Lean Oven Roasted White Turkey Sliced Deli Meat (16 oz)",
+    "raw_category": "Deli",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -3851,6 +4247,28 @@
   },
   {
     "request_id": "r136",
+    "store_id": 1042759,
+    "product_id": "8776503171",
+    "raw_title": "Peanut Butter & Co. Smooth Operator Peanut Butter Spread (16 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r136",
+    "store_id": 1742136,
+    "product_id": "21027313621",
+    "raw_title": "O Organics Creamy Peanut Butter Spread (16 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r136",
     "store_id": 24325284,
     "product_id": "11115073131",
     "raw_title": "Once Again Creamy Peanut Butter (16 oz)",
@@ -3898,6 +4316,17 @@
     "store_id": 24325284,
     "product_id": "11115073131",
     "raw_title": "Once Again Creamy Peanut Butter (16 oz)",
+    "raw_category": "Pantry",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r137",
+    "store_id": 24325284,
+    "product_id": "7295293477",
+    "raw_title": "Justins Nut Butter Honey Peanut Butter (16 oz)",
     "raw_category": "Pantry",
     "brand": null,
     "variant": null,
@@ -4006,6 +4435,17 @@
   {
     "request_id": "r143",
     "store_id": 35802549,
+    "product_id": "30802482185",
+    "raw_title": "Simple Truth Organic Large Honeycrisp Apple (each)",
+    "raw_category": "Produce",
+    "brand": null,
+    "variant": null,
+    "raw_size": "$4.29/lb",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r143",
+    "store_id": 35802549,
     "product_id": "33421243596",
     "raw_title": "Kroger Pink Lady Apples Bag (3 lb)",
     "raw_category": "Produce",
@@ -4023,6 +4463,17 @@
     "brand": null,
     "variant": null,
     "raw_size": "5 oz x 4 ct",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r146",
+    "store_id": 1042759,
+    "product_id": "8776480005",
+    "raw_title": "Cheez-It Original Baked Snack Crackers Family Size (21 oz)",
+    "raw_category": "Snacks",
+    "brand": null,
+    "variant": null,
+    "raw_size": "21 oz",
     "pkg_dimension": "weight"
   },
   {
@@ -4090,6 +4541,17 @@
     "variant": null,
     "raw_size": "6 ct",
     "pkg_dimension": "count"
+  },
+  {
+    "request_id": "r149",
+    "store_id": 1742136,
+    "product_id": "14533930582",
+    "raw_title": "Land O'Frost Premium Meat Honey Ham (16 oz)",
+    "raw_category": "Deli",
+    "brand": null,
+    "variant": null,
+    "raw_size": "16 oz",
+    "pkg_dimension": "weight"
   },
   {
     "request_id": "r149",
@@ -4162,6 +4624,17 @@
     "store_id": 29631686,
     "product_id": "1000030409614149",
     "raw_title": "L'oven Fresh Classic White Bread (20 oz)",
+    "raw_category": "Bakery",
+    "brand": null,
+    "variant": null,
+    "raw_size": "20 oz",
+    "pkg_dimension": "weight"
+  },
+  {
+    "request_id": "r152",
+    "store_id": 29631686,
+    "product_id": "22646327477",
+    "raw_title": "L'oven Fresh 100% Whole Wheat Wide Pan Bread (20 oz)",
     "raw_category": "Bakery",
     "brand": null,
     "variant": null,
