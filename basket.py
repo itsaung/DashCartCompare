@@ -57,6 +57,8 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 
+from build_availability import OUT_OF_STOCK, lookup as availability_lookup
+from parse_query import parse_shopping_line
 from retrieval import PACKAGE_SIZE_ROUNDING_TOLERANCE
 
 
@@ -320,3 +322,226 @@ def select_cheapest_sufficient(candidates, requested_total, requested_unit,
     return Selection(candidate=best_candidate, arithmetic=best_arithmetic,
                      runner_up=runner_up, considered=len(priced),
                      unresolved=tuple(unresolved))
+
+
+# ---------------------------------------------------------------------------
+# B4 -- line resolution: duplicates, the three-way response, overrides
+# ---------------------------------------------------------------------------
+
+LINE_PRICED = "priced"
+LINE_REVIEW = "review"
+LINE_MISSING = "missing"
+
+
+@dataclass(frozen=True)
+class ShoppingLine:
+    """One line of a shopping list, after duplicate resolution.
+
+    `texts` is a tuple rather than a string because a merged line came from
+    more than one thing the shopper wrote, and an explanation has to be able to
+    show both.
+    """
+    texts: tuple
+    product_type: str | None
+    matching_mode: str
+    canonical_unit: str | None
+    canonical_quantity: float | None
+    needs_review: bool
+    review_reasons: tuple = ()
+
+    @property
+    def text(self) -> str:
+        return self.texts[0] if self.texts else ""
+
+    @property
+    def merged(self) -> bool:
+        return len(self.texts) > 1
+
+
+@dataclass(frozen=True)
+class LineResolution:
+    """What the basket can say about one line at one store."""
+    line: ShoppingLine
+    state: str
+    selection: Selection | None = None
+    candidates: tuple = ()
+    reason: str = ""
+    overridden: bool = False
+    excluded_out_of_stock: tuple = ()
+
+    @property
+    def line_cost_cents(self) -> int | None:
+        return self.selection.line_cost_cents if self.selection else None
+
+
+def resolve_lines(texts, matching_mode="flexible", modes_by_index=None) -> list:
+    """Shopping-list text -> ShoppingLines, with duplicates summed.
+
+    MERGE RULE, deliberately narrow: same product_type AND same canonical unit
+    AND same matching mode. "2 lb chicken" + "1 lb chicken" is one line of
+    3 lb. Anything else stays two lines.
+
+    It is narrow on purpose. A loose merge -- fuzzy product similarity, or
+    ignoring the unit -- silently changes what the shopper asked for, and a
+    basket that quietly combines "1 lb chicken breast" with "2 lb chicken
+    thighs" has invented an order nobody placed. Two lines that should have
+    merged and did not cost the shopper a duplicate purchase they can see and
+    fix; two lines that merged and should not have produce a wrong basket they
+    cannot see.
+
+    A line whose parse failed never merges: it has no canonical unit to merge
+    ON, and guessing that two unparseable lines are the same request is exactly
+    the fuzzy matching this rule exists to avoid.
+    """
+    parsed = []
+    for i, text in enumerate(texts):
+        mode = (modes_by_index or {}).get(i, matching_mode)
+        s = parse_shopping_line(text)
+        parsed.append((text, mode, s))
+
+    merged = {}
+    order = []
+    for text, mode, s in parsed:
+        key = (s["product_type"], s["canonical_unit"], mode)
+        mergeable = (not s["needs_review"] and s["product_type"]
+                     and s["canonical_unit"] and s["canonical_quantity"] is not None)
+        if mergeable and key in merged:
+            prior = merged[key]
+            merged[key] = ShoppingLine(
+                texts=prior.texts + (text,),
+                product_type=prior.product_type,
+                matching_mode=prior.matching_mode,
+                canonical_unit=prior.canonical_unit,
+                canonical_quantity=prior.canonical_quantity + s["canonical_quantity"],
+                needs_review=False,
+                review_reasons=(),
+            )
+            continue
+
+        line = ShoppingLine(
+            texts=(text,),
+            product_type=s["product_type"],
+            matching_mode=mode,
+            canonical_unit=s["canonical_unit"],
+            canonical_quantity=s["canonical_quantity"],
+            needs_review=bool(s["needs_review"]),
+            review_reasons=tuple(s["review_reasons"]),
+        )
+        if mergeable:
+            merged[key] = line
+            order.append(("key", key))
+        else:
+            order.append(("line", line))
+
+    out = []
+    for kind, value in order:
+        out.append(merged[value] if kind == "key" else value)
+    return out
+
+
+def line_state(response: str, top_score, accept_threshold: float,
+               review_floor: float) -> str:
+    """The frozen three-way response, as a basket line state.
+
+    Deliberately the same rule as tune_threshold_v3.apply_cut_points, which is
+    what Checkpoint 4's cut points were selected under; a test pins the two
+    together across a grid so this cannot drift from the thresholds' meaning.
+    It is restated here rather than imported because that module pulls in the
+    whole evaluation stack, and the basket engine should not depend on the
+    benchmark to price a line.
+
+    REVIEW IS NOT "CLOSE ENOUGH TO PRICED". A review-band line is never priced
+    to improve completeness -- it is the matcher declining to commit, and a
+    basket that prices it anyway has converted a declared uncertainty into a
+    confident number.
+    """
+    if response == "needs_clarification":
+        return LINE_REVIEW
+    if response != "answerable" or top_score is None:
+        return LINE_MISSING
+    if top_score >= accept_threshold:
+        return LINE_PRICED
+    if top_score >= review_floor:
+        return LINE_REVIEW
+    return LINE_MISSING
+
+
+def resolve_line(line: ShoppingLine, candidates, accept_threshold: float,
+                 review_floor: float, availability_by_key=None,
+                 response: str | None = None) -> LineResolution:
+    """One ShoppingLine against one store's candidates.
+
+    Out-of-stock candidates are removed before anything is scored or priced,
+    and are reported on the resolution so the explanation can name them --
+    PROJECT_PLAN.md asks for out-of-stock items to be excluded, and an
+    exclusion the shopper cannot see is indistinguishable from the store not
+    carrying the product.
+    """
+    if line.needs_review:
+        return LineResolution(line=line, state=LINE_REVIEW, candidates=tuple(candidates),
+                              reason="; ".join(line.review_reasons) or "line needs review")
+
+    excluded = ()
+    if availability_by_key is not None:
+        kept = []
+        dropped = []
+        for c in candidates:
+            if availability_lookup(availability_by_key, c.store_id, c.product_id).state == OUT_OF_STOCK:
+                dropped.append(c)
+            else:
+                kept.append(c)
+        candidates, excluded = kept, tuple(dropped)
+
+    top_score = max((c.score for c in candidates), default=None)
+    state = line_state(response or ("answerable" if candidates else "no_acceptable_match"),
+                       top_score, accept_threshold, review_floor)
+
+    if state != LINE_PRICED:
+        return LineResolution(
+            line=line, state=state, candidates=tuple(candidates),
+            reason=("no candidate cleared the review floor" if state == LINE_MISSING
+                    else "score in the review band -- candidates shown, not priced"),
+            excluded_out_of_stock=excluded)
+
+    selection = select_cheapest_sufficient(
+        candidates, line.canonical_quantity, line.canonical_unit,
+        min_score=accept_threshold)
+    if selection is None:
+        # Accepted by score, but nothing could be priced -- every accepted
+        # candidate had an unresolvable package size. That is a review, not a
+        # match and not an abstention: there IS a product, its size is unknown.
+        return LineResolution(
+            line=line, state=LINE_REVIEW, candidates=tuple(candidates),
+            reason="accepted candidates have no resolvable package size",
+            excluded_out_of_stock=excluded)
+
+    return LineResolution(line=line, state=LINE_PRICED, selection=selection,
+                          candidates=tuple(candidates), excluded_out_of_stock=excluded)
+
+
+def apply_override(resolution: LineResolution, candidate: Candidate) -> LineResolution:
+    """The shopper picks a specific product for a line.
+
+    Recomputes package count, line cost and excess from scratch against the
+    chosen candidate -- it never patches the previous arithmetic, because a
+    partially-updated total is worse than no total. Works from any state,
+    including a line the matcher abstained on: an override is the shopper
+    overruling the matcher, which is the entire point of offering one.
+
+    Raises rather than guessing when the chosen product cannot be priced --
+    an override that silently produced no cost would look like a successful
+    selection.
+    """
+    line = resolution.line
+    if line.canonical_quantity is None or not line.canonical_unit:
+        raise BasketArithmeticError(
+            f"cannot price an override for a line with no resolvable amount: {line.text!r}")
+
+    arithmetic = compute_line(
+        line.canonical_quantity, line.canonical_unit, candidate.per_package_total,
+        candidate.canonical_unit, candidate.price_cents, pkg_count=candidate.pkg_count)
+    selection = Selection(candidate=candidate, arithmetic=arithmetic, considered=1)
+    return LineResolution(line=line, state=LINE_PRICED, selection=selection,
+                          candidates=resolution.candidates, reason="chosen by the shopper",
+                          overridden=True,
+                          excluded_out_of_stock=resolution.excluded_out_of_stock)
