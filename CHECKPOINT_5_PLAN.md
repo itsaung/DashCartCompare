@@ -225,9 +225,12 @@ out-of-stock line excludes exactly that line and says why.
    must distinguish them:
    - **automatic match** → line is priced.
    - **review band** → line is **not priced**; it carries its candidates and blocks basket
-     completeness. On the Checkpoint 4 test split 36.7% of requests landed in review, so this is
-     the common path, not an edge case, and an engine that quietly treats review as either "priced"
-     or "missing" will be wrong most of the time.
+     completeness. Review rates on the frozen matcher are **13.3% dev (12/90), 10.0% validation
+     (3/30) and 36.7% test (11/30)** — 17.3% (26/150) across the whole benchmark. *(Corrected
+     2026-09-21: this plan originally quoted only the 36.7% test figure. That split is an outlier,
+     inflated by six `needs_clarification` parser gates that happen to land in it; ~13–17% is the
+     typical rate.)* Either way review is a routine outcome rather than an edge case, and an engine
+     that quietly treats it as "priced" or as "missing" is wrong on one line in six.
    - **abstention** → line is missing; basket is incomplete.
 3. **User overrides** (`PROJECT_PLAN.md` pass criterion): accepting a specific product for a line —
    typically resolving a review-band line — recalculates `packages_needed`, line cost, excess and
