@@ -193,18 +193,37 @@ Every case below is a real request and a real catalog product. Scores are the ma
 
 ### Answerable requests the matcher abstained on (dev/validation)
 
-4. **r017 · exact · "a 67.6 fl oz bottle of Coke soda"** → `no_acceptable_match`, every candidate
-   filtered out before scoring. 67.6 fl oz is the 2 L bottle; the catalog row is labeled in liters.
-   *Cross-unit size filtering at the boundary* — `filter_by_package_size` compares only within one
-   canonical unit, so a row labeled `2 L` is never compared against a request in fl oz at all.
-5. **r142 · exact · "a 12 fl oz x 12 ct pack of Diet Coke Diet Cola Soda"** and **r151 · exact · "a
-   12 fl oz x 12 ct case of La Croix Razz-Cranberry Sparkling Water"** → both filtered to empty.
-   *The known `parse_shopping_line` "pack of"/"case of" gap* (PROJECT_PLAN.md Appendix A, open item
-   5): the phrase parses as dimension `count`, so every volume candidate is dropped before size
-   matching runs. Two of the nine false abstentions across dev and validation are this one parser bug.
-6. **r021 · exact · "a 24 oz loaf of Bimbo Large White Bread"** → filtered to empty. *Brand present
-   in catalog, size mismatch at the row level* — the store's Bimbo white bread rows do not carry a
-   resolvable 24 oz total, so the size filter removes them and nothing survives.
+4. **r017, r021, r142 and r151 are all one bug — the container-word parse gap.**
+   *(Corrected 2026-09-21, after this report was first published. The original text attributed
+   these to three different mechanisms — a cross-unit comparison failure, a row-level size
+   mismatch, and the known "pack of" gap. Re-checked against the parser, they are a single cause.
+   The corrected reading is below; no number in this report changes, only the diagnosis.)*
+
+   `parse_shopping_line` discards the stated size whenever a request uses an
+   `a <size> <container> of <product>` phrasing:
+
+   | request | parsed as |
+   |---|---|
+   | `a 67.6 fl oz bottle of Coke soda` | `count`, 1 ct |
+   | `a 24 oz loaf of Bimbo Large White Bread` | `count`, 1 ct |
+   | `a 12 fl oz x 12 ct pack of Diet Coke Diet Cola Soda` | `count`, 1 ct |
+   | `a 12 fl oz x 12 ct case of La Croix Razz-Cranberry Sparkling Water` | `count`, 1 ct |
+   | `67.6 fl oz Coke soda` (no container word) | `volume`, 67.6 fl oz |
+
+   The dimension becomes `count`, so `filter_by_dimension` drops every volume or weight candidate
+   before size matching is ever reached. It is the known `parse_shopping_line` "pack of" gap
+   (PROJECT_PLAN.md Appendix A item 5) — wider than recorded, since `bottle of` and `loaf of`
+   trigger it too, and it is not confined to multipacks.
+
+   **r017 is specifically not a cross-unit failure**, which is what this report originally said.
+   `normalize.py` canonicalizes `2 L` to 67.628 fl oz, the same canonical unit the request would
+   have had if it parsed — ALDI even stocks `Coke Cola Soda Bottle (67.6 fl oz)` at exactly
+   67.600. Nothing about litres versus fluid ounces is involved.
+
+   **Four of the nine false abstentions across dev and validation are this single parser bug** —
+   the largest identified cause, where the original grouping made it look like three separate
+   ones. Measured across the whole 150-request benchmark, 4 requests state a size the parser then
+   discards.
 7. **r100 · "14.9 oz frozen pizza", r108 · "21 oz crackers", r111 · "7 oz deli turkey", r147 ·
    "4.25 oz crackers"** → all four `no_acceptable_match`, all four flexible, all four
    *size-only requests with no product-identity signal*. The size filter is exact to 1% and the
@@ -223,13 +242,13 @@ Every case below is a real request and a real catalog product. Scores are the ma
 | mechanism | cases | fixable where |
 |---|---|---|
 | variant over- or mis-specification on flexible requests | r115, r149 | S2 descriptor vocabulary |
-| `parse_shopping_line` "pack of"/"case of" gap | r142, r151 | parser, known and open |
-| cross-unit size comparison (fl oz vs L) | r017 | `filter_by_package_size` |
+| `parse_shopping_line` container-word gap (`bottle/loaf/pack/case of`) | r017, r021, r142, r151 | parser, known and open |
 | size-only request, size absent from catalog | r100, r108, r111, r147 | not a matcher fix |
 | right answer below the cut point | r033, r093, r116, r118 | cut points, or score calibration |
 | labeling boundary | r083 | benchmark, not the matcher |
 
-Four of the fourteen inspected failures are the **score-doesn't-separate-correctness** problem, and
+Four of the fourteen inspected failures are the container-word parser gap and four more are the
+**score-doesn't-separate-correctness** problem, and
 the review band mitigates rather than solves it: it gives the overlap region a non-destructive
 destination instead of forcing a wrong accept or a wrong abstention.
 
@@ -296,5 +315,9 @@ cd dash
 ```
 
 A fresh run reproduces `final_metrics.json` and `constraint_violation_check.json` byte-for-byte;
-this was checked, not assumed. There are zero unjudged top-1 results anywhere in this report, across
+this was checked, not assumed — **at the code SHA recorded in `frozen_config.json`**. A parser fix
+landed after this report was published (Checkpoint 5, B1.5) which changes how 4 dev requests parse
+and therefore how the matcher resolves them; the artifacts here were deliberately not regenerated,
+and the measured divergence is recorded in `evaluation_v4/PARSER_FIX_DELTA.md`. No validation or
+test number is affected. There are zero unjudged top-1 results anywhere in this report, across
 all five families and all three splits.

@@ -48,7 +48,8 @@ that float dust or label rounding inflated; it can never let a genuinely
 insufficient package satisfy a request. 13 oz against a 12 oz package is 8.3%
 over and still needs two.
 
-Nothing here knows about stores, stock, scores, or ranking. That is B2 onward.
+B1 knows nothing about stores, stock, scores or ranking. B2 adds exactly one
+thing on top: choosing which package to buy, by actual purchase cost.
 """
 
 from __future__ import annotations
@@ -195,3 +196,127 @@ def compute_line(requested_total, requested_unit, per_package_total, package_uni
         canonical_unit=unit,
         pkg_count=pkg_count,
     )
+
+
+# ---------------------------------------------------------------------------
+# B2 -- cheapest sufficient package
+# ---------------------------------------------------------------------------
+
+
+@dataclass(frozen=True)
+class Candidate:
+    """One catalog row offered for one line. Deliberately not a DataFrame row:
+    the selection below should be testable with five hand-written objects and
+    no catalog on disk."""
+    store_id: str
+    product_id: str
+    title: str
+    price_cents: int
+    per_package_total: float | None
+    canonical_unit: str | None
+    score: float = 0.0
+    pkg_count: int | None = None
+
+
+@dataclass(frozen=True)
+class Selection:
+    """The chosen package for a line, with what it beat and why."""
+    candidate: Candidate
+    arithmetic: LineArithmetic
+    runner_up: "Selection | None" = None
+    considered: int = 0
+    unresolved: tuple = ()
+
+    @property
+    def line_cost_cents(self) -> int:
+        return self.arithmetic.line_cost_cents
+
+
+def _selection_sort_key(priced) -> tuple:
+    """Declared before the first run, per CHECKPOINT_5_PLAN.md B2.
+
+    Cost first: PROJECT_PLAN.md asks flexible mode to "select the cheapest
+    accepted product sufficient for the requested quantity", and that is a cost
+    question, not a unit-price one. Unit price and actual purchase cost disagree
+    exactly when excess is large -- a 5 lb sack may have the better unit price
+    and still be the wrong answer for a 1 lb request -- and it is actual outlay
+    the shopper pays.
+
+    Then LESS EXCESS, which is the whole role excess plays in ranking: it breaks
+    genuine cost ties and nothing else. Excess is displayed, never priced into
+    the ranking, because a waste cost would be an undeclared weight nobody has
+    measured -- the same class of knob that S6's 0.5 review cost turned out to
+    be, and that one at least was declared in advance.
+
+    Then higher match score, then product id so the order is total and a
+    re-run cannot reshuffle a tie.
+    """
+    candidate, arithmetic = priced
+    return (arithmetic.line_cost_cents, arithmetic.excess,
+            -candidate.score, str(candidate.product_id))
+
+
+def select_cheapest_sufficient(candidates, requested_total, requested_unit,
+                               min_score: float | None = None) -> Selection | None:
+    """The cheapest package that covers the request, with its runner-up.
+
+    `min_score` IS NOT OPTIONAL IN PRACTICE, and the default of None exists only
+    so the arithmetic can be tested without a matcher. PROJECT_PLAN.md says
+    flexible mode selects "the cheapest **accepted** product sufficient for the
+    requested quantity" -- the acceptance bar is load-bearing, and ranking by
+    cost without it does not degrade gracefully, it inverts.
+
+    Measured on flexible dev requests, 2026-09-21, ranking over the
+    size-sufficient pool with no acceptance bar:
+
+        "2 lb Honeycrisp Apples"  -> Sweet Onions Bag (2 lb), $1.69
+        "10 oz potato chips"      -> Happy Harvest Whole Potatoes (15 oz), $1.19
+        "12 oz ground coffee"     -> a 15 oz caramel vanilla coffee, $4.49
+
+    The sufficiency gate is deliberately weak -- any positive package size can
+    cover any request by buying enough of them -- so it admits ~190 of 200
+    retrieved rows. The cheapest thing in a bag of 190 groceries is essentially
+    never the thing the shopper asked for. Cost may only choose among products
+    that have already been judged acceptable matches; it must never be what
+    decides whether a product matches.
+
+    Returns None when nothing could be priced. Candidates whose size cannot be
+    resolved are not dropped on the floor -- they come back on the Selection as
+    `unresolved`, so a caller can report "3 possibilities had no package size"
+    instead of silently narrowing the shopper's options.
+
+    A candidate in a different canonical unit is skipped rather than raising:
+    at this level a mixed-unit candidate list is an ordinary occurrence, and
+    `compute_line`'s raise is the right behavior only when a caller has already
+    committed to one specific package.
+    """
+    priced, unresolved = [], []
+    for c in candidates:
+        if min_score is not None and c.score < min_score:
+            continue
+        try:
+            arithmetic = compute_line(
+                requested_total, requested_unit, c.per_package_total, c.canonical_unit,
+                c.price_cents, pkg_count=c.pkg_count)
+        except UnitMismatchError:
+            continue
+        except UnresolvedSizeError:
+            unresolved.append(c)
+            continue
+        priced.append((c, arithmetic))
+
+    if not priced:
+        return None
+
+    priced.sort(key=_selection_sort_key)
+    best_candidate, best_arithmetic = priced[0]
+
+    runner_up = None
+    if len(priced) > 1:
+        second_candidate, second_arithmetic = priced[1]
+        runner_up = Selection(candidate=second_candidate, arithmetic=second_arithmetic,
+                              considered=len(priced), unresolved=tuple(unresolved))
+
+    return Selection(candidate=best_candidate, arithmetic=best_arithmetic,
+                     runner_up=runner_up, considered=len(priced),
+                     unresolved=tuple(unresolved))

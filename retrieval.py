@@ -295,6 +295,59 @@ def filter_by_package_size(candidates: list, catalog_df, request_text: str, stru
     return survivors
 
 
+def filter_by_size_sufficient(candidates: list, catalog_df, request_text: str, structured: dict):
+    """Checkpoint 5, B2: flexible mode's size gate. Returns (sufficient, unresolved).
+
+    filter_by_package_size keeps only candidates whose total is within 1% of the
+    requested total, so `packages_needed` against anything it returns is always
+    1 and the whole of PROJECT_PLAN.md's package-count arithmetic is unreachable
+    through it. This is its sibling, NOT a modification of it: v1/v2/v3 baselines
+    and Checkpoint 4's published numbers depend on that function byte-for-byte,
+    the same rule Checkpoint 3.1 and Checkpoint 4 S3 both followed.
+
+    What "sufficient" means here: the candidate is in the request's canonical
+    unit and a whole number of its packages covers the request. Since any
+    positive package size can cover any request by buying enough of them, this
+    gate is deliberately weak -- it is a *computability* filter, not a quality
+    one. Cost ranking in basket.py is what actually chooses, which is the point:
+    PROJECT_PLAN.md asks flexible mode to "select the cheapest accepted product
+    sufficient for the requested quantity", and cheapness cannot be judged
+    before the package count is known.
+
+    Two returns, not one, because "this row has no package size" is a different
+    answer from "this row does not fit" and a basket must be able to say so:
+    3,122 frozen-catalog rows have no pkg_canonical_total and 1,000 are
+    variable_weight. Unresolved rows are handed back separately, never silently
+    dropped and never treated as sufficient.
+
+    Exact mode does not use this function at all. It keeps same-total matching,
+    because an exact request is for a specific package, not for an amount.
+    """
+    canonical_unit, canonical_total = _requested_canonical_total(request_text, structured)
+    if not canonical_unit or canonical_total is None:
+        # The request has no resolvable amount, so nothing can be shown to be
+        # sufficient for it. Same "unknown means don't filter" posture as the
+        # other filters: everything passes, nothing is claimed.
+        return list(candidates), []
+
+    sufficient, unresolved = [], []
+    for c in candidates:
+        row = catalog_df.iloc[c["row"]]
+        row_unit = row.get("pkg_canonical_unit")
+        row_total = row.get("pkg_canonical_total")
+        if pd.isna(row_unit) or pd.isna(row_total) or row_total <= 0:
+            unresolved.append(c)
+            continue
+        if row_unit != canonical_unit:
+            # A different canonical unit is a dimension conflict --
+            # filter_by_dimension's concern, not this one's. Dropped rather
+            # than called unresolved: the size IS known, it just is not
+            # comparable.
+            continue
+        sufficient.append(c)
+    return sufficient, unresolved
+
+
 def attribute_filter_baseline(request_text: str, catalog_df, vectorizer, matrix, top_k, min_similarity):
     """The system under test.
 

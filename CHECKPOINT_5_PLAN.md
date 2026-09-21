@@ -357,24 +357,45 @@ state.
 4. **A basket total is not a price quote.** Prices are snapshot values from a scrape, not live; no
    taxes, fees, delivery, promotions or loyalty pricing are modeled; substitution policy is not
    modeled. The writeup states this in the same place it states the totals.
-5. **"N packages of size S" does not parse.** `parse_shopping_line("3 boxes of 12 oz pasta")`
-   returns `needs_review` — "ambiguous unit: 'boxes'". So the most natural way to express an exact
-   multi-package request cannot be expressed. Exact mode's "multiply by the requested package
-   count" therefore has no parser support today. Either B4 extends the parser for the
-   `<count> <container> of <size> <product>` shape, or Checkpoint 5 ships with exact-mode package
-   counts limited to what the current parser expresses and says so. **Decide this in B4, do not
-   discover it in B6.**
+5. **The parser discards a stated size whenever a container word appears — wider than recorded,
+   and now the largest known failure cause.** Measured 2026-09-21:
+
+   | request | parsed as |
+   |---|---|
+   | `a 67.6 fl oz bottle of Coke soda` | `count`, 1 ct |
+   | `a 24 oz loaf of Bimbo Large White Bread` | `count`, 1 ct |
+   | `a 12 fl oz x 12 ct pack of Diet Coke` | `count`, 1 ct |
+   | `67.6 fl oz Coke soda` | `volume`, 67.6 fl oz |
+
+   `PROJECT_PLAN.md` Appendix A item 5 recorded this as a "pack of" gap; `bottle of` and `loaf of`
+   trigger it too, so it is not confined to multipacks. It accounts for **4 of the 9 false
+   abstentions** on Checkpoint 4's dev and validation splits — the single largest cause, and one
+   the S7 writeup originally split across three different mechanisms (corrected in
+   `evaluation_v3/SEMANTIC_RESULTS.md` §5).
+
+   Separately, `parse_shopping_line("3 boxes of 12 oz pasta")` returns `needs_review` ("ambiguous
+   unit: 'boxes'"), so **"N packages of size S" cannot be expressed at all** and exact mode's
+   "multiply by the requested package count" has no parser support today.
+
+   Both are the same `<count> <container> of <size> <product>` shape. A basket engine fed
+   `1 ct` when the shopper said `67.6 fl oz` will compute a confident, wrong package count, so
+   this is load-bearing for Checkpoint 5 in a way it was not for Checkpoint 4 (where it only
+   caused an abstention). **Decide in B4 whether to extend the parser or to ship with the
+   limitation documented — do not discover it in B6.**
 6. **Scope creep into Checkpoint 6.** `basket_demo.py` currently runs the TF-IDF stack, not the
    frozen embedding matcher. Moving it is genuinely needed, but it is CP6 demo work; B5 should
    expose a clean engine API and let CP6 rewire the demo, rather than rewriting the demo here.
 
 ## Open questions to settle before B2
 
-1. **Should flexible mode allow cross-unit sufficiency** (a 2 L bottle satisfying a 67.6 fl oz
-   request)? It is the r017 failure and it is a genuine shopper expectation. It is also a
-   conversion table nobody has reviewed, and B1 deliberately raises rather than converts. Proposal:
-   yes, but as an explicit, tested conversion table for the handful of real cross-unit pairs
-   (fl oz↔L↔ml, oz↔g↔lb), declared in `basket.py` before first use — not an open-ended unit library.
+1. ~~**Should flexible mode allow cross-unit sufficiency** (a 2 L bottle satisfying a 67.6 fl oz
+   request)?~~ — **withdrawn 2026-09-21; the premise was wrong.** `normalize.py` already
+   canonicalizes every weight to `oz` and every volume to `fl oz`, including litres (`2 L` →
+   67.628 fl oz), so there is no within-dimension cross-unit case for B2 to handle. The only
+   remaining "cross-unit" comparison is weight against volume (`oz` vs `fl oz`), which is a real
+   dimension conflict and must stay a hard mismatch. **B1's `require_same_unit` is correct as
+   written and needs no conversion table.** The r017 failure that motivated this question is not
+   a unit problem at all — see Risk 5.
 2. **Does an exact-mode line with a review-band response block the whole basket, or only that
    store's basket?** Proposal: only that store's, since a review is per (line, store) — but this
    needs deciding before B5's completeness invariant is written.

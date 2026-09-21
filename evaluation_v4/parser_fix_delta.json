@@ -1,0 +1,50 @@
+[
+  {
+    "request_id": "r017",
+    "split": "dev",
+    "text": "a 67.6 fl oz bottle of Coke soda",
+    "old_outcome": "no_match",
+    "old_response": "no_acceptable_match",
+    "new_outcome": "accept",
+    "new_response": "answerable",
+    "new_top1": "Coke Cola Soda Bottle (67.6 fl oz)",
+    "new_top1_score": 0.9316489696502686,
+    "new_top1_conservative_label": "Acceptable"
+  },
+  {
+    "request_id": "r021",
+    "split": "dev",
+    "text": "a 24 oz loaf of Bimbo Large White Bread",
+    "old_outcome": "no_match",
+    "old_response": "no_acceptable_match",
+    "new_outcome": "accept",
+    "new_response": "answerable",
+    "new_top1": "Bimbo Large White Bread (24 oz)",
+    "new_top1_score": 0.9374972581863403,
+    "new_top1_conservative_label": "Acceptable"
+  },
+  {
+    "request_id": "r142",
+    "split": "dev",
+    "text": "a 12 fl oz x 12 ct pack of Diet Coke Diet Cola Soda",
+    "old_outcome": "no_match",
+    "old_response": "no_acceptable_match",
+    "new_outcome": "accept",
+    "new_response": "answerable",
+    "new_top1": "Diet Coke Diet Cola Soda (12 fl oz x 12 ct)",
+    "new_top1_score": 0.9196230173110962,
+    "new_top1_conservative_label": "Acceptable"
+  },
+  {
+    "request_id": "r151",
+    "split": "dev",
+    "text": "a 12 fl oz x 12 ct case of La Croix Razz-Cranberry Sparkling Water",
+    "old_outcome": "no_match",
+    "old_response": "no_acceptable_match",
+    "new_outcome": "accept",
+    "new_response": "answerable",
+    "new_top1": "La Croix Razz-Cranberry Sparkling Water Cans (12 fl oz x 12 ct)",
+    "new_top1_score": 0.8530405759811401,
+    "new_top1_conservative_label": "Acceptable"
+  }
+]
