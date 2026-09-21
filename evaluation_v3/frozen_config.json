@@ -1,0 +1,44 @@
+{
+  "frozen_at": "2026-09-21T07:31:45Z",
+  "selected_baseline": "embed_dimension_size_filter",
+  "selection_rationale": "Validation selects. embed_dimension_size_filter and hybrid_dimension_size_filter tie on validation average cost (0.1833) with identical outcome splits (23 accept / 3 review / 4 no_match), and S5 found them tied on validation Success@1 (92.0%, 23/25). The tie is broken by the pre-declared preference for the simpler method: one retriever instead of two plus fusion, and ~12x lower latency (421 ms vs 4,904 ms median). Hybrid leads only on dev, the split its cut points were tuned on, and that lead did not reproduce on validation on either metric. The incumbent tfidf_dimension_size_filter is beaten on validation cost (0.3167 vs 0.1833) once it is given cut points from the same dev-only sweep.",
+  "selected_on_split": "validation",
+  "validation_avg_cost": 0.1833,
+  "dev_avg_cost": 0.1932,
+  "cut_points": {
+    "accept_threshold": 0.75552,
+    "review_floor": 0.691613
+  },
+  "cut_points_tuned_on": "dev only, 88 of 90 requests (r052, r129 excluded)",
+  "fusion_constants": {
+    "hybrid_retriever_depth": 50,
+    "rrf_k": 60
+  },
+  "model": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dimension": 384,
+    "max_seq_length": 256,
+    "device": "cpu",
+    "package_versions": {
+      "sentence-transformers": "6.1.0",
+      "transformers": "5.17.0",
+      "torch": "2.14.0",
+      "numpy": "2.5.3",
+      "pandas": "3.0.5"
+    }
+  },
+  "versions": {
+    "identity_extraction": "v1",
+    "text_construction": "v1",
+    "embed_construction": "v1"
+  },
+  "catalog": {
+    "rows": 31398,
+    "sha256": "141b82d9e167d7bfbb08de4a39e0dd38b58286146849a70debef66e35c5434b1"
+  },
+  "code_sha": "237b021fa69cc62121c9facc09552ba1417c12c3",
+  "working_tree_clean_at_freeze": true,
+  "test_split_status": "untouched at time of freeze",
+  "note": "Committed before final_evaluation.py was pointed at the test split. Any later change to the selection above is visible in git history as a commit after this one."
+}
