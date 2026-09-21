@@ -1,0 +1,100 @@
+{
+  "catalog_rows": 31398,
+  "snapshots_used": {
+    "2026-09-16T06:46:40Z": {
+      "source": "doordash_dashmart_1042759_items.csv",
+      "rows": 3163,
+      "duplicate_item_ids": 0
+    },
+    "2026-09-16T192713Z": {
+      "source": "runs/sprouts_24325284/2026-09-16T192713Z/items.csv",
+      "rows": 6770,
+      "duplicate_item_ids": 0
+    },
+    "2026-09-16T195036Z": {
+      "source": "runs/aldi_29631686/2026-09-16T195036Z/items.csv",
+      "rows": 3337,
+      "duplicate_item_ids": 0
+    },
+    "2026-09-16T195735Z": {
+      "source": "runs/ralphs_35802549/2026-09-16T195735Z/items.csv",
+      "rows": 9267,
+      "duplicate_item_ids": 0
+    },
+    "2026-09-16T201042Z": {
+      "source": "runs/vons_1742136/2026-09-16T201042Z/items.csv",
+      "rows": 9002,
+      "duplicate_item_ids": 0
+    }
+  },
+  "snapshot_ids_without_a_source": [],
+  "unjoined_rows": 248,
+  "unjoined_rate": 0.007898592267023377,
+  "state_counts": {
+    "unverified": 15388,
+    "in_stock": 13060,
+    "in_stock_limited": 2750,
+    "out_of_stock": 200
+  },
+  "state_rates": {
+    "unverified": 0.49009491050385373,
+    "in_stock": 0.4159500605134085,
+    "in_stock_limited": 0.0875851965093318,
+    "out_of_stock": 0.00636983247340595
+  },
+  "raw_value_counts": {
+    "<null>": 15388,
+    "Many in stock": 13060,
+    "In stock (20+)": 398,
+    "Out of stock": 200,
+    "In stock (5)": 200,
+    "In stock (7)": 193,
+    "In stock (3)": 188,
+    "In stock (8)": 182,
+    "In stock (6)": 177,
+    "In stock (4)": 170,
+    "In stock (11)": 143,
+    "In stock (2)": 142,
+    "In stock (9)": 141,
+    "In stock (10)": 134,
+    "In stock (12)": 130,
+    "In stock (1)": 88,
+    "In stock (14)": 85,
+    "In stock (13)": 85,
+    "In stock (15)": 73,
+    "In stock (16)": 66,
+    "In stock (18)": 57,
+    "In stock (17)": 52,
+    "In stock (19)": 46
+  },
+  "by_store": {
+    "1042759": {
+      "in_stock_limited": 2700,
+      "unverified": 248,
+      "out_of_stock": 74
+    },
+    "1742136": {
+      "unverified": 4995,
+      "in_stock": 3938,
+      "in_stock_limited": 37,
+      "out_of_stock": 32
+    },
+    "24325284": {
+      "unverified": 3948,
+      "in_stock": 2797,
+      "out_of_stock": 25
+    },
+    "29631686": {
+      "unverified": 2042,
+      "in_stock": 1229,
+      "out_of_stock": 66
+    },
+    "35802549": {
+      "in_stock": 5096,
+      "unverified": 4155,
+      "in_stock_limited": 13,
+      "out_of_stock": 3
+    }
+  },
+  "note": "A row that failed to join is UNVERIFIED, not dropped and not assumed in stock. unjoined_rate is reported rather than swallowed so a broken join shows up as a number."
+}
