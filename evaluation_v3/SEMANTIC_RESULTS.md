@@ -315,5 +315,9 @@ cd dash
 ```
 
 A fresh run reproduces `final_metrics.json` and `constraint_violation_check.json` byte-for-byte;
-this was checked, not assumed. There are zero unjudged top-1 results anywhere in this report, across
+this was checked, not assumed — **at the code SHA recorded in `frozen_config.json`**. A parser fix
+landed after this report was published (Checkpoint 5, B1.5) which changes how 4 dev requests parse
+and therefore how the matcher resolves them; the artifacts here were deliberately not regenerated,
+and the measured divergence is recorded in `evaluation_v4/PARSER_FIX_DELTA.md`. No validation or
+test number is affected. There are zero unjudged top-1 results anywhere in this report, across
 all five families and all three splits.

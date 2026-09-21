@@ -298,3 +298,100 @@ def test_multi_digit_percentage_is_not_torn_into_a_quantity():
     r = parse_shopping_line("12% milk")
     assert r["requested_quantity"] is None
     assert r["needs_review"] is True
+
+
+# --- "<count> [container of] <size> <product>" ------------------------------
+#
+# Added 2026-09-21 (Checkpoint 5, B1.5). Until then any container word made the
+# parser discard the size the shopper stated and fall through to a bare count of
+# 1: "a 67.6 fl oz bottle of Coke soda" parsed as 1 ct. In Checkpoint 4 that
+# produced an abstention (4 of the 9 dev/validation false abstentions were this
+# bug). In Checkpoint 5 it would produce a confident WRONG package count and a
+# wrong price, which is why it was fixed before the basket engine was built.
+
+def test_size_before_container_keeps_the_size():
+    """The r017 shape."""
+    r = parse_shopping_line("a 67.6 fl oz bottle of Coke soda")
+    assert r["dimension"] == "volume"
+    assert r["canonical_unit"] == "fl oz"
+    assert r["canonical_quantity"] == pytest.approx(67.6)
+    assert r["package_count"] == 1
+    assert r["package_size"] == pytest.approx(67.6)
+    assert r["container"] == "bottle"
+    assert r["product_type"] == "coke soda"
+    assert not r["needs_review"]
+
+
+def test_container_before_size_keeps_the_size_and_multiplies():
+    """'3 boxes of 12 oz pasta' is 36 oz total, not 3 counts and not 12 oz."""
+    r = parse_shopping_line("3 boxes of 12 oz pasta")
+    assert r["dimension"] == "weight"
+    assert r["canonical_quantity"] == pytest.approx(36.0)
+    assert r["package_count"] == 3
+    assert r["package_size"] == pytest.approx(12.0)
+    assert r["product_type"] == "pasta"
+    assert not r["needs_review"]
+
+
+def test_a_multipack_phrase_totals_the_whole_pack():
+    """'12 fl oz x 12 ct' is 144 fl oz, via normalize.parse_package_size -- the
+    same parser the catalog's own raw_size strings go through."""
+    r = parse_shopping_line("a 12 fl oz x 12 ct pack of Diet Coke Diet Cola Soda")
+    assert r["canonical_quantity"] == pytest.approx(144.0)
+    assert r["canonical_unit"] == "fl oz"
+    assert r["package_count"] == 1
+
+
+def test_two_multipacks_multiply():
+    r = parse_shopping_line("2 12 fl oz x 12 ct cases of sparkling water")
+    assert r["canonical_quantity"] == pytest.approx(288.0)
+    assert r["package_count"] == 2
+
+
+def test_loaf_is_handled_like_any_other_container():
+    r = parse_shopping_line("a 24 oz loaf of Bimbo Large White Bread")
+    assert r["canonical_quantity"] == pytest.approx(24.0)
+    assert r["dimension"] == "weight"
+    assert r["product_type"] == "bimbo white bread"
+
+
+def test_a_container_with_no_size_still_needs_review():
+    """The ambiguity rule is unchanged: a container word without a size has no
+    standard size to resolve, and must not be guessed at."""
+    for text in ("a jar of peanut butter", "3 bottles water", "3 cases of soda",
+                 "2 bags of chips"):
+        r = parse_shopping_line(text)
+        assert r["needs_review"], text
+        assert r["canonical_quantity"] is None, text
+
+
+def test_a_size_without_a_container_is_unchanged():
+    """The plain form must not acquire package_count from this change."""
+    r = parse_shopping_line("16 oz peanut butter")
+    assert r["canonical_quantity"] == pytest.approx(16.0)
+    assert r["package_count"] is None
+    assert r["package_size"] is None
+    assert r["container"] is None
+
+
+def test_package_fields_are_none_for_every_other_form():
+    for text in ("2 dozen large eggs", "1 gallon whole milk", "3 apples"):
+        r = parse_shopping_line(text)
+        assert r["package_count"] is None, text
+        assert r["container"] is None, text
+
+
+def test_the_size_regex_cannot_reach_into_a_product_name():
+    """It only runs on text immediately after a parsed leading quantity, so a
+    number inside the product name is never mistaken for a package size."""
+    r = parse_shopping_line("2 bottles of Coke Zero 100 calorie soda")
+    assert r["needs_review"]          # no size stated before the product
+    assert r["package_size"] is None
+
+
+def test_total_is_packages_times_size_not_either_alone():
+    """The arithmetic B1 consumes: 4 x 16 oz = 64 oz."""
+    r = parse_shopping_line("4 16 oz jars of peanut butter")
+    assert r["package_count"] == 4
+    assert r["package_size"] == pytest.approx(16.0)
+    assert r["canonical_quantity"] == pytest.approx(64.0)
