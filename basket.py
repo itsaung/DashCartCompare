@@ -55,7 +55,7 @@ thing on top: choosing which package to buy, by actual purchase cost.
 from __future__ import annotations
 
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 from build_availability import OUT_OF_STOCK, lookup as availability_lookup
 from parse_query import parse_shopping_line
@@ -228,6 +228,11 @@ class Selection:
     runner_up: "Selection | None" = None
     considered: int = 0
     unresolved: tuple = ()
+    # Candidates that were accepted and priceable but fell outside the
+    # near-tie band. Carried so an explanation can say "a cheaper option
+    # existed and here is why it lost" -- without this the shopper is told the
+    # winner was the only option, which is not true and is not checkable.
+    excluded_out_of_band: tuple = ()
 
     @property
     def line_cost_cents(self) -> int:
@@ -603,7 +608,27 @@ def select_for_line(candidates, requested_total, requested_unit, min_score=None,
         return None
     best = max(c.score for c in pool)
     near = [c for c in pool if c.score >= best - near_tie_band]
-    return select_cheapest_sufficient(near, requested_total, requested_unit)
+    out_of_band = [c for c in pool if c.score < best - near_tie_band]
+    selection = select_cheapest_sufficient(near, requested_total, requested_unit)
+    if selection is None or not out_of_band:
+        return selection
+
+    # Only report an out-of-band candidate that was actually CHEAPER -- one
+    # that was dearer as well as a worse match is not a road not taken.
+    cheaper = []
+    for c in out_of_band:
+        try:
+            arithmetic = compute_line(requested_total, requested_unit, c.per_package_total,
+                                      c.canonical_unit, c.price_cents, pkg_count=c.pkg_count)
+        except BasketArithmeticError:
+            continue
+        if arithmetic.line_cost_cents < selection.line_cost_cents:
+            cheaper.append((c, arithmetic))
+    if not cheaper:
+        return selection
+    cheaper.sort(key=_selection_sort_key)
+    return replace(selection, excluded_out_of_band=tuple(
+        Selection(candidate=c, arithmetic=a, considered=1) for c, a in cheaper))
 
 
 @dataclass(frozen=True)
@@ -710,4 +735,170 @@ def compare_stores(baskets) -> dict:
             "DashMart publishes a per-product count and the other storefronts do not. "
             "It is reported per store and is never an input to this ranking."
         ),
+    }
+
+
+# ---------------------------------------------------------------------------
+# B7 -- itemized explanations
+# ---------------------------------------------------------------------------
+
+
+def unit_price_cents_per_unit(candidate: Candidate):
+    """Price per canonical unit, FOR DISPLAY ONLY.
+
+    Never used to rank -- `_selection_sort_key` ranks on actual purchase cost,
+    because unit price and outlay disagree exactly when excess is large (a 5 lb
+    sack can have the better unit price and still be the wrong answer for a
+    1 lb request). It is shown because a shopper comparing two package sizes
+    expects to see it, and hiding it would make the selection harder to check,
+    not easier.
+
+    Returns None rather than raising for an unpriceable row: this is a display
+    helper and a missing number is a blank cell, not an error.
+    """
+    if not candidate.per_package_total or candidate.per_package_total <= 0:
+        return None
+    return candidate.price_cents / candidate.per_package_total
+
+
+def explain_line(resolution: LineResolution, availability_by_key=None) -> dict:
+    """Everything needed to justify one line to the shopper.
+
+    For a priced line that had alternatives, this carries WHY this package and
+    not the runner-up, with the runner-up's own cost -- the plan's requirement,
+    and the only way a reader can tell a cost decision from a match-quality one.
+    """
+    line = resolution.line
+    out = {
+        "request": line.text,
+        "merged_from": list(line.texts) if line.merged else None,
+        "matching_mode": line.matching_mode,
+        "requested": (None if line.canonical_quantity is None
+                      else f"{line.canonical_quantity:g} {line.canonical_unit}"),
+        "state": resolution.state,
+        "reason": resolution.reason or None,
+        "overridden": resolution.overridden,
+        "n_candidates_considered": len(resolution.candidates),
+        "excluded_out_of_stock": [
+            {"product_id": c.product_id, "title": c.title} for c in resolution.excluded_out_of_stock
+        ],
+    }
+
+    if resolution.state != LINE_PRICED:
+        # A review line shows what it would not commit to. Showing nothing here
+        # is what makes a review outcome feel like a failure rather than a
+        # question.
+        out["candidates"] = [
+            {"product_id": c.product_id, "title": c.title, "price_cents": c.price_cents,
+             "score": c.score}
+            for c in sorted(resolution.candidates, key=lambda c: -c.score)[:5]
+        ]
+        return out
+
+    selection = resolution.selection
+    candidate = selection.candidate
+    arithmetic = selection.arithmetic
+    availability = (availability_lookup(availability_by_key, candidate.store_id,
+                                        candidate.product_id)
+                    if availability_by_key is not None else None)
+
+    out.update({
+        "product_id": candidate.product_id,
+        "title": candidate.title,
+        "package_size": f"{arithmetic.per_package_total:g} {arithmetic.canonical_unit}",
+        "pkg_count": candidate.pkg_count,
+        "unit_price_cents_per_unit": unit_price_cents_per_unit(candidate),
+        "unit_price_note": "display only; ranking is on actual purchase cost",
+        "packages": arithmetic.packages,
+        "package_price_cents": candidate.price_cents,
+        "line_cost_cents": arithmetic.line_cost_cents,
+        "excess": arithmetic.excess,
+        "excess_note": (None if not arithmetic.excess else
+                        f"buying {arithmetic.packages} package(s) leaves "
+                        f"{arithmetic.excess:g} {arithmetic.canonical_unit} more than requested"),
+        "availability": None if availability is None else {
+            "state": availability.state,
+            "remaining": availability.remaining,
+            "remaining_is_lower_bound": availability.remaining_is_lower_bound,
+            "verified": availability.verified,
+        },
+        "n_unresolved_size_candidates": len(selection.unresolved),
+    })
+
+    runner_up = selection.runner_up
+    if runner_up is None and selection.excluded_out_of_band:
+        # A cheaper option existed but matched the request less well than the
+        # near-tie band allows. Saying "the only candidate" here would be
+        # false, and would hide the one decision a shopper is most likely to
+        # want to overrule.
+        rival = selection.excluded_out_of_band[0]
+        delta = arithmetic.line_cost_cents - rival.line_cost_cents
+        out["chosen_because"] = (
+            f"best match among accepted options; {rival.candidate.title} is {delta}c cheaper "
+            f"but scores further from the request than the near-tie band "
+            f"({SCORE_NEAR_TIE_BAND}) allows")
+        out["runner_up"] = None
+        out["cheaper_but_worse_match"] = [
+            {"product_id": r.candidate.title and r.candidate.product_id,
+             "title": r.candidate.title, "line_cost_cents": r.line_cost_cents,
+             "score": r.candidate.score}
+            for r in selection.excluded_out_of_band[:3]
+        ]
+        return out
+    if runner_up is None:
+        out["chosen_because"] = (
+            "the only candidate that could be priced"
+            if selection.considered <= 1 else "the only accepted candidate")
+        out["runner_up"] = None
+        return out
+
+    rival = runner_up.candidate
+    delta = runner_up.line_cost_cents - arithmetic.line_cost_cents
+    if delta > 0:
+        because = (f"cheapest accepted option: {arithmetic.line_cost_cents}c against "
+                   f"{runner_up.line_cost_cents}c for {rival.title}, a {delta}c difference")
+    elif delta == 0:
+        because = (f"tied on cost with {rival.title} at {arithmetic.line_cost_cents}c; "
+                   "broken by less excess, then by match score")
+    else:
+        because = (f"best match among accepted options; {rival.title} is {-delta}c cheaper "
+                   f"but scores further from the request than the near-tie band allows")
+    out["chosen_because"] = because
+    out["runner_up"] = {
+        "product_id": rival.product_id, "title": rival.title,
+        "line_cost_cents": runner_up.line_cost_cents,
+        "packages": runner_up.arithmetic.packages,
+        "excess": runner_up.arithmetic.excess,
+    }
+    return out
+
+
+def explain_basket(store_basket: StoreBasket, availability_by_key=None) -> dict:
+    """A whole store's basket, itemized.
+
+    The total is reported WITH its completeness and verification state, never
+    alone -- PROJECT_PLAN.md's "report coverage alongside precision" applied to
+    prices: a number that looks clean while half its lines are unverified is the
+    specific thing this structure prevents.
+    """
+    return {
+        "store_id": store_basket.store_id,
+        "store_name": store_basket.store_name,
+        "total_cents": store_basket.total_cents,
+        "state": store_basket.state,
+        "complete": store_basket.complete,
+        "lines": {
+            "total": len(store_basket.resolutions),
+            "priced": store_basket.n_priced,
+            "review": store_basket.n_review,
+            "missing": store_basket.n_missing,
+        },
+        "availability": {
+            "verified_lines": store_basket.n_verified,
+            "unverified_lines": store_basket.n_unverified,
+            "out_of_stock_candidates_excluded": store_basket.n_out_of_stock_excluded,
+            "note": ("A total with unverified lines is a best effort, not a confirmed price. "
+                     "Verification rate also differs by storefront, not only by stock."),
+        },
+        "items": [explain_line(r, availability_by_key) for r in store_basket.resolutions],
     }
