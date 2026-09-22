@@ -1,0 +1,904 @@
+{
+  "note": "Checkpoint 5, B6. Every expected value below was computed BY HAND and written here before the engine was run against it; the arithmetic is spelled out in each scenario's `hand_calculation`. A scenario whose expectation came from the engine would prove nothing.",
+  "provenance": {
+    "prices_and_sizes": "REAL. Every product is a row of benchmark_catalog_frozen.csv, cited by (store_id, product_id), with its actual price_cents and pkg_canonical_total. No invented products or prices.",
+    "scores": "CHOSEN, not measured. A candidate's score is set to exercise a particular response state (priced / review / missing). Thresholds used throughout: accept 0.75, review floor 0.69, near-tie band 0.01.",
+    "availability": "CHOSEN per scenario where a scenario is about stock; otherwise absent, which the engine treats as unverified.",
+    "candidate_lists": "A store's value is either one list applying to every line, or a list of per-line lists. Multi-line scenarios use per-line lists so that a line is offered only the products it is about -- a shared pool let the crackers line buy peanut butter, which is correct engine behaviour but not what those scenarios test.",
+    "synthetic_rows": "A product_id beginning SYNTHETIC- is not a catalog row. Used only where no real row has the property a scenario needs (an unresolvable size at a low price, an out-of-stock row cheaper than its alternative). Every other product_id is a real row and its price is asserted against the frozen catalog by test_every_product_is_a_real_catalog_row."
+  },
+  "thresholds": {
+    "accept": 0.75,
+    "review_floor": 0.69,
+    "near_tie_band": 0.01
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "category": "exact fit",
+      "lines": [
+        "16 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614057",
+            "title": "Peanut Delight No-Stir Creamy Peanut Butter (16 oz)",
+            "price_cents": 169,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "hand_calculation": "16 / 16 = 1.0 -> 1 package. 1 x 169 = 169c. Excess 16 - 16 = 0.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 169,
+          "excess": 0.0,
+          "product_id": "1000030409614057"
+        }
+      ],
+      "expect_total_cents": 169
+    },
+    {
+      "id": "S02",
+      "category": "overshoot, multiple packages",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614071",
+            "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+            "price_cents": 189,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "hand_calculation": "32 / 18 = 1.778 -> ceil 2 packages. 2 x 189 = 378c. Excess 36 - 32 = 4 oz.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 2,
+          "line_cost_cents": 378,
+          "excess": 4.0,
+          "product_id": "1000030409614071"
+        }
+      ],
+      "expect_total_cents": 378
+    },
+    {
+      "id": "S03",
+      "category": "request smaller than one package",
+      "lines": [
+        "8 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614001",
+            "title": "Peanut Delight Creamy Peanut Butter (40 oz)",
+            "price_cents": 399,
+            "per_package_total": 40.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "hand_calculation": "8 / 40 = 0.2 -> ceil 1 package (cannot buy a fifth of a jar). 1 x 399 = 399c. Excess 40 - 8 = 32 oz.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 399,
+          "excess": 32.0,
+          "product_id": "1000030409614001"
+        }
+      ],
+      "expect_total_cents": 399
+    },
+    {
+      "id": "S04",
+      "category": "multipack, divided by total not pack count",
+      "lines": [
+        "288 fl oz diet cola"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000040970948003",
+            "title": "Diet Coke Diet Cola Soda (12 fl oz x 12 ct)",
+            "price_cents": 999,
+            "per_package_total": 144.0,
+            "unit": "fl oz",
+            "score": 0.9,
+            "pkg_count": 12
+          }
+        ]
+      },
+      "hand_calculation": "The case is 12 x 12 fl oz = 144 fl oz TOTAL. 288 / 144 = 2.0 -> 2 cases. 2 x 999 = 1998c. Excess 288 - 288 = 0. If pkg_count were divided by, this would wrongly be 24.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 2,
+          "line_cost_cents": 1998,
+          "excess": 0.0,
+          "product_id": "1000040970948003"
+        }
+      ],
+      "expect_total_cents": 1998
+    },
+    {
+      "id": "S05",
+      "category": "multipack, partial",
+      "lines": [
+        "200 fl oz diet cola"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000040970948003",
+            "title": "Diet Coke Diet Cola Soda (12 fl oz x 12 ct)",
+            "price_cents": 999,
+            "per_package_total": 144.0,
+            "unit": "fl oz",
+            "score": 0.9,
+            "pkg_count": 12
+          }
+        ]
+      },
+      "hand_calculation": "200 / 144 = 1.389 -> ceil 2 cases. 2 x 999 = 1998c. Excess 288 - 200 = 88 fl oz.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 2,
+          "line_cost_cents": 1998,
+          "excess": 88.0,
+          "product_id": "1000040970948003"
+        }
+      ],
+      "expect_total_cents": 1998
+    },
+    {
+      "id": "S06",
+      "category": "duplicate entries merge",
+      "lines": [
+        "1 lb peanut butter",
+        "1 lb peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614057",
+            "title": "Peanut Delight No-Stir Creamy Peanut Butter (16 oz)",
+            "price_cents": 169,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "hand_calculation": "1 lb = 16 oz each, same product_type and unit and mode, so they merge to one line of 32 oz. 32 / 16 = 2 packages. 2 x 169 = 338c. Excess 0. Counted ONCE: two unmerged lines would bill 338c as 2 x 169 twice.",
+      "expect_n_lines": 1,
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 2,
+          "line_cost_cents": 338,
+          "excess": 0.0,
+          "product_id": "1000030409614057"
+        }
+      ],
+      "expect_total_cents": 338
+    },
+    {
+      "id": "S07",
+      "category": "duplicate entries merge, unequal amounts",
+      "lines": [
+        "2 lb peanut butter",
+        "1 lb peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614001",
+            "title": "Peanut Delight Creamy Peanut Butter (40 oz)",
+            "price_cents": 399,
+            "per_package_total": 40.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "hand_calculation": "32 oz + 16 oz = 48 oz on one line. 48 / 40 = 1.2 -> ceil 2 jars. 2 x 399 = 798c. Excess 80 - 48 = 32 oz.",
+      "expect_n_lines": 1,
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 2,
+          "line_cost_cents": 798,
+          "excess": 32.0,
+          "product_id": "1000030409614001"
+        }
+      ],
+      "expect_total_cents": 798
+    },
+    {
+      "id": "S08",
+      "category": "duplicates that must NOT merge (different unit)",
+      "lines": [
+        "12 eggs",
+        "16 oz eggs"
+      ],
+      "candidates": {},
+      "hand_calculation": "A count of eggs and a weight of eggs are different requests; summing them is meaningless. Two lines survive, both unpriceable here (no candidates).",
+      "expect_n_lines": 2,
+      "expect_lines": [
+        {
+          "state": "missing"
+        },
+        {
+          "state": "missing"
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S09",
+      "category": "incompatible units",
+      "lines": [
+        "16 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "25658690163",
+            "title": "Coke Cola Soda Bottle (67.6 fl oz)",
+            "price_cents": 299,
+            "per_package_total": 67.6,
+            "unit": "fl oz",
+            "score": 0.95
+          }
+        ]
+      },
+      "hand_calculation": "A weight request against a volume package. The engine does not convert oz to fl oz, so no candidate is priceable and the line is review (accepted by score, nothing priceable).",
+      "expect_lines": [
+        {
+          "state": "review"
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S10",
+      "category": "unknown package size",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "36814046941",
+            "title": "Carista Mexican Style Lager Bottles (unresolved size)",
+            "price_cents": 855,
+            "per_package_total": null,
+            "unit": "oz",
+            "score": 0.95
+          }
+        ]
+      },
+      "hand_calculation": "A row with no resolvable pkg_canonical_total cannot yield a package count. Accepted by score but unpriceable -> review, never a default of 1 package at 855c.",
+      "expect_lines": [
+        {
+          "state": "review",
+          "reason_contains": "no resolvable package size"
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S11",
+      "category": "unknown size never beats a priced row",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "SYNTHETIC-unresolved-size",
+            "title": "synthetic row: no resolvable size, cheap",
+            "price_cents": 99,
+            "per_package_total": null,
+            "unit": "oz",
+            "score": 0.95
+          },
+          {
+            "product_id": "1000030409614071",
+            "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+            "price_cents": 189,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.94
+          }
+        ]
+      },
+      "hand_calculation": "The cheap row has no size and cannot be priced (synthetic row, not a catalog product -- no real row combines an unresolvable size with this price). The 18 oz row is within the near-tie band (0.95 - 0.94 = 0.01) and is the only priceable candidate: 32 / 18 = 1.778 -> 2 x 189 = 378c, excess 36 - 32 = 4 oz.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 2,
+          "line_cost_cents": 378,
+          "excess": 4.0,
+          "product_id": "1000030409614071"
+        }
+      ],
+      "expect_total_cents": 378
+    },
+    {
+      "id": "S12",
+      "category": "missing product",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": []
+      },
+      "hand_calculation": "No candidate at all -> the line is missing and the basket is incomplete, with no total.",
+      "expect_lines": [
+        {
+          "state": "missing"
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S13",
+      "category": "review band",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614071",
+            "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+            "price_cents": 189,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.7
+          }
+        ]
+      },
+      "hand_calculation": "0.70 is at or above the review floor (0.69) and below accept (0.75), so the line is review: candidates shown, NOT priced. The basket has no total even though a price could be computed.",
+      "expect_lines": [
+        {
+          "state": "review",
+          "n_candidates": 1
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S14",
+      "category": "below the review floor",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614071",
+            "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+            "price_cents": 189,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.5
+          }
+        ]
+      },
+      "hand_calculation": "0.50 is below the review floor -> missing, not review.",
+      "expect_lines": [
+        {
+          "state": "missing"
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S15",
+      "category": "parser gate",
+      "lines": [
+        "milk"
+      ],
+      "candidates": {
+        "29631686": []
+      },
+      "hand_calculation": "The line has no recognizable quantity, so it never reaches retrieval and is review by definition.",
+      "expect_lines": [
+        {
+          "state": "review",
+          "reason_contains": "no recognizable quantity"
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S16",
+      "category": "out of stock excluded",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "SYNTHETIC-out-of-stock",
+            "title": "synthetic row: out of stock, cheaper",
+            "price_cents": 99,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.95
+          },
+          {
+            "product_id": "1000030409614071",
+            "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+            "price_cents": 189,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.94
+          }
+        ]
+      },
+      "availability": {
+        "SYNTHETIC-out-of-stock": "out_of_stock",
+        "1000030409614071": "in_stock"
+      },
+      "hand_calculation": "The 99c row is out of stock and is removed BEFORE pricing, and named. The remaining row: 32 / 18 -> 2 x 189 = 378c, excess 4.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 2,
+          "line_cost_cents": 378,
+          "excess": 4.0,
+          "product_id": "1000030409614071",
+          "n_excluded_out_of_stock": 1
+        }
+      ],
+      "expect_total_cents": 378
+    },
+    {
+      "id": "S17",
+      "category": "everything out of stock",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "SYNTHETIC-out-of-stock",
+            "title": "synthetic row: out of stock",
+            "price_cents": 99,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.95
+          }
+        ]
+      },
+      "availability": {
+        "SYNTHETIC-out-of-stock": "out_of_stock"
+      },
+      "hand_calculation": "Every candidate excluded -> the line is missing, with the exclusion still reported.",
+      "expect_lines": [
+        {
+          "state": "missing",
+          "n_excluded_out_of_stock": 1
+        }
+      ],
+      "expect_total_cents": null
+    },
+    {
+      "id": "S18",
+      "category": "unverified is still eligible",
+      "lines": [
+        "16 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614057",
+            "title": "Peanut Delight No-Stir Creamy Peanut Butter (16 oz)",
+            "price_cents": 169,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "availability": {
+        "1000030409614057": "unverified"
+      },
+      "hand_calculation": "49% of the catalog is unverified; excluding it would empty every basket. The line prices, and the basket is labelled unverified.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 169,
+          "excess": 0.0
+        }
+      ],
+      "expect_total_cents": 169,
+      "expect_unverified_lines": 1
+    },
+    {
+      "id": "S19",
+      "category": "near-tie: cost decides",
+      "lines": [
+        "16 oz peanut butter"
+      ],
+      "candidates": {
+        "24325284": [
+          {
+            "product_id": "5648872748",
+            "title": "Sprouts Crunchy Peanut Butter (16 oz)",
+            "price_cents": 299,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          },
+          {
+            "product_id": "8301710130",
+            "title": "Sprouts Smooth No Stir Peanut Butter Creamy (16 oz)",
+            "price_cents": 299,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.895
+          }
+        ]
+      },
+      "hand_calculation": "0.900 - 0.895 = 0.005, inside the 0.01 band, so cost decides. Both cost 299c for one package, so the tie falls through to score: the 0.900 row wins. 1 x 299 = 299c.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 299,
+          "product_id": "5648872748"
+        }
+      ],
+      "expect_total_cents": 299
+    },
+    {
+      "id": "S20",
+      "category": "near-tie: cheaper in-band candidate wins",
+      "lines": [
+        "16 oz peanut butter"
+      ],
+      "candidates": {
+        "1742136": [
+          {
+            "product_id": "9866878381",
+            "title": "Jif Gluten Free Creamy Peanut Butter (16 oz)",
+            "price_cents": 519,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          },
+          {
+            "product_id": "10021637629",
+            "title": "Signature Select Creamy Peanut Butter (16 oz)",
+            "price_cents": 349,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.895
+          }
+        ]
+      },
+      "hand_calculation": "0.005 apart, inside the band, so the cheaper real row wins: 1 x 349 = 349c.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 349,
+          "product_id": "10021637629"
+        }
+      ],
+      "expect_total_cents": 349
+    },
+    {
+      "id": "S21",
+      "category": "outside the band: best match wins despite cost",
+      "lines": [
+        "16 oz peanut butter"
+      ],
+      "candidates": {
+        "1742136": [
+          {
+            "product_id": "9866878381",
+            "title": "Jif Gluten Free Creamy Peanut Butter (16 oz)",
+            "price_cents": 519,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          },
+          {
+            "product_id": "10021637629",
+            "title": "Signature Select Creamy Peanut Butter (16 oz)",
+            "price_cents": 349,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.87
+          }
+        ]
+      },
+      "hand_calculation": "0.030 apart, outside the 0.01 band, so the better match wins even though it costs 170c more: 1 x 519 = 519c. This is the guard against a cheap wrong match winning a line.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 519,
+          "product_id": "9866878381"
+        }
+      ],
+      "expect_total_cents": 519
+    },
+    {
+      "id": "S22",
+      "category": "tie across stores",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "1742136": [
+          {
+            "product_id": "10021637629",
+            "title": "Signature Select Creamy Peanut Butter (16 oz)",
+            "price_cents": 349,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ],
+        "35802549": [
+          {
+            "product_id": "30994837848",
+            "title": "Kroger Gluten Free Creamy Peanut Butter (16 oz)",
+            "price_cents": 349,
+            "per_package_total": 16.0,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "hand_calculation": "Both stores really do price a 16 oz jar at 349c. 32 / 16 = 2 packages each, 2 x 349 = 698c at both. A genuine tie: BOTH stores are winners, not the first one found.",
+      "expect_totals": {
+        "1742136": 698,
+        "35802549": 698
+      },
+      "expect_winners": [
+        "1742136",
+        "35802549"
+      ],
+      "expect_is_tie": true
+    },
+    {
+      "id": "S23",
+      "category": "incomplete never outranks complete",
+      "lines": [
+        "32 oz peanut butter",
+        "13.7 oz crackers"
+      ],
+      "candidates": {
+        "29631686": [
+          [
+            {
+              "product_id": "1000030409614057",
+              "title": "Peanut Delight No-Stir Creamy Peanut Butter (16 oz)",
+              "price_cents": 169,
+              "per_package_total": 16.0,
+              "unit": "oz",
+              "score": 0.9
+            }
+          ],
+          [
+            {
+              "product_id": "22646326982",
+              "title": "Savoritz Golden Round Crackers (13.7 oz)",
+              "price_cents": 259,
+              "per_package_total": 13.7,
+              "unit": "oz",
+              "score": 0.9
+            }
+          ]
+        ],
+        "24325284": [
+          [
+            {
+              "product_id": "5648872748",
+              "title": "Sprouts Crunchy Peanut Butter (16 oz)",
+              "price_cents": 299,
+              "per_package_total": 16.0,
+              "unit": "oz",
+              "score": 0.9
+            }
+          ],
+          []
+        ]
+      },
+      "hand_calculation": "ALDI prices both lines: peanut butter 32/16 = 2 x 169 = 338c, crackers 13.7/13.7 = 1 x 259 = 259c, total 597c. Sprouts prices only the peanut butter (2 x 299 = 598c) and has nothing for crackers, so it is INCOMPLETE with no total at all -- even though 598c alone would have looked competitive. ALDI wins at 597c.",
+      "expect_totals": {
+        "29631686": 597,
+        "24325284": null
+      },
+      "expect_winners": [
+        "29631686"
+      ],
+      "expect_incomplete": [
+        "24325284"
+      ]
+    },
+    {
+      "id": "S24",
+      "category": "no store can complete",
+      "lines": [
+        "32 oz peanut butter",
+        "13.7 oz crackers"
+      ],
+      "candidates": {
+        "29631686": [
+          [
+            {
+              "product_id": "1000030409614057",
+              "title": "Peanut Delight No-Stir Creamy Peanut Butter (16 oz)",
+              "price_cents": 169,
+              "per_package_total": 16.0,
+              "unit": "oz",
+              "score": 0.9
+            }
+          ],
+          []
+        ],
+        "24325284": [
+          [
+            {
+              "product_id": "5648872748",
+              "title": "Sprouts Crunchy Peanut Butter (16 oz)",
+              "price_cents": 299,
+              "per_package_total": 16.0,
+              "unit": "oz",
+              "score": 0.9
+            }
+          ],
+          []
+        ]
+      },
+      "hand_calculation": "Neither store has crackers. Both baskets are incomplete, so there is no winner and no cheapest-of-the-incomplete ranking -- the engine says so explicitly.",
+      "expect_winners": [],
+      "expect_no_winner_reason": "no store can complete this basket"
+    },
+    {
+      "id": "S25",
+      "category": "override resolves a review line",
+      "lines": [
+        "32 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614071",
+            "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+            "price_cents": 189,
+            "per_package_total": 18.0,
+            "unit": "oz",
+            "score": 0.7
+          }
+        ]
+      },
+      "override": {
+        "product_id": "1000030409614001",
+        "title": "Peanut Delight Creamy Peanut Butter (40 oz)",
+        "price_cents": 399,
+        "per_package_total": 40.0,
+        "unit": "oz"
+      },
+      "hand_calculation": "Before: score 0.70 is in the review band, so the line is not priced. After the shopper picks the 40 oz jar: 32 / 40 = 0.8 -> 1 jar. 1 x 399 = 399c. Excess 40 - 32 = 8 oz.",
+      "expect_before": {
+        "state": "review"
+      },
+      "expect_after": {
+        "state": "priced",
+        "packages": 1,
+        "line_cost_cents": 399,
+        "excess": 8.0
+      }
+    },
+    {
+      "id": "S26",
+      "category": "override on a line the matcher abstained on",
+      "lines": [
+        "48 oz peanut butter"
+      ],
+      "candidates": {
+        "29631686": []
+      },
+      "override": {
+        "product_id": "1000030409614001",
+        "title": "Peanut Delight Creamy Peanut Butter (40 oz)",
+        "price_cents": 399,
+        "per_package_total": 40.0,
+        "unit": "oz"
+      },
+      "hand_calculation": "Before: no candidates, so the line is missing. After: 48 / 40 = 1.2 -> ceil 2 jars. 2 x 399 = 798c. Excess 80 - 48 = 32 oz.",
+      "expect_before": {
+        "state": "missing"
+      },
+      "expect_after": {
+        "state": "priced",
+        "packages": 2,
+        "line_cost_cents": 798,
+        "excess": 32.0
+      }
+    },
+    {
+      "id": "S27",
+      "category": "container-phrased request (B1.5)",
+      "lines": [
+        "a 67.6 fl oz bottle of Coke soda"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "25658690163",
+            "title": "Coke Cola Soda Bottle (67.6 fl oz)",
+            "price_cents": 299,
+            "per_package_total": 67.6,
+            "unit": "fl oz",
+            "score": 0.95
+          }
+        ]
+      },
+      "hand_calculation": "The container phrasing parses to 67.6 fl oz (before B1.5 it parsed to a bare count of 1 and matched nothing). 67.6 / 67.6 = 1 bottle. 1 x 299 = 299c. Excess 0.",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 299,
+          "excess": 0.0
+        }
+      ],
+      "expect_total_cents": 299
+    },
+    {
+      "id": "S28",
+      "category": "label-rounding tolerance",
+      "lines": [
+        "500 g peanut butter"
+      ],
+      "candidates": {
+        "29631686": [
+          {
+            "product_id": "1000030409614071",
+            "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+            "price_cents": 189,
+            "per_package_total": 17.637,
+            "unit": "oz",
+            "score": 0.9
+          }
+        ]
+      },
+      "hand_calculation": "500 g canonicalizes to 17.637 oz. Against a package of the same 17.637 oz the quotient is exactly 1.0 -> 1 package, 189c, excess 0. (The tolerance case proper is covered in test_basket_arithmetic.py, where 17.637 is requested against a 17.6 oz package.)",
+      "expect_lines": [
+        {
+          "state": "priced",
+          "packages": 1,
+          "line_cost_cents": 189,
+          "excess": 0.0
+        }
+      ],
+      "expect_total_cents": 189
+    }
+  ]
+}
