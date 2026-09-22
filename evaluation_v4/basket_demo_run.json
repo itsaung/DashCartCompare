@@ -1,0 +1,942 @@
+{
+  "list": [
+    "32 oz peanut butter",
+    "15 oz cereal",
+    "13.7 oz crackers",
+    "a 67.6 fl oz bottle of Coke soda"
+  ],
+  "thresholds": {
+    "accept": 0.75552,
+    "review_floor": 0.691613,
+    "near_tie_band": 0.01
+  },
+  "winners": [
+    "29631686"
+  ],
+  "no_winner_reason": null,
+  "baskets": {
+    "29631686": {
+      "store_id": "29631686",
+      "store_name": "ALDI",
+      "total_cents": 1516,
+      "state": "complete",
+      "complete": true,
+      "lines": {
+        "total": 4,
+        "priced": 4,
+        "review": 0,
+        "missing": 0
+      },
+      "availability": {
+        "verified_lines": 2,
+        "unverified_lines": 2,
+        "out_of_stock_candidates_excluded": 6,
+        "note": "A total with unverified lines is a best effort, not a confirmed price. Verification rate also differs by storefront, not only by stock."
+      },
+      "items": [
+        {
+          "request": "32 oz peanut butter",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "32 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 44,
+          "excluded_out_of_stock": [],
+          "product_id": "1000030409614001",
+          "title": "Peanut Delight Creamy Peanut Butter (40 oz)",
+          "package_size": "40 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 9.975,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 1,
+          "package_price_cents": 399,
+          "line_cost_cents": 399,
+          "excess": 8.0,
+          "excess_note": "buying 1 package(s) leaves 8 oz more than requested",
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Peanut Delight Creamy Peanut Butter (18 oz) is 21c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "1000030409614071",
+              "title": "Peanut Delight Creamy Peanut Butter (18 oz)",
+              "line_cost_cents": 378,
+              "score": 0.8328429460525513
+            }
+          ]
+        },
+        {
+          "request": "15 oz cereal",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "15 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 56,
+          "excluded_out_of_stock": [],
+          "product_id": "22646326226",
+          "title": "Fruity Pebbles Cereal Large Size (15 oz)",
+          "package_size": "15 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 31.266666666666666,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 1,
+          "package_price_cents": 469,
+          "line_cost_cents": 469,
+          "excess": 0.0,
+          "excess_note": null,
+          "availability": {
+            "state": "unverified",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": false
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Millville Raisin Bran Cereal (16.6 oz) is 190c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "22646326125",
+              "title": "Millville Raisin Bran Cereal (16.6 oz)",
+              "line_cost_cents": 279,
+              "score": 0.7739452719688416
+            },
+            {
+              "product_id": "22646281655",
+              "title": "Millville Fruit Rounds Cereal (12.2 oz)",
+              "line_cost_cents": 398,
+              "score": 0.7558594942092896
+            }
+          ]
+        },
+        {
+          "request": "13.7 oz crackers",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "13.7 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 71,
+          "excluded_out_of_stock": [],
+          "product_id": "22646326996",
+          "title": "Savoritz Club House Crackers (13.7 oz)",
+          "package_size": "13.7 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 25.474452554744527,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 1,
+          "package_price_cents": 349,
+          "line_cost_cents": 349,
+          "excess": 0.0,
+          "excess_note": null,
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "cheapest accepted option: 349c against 878c for Savoritz Six Assortment Crackers (13.1 oz), a 529c difference",
+          "runner_up": {
+            "product_id": "1000030409614487",
+            "title": "Savoritz Six Assortment Crackers (13.1 oz)",
+            "line_cost_cents": 878,
+            "packages": 2,
+            "excess": 12.5
+          }
+        },
+        {
+          "request": "a 67.6 fl oz bottle of Coke soda",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "67.6 fl oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 39,
+          "excluded_out_of_stock": [
+            {
+              "product_id": "24319698317",
+              "title": "Gatorade Zero Fruit Punch Sports Drink Bottles (20 fl oz x 8 ct)"
+            },
+            {
+              "product_id": "37914088653",
+              "title": "Gatorade Thirst Quencher Fierce Grape Sport Drink Bottles (20 fl oz x 8 ct)"
+            },
+            {
+              "product_id": "35678205122",
+              "title": "Gatorade G Zero Cool Blue Thirst Quencher Sports Drink Bottles (20 fl oz x 8 ct)"
+            },
+            {
+              "product_id": "24319698315",
+              "title": "Gatorade Thirst Quencher Frost Glacier Cherry Sports Drinks Bottles (20 fl oz x 8 ct)"
+            },
+            {
+              "product_id": "35678205121",
+              "title": "Gatorade G Zero Sugar Grape Sports Drink Bottles (20 fl oz x 8 ct)"
+            },
+            {
+              "product_id": "42126451930",
+              "title": "Gatorade Orange (20 fl oz)"
+            }
+          ],
+          "product_id": "25658690163",
+          "title": "Coke Cola Soda Bottle (67.6 fl oz)",
+          "package_size": "67.6 fl oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 4.423076923076923,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 1,
+          "package_price_cents": 299,
+          "line_cost_cents": 299,
+          "excess": 0.0,
+          "excess_note": null,
+          "availability": {
+            "state": "unverified",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": false
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "the only candidate that could be priced",
+          "runner_up": null
+        }
+      ]
+    },
+    "35802549": {
+      "store_id": "35802549",
+      "store_name": "Ralphs",
+      "total_cents": 5510,
+      "state": "complete",
+      "complete": true,
+      "lines": {
+        "total": 4,
+        "priced": 4,
+        "review": 0,
+        "missing": 0
+      },
+      "availability": {
+        "verified_lines": 4,
+        "unverified_lines": 0,
+        "out_of_stock_candidates_excluded": 0,
+        "note": "A total with unverified lines is a best effort, not a confirmed price. Verification rate also differs by storefront, not only by stock."
+      },
+      "items": [
+        {
+          "request": "32 oz peanut butter",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "32 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 105,
+          "excluded_out_of_stock": [],
+          "product_id": "30994832476",
+          "title": "Skippy Creamy Peanut Butter (28 oz)",
+          "package_size": "28 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 28.535714285714285,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 799,
+          "line_cost_cents": 1598,
+          "excess": 24.0,
+          "excess_note": "buying 2 package(s) leaves 24 oz more than requested",
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Kroger Natural Creamy Peanut Butter (15 oz) is 701c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "30994837850",
+              "title": "Kroger Natural Creamy Peanut Butter (15 oz)",
+              "line_cost_cents": 897,
+              "score": 0.7778047323226929
+            },
+            {
+              "product_id": "30994832477",
+              "title": "Skippy Creamy Peanut Butter Spread (48 oz)",
+              "line_cost_cents": 959,
+              "score": 0.7670797109603882
+            },
+            {
+              "product_id": "30994832483",
+              "title": "Skippy Creamy Peanut Butter Spread (16.3 oz)",
+              "line_cost_cents": 998,
+              "score": 0.7643635869026184
+            }
+          ]
+        },
+        {
+          "request": "15 oz cereal",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "15 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 94,
+          "excluded_out_of_stock": [],
+          "product_id": "30994834577",
+          "title": "Cocoa Pebbles Cereal (11 oz)",
+          "package_size": "11 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 50.81818181818182,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 559,
+          "line_cost_cents": 1118,
+          "excess": 7.0,
+          "excess_note": "buying 2 package(s) leaves 7 oz more than requested",
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "the only candidate that could be priced",
+          "runner_up": null
+        },
+        {
+          "request": "13.7 oz crackers",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "13.7 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 84,
+          "excluded_out_of_stock": [],
+          "product_id": "30994851749",
+          "title": "Club Crackers Snack Stacks Original Crackers (12.5 oz)",
+          "package_size": "12.5 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 57.52,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 719,
+          "line_cost_cents": 1438,
+          "excess": 11.3,
+          "excess_note": "buying 2 package(s) leaves 11.3 oz more than requested",
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Club Original Crackers Box (13.7 oz) is 719c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "30994851745",
+              "title": "Club Original Crackers Box (13.7 oz)",
+              "line_cost_cents": 719,
+              "score": 0.7562241554260254
+            }
+          ]
+        },
+        {
+          "request": "a 67.6 fl oz bottle of Coke soda",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "67.6 fl oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 132,
+          "excluded_out_of_stock": [],
+          "product_id": "30994675233",
+          "title": "Coke Original Cola Soda Bottle (20 fl oz)",
+          "package_size": "20 fl oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 16.95,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 4,
+          "package_price_cents": 339,
+          "line_cost_cents": 1356,
+          "excess": 12.400000000000006,
+          "excess_note": "buying 4 package(s) leaves 12.4 fl oz more than requested",
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "the only candidate that could be priced",
+          "runner_up": null
+        }
+      ]
+    },
+    "1742136": {
+      "store_id": "1742136",
+      "store_name": "Vons",
+      "total_cents": 5230,
+      "state": "complete",
+      "complete": true,
+      "lines": {
+        "total": 4,
+        "priced": 4,
+        "review": 0,
+        "missing": 0
+      },
+      "availability": {
+        "verified_lines": 2,
+        "unverified_lines": 2,
+        "out_of_stock_candidates_excluded": 0,
+        "note": "A total with unverified lines is a best effort, not a confirmed price. Verification rate also differs by storefront, not only by stock."
+      },
+      "items": [
+        {
+          "request": "32 oz peanut butter",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "32 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 90,
+          "excluded_out_of_stock": [],
+          "product_id": "1000014349935040",
+          "title": "O Organics Old Fashioned Crunchy Peanut Butter (28 oz)",
+          "package_size": "28 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 31.035714285714285,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 869,
+          "line_cost_cents": 1738,
+          "excess": 24.0,
+          "excess_note": "buying 2 package(s) leaves 24 oz more than requested",
+          "availability": {
+            "state": "unverified",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": false
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Signature Select Creamy Peanut Butter (16 oz) is 1040c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "10021637629",
+              "title": "Signature Select Creamy Peanut Butter (16 oz)",
+              "line_cost_cents": 698,
+              "score": 0.7722253799438477
+            },
+            {
+              "product_id": "9300904582",
+              "title": "Skippy Creamy Peanut Butter Spread (48 oz)",
+              "line_cost_cents": 699,
+              "score": 0.7670797109603882
+            },
+            {
+              "product_id": "10998033313",
+              "title": "Skippy Creamy Peanut Butter Spread (16.3 oz)",
+              "line_cost_cents": 1038,
+              "score": 0.7643635869026184
+            }
+          ]
+        },
+        {
+          "request": "15 oz cereal",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "15 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 88,
+          "excluded_out_of_stock": [],
+          "product_id": "9866812259",
+          "title": "Honey Ohs! Cereal (14 oz)",
+          "package_size": "14 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 33.5,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 469,
+          "line_cost_cents": 938,
+          "excess": 13.0,
+          "excess_note": "buying 2 package(s) leaves 13 oz more than requested",
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Post Raisin Bran Cereal (16.6 oz) is 469c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "18052432603",
+              "title": "Post Raisin Bran Cereal (16.6 oz)",
+              "line_cost_cents": 469,
+              "score": 0.7580845355987549
+            }
+          ]
+        },
+        {
+          "request": "13.7 oz crackers",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "13.7 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 82,
+          "excluded_out_of_stock": [],
+          "product_id": "12044237780",
+          "title": "Club Crackers Snack Stacks Original Crackers (12.5 oz)",
+          "package_size": "12.5 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 46.32,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 579,
+          "line_cost_cents": 1158,
+          "excess": 11.3,
+          "excess_note": "buying 2 package(s) leaves 11.3 oz more than requested",
+          "availability": {
+            "state": "unverified",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": false
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Club Original Crackers Box (13.7 oz) is 579c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "11657839335",
+              "title": "Club Original Crackers Box (13.7 oz)",
+              "line_cost_cents": 579,
+              "score": 0.7562241554260254
+            }
+          ]
+        },
+        {
+          "request": "a 67.6 fl oz bottle of Coke soda",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "67.6 fl oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 111,
+          "excluded_out_of_stock": [],
+          "product_id": "2794705093",
+          "title": "Coke Original Cola Soda Bottle (20 fl oz)",
+          "package_size": "20 fl oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 17.45,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 4,
+          "package_price_cents": 349,
+          "line_cost_cents": 1396,
+          "excess": 12.400000000000006,
+          "excess_note": "buying 4 package(s) leaves 12.4 fl oz more than requested",
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "the only candidate that could be priced",
+          "runner_up": null
+        }
+      ]
+    },
+    "24325284": {
+      "store_id": "24325284",
+      "store_name": "Sprouts",
+      "total_cents": null,
+      "state": "incomplete",
+      "complete": false,
+      "lines": {
+        "total": 4,
+        "priced": 2,
+        "review": 1,
+        "missing": 1
+      },
+      "availability": {
+        "verified_lines": 1,
+        "unverified_lines": 1,
+        "out_of_stock_candidates_excluded": 0,
+        "note": "A total with unverified lines is a best effort, not a confirmed price. Verification rate also differs by storefront, not only by stock."
+      },
+      "items": [
+        {
+          "request": "32 oz peanut butter",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "32 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 93,
+          "excluded_out_of_stock": [],
+          "product_id": "11115073131",
+          "title": "Once Again Creamy Peanut Butter (16 oz)",
+          "package_size": "16 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 49.9375,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 799,
+          "line_cost_cents": 1598,
+          "excess": 0.0,
+          "excess_note": null,
+          "availability": {
+            "state": "in_stock",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Peanut Butter & Co. Smooth Operator Peanut Butter (16 oz) is 440c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "41496792770",
+              "title": "Peanut Butter & Co. Smooth Operator Peanut Butter (16 oz)",
+              "line_cost_cents": 1158,
+              "score": 0.7798404693603516
+            },
+            {
+              "product_id": "10016062919",
+              "title": "Justins Nut Butter Classic Peanut Butter (16 oz)",
+              "line_cost_cents": 1298,
+              "score": 0.7825928926467896
+            },
+            {
+              "product_id": "7295293477",
+              "title": "Justins Nut Butter Honey Peanut Butter (16 oz)",
+              "line_cost_cents": 1298,
+              "score": 0.7586672902107239
+            }
+          ]
+        },
+        {
+          "request": "15 oz cereal",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "15 oz",
+          "state": "review",
+          "reason": "score in the review band -- candidates shown, not priced",
+          "overridden": false,
+          "n_candidates_considered": 82,
+          "excluded_out_of_stock": [],
+          "candidates": [
+            {
+              "product_id": "12491135938",
+              "title": "Magic Spoon Cereal Fruity Grain-Free Cereal (7 oz)",
+              "price_cents": 899,
+              "score": 0.7123355865478516
+            },
+            {
+              "product_id": "26945513936",
+              "title": "Kashi Cinnamon Harvest Cereal (18 oz)",
+              "price_cents": 899,
+              "score": 0.7117785215377808
+            },
+            {
+              "product_id": "26945513935",
+              "title": "Kashi Chocolate Crunch Cluster Cereal (16 oz)",
+              "price_cents": 899,
+              "score": 0.7113651037216187
+            },
+            {
+              "product_id": "25435045564",
+              "title": "Cascadian Farm Organic Cinnamon Crunch Family Size Cereal (14.5 oz)",
+              "price_cents": 749,
+              "score": 0.7077596187591553
+            },
+            {
+              "product_id": "1000011521057004",
+              "title": "Truely Cereal Fruity High Protein Cereal (7.05 oz)",
+              "price_cents": 999,
+              "score": 0.7044647932052612
+            }
+          ]
+        },
+        {
+          "request": "13.7 oz crackers",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "13.7 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 64,
+          "excluded_out_of_stock": [],
+          "product_id": "23032560190",
+          "title": "Back To Nature Classic Round Crackers (6.5 oz)",
+          "package_size": "6.5 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 70.61538461538461,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 3,
+          "package_price_cents": 459,
+          "line_cost_cents": 1377,
+          "excess": 5.800000000000001,
+          "excess_note": "buying 3 package(s) leaves 5.8 oz more than requested",
+          "availability": {
+            "state": "unverified",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": false
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "the only candidate that could be priced",
+          "runner_up": null
+        },
+        {
+          "request": "a 67.6 fl oz bottle of Coke soda",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "67.6 fl oz",
+          "state": "missing",
+          "reason": "no candidate cleared the review floor",
+          "overridden": false,
+          "n_candidates_considered": 25,
+          "excluded_out_of_stock": [],
+          "candidates": [
+            {
+              "product_id": "14205714386",
+              "title": "The Mountain Valley Lime Sparkling Water Bottle (33.8 fl oz)",
+              "price_cents": 459,
+              "score": 0.641552209854126
+            },
+            {
+              "product_id": "24352078961",
+              "title": "Saratoga Sparkling Spring Carbonated Water Bottle (28 fl oz)",
+              "price_cents": 349,
+              "score": 0.6286805868148804
+            },
+            {
+              "product_id": "1000011138366735",
+              "title": "Spindrift Shirley Temple Soda (12 fl oz \u00d7 6 ct)",
+              "price_cents": 1199,
+              "score": 0.6149304509162903
+            },
+            {
+              "product_id": "24791869993",
+              "title": "Mountain valley Ouachita Mountains Sparkling Water Bottle (33.8 fl oz)",
+              "price_cents": 349,
+              "score": 0.6108007431030273
+            },
+            {
+              "product_id": "9952251697",
+              "title": "Lamarca Prosecco Sparkling Wine Bottle (750 ml)",
+              "price_cents": 1899,
+              "score": 0.6099594831466675
+            }
+          ]
+        }
+      ]
+    },
+    "1042759": {
+      "store_id": "1042759",
+      "store_name": "DashMart",
+      "total_cents": 5301,
+      "state": "complete",
+      "complete": true,
+      "lines": {
+        "total": 4,
+        "priced": 4,
+        "review": 0,
+        "missing": 0
+      },
+      "availability": {
+        "verified_lines": 3,
+        "unverified_lines": 1,
+        "out_of_stock_candidates_excluded": 3,
+        "note": "A total with unverified lines is a best effort, not a confirmed price. Verification rate also differs by storefront, not only by stock."
+      },
+      "items": [
+        {
+          "request": "32 oz peanut butter",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "32 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 52,
+          "excluded_out_of_stock": [
+            {
+              "product_id": "34435334495",
+              "title": "Skippy Creamy Peanut Butter Spread (16.3 oz)"
+            }
+          ],
+          "product_id": "21825993571",
+          "title": "Skippy Creamy Peanut Butter (28 oz)",
+          "package_size": "28 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 31.035714285714285,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 869,
+          "line_cost_cents": 1738,
+          "excess": 24.0,
+          "excess_note": "buying 2 package(s) leaves 24 oz more than requested",
+          "availability": {
+            "state": "in_stock_limited",
+            "remaining": 11,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Signature Select Creamy Peanut Butter (28 oz) is 460c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "37182316097",
+              "title": "Signature Select Creamy Peanut Butter (28 oz)",
+              "line_cost_cents": 1278,
+              "score": 0.8050888776779175
+            }
+          ]
+        },
+        {
+          "request": "15 oz cereal",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "15 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 62,
+          "excluded_out_of_stock": [],
+          "product_id": "20621546144",
+          "title": "Cocoa Pebbles Cereal (15 oz)",
+          "package_size": "15 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 45.93333333333333,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 1,
+          "package_price_cents": 689,
+          "line_cost_cents": 689,
+          "excess": 0.0,
+          "excess_note": null,
+          "availability": {
+            "state": "unverified",
+            "remaining": null,
+            "remaining_is_lower_bound": false,
+            "verified": false
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "the only candidate that could be priced",
+          "runner_up": null
+        },
+        {
+          "request": "13.7 oz crackers",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "13.7 oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 48,
+          "excluded_out_of_stock": [
+            {
+              "product_id": "8776542290",
+              "title": "Town House Original Light and Buttery Oven Baked Crackers (13.8 oz)"
+            }
+          ],
+          "product_id": "10288800611",
+          "title": "Club Crackers Snack Stacks Original Crackers (12.5 oz)",
+          "package_size": "12.5 oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 62.32,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 2,
+          "package_price_cents": 779,
+          "line_cost_cents": 1558,
+          "excess": 11.3,
+          "excess_note": "buying 2 package(s) leaves 11.3 oz more than requested",
+          "availability": {
+            "state": "in_stock_limited",
+            "remaining": 3,
+            "remaining_is_lower_bound": false,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "best match among accepted options; Club Original Crackers Box (13.7 oz) is 779c cheaper but scores further from the request than the near-tie band (0.01) allows",
+          "runner_up": null,
+          "cheaper_but_worse_match": [
+            {
+              "product_id": "20623100432",
+              "title": "Club Original Crackers Box (13.7 oz)",
+              "line_cost_cents": 779,
+              "score": 0.7562241554260254
+            }
+          ]
+        },
+        {
+          "request": "a 67.6 fl oz bottle of Coke soda",
+          "merged_from": null,
+          "matching_mode": "flexible",
+          "requested": "67.6 fl oz",
+          "state": "priced",
+          "reason": null,
+          "overridden": false,
+          "n_candidates_considered": 70,
+          "excluded_out_of_stock": [
+            {
+              "product_id": "10184010422",
+              "title": "Gatorade Thirst Quencher Cool Blue Sports Drink Bottle (28 fl oz)"
+            }
+          ],
+          "product_id": "8776540742",
+          "title": "Pepsi Cola Soda Bottle (20 fl oz)",
+          "package_size": "20 fl oz",
+          "pkg_count": null,
+          "unit_price_cents_per_unit": 16.45,
+          "unit_price_note": "display only; ranking is on actual purchase cost",
+          "packages": 4,
+          "package_price_cents": 329,
+          "line_cost_cents": 1316,
+          "excess": 12.400000000000006,
+          "excess_note": "buying 4 package(s) leaves 12.4 fl oz more than requested",
+          "availability": {
+            "state": "in_stock_limited",
+            "remaining": 20,
+            "remaining_is_lower_bound": true,
+            "verified": true
+          },
+          "n_unresolved_size_candidates": 0,
+          "chosen_because": "cheapest accepted option: 1316c against 1476c for Coke Vanilla Soda Bottle (20 fl oz), a 160c difference",
+          "runner_up": {
+            "product_id": "22719903895",
+            "title": "Coke Vanilla Soda Bottle (20 fl oz)",
+            "line_cost_cents": 1476,
+            "packages": 4,
+            "excess": 12.400000000000006
+          }
+        }
+      ]
+    }
+  }
+}
