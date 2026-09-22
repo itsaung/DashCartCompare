@@ -503,7 +503,7 @@ def resolve_line(line: ShoppingLine, candidates, accept_threshold: float,
                     else "score in the review band -- candidates shown, not priced"),
             excluded_out_of_stock=excluded)
 
-    selection = select_cheapest_sufficient(
+    selection = select_for_line(
         candidates, line.canonical_quantity, line.canonical_unit,
         min_score=accept_threshold)
     if selection is None:
@@ -545,3 +545,169 @@ def apply_override(resolution: LineResolution, candidate: Candidate) -> LineReso
                           candidates=resolution.candidates, reason="chosen by the shopper",
                           overridden=True,
                           excluded_out_of_stock=resolution.excluded_out_of_stock)
+
+
+# ---------------------------------------------------------------------------
+# B5 -- basket assembly, comparison and ranking
+# ---------------------------------------------------------------------------
+
+# How close in match score a candidate must be to the best accepted one before
+# cost is allowed to decide between them. DECLARED BEFORE FIRST USE, 2026-09-21.
+#
+# Why cost is not the primary key. B2 measured what happens when it is: ranking
+# by cost across everything the sufficiency gate admits selected Sweet Onions
+# for "2 lb Honeycrisp Apples" and Whole Potatoes for "10 oz potato chips".
+# PROJECT_PLAN.md says "the cheapest ACCEPTED product"; acceptance has to come
+# first, and a 0.02-worse match that happens to be cheap is not the same
+# product the shopper asked for.
+#
+# Where 0.01 comes from. Measured over the 347 accepted-but-not-best candidates
+# on 30 flexible dev lines, the gap below the best accepted score has its 5th
+# percentile at 0.0106. A candidate inside that band is in the tightest 5% of
+# the accepted distribution -- effectively the same match quality, which is
+# exactly when price should decide. Deriving it from dev scores IS a use of the
+# tuning split; that is permitted (dev is the tuning split) and is stated here
+# rather than left implicit, the same disclosure S6 made about its grid.
+#
+# Sensitivity, on those 30 lines (total basket cost, and lines whose selection
+# differs from pure score ranking):
+#
+#     band       total     lines changed
+#     0.000     20,389          0   (pure score)
+#     0.005     19,959          2
+#     0.010     19,769          3   <- declared
+#     0.020     18,277          6
+#     0.050     13,454         16
+#     cost-only 10,482         20   (B2's original behavior)
+#
+# The band is load-bearing and this is a design preference, not a measurement of
+# anything: widening it buys a cheaper basket by accepting worse matches, and
+# the far end of that trade is the onions. Do not read 0.01 as tuned.
+SCORE_NEAR_TIE_BAND = 0.01
+
+BASKET_COMPLETE = "complete"
+BASKET_INCOMPLETE = "incomplete"
+
+
+def select_for_line(candidates, requested_total, requested_unit, min_score=None,
+                    near_tie_band: float = SCORE_NEAR_TIE_BAND) -> Selection | None:
+    """The shipped selection rule: best match first, cost breaks near-ties.
+
+    Narrows to candidates within `near_tie_band` of the best accepted score,
+    then hands that set to `select_cheapest_sufficient`. With a band of 0.0 this
+    is pure score ranking; with an unbounded band it is B2's original cost-only
+    behavior. Both remain reachable for tests and for the sensitivity table.
+    """
+    pool = [c for c in candidates if min_score is None or c.score >= min_score]
+    if not pool:
+        return None
+    best = max(c.score for c in pool)
+    near = [c for c in pool if c.score >= best - near_tie_band]
+    return select_cheapest_sufficient(near, requested_total, requested_unit)
+
+
+@dataclass(frozen=True)
+class StoreBasket:
+    store_id: str
+    store_name: str
+    resolutions: tuple
+    total_cents: int | None
+    state: str
+    n_priced: int
+    n_review: int
+    n_missing: int
+    n_verified: int
+    n_unverified: int
+    n_out_of_stock_excluded: int
+
+    @property
+    def complete(self) -> bool:
+        return self.state == BASKET_COMPLETE
+
+
+def build_store_basket(store_id, store_name, resolutions, availability_by_key=None) -> StoreBasket:
+    """One store's basket. Complete only when EVERY line priced.
+
+    A review line makes this store's basket incomplete and nothing more -- the
+    comparison as a whole is unaffected. Review is per (line, store): a score
+    below the accept threshold at one store says nothing about another, which
+    may carry the same product under a cleaner title. Blocking every store on
+    one store's review would suppress the ranking on most real lists, since
+    review runs ~17% of lines across the frozen benchmark.
+    """
+    resolutions = tuple(resolutions)
+    n_priced = sum(1 for r in resolutions if r.state == LINE_PRICED)
+    n_review = sum(1 for r in resolutions if r.state == LINE_REVIEW)
+    n_missing = sum(1 for r in resolutions if r.state == LINE_MISSING)
+    complete = bool(resolutions) and n_priced == len(resolutions)
+
+    n_verified = n_unverified = 0
+    if availability_by_key is not None:
+        for r in resolutions:
+            if r.selection is None:
+                continue
+            state = availability_lookup(availability_by_key, r.selection.candidate.store_id,
+                                        r.selection.candidate.product_id)
+            if state.verified:
+                n_verified += 1
+            else:
+                n_unverified += 1
+
+    # A total is computed only for a complete basket. A partial sum is the
+    # number most likely to be misread as a price, and PROJECT_PLAN.md forbids
+    # ranking on it -- so it is not produced at all rather than produced and
+    # hidden behind a flag a caller can ignore.
+    total = sum(r.line_cost_cents for r in resolutions) if complete else None
+
+    return StoreBasket(
+        store_id=str(store_id), store_name=store_name, resolutions=resolutions,
+        total_cents=total, state=BASKET_COMPLETE if complete else BASKET_INCOMPLETE,
+        n_priced=n_priced, n_review=n_review, n_missing=n_missing,
+        n_verified=n_verified, n_unverified=n_unverified,
+        n_out_of_stock_excluded=sum(len(r.excluded_out_of_stock) for r in resolutions),
+    )
+
+
+def compare_stores(baskets) -> dict:
+    """Rank complete baskets by total. Incomplete ones are reported, never ranked.
+
+    PROJECT_PLAN.md: "A smaller incomplete basket never outranks a complete
+    basket." That is enforced by construction -- an incomplete basket has no
+    total to rank with -- rather than by sorting carefully and hoping.
+
+    `winners` is a LIST because ties are shown in full. Collapsing a tie to one
+    store would invent a preference the prices do not support.
+    """
+    baskets = list(baskets)
+    complete = [b for b in baskets if b.complete]
+    incomplete = [b for b in baskets if not b.complete]
+    ranked = sorted(complete, key=lambda b: (b.total_cents, b.store_id))
+
+    winners, cheapest = [], None
+    if ranked:
+        cheapest = ranked[0].total_cents
+        winners = [b for b in ranked if b.total_cents == cheapest]
+
+    return {
+        "ranked": ranked,
+        "incomplete": incomplete,
+        "winners": winners,
+        "cheapest_total_cents": cheapest,
+        "is_tie": len(winners) > 1,
+        # No winner and an explicit reason, rather than a cheapest-of-the-broken
+        # ranking that reads like an answer.
+        "no_winner_reason": (
+            None if ranked else
+            "no store can complete this basket" if baskets else "no stores compared"),
+        "n_compared": len(baskets),
+        "n_complete": len(complete),
+        "verification": {
+            b.store_id: {"verified_lines": b.n_verified, "unverified_lines": b.n_unverified}
+            for b in baskets
+        },
+        "caveat": (
+            "Verification rate is a storefront artifact, not a stock difference -- "
+            "DashMart publishes a per-product count and the other storefronts do not. "
+            "It is reported per store and is never an input to this ranking."
+        ),
+    }
