@@ -1,0 +1,227 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "smart%20home-5575",
+      "subcat": "wi-fi%20%26%20networking-5590",
+      "url": "https://www.doordash.com/convenience/store/26060223/category/smart%20home-5575/sub-category/wi-fi%20%26%20networking-5590",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.14939474999846425,
+          "size": 6420
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20718475000467151,
+          "size": 6420
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.25703795900335535,
+          "size": 6420
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2299979999952484,
+          "size": 6420
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22581162500136998,
+          "size": 6420
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "smart%20home-5575",
+      "subcat": "virtual%20assistant-21084",
+      "url": "https://www.doordash.com/convenience/store/26060223/category/smart%20home-5575/sub-category/virtual%20assistant-21084",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.11118441700818948,
+          "size": 6387
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19692295898857992,
+          "size": 6387
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2571769159985706,
+          "size": 6387
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2475531670061173,
+          "size": 6387
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2075790840026457,
+          "size": 6387
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "wearable%20technology-5617",
+      "subcat": "smart%20watches-886103307675697217",
+      "url": "https://www.doordash.com/convenience/store/26060223/category/wearable%20technology-5617/sub-category/smart%20watches-886103307675697217",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2772910409985343,
+          "size": 6462
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18559912500495557,
+          "size": 6462
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21277208300307393,
+          "size": 6462
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.24023358299746178,
+          "size": 6462
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.250336333992891,
+          "size": 6462
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "wearable%20technology-5617",
+      "subcat": "exercise%20equipment-19152",
+      "url": "https://www.doordash.com/convenience/store/26060223/category/wearable%20technology-5617/sub-category/exercise%20equipment-19152",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17390337499091402,
+          "size": 6438
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.24558791700110305,
+          "size": 6438
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2299389580002753,
+          "size": 6438
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23812824999913573,
+          "size": 6438
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19550104200607166,
+          "size": 6438
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "tv%20%26%20home%20theater-5560",
+      "subcat": "blu-ray%20%26%20dvds-2000000000000001611",
+      "url": "https://www.doordash.com/convenience/store/26060223/category/tv%20%26%20home%20theater-5560/sub-category/blu-ray%20%26%20dvds-2000000000000001611",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.18578108299698215,
+          "size": 6514
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2252357499965001,
+          "size": 6514
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.20870095898862928,
+          "size": 6514
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2926410410000244,
+          "size": 6514
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2125292920100037,
+          "size": 6514
+        }
+      ],
+      "status": 429,
+      "error": null
+    }
+  ],
+  "still_failed": [],
+  "discovery_failures": [],
+  "zero_item_pages": []
+}

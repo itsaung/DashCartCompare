@@ -831,6 +831,56 @@ def unescape(s: str) -> str:
     )
 
 
+CSV_FIELDNAMES = [
+    "scraped_at",
+    "category",
+    "subcategory",
+    "item_id",
+    "item_name",
+    "expires_soon",
+    "best_by",
+    "price",
+    "price_usd",
+    "original_price",
+    "original_price_usd",
+    "discount",
+    "unit_size",
+    "unit_price",
+    "stock_status",
+    "recently_sold",
+    "snap",
+    "rating",
+    "rating_count",
+    "image_url",
+]
+
+
+def item_row(it: dict, scraped_at: str) -> dict:
+    """One output CSV row from a merged item dict (shared with price_watch_snapshot)."""
+    return {
+        "scraped_at": scraped_at,
+        "category": it.get("category", ""),
+        "subcategory": it.get("subcat", ""),
+        "item_id": it.get("item_id", ""),
+        "item_name": it.get("item_name", ""),
+        "expires_soon": it.get("expires_soon", ""),
+        "best_by": it.get("best_by", ""),
+        "price": it.get("price_display", ""),
+        "price_usd": it.get("price_usd", ""),
+        "original_price": it.get("original_display", ""),
+        "original_price_usd": it.get("original_usd", ""),
+        "discount": it.get("discount", ""),
+        "unit_size": it.get("unit_size", ""),
+        "unit_price": it.get("unit_price", ""),
+        "stock_status": stock_status(it.get("badge") or ""),
+        "recently_sold": it.get("recently_sold", ""),
+        "snap": it.get("snap", ""),
+        "rating": it.get("rating_val", ""),
+        "rating_count": it.get("rating_count", ""),
+        "image_url": it.get("image", ""),
+    }
+
+
 def append_csv(out_path, rows, fieldnames):
     """Append rows to a CSV. Write a header only when the file is new.
 
@@ -1049,57 +1099,9 @@ def main():
                 fut.result()
 
     scraped_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    rows = []
-    for it in item_map.values():
-        rows.append(
-            {
-                "scraped_at": scraped_at,
-                "category": it.get("category", ""),
-                "subcategory": it.get("subcat", ""),
-                "item_id": it.get("item_id", ""),
-                "item_name": it.get("item_name", ""),
-                "expires_soon": it.get("expires_soon", ""),
-                "best_by": it.get("best_by", ""),
-                "price": it.get("price_display", ""),
-                "price_usd": it.get("price_usd", ""),
-                "original_price": it.get("original_display", ""),
-                "original_price_usd": it.get("original_usd", ""),
-                "discount": it.get("discount", ""),
-                "unit_size": it.get("unit_size", ""),
-                "unit_price": it.get("unit_price", ""),
-                "stock_status": stock_status(it.get("badge") or ""),
-                "recently_sold": it.get("recently_sold", ""),
-                "snap": it.get("snap", ""),
-                "rating": it.get("rating_val", ""),
-                "rating_count": it.get("rating_count", ""),
-                "image_url": it.get("image", ""),
-            }
-        )
+    rows = [item_row(it, scraped_at) for it in item_map.values()]
     rows.sort(key=lambda r: (r["category"], r["item_name"]))
-
-    fieldnames = [
-        "scraped_at",
-        "category",
-        "subcategory",
-        "item_id",
-        "item_name",
-        "expires_soon",
-        "best_by",
-        "price",
-        "price_usd",
-        "original_price",
-        "original_price_usd",
-        "discount",
-        "unit_size",
-        "unit_price",
-        "stock_status",
-        "recently_sold",
-        "snap",
-        "rating",
-        "rating_count",
-        "image_url",
-    ]
-    append_csv(out_path, rows, fieldnames)
+    append_csv(out_path, rows, CSV_FIELDNAMES)
 
     print(f"Appended {len(rows)} rows ({scraped_at}) to {out_path}")
 
