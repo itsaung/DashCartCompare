@@ -626,7 +626,40 @@ def discover_subcategories(session: requests.Session, store_id: str, cat_slug: s
     resp, log = fetch(session, url, pacer)
     if resp is None or resp.status_code >= 400:
         return [], {"category": cat_slug, **log}
-    return sorted(set(re.findall(r"sub-category/([a-zA-Z0-9%\-]+)", resp.text))), None
+    slugs = set(re.findall(r"sub-category/([a-zA-Z0-9%\-]+)", resp.text))
+    slugs |= flight_subcategories(extract_flight(resp.text), cat_slug)
+    return sorted(slugs), None
+
+
+L2_OWNER_RE = re.compile(r'"urlSlug":("(?:[^"\\]|\\.)*")[^\[\]]{0,400}$')
+
+
+def flight_subcategories(combined: str, cat_slug: str) -> set:
+    """Sub-category slugs from the flight payload's `l2Categories` list.
+
+    Some storefronts (Target 2833969) never render `sub-category/{slug}` links
+    into the HTML, so the regex above finds nothing and every category stops at
+    its first 50-item SSR batch. The same page's flight data still carries the
+    category object with its `l2Categories`. Only lists owned by `cat_slug`
+    are used -- the owner's `urlSlug` precedes `l2Categories` in the object.
+    Returned slugs are URL-quoted to match the form the link regex yields.
+    """
+    decoder = json.JSONDecoder()
+    want = urllib.parse.unquote(cat_slug)
+    found = set()
+    for m in re.finditer(r'"l2Categories":', combined):
+        owner = L2_OWNER_RE.search(combined, max(0, m.start() - 600), m.start())
+        if not owner or json.loads(owner.group(1)) != want:
+            continue
+        try:
+            l2s, _ = decoder.raw_decode(combined, m.end())
+        except ValueError:
+            continue
+        for l2 in l2s if isinstance(l2s, list) else []:
+            slug = isinstance(l2, dict) and l2.get("urlSlug")
+            if slug:
+                found.add(urllib.parse.quote(slug, safe="-"))
+    return found
 
 
 def category_display_name(slug: str) -> str:
