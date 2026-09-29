@@ -38,6 +38,8 @@ Category pages never fired a "load more" network request under scroll, click, or
 
 **Workaround — subcategory decomposition**: rather than paginating one large category, fetch every subcategory chip's own page (each is a separate SSR with its own ~50–80 item batch). Household's 483 items are spread across 17 subcategories; summed, this recovers most — not all — of the catalog. This turned "23 huge pages" into "~240 small pages," each individually complete or near-complete.
 
+**Storefronts without sub-category links (2026-09-28).** Target (2833969) renders no `sub-category/{slug}` substrings at all, so the regex found nothing and every category stopped at 50 items (1,605 products in total). The same category page's flight payload still carries the category object with an `l2Categories` array (`{"urlSlug":"chips-765","name":"Chips",...}`), preceded by the owning category's `urlSlug` and `totalItemCount` (Snacks: 1,652). `flight_subcategories` reads those lists, keeps only the one owned by the requested category, and URL-quotes the slugs. The `.../sub-category/{urlSlug}` URLs work as usual. A re-crawl went from 38 to 376 pages and from 1,605 to 11,504 products. That run's slow retry pass got **403** on all 11 remaining pages, which is a block, not a 429 rate limit.
+
 Residual gap: some individual **subcategories** still exceed their own SSR batch (e.g. "Chips" under Snacks reports 142 results, only ~82 unique items were extractable) — the same unsolved cursor-pagination problem, just at smaller scale.
 
 ## Rate limiting

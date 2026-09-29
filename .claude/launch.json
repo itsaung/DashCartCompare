@@ -15,6 +15,21 @@
         "127.0.0.1"
       ],
       "port": 8501
+    },
+    {
+      "name": "price-watch",
+      "runtimeExecutable": ".venv/bin/streamlit",
+      "runtimeArgs": [
+        "run",
+        "price_watch_app.py",
+        "--server.port",
+        "8502",
+        "--server.headless",
+        "true",
+        "--server.address",
+        "127.0.0.1"
+      ],
+      "port": 8502
     }
   ]
 }

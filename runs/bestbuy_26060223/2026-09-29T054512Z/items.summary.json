@@ -1,0 +1,20 @@
+{
+  "store_id": "26060223",
+  "name": "Bestbuy",
+  "scraped_at": "2026-09-29T05:50:59Z",
+  "settings": {
+    "concurrency": 6,
+    "min_interval": 0.15,
+    "paginate": false,
+    "details": false
+  },
+  "elapsed_seconds": 346.5,
+  "pages_discovered": 107,
+  "first_pass_failures": 5,
+  "recovered_on_retry": 5,
+  "still_failed": 0,
+  "discovery_failures": 0,
+  "pages_with_zero_items": 0,
+  "products_saved": 2205,
+  "complete": true
+}

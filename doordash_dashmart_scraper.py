@@ -626,7 +626,40 @@ def discover_subcategories(session: requests.Session, store_id: str, cat_slug: s
     resp, log = fetch(session, url, pacer)
     if resp is None or resp.status_code >= 400:
         return [], {"category": cat_slug, **log}
-    return sorted(set(re.findall(r"sub-category/([a-zA-Z0-9%\-]+)", resp.text))), None
+    slugs = set(re.findall(r"sub-category/([a-zA-Z0-9%\-]+)", resp.text))
+    slugs |= flight_subcategories(extract_flight(resp.text), cat_slug)
+    return sorted(slugs), None
+
+
+L2_OWNER_RE = re.compile(r'"urlSlug":("(?:[^"\\]|\\.)*")[^\[\]]{0,400}$')
+
+
+def flight_subcategories(combined: str, cat_slug: str) -> set:
+    """Sub-category slugs from the flight payload's `l2Categories` list.
+
+    Some storefronts (Target 2833969) never render `sub-category/{slug}` links
+    into the HTML, so the regex above finds nothing and every category stops at
+    its first 50-item SSR batch. The same page's flight data still carries the
+    category object with its `l2Categories`. Only lists owned by `cat_slug`
+    are used -- the owner's `urlSlug` precedes `l2Categories` in the object.
+    Returned slugs are URL-quoted to match the form the link regex yields.
+    """
+    decoder = json.JSONDecoder()
+    want = urllib.parse.unquote(cat_slug)
+    found = set()
+    for m in re.finditer(r'"l2Categories":', combined):
+        owner = L2_OWNER_RE.search(combined, max(0, m.start() - 600), m.start())
+        if not owner or json.loads(owner.group(1)) != want:
+            continue
+        try:
+            l2s, _ = decoder.raw_decode(combined, m.end())
+        except ValueError:
+            continue
+        for l2 in l2s if isinstance(l2s, list) else []:
+            slug = isinstance(l2, dict) and l2.get("urlSlug")
+            if slug:
+                found.add(urllib.parse.quote(slug, safe="-"))
+    return found
 
 
 def category_display_name(slug: str) -> str:
@@ -796,6 +829,56 @@ def unescape(s: str) -> str:
         .replace("\\n", " ")
         .replace("\\u0026", "&")
     )
+
+
+CSV_FIELDNAMES = [
+    "scraped_at",
+    "category",
+    "subcategory",
+    "item_id",
+    "item_name",
+    "expires_soon",
+    "best_by",
+    "price",
+    "price_usd",
+    "original_price",
+    "original_price_usd",
+    "discount",
+    "unit_size",
+    "unit_price",
+    "stock_status",
+    "recently_sold",
+    "snap",
+    "rating",
+    "rating_count",
+    "image_url",
+]
+
+
+def item_row(it: dict, scraped_at: str) -> dict:
+    """One output CSV row from a merged item dict (shared with price_watch_snapshot)."""
+    return {
+        "scraped_at": scraped_at,
+        "category": it.get("category", ""),
+        "subcategory": it.get("subcat", ""),
+        "item_id": it.get("item_id", ""),
+        "item_name": it.get("item_name", ""),
+        "expires_soon": it.get("expires_soon", ""),
+        "best_by": it.get("best_by", ""),
+        "price": it.get("price_display", ""),
+        "price_usd": it.get("price_usd", ""),
+        "original_price": it.get("original_display", ""),
+        "original_price_usd": it.get("original_usd", ""),
+        "discount": it.get("discount", ""),
+        "unit_size": it.get("unit_size", ""),
+        "unit_price": it.get("unit_price", ""),
+        "stock_status": stock_status(it.get("badge") or ""),
+        "recently_sold": it.get("recently_sold", ""),
+        "snap": it.get("snap", ""),
+        "rating": it.get("rating_val", ""),
+        "rating_count": it.get("rating_count", ""),
+        "image_url": it.get("image", ""),
+    }
 
 
 def append_csv(out_path, rows, fieldnames):
@@ -1016,57 +1099,9 @@ def main():
                 fut.result()
 
     scraped_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    rows = []
-    for it in item_map.values():
-        rows.append(
-            {
-                "scraped_at": scraped_at,
-                "category": it.get("category", ""),
-                "subcategory": it.get("subcat", ""),
-                "item_id": it.get("item_id", ""),
-                "item_name": it.get("item_name", ""),
-                "expires_soon": it.get("expires_soon", ""),
-                "best_by": it.get("best_by", ""),
-                "price": it.get("price_display", ""),
-                "price_usd": it.get("price_usd", ""),
-                "original_price": it.get("original_display", ""),
-                "original_price_usd": it.get("original_usd", ""),
-                "discount": it.get("discount", ""),
-                "unit_size": it.get("unit_size", ""),
-                "unit_price": it.get("unit_price", ""),
-                "stock_status": stock_status(it.get("badge") or ""),
-                "recently_sold": it.get("recently_sold", ""),
-                "snap": it.get("snap", ""),
-                "rating": it.get("rating_val", ""),
-                "rating_count": it.get("rating_count", ""),
-                "image_url": it.get("image", ""),
-            }
-        )
+    rows = [item_row(it, scraped_at) for it in item_map.values()]
     rows.sort(key=lambda r: (r["category"], r["item_name"]))
-
-    fieldnames = [
-        "scraped_at",
-        "category",
-        "subcategory",
-        "item_id",
-        "item_name",
-        "expires_soon",
-        "best_by",
-        "price",
-        "price_usd",
-        "original_price",
-        "original_price_usd",
-        "discount",
-        "unit_size",
-        "unit_price",
-        "stock_status",
-        "recently_sold",
-        "snap",
-        "rating",
-        "rating_count",
-        "image_url",
-    ]
-    append_csv(out_path, rows, fieldnames)
+    append_csv(out_path, rows, CSV_FIELDNAMES)
 
     print(f"Appended {len(rows)} rows ({scraped_at}) to {out_path}")
 

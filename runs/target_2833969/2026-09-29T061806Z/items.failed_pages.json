@@ -1,0 +1,989 @@
+{
+  "first_pass_failures": [
+    {
+      "category": "candy-750",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/candy-750",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.08695016600540839,
+          "size": 6179
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.27781520900316536,
+          "size": 6179
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4751326249970589,
+          "size": 6179
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2552330409962451,
+          "size": 6179
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19495545799145475,
+          "size": 6179
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "candy-750",
+      "subcat": "chocolate-766",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/candy-750/sub-category/chocolate-766",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.24219570799323265,
+          "size": 6303
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3504809580044821,
+          "size": 6303
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4734085829986725,
+          "size": 6303
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.244116000001668,
+          "size": 6303
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1515668329957407,
+          "size": 6303
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "beauty-1123",
+      "subcat": "setting%20spray-809894227601063966",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/beauty-1123/sub-category/setting%20spray-809894227601063966",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1286385420098668,
+          "size": 6393
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21912804200837854,
+          "size": 6393
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3350370000116527,
+          "size": 6393
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.28503491599985864,
+          "size": 6393
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2046153750125086,
+          "size": 6393
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "candy-750",
+      "subcat": "fruity-783",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/candy-750/sub-category/fruity-783",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2686908330069855,
+          "size": 6294
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.25210837500344496,
+          "size": 6294
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.4410623330040835,
+          "size": 6294
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.31828137500269804,
+          "size": 6294
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2433612080058083,
+          "size": 6294
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "beauty-1123",
+      "subcat": "primer-4592",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/beauty-1123/sub-category/primer-4592",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23708808299852535,
+          "size": 6303
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2091968330059899,
+          "size": 6303
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2904259170027217,
+          "size": 6303
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.24703095799486618,
+          "size": 6303
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22560329199768603,
+          "size": 6303
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "beauty-1123",
+      "subcat": "nails-1134",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/beauty-1123/sub-category/nails-1134",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.10097949999908451,
+          "size": 6300
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.07274045899976045,
+          "size": 6300
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23301091601024382,
+          "size": 6300
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.33322329200746026,
+          "size": 6300
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.16906499999458902,
+          "size": 6300
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "home%20improvement-8897",
+      "subcat": "automotive-1920",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/home%20improvement-8897/sub-category/automotive-1920",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.07467349999933504,
+          "size": 6372
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21609754199744202,
+          "size": 6372
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.24391591700259596,
+          "size": 6372
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.30150254200270865,
+          "size": 6372
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.31593974999850616,
+          "size": 6372
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "home%20improvement-8897",
+      "subcat": "blinds%20%26%20shades-8822",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/home%20improvement-8897/sub-category/blinds%20%26%20shades-8822",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.190958999999566,
+          "size": 6426
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.44607579200237524,
+          "size": 6426
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2780794580030488,
+          "size": 6426
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23298250000516418,
+          "size": 6426
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2256526249984745,
+          "size": 6426
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "home%20decor-8880",
+      "subcat": "vases%20%26%20containers-976803794236702871",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/home%20decor-8880/sub-category/vases%20%26%20containers-976803794236702871",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.06335854099597782,
+          "size": 6459
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.10306783299893141,
+          "size": 6459
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.27391979200183414,
+          "size": 6459
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2994368749932619,
+          "size": 6459
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2185146249976242,
+          "size": 6459
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "home%20decor-8880",
+      "subcat": "wall%20art-8996",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/home%20decor-8880/sub-category/wall%20art-8996",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2623730000050273,
+          "size": 6354
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2542115000105696,
+          "size": 6354
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2694824170030188,
+          "size": 6354
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.27803629101254046,
+          "size": 6354
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19395808299304917,
+          "size": 6354
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "home%20improvement-8897",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/home%20improvement-8897",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.05699412499961909,
+          "size": 6242
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.24753266701009125,
+          "size": 6242
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2798693750082748,
+          "size": 6242
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17486524999549147,
+          "size": 6242
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23276437500317115,
+          "size": 6242
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "kids",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/kids",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2322232919977978,
+          "size": 6164
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.5898485830111895,
+          "size": 6164
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3469224589935038,
+          "size": 6164
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.31180808300268836,
+          "size": 6164
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21004150000226218,
+          "size": 6164
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": "gift%20wrapping-819934417151262745",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926/sub-category/gift%20wrapping-819934417151262745",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.07868904199858662,
+          "size": 6444
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1991015840030741,
+          "size": 6444
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.21992487499665003,
+          "size": 6444
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.34000612499949057,
+          "size": 6444
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3055727500031935,
+          "size": 6444
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": "decorations-1789",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926/sub-category/decorations-1789",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.08822170799248852,
+          "size": 6369
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2164075420005247,
+          "size": 6369
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.17608000000473112,
+          "size": 6369
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3738715830113506,
+          "size": 6369
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.25095095799770206,
+          "size": 6369
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": "greeting%20cards-11341",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926/sub-category/greeting%20cards-11341",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.19808945899421815,
+          "size": 6387
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.22020750000956468,
+          "size": 6387
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2426360410026973,
+          "size": 6387
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2595694580086274,
+          "size": 6387
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2620108330011135,
+          "size": 6387
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "pet%20care-1026",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/pet%20care-1026",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2248149170045508,
+          "size": 6218
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1796511249995092,
+          "size": 6218
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.294784958998207,
+          "size": 6218
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2705080409941729,
+          "size": 6218
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.1916521249950165,
+          "size": 6218
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "pantry-963",
+      "subcat": "syrups-1482",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/pantry-963/sub-category/syrups-1482",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.07894795799802523,
+          "size": 6300
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.26246987500053365,
+          "size": 6300
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.27083683299133554,
+          "size": 6300
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.2199773339962121,
+          "size": 6300
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3011497080005938,
+          "size": 6300
+        }
+      ],
+      "status": 429,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23854654200840741,
+          "size": 6236
+        },
+        {
+          "n": 2,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.09681995899882168,
+          "size": 6236
+        },
+        {
+          "n": 3,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.35030029200424906,
+          "size": 6236
+        },
+        {
+          "n": 4,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.23757662500429433,
+          "size": 6236
+        },
+        {
+          "n": 5,
+          "status": 429,
+          "error": null,
+          "elapsed": 0.3154866660042899,
+          "size": 6236
+        }
+      ],
+      "status": 429,
+      "error": null
+    }
+  ],
+  "still_failed": [
+    {
+      "category": "candy-750",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/candy-750",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.2796387499984121,
+          "size": 6222
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "candy-750",
+      "subcat": "chocolate-766",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/candy-750/sub-category/chocolate-766",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.22303308300615754,
+          "size": 6345
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "beauty-1123",
+      "subcat": "setting%20spray-809894227601063966",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/beauty-1123/sub-category/setting%20spray-809894227601063966",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.17957599999499507,
+          "size": 6436
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "home%20decor-8880",
+      "subcat": "wall%20art-8996",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/home%20decor-8880/sub-category/wall%20art-8996",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.23045841600105632,
+          "size": 6375
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "home%20improvement-8897",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/home%20improvement-8897",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.23659170800237916,
+          "size": 6285
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": "gift%20wrapping-819934417151262745",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926/sub-category/gift%20wrapping-819934417151262745",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.06677900000067893,
+          "size": 6487
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": "decorations-1789",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926/sub-category/decorations-1789",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.23071145800349768,
+          "size": 6412
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": "greeting%20cards-11341",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926/sub-category/greeting%20cards-11341",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.26992649999738205,
+          "size": 6430
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "pet%20care-1026",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/pet%20care-1026",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.4472167080093641,
+          "size": 281369
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "pantry-963",
+      "subcat": "syrups-1482",
+      "url": "https://www.doordash.com/convenience/store/2833969/category/pantry-963/sub-category/syrups-1482",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.3343954999872949,
+          "size": 6342
+        }
+      ],
+      "status": 403,
+      "error": null
+    },
+    {
+      "category": "party%20supplies-1926",
+      "subcat": null,
+      "url": "https://www.doordash.com/convenience/store/2833969/category/party%20supplies-1926",
+      "attempts": [
+        {
+          "n": 1,
+          "status": 403,
+          "error": null,
+          "elapsed": 0.2582471659989096,
+          "size": 6279
+        }
+      ],
+      "status": 403,
+      "error": null
+    }
+  ],
+  "discovery_failures": [],
+  "zero_item_pages": [
+    {
+      "category": "men",
+      "subcat": null
+    },
+    {
+      "category": "women",
+      "subcat": null
+    },
+    {
+      "category": "kids",
+      "subcat": null
+    }
+  ]
+}
